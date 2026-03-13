@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>인원선택 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+	<header id="headerSub">
+		<h1 class="tit">인원선택</h1>
+		<a href="" class="h-back"><i class="iconset ico-back"></i></a>
+		<button type="button" class="h-burger"><i class="iconset ico-burger"></i></button>
+	</header>
+	<div id="rnb">
+	
+	</div>
+
+	<div class="container">
+
+		<!-- layer-dimmed 처리될때 body에 class="no-scroll" 추가 -->
+		<div class="layer-dimmed"></div>
+
+		<div class="layer-popup-bt">
+
+			<div class="pg-alert-text">
+
+				<!-- <i class="iconset ico-pg-big-20"></i>
+				<p class="txt">
+					만 18세 미만의 고객님은(영, 유아포함) <br />
+					보호자를 동반하여도 관람이 불가하며,<br />
+					만 18세 이상이더라도고등학교 재학중인 고객님은<br />
+					관람이 불가합니다.<br />
+					<strong>입장 시, 신분증을 반드시 지참해주세요!</strong>
+				</p> -->
+				
+				<!-- 전체관람 
+				<i class="iconset ico-pg-big-all"></i>
+				<p class="txt">모든 연령이 관람할 수 있습니다.</p>
+				-->
+				<!-- 12세이상관람
+				<i class="iconset ico-pg-big-12"></i>
+				<p class="txt">
+					만 12세 미만의 고객님은(영,유아 포함)<br />
+					반드시 부모님 또는 성인 보호자의 동반 하에<br />
+					관람이 가능합니다.<br />
+					연령 확인 불가 시 입장이 제한될 수 있습니다.
+				</p>
+				-->
+
+				<!-- 15세이상관람 -->
+				<i class="iconset ico-pg-big-15"></i>
+				<p class="txt">
+					만 15세 미만의 고객님은(영,유아 포함)<br />
+					반드시 부모님 또는 성인 보호자의 동반 하에<br />
+					관람이 가능합니다.<br />
+					연령 확인 불가 시 입장이 제한될 수 있습니다.
+				</p>
+				
+			</div>
+
+			<!-- 
+			한줄일때
+			<div class="sheet-select">
+				<div class="item">
+					<span class="text">일반</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+			</div> 
+			-->
+			
+			<!-- 
+				인원선택 항목이 한가지일때 sheet-select 
+				인원선택 항목이 두개이상일때 sheet-select에 col-2 클래스 추가
+			-->
+			<div class="sheet-select col-2">
+				<div class="top-text">커플석은 2,4,6,8명일 경우 선택하실 수 있습니다.</div>
+				<!--
+				<div class="top-text">키즈석은 어린이만 이용 가능하며, 일반과 어린이는 같이 선택할 수 없습니다.</div>
+				<div class="top-text">2인 소파는 최대 2인까지, 4인 소파는 최대 4인까지 선택하실 수 있습니다.</div>
+				<div class="top-text">발코니, 발코니 디럭스는  4인 이하 선택 시 예매가 가능합니다.</div>
+				-->
+				<div class="item">
+					<span class="text">일반</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" readonly />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+
+				<div class="item">
+					<span class="text">문화의 날</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" readonly />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+
+				<div class="item">
+					<span class="text">청소년</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" readonly />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+
+				<div class="item">
+					<span class="text">어린이</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" readonly />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+
+				<div class="item">
+					<span class="text">우대</span>
+					<div class="count">
+						<button type="button" class="down" title="수량 감소">-</button>
+
+						<div class="number">
+							<input type="text" class="now" title="현재 수량" value="1" readonly />
+						</div>
+						
+						<button type="button" class="up" title="수량 증가">+</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group pd0">
+				<button type="button" class="button-bot purple">동의하고 좌석선택</button>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

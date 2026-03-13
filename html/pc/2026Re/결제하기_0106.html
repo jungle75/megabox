@@ -1,0 +1,420 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>특별관_boutique</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header : layout.html 참조
+		</header>
+		<!--// header -->
+		
+		<!-- container -->
+		<div class="container">
+      <div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
+      
+        <!-- quick-reserve -->
+        <div class="reservePay2">
+
+          <div class="contentsArea">
+            <h2 class="tit">결제하기<!-- 결제하기 --></h2>
+            <!-- cti 일때만 출력 -->
+            <div class="cti-area" style="display:none">
+                <p>이름</p>
+                <input maxlength="20" name="riaName" type="text" title="이름 출력" class="input-text a-c w120px" placeholder="이름" value="">
+
+                <p>생년월일</p>
+                <input maxlength="8" name="riaBirthday" type="text" title="생년월일 출력" class="input-text a-c w150px" placeholder="6자리 또는 8자리" value="">
+
+                <p>휴대폰번호</p>
+                <input maxlength="11" name="riaMobileNo" type="text" title="휴대폰번호 출력" class="input-text a-c w150px" placeholder="- 없이 입력" value="">
+
+                <p>회원</p>
+                <input name="riaMemberYn" type="text" title="회원여부 출력" class="input-text a-c w100px" value="" readyonly="readyonly">
+            </div>
+
+            <section class="section">
+              <div class="titleArea">
+                <h3 class="tits">예매정보</h3>
+              </div>
+              <div class="movInfo" id="movieInfo">
+                <div class="movImg">
+                  <img src="https://megabox.co.kr/SharedImg/2025/12/23/n7JTlaC0CJoIxETuycsg8WxhnejZqfGS_150.jpg" alt="&amp;#40;3D&amp;#41; 아바타: 불과 재">
+                  <div class="movie-grade size12 age-12" id="admisClassNm"></div>
+                  <!-- 같은 방식이지만 size12 클래스 추가됨 -->
+                </div>
+                <ul class="list">
+                  <li id="movieNm">(3D) 아바타: 불과 재</li>
+                  <li><span id="playDe">2026.01.06</span><em id="dowNm">(화)</em> <span id="playTime"><i class="iconset ico-clock-white"></i>19:25~22:52</span></li>
+                  <li><span id="brchNm">상암월드컵경기장/DOLBY ATMOS관 [Laser]</span><span class="dotgrbx"></span><span id="playKindNm">3D ATMOS(자막)</span></li>
+                  <li>성인 1</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="section">
+              <div class="titleArea">
+                <h3 class="tits">할인적용</h3>
+                <div class="rt">
+                  <a href="#" class="btn bty1" id="btn_booking_init">초기화</a>
+                </div>
+              </div>
+              
+                <div class="discount" id="discount">
+                  <div class="neTab" id="neTab">
+                    <a href="javascript:void(0)" class="">쿠폰/관람권/기타</a>
+                    <a href="javascript:void(0)" class="act">포인트</a>
+                  </div>
+                  <!-- tabCont -->
+                  <div class="tabCont display-none" id="dcTab">
+                    <ul class="btnList" id="dcBtnList"><li class="btn-modal-open" paydcmeancd="popup_202002" data-base="1" data-point="0" dispname="dcoupon" meanmappid="ON00000002" hrankmeanmappid="ON00000001" data-layer="layer_202002" w-data="600" h-data="550"><span>할인쿠폰</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_202001" data-base="2" data-point="0" dispname="vipCpon" meanmappid="ON00000003" hrankmeanmappid="ON00000001" data-layer="layer_202001" w-data="600" h-data="550"><span>VIP 영화쿠폰</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_201006" data-base="3" data-point="0" dispname="cmbnd-display" meanmappid="ON00000144" hrankmeanmappid="ON00000001" data-layer="layer_201006" w-data="600" h-data="550"><span>메가박스 관람권</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_201003" data-base="4" data-point="0" dispname="scoupon" meanmappid="ON00000005" hrankmeanmappid="ON00000001" data-layer="layer_201003" w-data="600" h-data="550"><span>스토어 교환권</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_301001" data-base="5" data-point="0" dispname="m-cpon-display" meanmappid="ON00000006" hrankmeanmappid="ON00000001" data-layer="layer_301001" w-data="600" h-data="550"><span>모바일 관람권</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_105022" data-base="6" data-point="0" dispname="paysgift" meanmappid="ON00000007" hrankmeanmappid="ON00000001" data-layer="layer_105022" w-data="600" h-data="550"><span>페이즈 금액권</span><em></em></li><li class="btn-modal-open" paydcmeancd="popup_0" data-base="7" data-point="0" dispname="joongangFamily-display" meanmappid="ON00000008" hrankmeanmappid="ON00000001" data-layer="layer_0" w-data="600" h-data="550"><span>중앙패밀리</span><em></em></li></ul>
+                    <div class="checkArea" id="dcCponDiv">
+                      <div class="newCheck_1">
+                        <input type="checkbox" id="dcCponApply" name="dcCponApply" paydcmeancd="">
+                        <label for="dcCponApply">할인 쿠폰 자동 적용</label>
+                      </div>
+                      <a href="javascript:openDcCponPopup()" class="rt act disab">적용 쿠폰 확인</a> <!--disab 있음-->
+                    </div>
+                    <div class="textBox" style="">
+                      <ul class="dotList">
+                        <li>기프트콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은  [모바일관람권]에서 사용하실 수 있습니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="tabCont" id="pointTab">
+                    <ul class="btnList" id="pointBtnList">
+                      <li class="btn-modal-open" paydcmeancd="popup_204001" data-base="1" data-point="0" dispname="memp" meanmappid="ON00000012" hrankmeanmappid="ON00000011" data-layer="layer_204001" w-data="600" h-data="550"><span>멤버십 포인트</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303006" data-base="3" data-point="0" dispname="okcb" meanmappid="ON00000014" hrankmeanmappid="ON00000011" data-layer="layer_303006" w-data="600" h-data="550"><span>OK캐시백</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303013" data-base="4" data-point="0" dispname="lpoint" meanmappid="ON00000015" hrankmeanmappid="ON00000011" data-layer="layer_303013" w-data="600" h-data="550"><span>L.POINT</span><em></em></li>
+                      <li class="btn-modal-open disab" paydcmeancd="popup_303002" data-base="5" data-point="0" dispname="gsnp" meanmappid="ON00000016" hrankmeanmappid="ON00000011" data-layer="layer_303002" w-data="600" h-data="550"><span>GS&amp;POINT</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303025" data-base="6" data-point="0" dispname="hyoil-display" meanmappid="ON00000017" hrankmeanmappid="ON00000011" data-layer="layer_303025" w-data="600" h-data="550"><span>HD현대오일뱅크</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303023" data-base="7" data-point="0" dispname="happ-display" meanmappid="ON00000018" hrankmeanmappid="ON00000011" data-layer="layer_303023" w-data="600" h-data="550"><span>해피포인트</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303005" data-base="8" data-point="0" dispname="hbluep" meanmappid="ON00000019" hrankmeanmappid="ON00000011" data-layer="layer_303005" w-data="600" h-data="550"><span>블루멤버스포인트</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303022" data-base="9" data-point="0" dispname="kiamembers" meanmappid="ON00000020" hrankmeanmappid="ON00000011" data-layer="layer_303022" w-data="600" h-data="550"><span>기아멤버스포인트</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303024" data-base="10" data-point="0" dispname="hydm-display" meanmappid="ON00000021" hrankmeanmappid="ON00000011" data-layer="layer_303024" w-data="600" h-data="550"><span>현대M포인트</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_105021" data-base="12" data-point="0" dispname="bookcash" meanmappid="ON00000023" hrankmeanmappid="ON00000011" data-layer="layer_105021" w-data="600" h-data="550"><span>북앤라이프캐시</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_105019" data-base="13" data-point="0" dispname="cultcash" meanmappid="ON00000024" hrankmeanmappid="ON00000011" data-layer="layer_105019" w-data="600" h-data="550"><span>컬쳐캐쉬</span><em></em></li>
+                      <li class="btn-modal-open disab" paydcmeancd="popup_305004" data-base="14" data-point="0" dispname="culturenuri" meanmappid="ON00000025" hrankmeanmappid="ON00000011" data-layer="layer_305004" w-data="600" h-data="550"><span>문화누리카드</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303007" data-base="15" data-point="0" dispname="joongang" meanmappid="ON00000026" hrankmeanmappid="ON00000011" data-layer="layer_303007" w-data="600" h-data="550"><span>중앙멤버십</span><em></em></li>
+                      <li class="btn-modal-open" paydcmeancd="popup_303008" data-base="16" data-point="0" dispname="joongang" meanmappid="ON00000026" hrankmeanmappid="ON00000011" data-layer="layer_303008" w-data="600" h-data="550"><span>청년문화예술패스</span><em></em></li>
+                    </ul>
+                  </div>
+                  <!--//tabCont end -->
+                </div>
+              
+              
+            </section>
+
+            <section class="section">
+              <div class="titleArea">
+                <div class="tit">결제수단</div>
+              </div>
+              <!-- paySelect -->
+              <div class="paySelect" id="paySelect">
+                <div class="joongPay none" data-type="joongang-display" paydcmeancd="105038">
+                  <div class="title">
+                    <div class="tit"><span class="hide">JoongAng PAY</span></div>
+                    <div class="btn" id="btnMng" onclick="fn_joongAngPayMng();" style="display: block;"></div>
+                  </div>
+                  <!-- cardBox -->
+                  <div class="cardBox swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode" id="joongAngPayList" onclick=""><div class="swiper-wrapper" style="transition-duration: 0ms;"><div class="swiper-slide card c11_047 act swiper-slide-active" onclick="fn_joongAngPayClick(this);" mtycd="11" mdtcd="047" vrno="B926D56F1D56997DE41EE5F1BCDF3D0849F4E648" style="margin-right: 20px;">	<dl>    	<dd class="name">롯데카드</dd>    	<dd class="numb">5137 92** **** 0123</dd>	</dl></div><div class="swiper-slide card none swiper-slide-next" onclick="fn_joongAngPayLink('PREG');" style="margin-right: 20px;">카드 추가하기</div></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                  <!--//cardBox end-->
+                </div>
+                <div class="pays" data-type="credit" paydcmeancd="102001" meanmappid="ON00000030">신용/체크카드</div> <!--선택되면 체크 act-->
+                <div class="pays" data-type="tossquick" paydcmeancd="105044" meanmappid="ON00000038">퀵계좌이체<span class="tag" id="imgTag">즉시할인</span></div>
+                <div class="pays" data-type="easy" paydcmeancd="105001" meanmappid="ON00000032">간편결제<span class="tag" id="imgTag">혜택</span></div> <!--사용 못할때는 disab 추가-->
+                <div class="pays act" data-type="etc" paydcmeancd="105045" meanmappid="ON00000169">기타결제</div>
+              </div>
+              <!--//paySelect end -->
+              <!-- ord 카드사 선택 -->
+              <div class="ord display-none" id="credit-display">
+                <div class="item">카드사 선택</div>
+                <div class="item">
+                  <select id="card_select" title="카드사 선택" class="newSelect">
+                    <option value="00" selected="">선택</option><!-- 전체카드   -->
+                    <option value="01">비씨카드</option><!-- 비씨카드   -->
+                    <option value="07">국민카드</option><!-- 국민카드   -->
+                    <option value="02">신한카드</option><!-- 신한카드   -->
+                    <option value="03">삼성카드</option><!-- 삼성카드   -->
+                    <option value="05">롯데카드</option><!-- 롯데카드   -->
+                    <option value="12">농협카드</option><!-- 농협카드   -->
+                    <option value="27">하나카드</option><!-- 하나카드   -->
+                    <option value="04">현대카드</option><!-- 현대카드   -->
+                    <option value="13">씨티카드</option><!-- 씨티카드   -->
+                    <option value="22">제주카드</option><!-- 제주카드   -->
+                    <option value="14">우리카드</option><!-- 우리카드   -->
+                    <option value="11">수협카드</option><!-- 수협카드   -->
+                    <option value="24">전북카드</option><!-- 전북카드   -->
+                    <option value="23">광주카드</option><!-- 광주카드   -->
+                    <option value="17">신협카드</option><!-- 신협카드   -->
+                    <option value="90">카카오뱅크</option><!-- 카카오뱅크 -->
+                    <option value="91">케이뱅크</option><!-- 케이뱅크   -->
+                    
+                    <option value="B0">우체국카드</option><!-- 우체국 카드   -->
+                    <option value="B1">토스  카드</option><!-- 토스  카드  -->
+                    <option value="B2">SC제일은행 비씨카드</option><!-- SC제일은행 비씨카드   -->
+                    <option value="S0">SC제일은행 삼성카드</option><!-- SC제일은행 삼성카드   -->
+                    <option value="B3">IBK기업은행 카드</option><!-- IBK기업은행 카드  -->
+                  </select>
+                </div>
+
+                <div class="item display-none" id="rdo_credit_method">
+                  <div class="radioArea">
+                    <div class="newRadio_1">
+                      <input type="radio" name="rdo_card_select" id="app_card" checked="" value="01">
+                      <label for="app_card" id="label_app_card">앱카드 <!-- ISP, APP --></label>
+                    </div>
+                    <div class="newRadio_1">
+                      <input type="radio" name="rdo_card_select" id="general_card" value="00">
+                      <label for="general_card" id="label_general_card">일반결제 <!-- 일반결제 --></label>
+                    </div>
+                    <div class="newRadio_1" id="special_rdo">
+                      <input type="radio" name="rdo_card_select" id="special_card" value="02">
+                      <label for="special_card" id="label_special_card">포인트사용 <!-- 삼성카드 포인트 사용 --></label>
+                    </div>
+                    <div class="newRadio_1 display-none" id="morning_rdo">
+                      <input type="radio" name="rdo_card_select" id="morning_card" value="03">
+                      <label for="morning_card" id="label_morning_card">아침愛 조조할인  <!-- 아침愛 조조할인 --></label>
+                    </div>
+                    <div class="newRadio_1 display-none" id="edu_rdo">
+                      <input type="radio" name="rdo_card_select" id="edu_card" value="04">
+                      <label for="edu_card" id="label_edu_card">Edu Plan+ 할인 <!-- Edu Plan+ 할인 --></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--//ord 카드사 선택 -->
+              <!-- ord 간편결제 선택 -->
+              <div class="ord display-none" id="easy-display">
+                <div class="item">
+                  <div class="radioArea">
+                    <div class="newRadio_1">
+                      <input type="radio" name="easy_radio_payment" id="rdo_pay_tosspay" value="tosspay" paydcmeancd="105035" data-text="토스페이" data-type="toss-display" meanmappid="ON00000033" hrankmeanmappid="ON00000032">
+                      <label for="rdo_pay_tosspay">토스페이</label>
+                    </div>
+                    <div class="newRadio_1">
+                      <input type="radio" name="easy_radio_payment" id="rdo_pay_naverpay" value="naverpay" paydcmeancd="105036" data-text="네이버페이" data-type="naver-display" meanmappid="ON00000034" hrankmeanmappid="ON00000032">
+                      <label for="rdo_pay_naverpay">네이버페이(Npay)</label>
+                    </div>
+                    <div class="newRadio_1">
+                      <input type="radio" name="easy_radio_payment" id="rdo_pay_kakaopay" value="kakaopay" paydcmeancd="105037" data-text="카카오페이" data-type="kakao-display" meanmappid="ON00000035" hrankmeanmappid="ON00000032">
+                      <label for="rdo_pay_kakaopay">카카오페이</label>
+                    </div>
+                    
+                    <div class="newRadio_1">
+                      <input type="radio" name="easy_radio_payment" id="rdo_pay_kbpay" value="kbpay" paydcmeancd="105034" data-text="KB PAY" data-type="kbpay" meanmappid="ON00000037" hrankmeanmappid="ON00000032">
+                      <label for="rdo_pay_kbpay">KB PAY</label>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+              <!--//ord 간편결제 선택 -->
+              <!-- 간편결제용 -->
+              <!-- ord 계좌이체 선택 -->
+              <div class="ord" id="etc-display">
+                <div class="item">
+                  <div class="radioArea">
+                    <div class="newRadio_1">
+                      <input type="radio" name="etc_radio_payment" id="rdo_pay_mobile" value="mobile" paydcmeancd="105005" data-text="휴대폰결제" data-type="mobile" meanmappid="ON00000170">
+                      <label for="rdo_pay_mobile">휴대폰 결제</label>
+                    </div>
+                    <div class="newRadio_1">
+                      <input type="radio" name="etc_radio_payment" id="rdo_pay_settlebank" value="settlebank" paydcmeancd="105030" data-text="내통장결제" data-type="settlebank" meanmappid="ON00000178">
+                      <label for="rdo_pay_settlebank">내통장결제</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--//ord 계좌이체 선택 -->
+
+              <!-- 2020.02.07 수단별 알림 문구 추가 -->
+              <div class="dotList" id="paymentInfo">
+                <ul class="dotList display-none" content-paydcmeancd="102001" value="credit"></ul>
+                <ul class="dotList" content-paydcmeancd="105005" value="mobile"><li>결제하신 금액은 익월 휴대폰 요금에 합산되어 청구되며, 휴대폰 결제한도는 통산사별 월 누적 이용 제한에 따라 적용됩니다.</li><li>매월 말일 23시30분 ~ 익월 00시 10분까지(40분간)는 시스템 점검시간으로 이용이 어려울 수 있습니다.</li><li>휴대폰 결제와 관련된 추가 안내는 FAQ를 참조해주세요.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105030" value="settlebank"><li>내통장결제는 본인명의의 계좌를 최초 1회 등록 후 비밀번호 입력만으로 간편하게 이용할 수 있는 현금결제 서비스 입니다.</li><li>은행 점검시간의 경우 내통장결제서비스 이용이 불가합니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105044" value="tossquick"><li>퀵계좌이체란? 복잡한 인증 과정 없이 비밀번호 6자리로 결제할 수 있는 서비스입니다.</li><li>최초 1회 등록이 필요합니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105035" value="tosspay"><li>토스에 등록된 계좌와 신용/체크카드로 쉽고 편리하게 결제하세요.</li><li>토스페이 결제 시 토스에서 제공하는 카드사 별 무이자, 청구할인, 결제 이벤트만 제공됩니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105036" value="naverpay"><li>이벤트! 네이버페이 2만원 이상 결제 시 1,000원 네이버페이포인트 추첨 제공(25.12.19~31)</li><li>네이버페이 결제 시, 카드사 할인 및 포인트 사용이 불가할 수 있습니다.</li><li>네이버페이 결제 시 결제금액의 최대 1%가 적립됩니다. (네이버 유입 1% / 기타경로 0.2%)</li><li>상기 적립율은 2023년 6월 1일 결제 건부터 적용됩니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105037" value="kakaopay"><li>즉시할인 신용카드 적용이 불가합니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105003" value="payco"><li>즉시할인 신용카드 적용이 불가합니다.</li><li>페이코 포인트 결제 시 결제금액의 1% 추가적립 됩니다.</li></ul>
+                <ul class="dotList display-none" content-paydcmeancd="105034" value="kbpay"></ul>
+                <ul class="dotList display-none" content-paydcmeancd="305005" value="shinhan">신한카드 조조무료 서비스는 '아침愛 조조할인' 선택 시에만 적용되며 실적 및 조건 충족 시 월 1회, 최대 2인까지 무료로 관람하실 수 있습니다.</ul>
+              </div>
+              <div class="textInfo" id="promt">
+                <div class="tit">결제 프로모션</div>
+                <div class="inbox"><div class="item"><div class="img"><img src="https://img.megabox.co.kr/SharedImg/payPromt/2025/12/10/rKNVX07DwXis5RAiPyJYu4TAL6q597HP.png"></div><div class="txt">0.3% 즉시할인+영화 3천원 할인+경품 추첨 이벤트!</div></div><div class="item"><div class="img"><img src="https://img.megabox.co.kr/SharedImg/payPromt/2024/07/05/z9Amz4ohMGa2jOgT6zJZtcchh0qcWAr6.png"></div><div class="txt">1월 토스페이 결제 시 할인 혜택!</div></div></div>
+              </div>
+              <dl class="term-list" id="terms">
+                <dt>
+                  <span class="bg-chk small">
+                    <input type="checkbox" id="agree"><label for="agree">결제대행 서비스 약관 필수 동의</label>
+                  </span>
+                </dt>
+                <dd class="tit">
+                  전자금융거래 기본약관<!-- 전자금융거래 기본약관 -->
+                  <a href="javascript:void(0);" onclick="openTermsPop('one')">내용보기</a>
+                </dd>
+                <dd class="tit">
+                  개인정보 수집 및 이용에 대한 동의<!-- 개인정보 수집 및 이용에 대한 동의 -->
+                  <a href="javascript:void(0);" onclick="openTermsPop('two')">내용보기</a>
+                </dd>
+                <dd class="tit">
+                  개인정보의 제 3자 제공 동의<!-- 개인정보 제공 및 위탁 안내 -->
+                  <a href="javascript:void(0);" onclick="openTermsPop('three')">내용보기</a>
+                </dd>
+                <dd class="tit">
+                  개인정보의 처리 위탁 동의<!-- 개인정보의 처리 위탁 동의 -->
+                  <a href="javascript:void(0);" onclick="openTermsPop('four')">내용보기</a>
+                </dd>
+              </dl>
+
+              <dl class="term-list" id="refundTerms" style="display: block;">
+                <dt>
+                          <span class="bg-chk small">
+                            <input type="checkbox" id="refundAgree"><label for="refundAgree">취소/환불 정책에 대한 동의</label>
+                          </span>
+                </dt>
+                <dd class="guide"><p>- 온라인 예매는 영화 상영시간 20분전까지 취소 가능하며, 20분 이후 현장 취소만 가능합니다.</p><p>- 현장 취소 시 영화 상영시간 이전까지만 가능합니다.</p></dd>
+              </dl>
+            </section>
+          </div>
+
+          <div class="rightArea">
+            <!-- receipt -->
+            <div class="receipt">
+              <div class="cont">
+                <h4>결제금액</h4>
+                <!-- innerBox -->
+                <div class="innerBox" style="max-height:270px; overflow-y:auto;">
+                  <div class="grayArea top">
+                    <!-- ltrtBox -->
+                    <div class="ltrtBox"><div class="row data"><div class="lt">성인 1</div><div class="rt"><span>18,000</span></div></div>
+                      <div class="row last">
+                        <div class="lt">금액 <!-- 금액 --></div>
+                        <div class="rt"><span>18,000</span> 원 <!-- 원 --></div>
+                      </div>
+                    </div>
+                    <!--//ltrtBox end -->
+                  </div>
+                  <div class="grayArea bot">
+                    <!-- ltrtBox -->
+                    <div class="ltrtBox">
+                      
+                      <div class="row last">
+                        <div class="lt">할인적용</div>
+                        <div class="rt"><span>0</span> 원 <!-- 원 --></div>
+                      </div>
+                    </div>
+                    <!--//ltrtBox end -->
+                  </div>
+                </div>
+                <!--//innerBox end -->
+                <!-- ltrtBox -->
+                <div class="ltrtBox">
+                  <div class="row add">
+                    <div class="lt">추가 차액</div>
+                    <div class="rt"><span>0</span></div>
+                  </div>
+                  <div class="row total">
+                    <div class="lt">최종결제금액</div>
+                    <div class="rt"><span>18,000</span> 원 <!-- 원 --></div>
+                  </div>
+                  <div class="row last">
+                    <div class="lt">결제수단</div>
+                    <div class="rt">기타결제</div>
+                  </div>
+                </div>
+                <!--//ltrtBox end -->
+              </div>
+              <div class="btnArea">
+                <a href="#" class="btn01" id="btn_booking_back" title="이전">이전 <!-- 이전 --></a>
+                
+                  
+                  
+                  
+                    <a href="#" class="btn02 btn-modal-open" id="btn_booking_pay" onclick="startPay()" title="결제" w-data="600" h-data="400">결제</a>
+                  
+                
+              </div>
+            </div>
+            <!--//receipt end -->
+            
+              
+                
+                
+                  <div class="adbox">
+                    
+                      
+                      
+                        <a id="payBannerPCLink2" href="https://www.megabox.co.kr/event/detail?eventNo=19582" target="_top" title="">
+                          <img id="payBannerPC2" style="width:310px;" src="https://img.megabox.co.kr/SharedImg/cpBanner/2026/01/02/Q9YPcTjI3aDeTmSeb0nDyC7FOTDdM94i.png" alt=" ">
+                        </a>
+                      
+                    
+                  </div>
+                
+              
+            
+          </div>
+        </div>
+        <!--// quick-reserve -->
+
+      </div>
+		</div>
+		<!--// container -->
+
+		<footer id="footer">footer</footer>
+	</div>
+  <!--// body-wrap -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "utf-8";
+/*
+	디스크폰트
+*/
+@font-face {
+    font-family: 'text-security-disc';
+    src: url('../font/disc/disc-font.eot');
+    src: url('../font/disc/disc-font.eot?#iefix') format('embedded-opentype'),
+        url('../font/disc/disc-font.woff2') format('woff2'),
+        url('../font/disc/disc-font.woff') format('woff'),
+        url('../font/disc/disc-font.ttf') format('truetype'),
+        url('../font/disc/disc-font.svg#text-security') format('svg');
+}

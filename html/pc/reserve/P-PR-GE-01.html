@@ -1,0 +1,1036 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>관람인원선택 &gt; 빠른예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function() {
+		//mbLayer.toggle({id:'layer_ex', url:'/html/test/external.html', title:'레이어팝업 수동호출 테스트', minWidth:350 })
+
+		// 로딩시 연령고지 레이어 불러오기
+		$(window).on('load', function(){
+			$modal('layer_age_alert');
+		});
+	});
+</script>
+</head>
+<body class="body-iframe">
+
+	<section id="layer_age_alert" class="modal-layer">
+		<div class="wrap" style="width:500px; height:350px;">
+			<header class="layer-header">
+				<h3 class="tit">알림</h3>
+			</header>
+
+			<div class="layer-con">
+
+				<!--
+				12세 일때
+
+				<div class="alert-age-layer age12">
+
+				15세 일때
+				<div class="alert-age-layer age15">
+
+				19일세 일때
+				<div class="alert-age-layer age19">
+				-->
+				<div class="alert-age-layer age19">
+
+					<div class="age-box age-12">
+						<div class="left">
+							<p class="circle">12</p>
+						</div>
+
+						<div class="right">
+							<p class="tit">12세 이상 관람가</p>
+							<p class="txt">
+								만 12 세 미만의 고객님은(영,유아 포함)<br />
+								반드시 부모님 또는 성인 보호자의 동반하에<br />
+								관람이 가능합니다.<br />
+								연령 확인 불가 시 입장이 제한될 수 있습니다.
+							</p>
+						</div>
+					</div>
+
+					<div class="age-box age-15">
+						<div class="left">
+							<p class="circle">15</p>
+						</div>
+
+						<div class="right">
+							<p class="tit">15세 이상 관람가</p>
+							<p class="txt">
+								만 15 세 미만의 고객님은(영,유아 포함)<br />
+								반드시 부모님 또는 성인 보호자의 동반하에<br />
+								관람이 가능합니다.<br />
+								연령 확인 불가 시 입장이 제한될 수 있습니다.
+							</p>
+						</div>
+					</div>
+
+					<div class="age-box age-19">
+						<div class="left">
+							<p class="circle">19</p>
+						</div>
+
+						<div class="right">
+							<p class="tit">청소년 관람불가</p>
+							<p class="txt">
+								<strong>입장 시, 신분증을 반드시 지참하시기 바랍니다</strong><br />
+								본 영화는 보호자를 동반하여도 만 18세 미만의 <br />
+								고객님은 (영,유아포함) 영화관람이 불가하며,<br />
+								만 18세 이상이라도 고등학교 재학중인<br />
+								고객님은 영화관람이 불가합니다<br />
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button purple small close-layer">확인</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+
+	<div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
+		<!-- quick-reserve -->
+		<div class="quick-reserve">
+
+			<h2 class="tit">빠른예매</h2>
+
+			<!-- cti 일때만 출력 -->
+			<div class="cti-area">
+				<p>이름</p>
+				<input type="text" title="이름 출력" class="input-text a-c w120px" value="홍길동" readonly="readonly" />
+
+				<p>생년월일</p>
+				<input type="text" title="생년월일 출력" class="input-text a-c w120px" value="881212" readonly="readonly" />
+
+				<p>휴대폰번호</p>
+				<input type="text" title="휴대폰번호 출력" class="input-text a-c w150px" value="01012341234" readonly="readonly" />
+
+				<p>회원</p>
+				<input type="text" title="회원여부 출력" class="input-text a-c w100px" value="비회원" readonly="readonly" />
+
+				<button type="button" class="button gray ml10">재인증</button>
+			</div>
+
+			<!-- seat-select-section -->
+			<div class="seat-select-section">
+				<!-- seat-section -->
+				<div class="seat-section">
+
+					<div class="tit-util">
+						<h3 class="tit small">관람인원선택 <span class="sub">(최대 8매 선택가능)</span></h3>
+
+						<div class="right">
+							<button type="button" class="button gray-line small"><i class="iconset ico-reset-small"></i>초기화</button>
+						</div>
+					</div>
+
+					<!-- seat-area -->
+					<!--
+						경고 박스, legend 둘다 없을 때
+						<div class="seat-area">
+
+						경고 박스만 있을 때
+						<div class="seat-area has-alert">
+
+						legend만 있을 때
+						<div class="seat-area has-zone-legend">
+
+						레전드와 경고박스 둘다 있을 때
+						<div class="seat-area has-alert has-zone-legend">
+					 -->
+					<div class="seat-area has-alert has-zone-legend">
+						<!-- seat-count -->
+						<div class="seat-count">
+							<div class="cell">
+								<p class="txt">일반</p>
+
+								<div class="count">
+									<button type="button" class="down" title="일반 좌석 선택 감소">-</button>
+
+									<div class="number">
+										<button type="button" class="now" title="일반 현재 좌석 선택 수">0</button>
+
+										<!--
+											현재 선택된 숫자 일때
+											<button type="button" class="btn on">
+
+											현재 선택된 숫자가 아닐 때
+											<button type="button" class="btn">
+										-->
+										<ul class="num-choice">
+											<li><button type="button" class="btn">0</button></li>
+											<li><button type="button" class="btn on">1</button></li>
+											<li><button type="button" class="btn">2</button></li>
+											<li><button type="button" class="btn">3</button></li>
+											<li><button type="button" class="btn">4</button></li>
+											<li><button type="button" class="btn">5</button></li>
+											<li><button type="button" class="btn">6</button></li>
+											<li><button type="button" class="btn">7</button></li>
+											<li><button type="button" class="btn">8</button></li>
+										</ul>
+									</div>
+
+									<button type="button" class="up" title="일반 좌석 선택 증가">+</button>
+								</div>
+							</div>
+
+							<div class="cell">
+								<p class="txt">청소년</p>
+
+								<div class="count">
+									<button type="button" class="down" title="청소년 좌석 선택 감소">-</button>
+
+									<div class="number">
+										<button type="button" class="now" title="청소년 현재 좌석 선택 수">0</button>
+
+										<ul class="num-choice">
+											<li><button type="button" class="btn">0</button></li>
+											<li><button type="button" class="btn">1</button></li>
+											<li><button type="button" class="btn">2</button></li>
+											<li><button type="button" class="btn">3</button></li>
+											<li><button type="button" class="btn">4</button></li>
+											<li><button type="button" class="btn">5</button></li>
+											<li><button type="button" class="btn">6</button></li>
+											<li><button type="button" class="btn">7</button></li>
+											<li><button type="button" class="btn">8</button></li>
+										</ul>
+									</div>
+
+									<button type="button" class="up" title="청소년 좌석 선택 증가">+</button>
+								</div>
+							</div>
+
+							<div class="cell">
+								<p class="txt">어린이</p>
+
+								<div class="count">
+									<button type="button" class="down" title="어린이 좌석 선택 감소">-</button>
+
+									<div class="number">
+										<button type="button" class="now" title="어린이 현재 좌석 선택 수">0</button>
+
+										<ul class="num-choice">
+											<li><button type="button" class="btn">0</button></li>
+											<li><button type="button" class="btn">1</button></li>
+											<li><button type="button" class="btn">2</button></li>
+											<li><button type="button" class="btn">3</button></li>
+											<li><button type="button" class="btn">4</button></li>
+											<li><button type="button" class="btn">5</button></li>
+											<li><button type="button" class="btn">6</button></li>
+											<li><button type="button" class="btn">7</button></li>
+											<li><button type="button" class="btn">8</button></li>
+										</ul>
+									</div>
+
+									<button type="button" class="up" title="어린이 좌석 선택 증가">+</button>
+								</div>
+							</div>
+
+							<div class="cell">
+								<p class="txt">우대</p>
+
+								<div class="count">
+									<button type="button" class="down" title="우대 좌석 선택 감소">-</button>
+
+									<div class="number">
+										<button type="button" class="now" title="우대 현재 좌석 선택 수">0</button>
+
+										<ul class="num-choice">
+											<li><button type="button" class="btn">0</button></li>
+											<li><button type="button" class="btn">1</button></li>
+											<li><button type="button" class="btn">2</button></li>
+											<li><button type="button" class="btn">3</button></li>
+											<li><button type="button" class="btn">4</button></li>
+											<li><button type="button" class="btn">5</button></li>
+											<li><button type="button" class="btn">6</button></li>
+											<li><button type="button" class="btn">7</button></li>
+											<li><button type="button" class="btn">8</button></li>
+										</ul>
+									</div>
+
+									<button type="button" class="up" title="우대 좌석 선택 증가">+</button>
+								</div>
+							</div>
+						</div>
+						<!--// seat-count -->
+
+						<!-- scroll -->
+						<div class="seat-layout">
+
+							<!-- alert -->
+							<div class="alert">
+								<div class="box-alert">
+									<strong>[알림]</strong>
+									<span>
+										키즈석은 어린이만 이용 가능하며, 일반과 어린이는 같이 선택할 수 없습니다.
+									</span>
+
+									<button type="button" class="btn-close-small">삭제</button>
+								</div>
+
+								<div class="box-alert">
+									<strong>[알림]</strong>
+									<span>
+										키즈석은 어린이만 이용 가능하며, 일반과 어린이는 같이 선택할 수 없습니다.
+									</span>
+
+									<button type="button" class="btn-close-small">삭제</button>
+								</div>
+							</div>
+							<!--// alert -->
+
+							<!--
+								관람인원 선택 전
+								<div class="seat-count-before">
+
+								관람인원 선택 후
+								<div class="seat-count-before off">
+							-->
+							<div class="seat-count-before off">관람인원을 선택하세요.</div>
+
+							<div class="scroll m-scroll">
+								<!--
+									좌석배치도 부분
+
+									width : 100%,
+									height : inline 으로 계산되어진 값을 넣어줘야 합니다.
+								-->
+								<div id="seatLayout" style="width:100%; height:1000px;">
+									<img src="../../../static/pc/images/reserve/img-theater-screen.png" alt="screen" style="position:absolute; left:62px; top:30px;" />
+
+									<img src="../../../static/pc/images/reserve/img-door-left.png" alt="좌측 출입구" style="position:absolute; left:0px; top:50px;" />
+
+									<img src="../../../static/pc/images/reserve/img-door-right.png" alt="우측 출입구" style="position:absolute; left:0px; top:70px;" />
+
+									<img src="../../../static/pc/images/reserve/img-door-top.png" alt="상단 출입구" style="position:absolute; left:0px; top:90px;" />
+
+									<img src="../../../static/pc/images/reserve/img-door-bottom.png" alt="하단 출입구" style="position:absolute; left:0px; top:110px;" />
+
+									<!-- 2019-03-05 : 좌우측, 상하단 출입구 이미지 추가 -->
+									<!-- 좌측 우측 동시의 문 -->
+									<img src="../../../static/pc/images/reserve/img-door-left-right.png" alt="좌우측 출입구" style="position:absolute; left:0px; top:140px;" />
+
+									<!-- 상단 하단 동시의 문 -->
+									<img src="../../../static/pc/images/reserve/img-door-top-bottom.png" alt="상하단 출입구" style="position:absolute; left:0px; top:170px;" />
+
+									<!--
+										to : 개발
+										예매 가능한 버튼마우스 오버시 addClass on 기능 front.js 에 있음.
+										필요 없을시 주석처리해도 됩니다.
+									 -->
+									<!--
+										예약가능
+									 -->
+									<div class="row">
+										<button type="button" class="btn-seat-row" title="A 행" style="position:absolute; left:42px; top:60px;">A</button>
+
+										<button type="button" title="A1 (일반석/스탠다드존)" class="seat-condition common standard" style="position:absolute; left:62px; top:60px; width:18px;">
+											<span class="num">1</span>
+											<span class="kind">일반</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A2 (장애인/휠체어석/스탠다드존)" class="seat-condition disabled standard" style="position:absolute; left:82px; top:60px; width:18px">
+											<span class="num">2</span>
+											<span class="kind">장애인/휠체어석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A3 (키즈석/스탠다드존)" class="seat-condition kids standard" style="position:absolute; left:102px; top:60px; width:18px">
+											<span class="num">3</span>
+											<span class="kind">키즈석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A4 (테이블석/스탠다드존)" class="seat-condition table standard" style="position:absolute; left:122px; top:60px; width:18px">
+											<span class="num">4</span>
+											<span class="kind">테이블석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A5 (2인소파석/스탠다드존)" class="seat-condition sofa2 standard" style="position:absolute; left:142px; top:60px; width:18px">
+											<span class="num">5</span>
+											<span class="kind">2인소파석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A6 (4인소파석/스탠다드존)" class="seat-condition sofa4 standard" style="position:absolute; left:162px; top:60px; width:18px">
+											<span class="num">6</span>
+											<span class="kind">4인소파석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A7 (발코니석/스탠다드존)" class="seat-condition balcony standard" style="position:absolute; left:182px; top:60px; width:18px">
+											<span class="num">7</span>
+											<span class="kind">발코니석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A8 (발코니디럭스석/스탠다드존)" class="seat-condition balcony-d standard" style="position:absolute; left:202px; top:60px; width:18px">
+											<span class="num">8</span>
+											<span class="kind">발코니디럭스석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A9 (로얄석/스탠다드존)" class="seat-condition royal standard" style="position:absolute; left:222px; top:60px; width:18px">
+											<span class="num">9</span>
+											<span class="kind">로얄석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A10 (스페셜석/스탠다드존)" class="seat-condition special standard" style="position:absolute; left:242px; top:60px; width:18px">
+											<span class="num">10</span>
+											<span class="kind">스페셜석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A11 (스위트석/스탠다드존)" class="seat-condition sweet standard" style="position:absolute; left:262px; top:60px; width:18px">
+											<span class="num">11</span>
+											<span class="kind">스위트석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+
+										<button type="button" title="A12 (커플석/스탠다드존)" class="seat-condition couple standard" style="position:absolute; left:282px; top:60px; width:18px">
+											<span class="num">12</span>
+											<span class="kind">커플석</span>
+											<span class="condition">예약가능</span>
+											<span class="rank">스탠다드</span>
+										</button>
+									</div>
+
+									<!--
+										예약완료
+									 -->
+									<div class="row">
+										<button type="button" class="btn-seat-row" title="B 행" style="position:absolute; left:42px; top:100px;">B</button>
+
+										<button type="button" title="B1 (일반석/이코노미)" class="seat-condition common finish economy" style="position:absolute; left:62px; top:100px; width:18px;">
+											<span class="num">1</span>
+											<span class="kind">일반</span>
+											<span class="condition">예약완료</span>
+											<span class="rank">이코노미</span>
+										</button>
+
+										<button type="button" title="B2 (장애인/휠체어석/이코노미)" class="seat-condition disabled finish economy" style="position:absolute; left:82px; top:100px; width:18px">
+											<span class="num">2</span>
+											<span class="kind">장애인/휠체어석</span>
+											<span class="condition">예약완료</span>
+											<span class="rank">이코노미</span>
+										</button>
+
+										<button type="button" title="B3 (키즈석/이코노미)" class="seat-condition kids finish economy" style="position:absolute; left:102px; top:100px; width:18px">
+											<span class="num">3</span>
+											<span class="kind">키즈석</span>
+											<span class="condition">예약완료</span>
+											<span class="rank">이코노미</span>
+										</button>
+									</div>
+
+									<!--
+										예약불가
+									-->
+									<div class="row">
+										<button type="button" class="btn-seat-row" title="C 행" style="position:absolute; left:42px; top:140px;">C</button>
+
+										<button type="button" title="C1 (일반석/이코노미)" class="seat-condition common impossible premium" style="position:absolute; left:62px; top:140px; width:18px;">
+											<span class="num">1</span>
+											<span class="kind">일반</span>
+											<span class="condition">예약불가</span>
+											<span class="rank">프리미엄</span>
+										</button>
+
+										<button type="button" title="C2 (장애인/휠체어석/이코노미)" class="seat-condition disabled impossible view premium" style="position:absolute; left:82px; top:140px; width:18px">
+											<span class="num">2</span>
+											<span class="kind">장애인/휠체어석</span>
+											<span class="condition">예약불가</span>
+											<span class="rank">프리미엄</span>
+										</button>
+
+										<button type="button" title="C3 (키즈석/이코노미)" class="seat-condition kids impossible premium" style="position:absolute; left:102px; top:140px; width:18px;">
+											<span class="num">3</span>
+											<span class="kind">키즈석</span>
+											<span class="condition">예약불가</span>
+											<span class="rank">프리미엄</span>
+										</button>
+									</div>
+
+									<div class="row">
+										<button type="button" class="btn-seat-row" title="D 행" style="position:absolute; left:42px; top:180px;">D</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!--// scroll -->
+
+						<div class="zone-legend">
+							<div class="label standard">스탠다드</div>
+							<div class="label economy">이코노미</div>
+							<div class="label premium">프리미엄</div>
+						</div>
+					</div>
+					<!--// seat-area -->
+				</div>
+				<!--// seat-section -->
+
+				<!-- seat-result -->
+				<div class="seat-result">
+					<div class="wrap">
+
+						<div class="tit-area">
+							<!--
+								관람 등급 표시
+								<span class="movie-grade small age-all">전체 관람가</span>
+								<span class="movie-grade small age-12">12세 이상 관람가</span>
+								<span class="movie-grade small age-15">15세 이상 관람가</span>
+								<span class="movie-grade small age-19">청소년 관람 불가</span>
+								<span class="movie-grade small age-no">미정</span>
+							-->
+							<span class="movie-grade small age-all">전체 관람가</span>
+
+							<p class="tit">영화 제목 출력 영화 제목 출력 영화 제목 출력 영화 제목 출력 영화 제목 출력</p>
+							<p class="cate">디지털(자막)/무대인사</p>
+						</div>
+
+						<div class="info-area">
+							<p class="theater">대구신세계(동대구)</p>
+							<p class="special">발코니</p>
+							<p class="date"><span>2018.11.25</span><em>(수)</em></p>
+
+							<div class="other-time">
+								<button type="button" class="now">07:30~09:30 <i class="arr"></i></button>
+
+								<!--
+									현재 선택된 시간
+									<button type="button" class="btn on">
+
+									현재 선택된 시간이 아닐때
+									<button type="button" class="btn">
+								 -->
+								<ul class="other">
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+									<li><button type="button" class="btn on">07:30~09:30</button></li>
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+									<li><button type="button" class="btn">07:30~09:30</button></li>
+								</ul>
+							</div>
+
+							<p class="poster">
+								<img src="../../../static/pc/images/reserve/@img-poster01.jpg" alt="영화제목 출력" />
+							</p>
+						</div>
+
+						<div class="choice-seat-area">
+							<div class="legend">
+								<!--
+									좌석 범례
+
+									<div class="seat-condition choice" title="선택한 좌석"></div>
+									<div class="seat-condition finish" title="예매 완료"></div>
+									<div class="seat-condition impossible" title="선택 불가"></div>
+
+									<div class="seat-condition common" title="일반"></div>
+									<div class="seat-condition disabled" title="장애인/휠체어석"></div>
+									<div class="seat-condition sofa4" title="4인소파석"></div>
+									<div class="seat-condition sofa2" title="2인소파석"></div>
+									<div class="seat-condition royal" title="로얄석"></div>
+									<div class="seat-condition couple" title="커플석"></div>
+									<div class="seat-condition table" title="테이블석"></div>
+									<div class="seat-condition kids" title="키즈석"></div>
+									<div class="seat-condition sweet" title="스위트석"></div>
+									<div class="seat-condition balcony" title="발코니석"></div>
+									<div class="seat-condition balcony-d" title="발코니디럭스석"></div>
+									<div class="seat-condition special" title="스페셜석"></div>
+								-->
+
+								<ul class="list">
+									<li><div class="seat-condition choice" title="선택한 좌석"></div> <em>선택</em></li>
+									<li><div class="seat-condition finish" title="예매 완료"></div> <em>예매완료</em></li>
+									<li><div class="seat-condition impossible" title="선택 불가"></div> <em>선택불가</em></li>
+
+									<li><div class="seat-condition common" title="일반"></div> <em>일반</em></li>
+									<li><div class="seat-condition disabled" title="장애인/휠체어석"></div> <em>장애인/휠체어석</em></li>
+									<li><div class="seat-condition kids" title="키즈석"></div> <em>키즈석</em></li>
+									<li><div class="seat-condition table" title="테이블석"></div> <em>테이블석</em></li>
+									<li><div class="seat-condition balcony" title="발코니석"></div> <em>발코니석</em></li>
+									<li><div class="seat-condition couple" title="커플석"></div> <em>커플석</em></li>
+								</ul>
+							</div>
+
+							<div class="seat-num">
+								<p class="tit">선택좌석</p>
+
+								<div class="my-seat">
+									<!--
+										선택한 좌석 :
+										<div class="seat choice" title="선택한 좌석">G11</div>
+
+										선택할 수 있는 좌석 :
+										<div class="seat possible" title="선택할 수 있는 좌석">-</div>
+
+										구매가능 좌석 :
+										<div class="seat all" title="구매가능 좌석">-</div>
+									 -->
+
+									<div class="seat choice" title="선택한 좌석">G11</div>
+									<div class="seat choice" title="선택한 좌석">G12</div>
+
+									<div class="seat possible" title="선택할 수 있는 좌석">-</div>
+									<div class="seat possible" title="선택할 수 있는 좌석">-</div>
+
+									<div class="seat all" title="구매가능 좌석">-</div>
+									<div class="seat all" title="구매가능 좌석">-</div>
+									<div class="seat all" title="구매가능 좌석">-</div>
+									<div class="seat all" title="구매가능 좌석">-</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pay-area">
+							<p class="count">
+								<span>일반 <em>2</em></span>
+								<span>어린이 <em>2</em></span>
+								<span>청소년 <em>2</em></span>
+								<span>우대 <em>2</em></span>
+							</p>
+
+							<div class="pay">
+								<p class="tit">최종결제금액</p>
+
+								<div class="money">
+									<em>99,999,999</em>
+									<span>원</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<a href="" class="button">이전</a>
+							<!--
+								디폴트?
+								<a href="" class="button">다음</a>
+
+								비활성화
+								<a href="" class="button disabled">다음</a>
+
+								활성
+								<a href="" class="button active">다음</a>
+							-->
+							<!--
+								로그인전
+								<a href="#layer_login_select" class="button btn-modal-open" w-data='850' h-data='556'>다음</a>
+
+								로그인 후
+								<a href="#layer_login_select" class="button active">다음</a>
+							 -->
+							<!-- 로그인 레이어 띄울 때 -->
+							<a href="#layer_login_select" class="button active btn-modal-open" w-data='850' h-data='556'>다음</a>
+
+							<!-- 예매 제한 기준 안내 띄울 때 -->
+							<a href="#layer_member_grade" class="button active btn-modal-open" w-data='600' h-data='350'>다음</a>
+						</div>
+					</div>
+				</div>
+				<!--// seat-result -->
+
+			</div>
+			<!--// seat-select-section -->
+
+		</div>
+		<!--// quick-reserve -->
+
+		<div class="quick-reserve-ad-area">
+			<img src="../../../static/pc/images/reserve/@img-ad.jpg" alt="사건의 유일한 목격자 자폐 소녀를 만나다. 증인 : 2월 13일 대개봉. 12세 관람가" />
+		</div>
+
+		<!-- 레이어 : 예매 제한 기준 안내  -->
+		<section id="layer_member_grade" class="modal-layer">
+			<div class="wrap">
+				<header class="layer-header">
+					<h3 class="tit">예매 제한 기준 안내</h3>
+				</header>
+
+				<div class="layer-con">
+					<p>일 최대 예매 제한 횟수를 초과하여 예매가 불가능 합니다.</p>
+
+					<div class="box-gray a-c">
+						일 최대 3개 지점 / 최대 15매(3회에 한함)
+						<!-- 일 최대 1개 지점 / 최대 8매(1회에 한함) -->
+					</div>
+
+					<p>
+						추가 단체 관람을 원하실 경우 메가박스 드림센터 <em class="font-gblue">1544-0070</em>으로 문의 부탁 드립니다.<br />
+						메가박스를 이용해 주셔서 감사합니다.
+					</p>
+
+				</div>
+
+				<div class="btn-group-fixed">
+					<button type="button" class="button purple close-layer small">확인</button>
+				</div>
+
+				<button type="button" class="btn-modal-close">레이어 닫기</button>
+			</div>
+		</section>
+		<!--// 레이어 : 예매 제한 기준 안내  -->
+
+		<!-- 레이어 : 로그인  -->
+		<section id="layer_login_select" class="modal-layer">
+			<div class="wrap">
+				<header class="layer-header">
+					<h3 class="tit">로그인</h3>
+				</header>
+
+				<div class="layer-con">
+
+					<div class="tab-list tab-layer">
+						<ul>
+							<li class="on"><a href="#login_tab_01">회원 로그인</a></li>
+							<li><a href="#login_tab_02">비회원 로그인</a></li>
+						</ul>
+					</div>
+
+					<!-- tab-cont-wrap -->
+					<div class="tab-cont-wrap">
+						<!-- tab 회원 로그인 -->
+						<div id="login_tab_01" class="tab-cont on">
+
+							<div class="login-member col-2">
+								<!-- col-wrap -->
+								<div class="col-wrap">
+									<div class="col left">
+										<!-- login-input-area -->
+										<div class="login-input-area">
+											<input type="text" placeholder="아이디" title="아이디를 입력하세요" class="input-text">
+											<!--
+												오류 메시지 없을때는 태그 자체를 삭제
+											-->
+											<div class="alert">오류메시지 출력</div>
+
+											<input type="password" placeholder="비밀번호" title="비밀번호를 입력하세요" class="input-text mt15">
+											<!--
+												오류 메시지 없을때는 태그 자체를 삭제
+											-->
+											<div class="alert">오류메시지 출력</div>
+
+
+
+											<!-- chk-util -->
+											<div class="chk-util">
+												<div class="left">
+													<input type="checkbox" id="save_id_header" /> <label for="save_id_header">아이디 저장</label>
+												</div>
+
+												<div class="right">
+													<div class="hp-ad">
+														<a href="" target="_blank" title="새창 열림"><span>휴대폰 간편로그인</span> <em>광고</em></a>
+													</div>
+												</div>
+											</div>
+											<!--// chk-util -->
+
+											<button type="button" class="button purple large btn-login">로그인</button>
+
+											<div class="link">
+												<a href="">ID/PW 찾기</a>
+												<a href="">회원가입</a>
+												<a href="">비회원 예매확인</a>
+											</div>
+
+											<div class="sns-login">
+												<a href=""><img src="../../../static/pc/images/member/ico-facebook.png" alt="페이스북" /> 페이스북으로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-naver.png" alt="네이버로" /> 네이버로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-kakao.png" alt="카카오톡" /> 카카오톡으로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-payco.png" alt="페이코" /> 페이코로 로그인</a>
+											</div>
+										</div>
+										<!--// login-input-area -->
+									</div>
+
+									<div class="col right">
+										<div class="login-ad">
+											<a href="" target="_blank" title="새창 열림"><img src="../../../static/pc/images/member/img-ad.png" alt="광고 : 블루멤버스 포이트로 메가박스 4천원 할인 받으세요!" /></a>
+										</div>
+									</div>
+								</div>
+								<!--// col-wrap -->
+							</div>
+						</div>
+						<!--// tab 회원 로그인 -->
+
+						<!-- tab 비회원 로그인 -->
+						<div id="login_tab_02" class="tab-cont">
+
+							<!-- login-member -->
+							<div class="login-member col-2">
+								<!-- col-wrap -->
+								<div class="col-wrap">
+									<div class="col left">
+
+										<div class="no-member-login-table">
+											<table>
+												<caption>이름, 생년월일, 휴대폰번호, 인증번호, 비밀번호, 비밀번호 확인 항목을 가진 비회원 로그인 입력 표</caption>
+												<colgroup>
+													<col style="width:110px;" />
+													<col />
+												</colgroup>
+												<tbody>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_name">이름</label>
+														</th>
+														<td>
+															<input type="text" id="no_member_user_name" placeholder="이름" class="input-text">
+
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_birthday">생년월일</label>
+														</th>
+														<td>
+															<input type="text" id="no_member_user_birthday" placeholder="생년월일 앞 6자리" class="input-text">
+
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_hp_num">휴대폰번호</label>
+														</th>
+														<td>
+															<div class="hp-input">
+																<input type="text" id="no_member_user_hp_num" placeholder="- 없이 입력" class="input-text">
+
+																<!--
+																	처음 인증 할때
+																	<button type="button" class="button gray">인증요청</button>
+
+																	처음 인증 아닐 때
+																	<button type="button" class="button gray">재전송</button>
+																-->
+																<button type="button" class="button gray">인증요청</button>
+															</div>
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_chk_num">인증번호</label>
+														</th>
+														<td>
+															<div class="chk-num">
+																<div class="line">
+																	<input type="text" id="no_member_user_chk_num" class="input-text">
+
+																	<div class="time-limit">
+																		3:00
+																	</div>
+																</div>
+
+																<button type="button" class="button purple">확인</button>
+															</div>
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_pwd">인증번호</label>
+														</th>
+														<td>
+															<input type="password" id="no_member_user_pwd" placeholder="비밀번호(숫자 4자리)" class="input-text">
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row">
+															<label for="no_member_user_pwd_chk">인증번호</label>
+														</th>
+														<td>
+															<input type="password" id="no_member_user_pwd_chk" placeholder="비밀번호(숫자 4자리) 확인" class="input-text">
+															<!--
+																오류 메시지 없을때는 태그 자체를 삭제
+															-->
+															<div class="alert">오류메시지 출력</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div class="col right">
+
+										<div class="no-member-privacy-rule">
+											<p class="tit">비회원예매 개인정보 처리방침</p>
+
+											<div class="cont">
+												<dl>
+													<dt>수집목적</dt>
+													<dd>비회원예매 서비스 제공 / 이용자식별 / 구매 및  결제</dd>
+
+													<dt>수집항목</dt>
+													<dd>이름, 생년월일, 휴대폰번호, 비밀번호</dd>
+
+													<dt>보유기간</dt>
+													<dd>관람 또는 취소 후 7일 이내</dd>
+												</dl>
+
+												<div class="btn-agree">
+													<input type="radio" id="no_member_privacy_agree01" name="no_member_privacy_agree">
+													<label for="no_member_privacy_agree01">동의</label>
+
+													<input type="radio" id="no_member_privacy_agree02" name="no_member_privacy_agree" class="ml20">
+													<label for="no_member_privacy_agree02">미동의</label>
+												</div>
+
+												<ul class="dot-list gblue mt20">
+													<li class="font-gblue">정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우 비회원 예매서비스를 이용하실 수 없습니다.</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--// col-wrap -->
+
+								<div class="btn-group">
+									<!-- 비회원 알림 레이어 띄우기 -->
+									<a href="#layer_no_member_chk" class="button purple btn-modal-open" w-data='600' h-data='320'>확인</a>
+								</div>
+							</div>
+							<!--// login-member -->
+						</div>
+						<!--// tab 비회원 로그인 -->
+					</div>
+					<!--// tab-cont-wrap -->
+				</div>
+
+				<button type="button" class="btn-modal-close">레이어 닫기</button>
+			</div>
+		</section>
+		<!--// 레이어 : 로그인  -->
+
+		<!-- 레이어 : 비회원 티켓 발권 확인 -->
+		<section id="layer_no_member_chk" class="modal-layer">
+			<div class="wrap">
+				<header class="layer-header">
+					<h3 class="tit">알림</h3>
+				</header>
+
+				<div class="layer-con">
+					<p>티켓 발권을 위한 입력정보를 확인해 주세요.</p>
+
+					<div class="table-wrap v1">
+						<table class="data-table">
+							<caption>이름, 생년월일, 휴대폰번호 항목을 가진 비회원 티켓 발권을 위한 입력정보 표</caption>
+							<colgroup>
+								<col style="width:80px;" />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="a-l">이름</th>
+									<td>김메가박스</td>
+								</tr>
+								<tr>
+									<th scope="row" class="a-l">생년월일</th>
+									<td>991212</td>
+								</tr>
+								<tr>
+									<th scope="row" class="a-l">휴대폰번호</th>
+									<td>010-5555-5555</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="btn-group-fixed">
+					<button type="button" class="button close-layer small">취소</button>
+					<button type="button" class="button purple small">확인</button>
+				</div>
+
+				<button type="button" class="btn-modal-close">레이어 닫기</button>
+			</div>
+		</section>
+		<!--// 레이어 : 비회원 티켓 발권 확인 -->
+	</div>
+</body>
+</html>

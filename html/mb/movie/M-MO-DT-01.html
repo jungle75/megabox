@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>상세 &gt; 영화 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/mb/js/masonry.pkgd.min.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	function fn_movieMainListChg(idx){
+
+	}
+</script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function(){
+
+		// 핫클립
+		if( $('.clip-slide').length > 0 ){
+			var list_swiper = new Swiper('.clip-slide', {
+				slidesPerView: 'auto',
+				freeMode: true,
+				spaceBetween: 8,
+				pagination: false ,
+				centeredSlides: false ,
+				disableTouchControl:true,
+				lazy:true,
+				navigation : false
+			});
+		}
+
+	// 이벤트
+	if( $('.event-list').length > 0 ){
+		var list_swiper = new Swiper('.event-list', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 8,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+		/*!
+		* Masonry PACKAGED v4.2.2
+		* Cascading grid layout library
+		* https://masonry.desandro.com
+		* MIT License
+		* by David DeSandro
+		*/
+
+		// 핀터레스트 선언
+		/*
+			2019-07-02
+			가이드 수정
+			window load 된 다음에 실행
+		*/
+
+
+		$moviePostList = $('.stillcut-list').masonry({
+			itemSelector : '.grid-item',
+			columnWidth : '.grid-item',
+			gutter : 0
+		});
+
+
+		// masonry append (더보기 클릭시. 자세한건 사이트 참조)
+		$(document).on('click', '.btn-more-stillcut-list',function(){
+
+			var $items = $(
+			'<div class="grid-item">'+
+			'<div class="wrap">'+
+			'<div class="img">'+
+			'<a href=""><img src="../../../static/mb/images/movie/img-stillcut01.png" alt=""></a>'+
+			'</div>'+
+			'</div>'+
+			'</div>');
+
+			// 더보기 추가, 추가후 높이값 다시 계산 됨
+			$moviePostList.append($items).masonry('appended', $items);
+
+		 	setTimeout(function(){
+		 		$moviePostList.masonry('layout');
+			},10);
+
+			// 클릭 후 스크롤 아래로 이동. 필요없으면 주석처리 하시면 됩니다.
+			$scroll = $(this).offset().top;
+			$('html, body').finish().animate({ scrollTop : $scroll}, 300);
+		});
+
+
+
+		/* $moviePostList.imagesLoaded().progress(function(){
+			$moviePostList.masonry('layout');
+		}); */
+
+
+
+	});
+</script>
+</head>
+<body>
+	<header id="headerSub" class="movie-detail hd-bg-chg">
+		<a href="" class="h-back"><i class="iconset ico-back-w"></i></a>
+		<div class="r-util">
+			<div class="showing playing">상영중</div>
+			<div class="showing">D-10</div>
+			<button type="button"><i class="iconset ico-share"></i></button>
+		</div>
+	</header>
+	<div id="rnb">
+
+	</div>
+
+
+	<div class="container movie-wrap movie-detail">
+		<div class="poster-wrap">
+			<img src="../../../static/mb/images/movie/img-detail-poster.png" alt="">
+			<div class="gradation-top"><img src="../../../static/mb/images/movie/bg-movie-detail-top.png" alt=""></div>
+			<div class="gradation-bot"><img src="../../../static/mb/images/movie/bg-movie-detail-bot.png" alt=""></div>
+		</div>
+
+		<div class="detail-info">
+			<p class="hashtag">
+				<span>#오페라</span>
+				<span>#필름소사이어티</span>
+				<span>#필소토크</span>
+			</p>
+
+			<p class="tit">메리포핀스 리턴즈</p>
+
+			<p class="tit-eng">Mary Poppins Returns</p>
+
+			<p class="pg all">전체 관람가</p>
+
+			<p class="movie-stats"><!-- 20190411 숫자에 roboto light클래스 추가 -->
+				<span><i class="iconset ico-ticket-mini"></i> 1위 <em class="roboto light">(28.3%)</em></span>
+				<span class="roboto light"><i class="iconset ico-expect"></i> 8.9</span>
+				<span class="roboto light"><i class="iconset ico-viewer"></i> 9.2</span>
+				<span class="megacube"><img src="../../../static/mb/images/movie/img-megacube-txt-w.png" alt="MEGACUBE"></span>
+			</p>
+
+			<div class="movie-summary">
+				<p class="movie-story">
+					행복한 상상을 이루어주는 해피메이커 ‘메리 포핀스’ 모두가 기다려온 가장 황홀한 경험이 펼쳐진다!
+					체리트리 가 17번지에 살고 있는 마이클과 세 아이들은 아내와 엄마를 잃고, 집까지 빼앗길 위기에 처해 슬픔에 잠긴다. 어느 날, 바람의 방향이 바뀌고 마이클의 가족에게 다시 돌아온 ‘메리 포핀스’는 사랑스러운 마법으로 가득 찬 황홀한 경험을 선사하는데…
+				</p>
+
+				<div class="btn-movie-story-more">
+					<button type="button" class="btn-more on"><span>더보기</span> <i class="iconset ico-up-btn"></i></button>
+				</div>
+			</div>
+
+			<div class="hot-clip-wrap">
+
+				<div class="clip-slide">
+					<div class="swiper-wrapper">
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-20">청소년 관람불가</i>
+									<span>콜드워</span>
+								</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-all">전체관람가</i>
+									<span>그린치</span>
+								</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-15">15세 관람가</i>
+									<span>그린치</span>
+								</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-none">미정</i>
+									<span>그린치</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 무대인사가 없을시에는 col-3 클래스 추가 -->
+		<div class="movie-detail-tab">
+			<ul>
+				<li class="on"><button type="button">영화정보</button></li>
+				<li><button type="button">한줄평</button></li>
+				<li><button type="button">무비포스트</button></li>
+				<li><button type="button">무대인사</button></li>
+			</ul>
+		</div>
+
+		<!--
+		<div class="movie-detail-tab col-3">
+			<ul>
+				<li class="on"><button type="button">영화정보</button></li>
+				<li><button type="button">한줄평</button></li>
+				<li><button type="button">무비포스트</button></li>
+			</ul>
+		</div>
+		-->
+
+		<div class="detail-tab-contents">
+			<ul>
+				<li>
+					<span>개봉</span>
+					<em class="roboto light">2019.02.14</em>
+				</li>
+				<li>
+					<span>타입</span>
+					디지털(자막), ATMOS(자막), ATMOS(더빙)
+				</li>
+				<li>
+					<span>장르</span>
+					판타지, 뮤지컬 / 130 분
+				</li>
+				<li>
+					<span>등급</span>
+					12세 이상
+				</li>
+				<li>
+					<span>배급</span>
+					The Walt Desney Company
+				</li>
+			</ul>
+
+			<ul>
+				<li>
+					<span>감독</span>
+					롭 마샬
+				</li>
+				<li>
+					<span>출연</span>
+					메릴 스트립, 에밀리 블런트, 콜린 퍼스, 줄리 월터스, 벤 위쇼, 에밀리 모티머
+				</li>
+			</ul>
+		</div>
+
+
+
+		<div class="result-area-wrap">
+			<div class="inner-box">
+				<!-- 누적 관객 수 -->
+				<div class="all-guest-num">
+					<p class="title">누적 관객 수</p>
+					<div class="num-area">
+						<strong class="num"><span class="roboto">99.9</span>만</strong><!-- 만명부터 만 으로 표기 -->
+						<span class="percent up"><em>2.9%</em></span>
+					</div>
+					<span class="day">개봉 13일차</span>
+				</div>
+
+				<!-- 일별 관객 수 -->
+				<div class="day-guest-num">
+					<p class="title">일별 관객 수</p>
+					<div class="num-area">
+						<strong class="num"><span class="roboto">5,883</span></strong>
+						<span class="percent down">전일대비<em>2.9%</em></span>
+					</div>
+				</div>
+
+				<!-- 성별 분포도 -->
+				<div class="gender-graph">
+					<p class="title">성별 분포도</p>
+					<div class="graph-area">
+						<div class="item male">
+							<p class="roboto percent">36.0%</p>
+							<div class="line">
+								<div class="cover-img"></div>
+								<span class="data" style="height:36%"></span>
+							</div>
+						</div>
+
+						<div class="item female">
+							<p class="roboto percent big">64.0%</p>
+							<div class="line">
+								<div class="cover-img"></div>
+								<span class="data" style="height:64%"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 혼영족 관람률 -->
+				<!-- <div class="alone-rate">
+					<p class="title">혼영족 관람률</p>
+					<div class="num-area">
+						<strong class="num"><span class="roboto">13.2%</span></strong>
+						<span class="text">1인예매 비중</span>
+					</div>
+				</div> -->
+
+				<!-- 연령별 분포도 -->
+				<div class="age-graph">
+					<p class="title">연령별 분포도</p>
+					<div class="graph-area">
+						<div class="item">
+							<div class="line"><span class="data" style="height:40%"></span></div>
+							<span class="text">10대</span>
+						</div>
+						<div class="item">
+							<div class="line"><span class="data" style="height:30%"></span></div>
+							<span class="text">20대</span>
+						</div>
+						<div class="item">
+							<div class="line"><span class="data" style="height:10%"></span></div>
+							<span class="text">30대</span>
+						</div>
+						<div class="item">
+							<div class="line"><span class="data" style="height:60%"></span></div>
+							<span class="text">40대</span>
+						</div>
+						<div class="item">
+							<div class="line"><span class="data" style="height:50%"></span></div>
+							<span class="text">50대</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 스틸컷 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">스틸컷</p>
+				</div>
+			</div>
+
+			<!--
+			<div class="stillcut-movie">
+				<div class="left">
+					<div class="item cut01">
+						<a href="#">
+							<p class="img"><img src="../../../static/mb/images/movie/img-stillcut01.png" alt=""></p>
+						</a>
+					</div>
+					<div class="item cut02">
+						<a href="#">
+							<p class="img"><img src="../../../static/mb/images/movie/img-stillcut01.png" alt=""></p>
+						</a>
+					</div>
+				</div>
+
+				<div class="right">
+					<div class="item cut03">
+						<a href="#">
+							<p class="img"><img src="../../../static/mb/images/movie/img-stillcut03.png" alt=""></p>
+						</a>
+					</div>
+					<div class="item cut04">
+						<a href="#">
+							<p class="img"><img src="../../../static/mb/images/movie/img-stillcut04.png" alt=""></p>
+						</a>
+					</div>
+					<div class="item cut05">
+						<a href="#">
+							<p class="img"><img src="../../../static/mb/images/movie/img-stillcut05.png" alt=""></p>
+							<strong class="more-text"><span>+12장</span></strong>
+						</a>
+					</div>
+				</div>
+			</div> -->
+
+
+			<!-- movie-post-list -->
+			<div class="stillcut-list">
+				<div class="grid-item">
+					<div class="wrap">
+						<div class="img">
+							<a href=""><img src="../../../static/mb/images/movie/img-stillcut01.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-item">
+					<div class="wrap">
+						<div class="img">
+							<a href=""><img src="../../../static/mb/images/movie/img-stillcut01.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-item">
+					<div class="wrap">
+						<div class="img">
+							<a href=""><img src="../../../static/mb/images/movie/img-stillcut03.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-item">
+					<div class="wrap">
+						<div class="img">
+							<a href=""><img src="../../../static/mb/images/movie/img-stillcut04.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-item">
+					<div class="wrap">
+						<div class="img">
+							<a href=""><img src="../../../static/mb/images/movie/img-stillcut05.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// movie-post-list -->
+
+			<div class="more-stillcut-list">
+				<button type="button" class="button btn-more-stillcut-list">더보기222 <i class="iconset ico-up-btn"></i></button>
+			</div>
+
+
+		</div>
+		<!-- // 스틸컷 -->
+
+		<!-- 이벤트 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area mt0">
+					<p class="title">이벤트</p>
+				</div>
+
+
+				<div class="event-list">
+					<div class="swiper-wrapper">
+						<!-- 반복 -->
+						<div class="item swiper-slide">
+							<a href="#">
+								<div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+								<div class="info">
+									<p class="title">주먹왕랄프2 콤보</p>
+									<p class="date roboto light">2019. 01. 03 - 2019. 01. 31 </p><!-- 20190411 roboto light클래스 추가 -->
+								</div>
+							</a>
+						</div>
+						<!-- // 반복 -->
+						<div class="item swiper-slide">
+							<a href="#">
+								<div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+								<div class="info">
+									<p class="title">주먹왕랄프2 콤보</p>
+									<p class="date roboto light">2019. 01. 03 - 2019. 01. 31 </p><!-- 20190411 roboto light클래스 추가 -->
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 이벤트 -->
+
+		<!-- 버튼이 2개일시엔 col-2 클래스 추가되어야함 -->
+		<div class="btn-movie-reserve col-2">
+			<button type="button" class="like on">123</button>
+			<a href="" class="button-bot mx"><i class="iconset ico-mxlogo"></i> 예매</a>
+			<a href="" class="button-bot now">바로예매</a>
+		</div>
+
+		<!-- <div class="btn-movie-reserve">
+			<button type="button" class="like on">123</button>
+			<a href="" class="button-bot now">바로예매</a>
+		</div> -->
+
+		<!--
+		<div class="btn-movie-reserve">
+			<button type="button" class="like on">123</button>
+			<a href="" class="button-bot soon">상영예정</a>
+		</div> -->
+
+	</div>
+
+</body>
+</html>

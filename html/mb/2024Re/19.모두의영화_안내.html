@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>무대시사회 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+
+	// footer 토글
+	$('#footer .arrow').click(function() {
+        $('.footerHide').toggleClass('act');
+    });
+
+});
+
+
+$(window).on('scroll', function() {
+	var r24_header = $('.r24_header');
+    if (r24_header.length > 0) {
+        var scrollTop = $(window).scrollTop();
+        
+        if (scrollTop > 0) {
+            r24_header.addClass('scrollon');
+        } else {
+            r24_header.removeClass('scrollon');
+        }
+    };
+});
+
+
+</script>
+</head>
+<body>
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+			</div>
+			<h2 class="headTite">모두의 영화</h2>
+		</div>
+	</header>
+
+	<!-- container -->
+	<div class="container">
+    
+    <div class="everyoneMovieGuide">
+      <div class="titleGroup">
+        <span class="logo"><a href="">megabox</a></span>
+        <h2>
+          <img src="../../../static/mb/images/2024renewal/event/everyoneMovieTitle_v2.png" alt="메가결정사"><!-- 2025-07-29 디자인 변경에 이미지 이름 변경 -->
+        </h2>
+        <p class="text">내 남자 찾으면 50p 즉시 적립!</p>
+      </div>
+
+      <div class="character">
+        <div class="aniCharacter"><img src="../../../static/mb/images/2024renewal/event/Character01.png" alt="찡찡이"></div>
+        <div class="bubble"><img src="../../../static/mb/images/2024renewal/event/Character_word.png" alt="말풍선"></div>
+      </div>
+
+      <p class="numCount">지금까지 <span class="counting" data-count="9999">0</span>표 투표 중!</p>
+      <!-- 숫자 애니메이션 스크립트 -->
+
+      <script>
+        $('.counting').each(function() {
+          var $this = $(this),
+              countTo = $this.attr('data-count');
+          
+          // 목표 숫자 자리수를 배열로 나눕니다
+          var targetDigits = countTo.split('');
+          
+          // 각 자리수가 0부터 시작하도록 각 자리에 0을 채웁니다
+          var currentDigits = new Array(targetDigits.length).fill('0');
+          $this.text(currentDigits.join('')); // 초기 값은 모두 0으로 설정
+
+          $({ countNum: 0 }).animate({
+              countNum: parseInt(countTo)
+          }, {
+              duration: 2200,
+              easing: 'linear', 
+              step: function() {
+                  // 현재 값을 자리수별로 업데이트합니다
+                  var currentCount = Math.floor(this.countNum);
+                  var currentCountStr = currentCount.toString().padStart(targetDigits.length, '0'); // 자리수 맞추기
+
+                  // 각 자리수를 배열로 나누어 해당 자리만 업데이트
+                  currentDigits = currentCountStr.split('');
+
+                  // 숫자에 쉼표 추가
+                  var formattedNumber = currentDigits.join('').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                  // 텍스트에 적용
+                  $this.text(formattedNumber);
+              },
+              complete: function() {
+                  // 최종 숫자에 쉼표가 추가된 상태로 텍스트 설정
+                  var formattedNumber = this.countNum.toLocaleString();
+                  $this.text(formattedNumber);
+              }
+          });
+      });
+      </script>
+      
+      <div class="btnArea">
+        <button type="button" class="button-bot purple">‘머티리얼리스트’ 되어보기</button>
+      </div>
+
+      <!-- 유의사항 -->
+      <div class="dottedList">
+        <dl>
+          <dt>유의사항</dt>
+          <dd>로그인 후 5회 연속 투표 시 1일 1회 한정으로 멤버십 포인트 50p가 지급됩니다.</dd>
+          <dd>중도 이탈, 비회원인 경우에는 포인트가 지급되지 않습니다. (비회원 로그인 포함)</dd>
+          <dd>포인트는 마이메뉴 > 멤버십에서 확인 가능합니다.</dd>
+        </dl>
+      </div>
+    </div>
+
+	</div> 
+	<!--//container end -->
+</body>
+</html> 

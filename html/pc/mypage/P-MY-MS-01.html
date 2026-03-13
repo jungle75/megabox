@@ -1,0 +1,350 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+<title>무비타임라인 &gt; 나의 무비스토리 &gt; 나의메가박스 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+	
+	$(function(){
+		if( $('.time-year').length > 0 ){
+			
+			$yearLeng = $('.time-year .cell').length;
+			
+			var time_year = new Swiper('.time-year', {
+				loop : false,
+				initialSlide : $yearLeng,
+				simulateTouch : false,
+				slidesPerView: 9,
+				spaceBetween: 0,
+				navigation : {
+					prevEl : '.year-prev',
+					nextEl : '.year-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+			
+			$(window).resize(function(){
+				time_year.update();
+			}).resize();
+			
+			$(document).on('click', '.my-timeline .time-year .cell .btn', function(){
+				$(this).addClass('on').closest('.cell').siblings('.cell').find('.btn').removeClass('on');
+			});
+		}
+	});
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+			
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+		
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">나의 메가박스</a>
+						<a href="">나의 무비스토리</a>
+						<a href="">무비타임라인</a>
+					</div>
+					
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+						
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+					
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">나의 메가박스</a></p>
+						
+						<ul>
+							<li><a href="">예매/구매내역</a></li>
+							<li><a href="">영화/스토어 관람권</a>
+								<ul class="depth3">
+									<li><a href="">영화관람권</a></li>
+									<li><a href="">스토어교환권</a></li>
+									<li><a href="">기프트카드</a></li>
+								</ul>
+							</li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">맴버십 포인트</a>
+								<ul class="depth3">
+									<li><a href="">포인트 이용내역</a></li>
+									<li><a href="">맴버십 카드관리</a></li>
+								</ul>
+							</li>
+							<li class="on"><a href="">나의 무비스토리</a></li>
+							<li><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a>
+								<ul class="depth3">
+									<li><a href="">개인정보 수정</a></li>
+									<li><a href="">선택정보 수정</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				
+				<!-- contents -->
+				<div id="contents">
+					<h2 class="tit">나의 무비스토리</h2>
+					
+					<div class="im-movie-mania">
+						김메가님은 <span>Movie mania</span> 입니다.
+					</div>
+					
+					<div class="tab-block mb30">
+						<ul>
+							<li class="on"><a href="" class="btn">무비타임라인</a></li>
+							<li><a href="" class="btn">무비포스트</a></li>
+							<li><a href="" class="btn">한줄평</a></li>
+							<li><a href="" class="btn">본영화</a></li>
+							<li><a href="" class="btn">보고싶어</a></li>
+						</ul>
+					</div>
+					
+					<!-- 무비타임라인이 없을 때 -->
+					<div class="no-timeline">
+						나의 무비타임라인을 만들어 보세요.
+					</div>
+					
+					<!-- 무비타임라인이 있을 때 -->
+					<div class="my-timeline">
+						<button type="button" class="btn-year year-prev">이전 년도 선택</button>
+						
+						<div class="time-year">
+							<div class="swiper-wrapper">
+								<div class="cell swiper-slide"><button type="button" class="btn">2007</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2008</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2009</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2010</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2011</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2012</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2013</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2014</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2015</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2016</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2017</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn">2018</button></div>
+								<div class="cell swiper-slide"><button type="button" class="btn on">2019</button></div>
+							</div>
+						</div>
+						
+						<button type="button" class="btn-year year-next">다음 년도 선택</button>
+					</div>
+					
+					<!-- my-timeline-list -->
+					<div class="my-timeline-list">
+						<ol>
+							<li>
+								<div class="date">
+									<p>2019.12.12</p>
+								</div>
+								
+								<ul class="movie">
+									<li>
+										<p class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt=""></p>
+										
+										<div class="cont">
+											<p class="label">무비포스트</p>
+											
+											<p class="tit"><a href="">보헤미안랩소디</a></p>
+											
+											<p class="txt">
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+											</p>
+										</div>
+									</li>
+									
+									<li>
+										<p class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt=""></p>
+										
+										<div class="cont">
+											<p class="label">관람평</p>
+											
+											<p class="tit"><a href="">보헤미안랩소디</a></p>
+											
+											<div class="rate">
+												<p class="num review">9.8</p>
+												
+												<div class="case">
+													<p>연출</p>
+													<p>스토리</p>
+													<p>영상</p>
+													<p>배우</p>
+													<p>OST</p>
+												</div>
+											</div>
+											
+											<p class="txt">
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+											</p>
+										</div>
+									</li>
+									<li>
+										<p class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt=""></p>
+										
+										<div class="cont">
+											<p class="label">기대평</p>
+											
+											<p class="tit"><a href="">보헤미안랩소디</a></p>
+											
+											<div class="rate">
+												<p class="num preview">9.8</p>
+												
+												<div class="case">
+													<p>연출</p>
+													<p>스토리</p>
+												</div>
+											</div>
+											
+											<p class="txt">
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+												일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+											</p>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div class="date">
+									<p>2019.12.11</p>
+								</div>
+								
+								<ul class="movie">
+									<li>
+										<p class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt=""></p>
+										
+										<div class="cont">
+											<p class="label">본영화</p>
+											
+											<p class="tit"><a href="">보헤미안랩소디</a></p>
+											
+											<div class="theater">
+												<p>상암월드컵경기장</p>
+												<p>더부티크 101호 스위트룸</p>
+												<p>2018-12-11  20:50 (5회차)</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<p class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt=""></p>
+										
+										<div class="cont">
+											<p class="label">보고싶어</p>
+											
+											<p class="tit"><a href="">보헤미안랩소디</a></p>
+											
+											<div class="theater">
+												<p>개봉일 : 2019.12.12</p>
+												<p>감독 : 리치 무어</p>
+												<p>장르 : 코미디, 가족, 애니메이션, 어드벤처 / 112 분</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</div>
+					<!--// my-timeline-list -->
+					
+					<div class="btn-more v1 pt00">
+						<button type="button" class="btn">더보기 <i class="iconset ico-btn-more-arr"></i></button>
+					</div>
+					<!--// 무비타임라인이 있을 때 -->
+				</div>
+				<!--// contents -->
+			</div>
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

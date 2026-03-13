@@ -1,0 +1,1609 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+<link rel="stylesheet" href="../../../static/pc/css/main.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+
+	// 2019-04-03 그랜드 오픈 swipe 기능 추가
+	$(function(){
+
+		// StackBlur 기능 삭제
+		//stackBlurImage('blur_img','blur_canvas', 10, false);
+		//stackBlurImage('blur_img2','blur_canvas2', 100, false);
+
+		if( $('.open-swiper').length > 0 ){
+			var open_swiper = new Swiper('.open-swiper', {
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: true,
+				},
+				slidesPerView: 3,
+				spaceBetween: 0,
+				pagination: {
+					el: '.open-pagination',
+					//type: 'fraction',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.open-prev',
+					nextEl : '.open-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+
+			$('.open-cont .count-num .total').text(open_swiper.snapGrid.length)
+
+			open_swiper.on('slideChange', function(){
+				$('.open-cont .count-num .active').text(open_swiper.activeIndex + 1)
+			});
+
+			$('.open-pause').on('click', function(){
+				open_swiper.autoplay.stop();
+
+				$(this).removeClass('on');
+				$('.open-play').addClass('on').focus();
+			});
+
+			$('.open-play').on('click', function(){
+				open_swiper.autoplay.start();
+
+				$(this).removeClass('on');
+				$('.open-pause').addClass('on').focus();
+			});
+
+			$('.open-swiper .cell a').on({
+				focus : function(){
+					open_swiper.autoplay.stop();
+				}
+			});
+
+			$('.open-swiper').on({
+				mouseenter : function(){
+					open_swiper.autoplay.stop();
+					$('.open-pause').removeClass('on');
+					$('.open-play').addClass('on');
+				}
+			});
+
+			$(window).resize(function(){
+				open_swiper.update();
+			}).resize();
+		}
+	});
+
+</script>
+
+</head>
+<body>
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+
+		<!-- 2019-02-22 : 광고영역 세분화, 광고영역 닫기 추가  -->
+		<div class="header-add-area">
+			<div class="cont">광고영역</div>
+
+			<button type="button" class="btn-del">광고영역 닫기</button>
+		</div>
+		<!--// 2019-02-22 : 광고영역 세분화, 광고영역 닫기 추가  -->
+
+		<!-- header -->
+		<!--
+			중요!!
+
+			메인페이지 header 는 class main-header, no-bg 가 들어감
+		 -->
+		<header id="header" class="main-header no-bg">
+			<h1 class="ci"><a href="">MEGABOX : Life Theater</a></h1>
+
+			<!-- 2019-04-15 마크업 수정 : 고객요청  -->
+			<div class="util-area">
+				<div class="left-link">
+					<a href="">VIP</a>
+					<a href="">멤버십</a>
+					<a href="">고객센터</a>
+				</div>
+
+				<div class="right-link">
+					<!-- 로그인전 -->
+					<div class="before">
+						<a href="">로그인</a>
+						<a href="">회원가입</a>
+					</div>
+
+					<!-- 로그인후 -->
+					<!--
+					<div class="after">
+						<a href="" class="">로그아웃</a>
+						<a href="" class="">나의 메가박스</a>
+					</div>
+					-->
+
+					<a href="">English ticket</a>
+				</div>
+			</div>
+			<!--// 2019-04-15 마크업 수정 : 고객요청  -->
+
+			<div class="link-area">
+				<a href="#layer_sitemap" class="header-open-layer btn-layer-sitemap">사이트맵</a>
+				<a href="#layer_header_search" class="header-open-layer btn-layer-search">검색</a>
+				<a href="" class="link-ticket" >티켓</a>
+				<a href="#layer_mymega" class="header-open-layer btn-layer-mymega">나의 메가박스</a>
+			</div>
+
+			<!-- gnb -->
+			<!--
+				2019-04-15 마크업 수정 : 고객요청
+				1뎁스 a 태그에 각각 다른 class 추가
+			-->
+			<nav id="gnb">
+				<ul class="gnb-depth1">
+					<li><a href="" class="gnb-txt-movie">영화</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="">전체영화</a></li>
+								<li><a href="">큐레이션</a></li>
+								<li><a href="">영화제</a></li>
+								<li><a href="">무비포스트</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="" class="gnb-txt-reserve">예매</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="">빠른예매</a></li>
+								<li><a href="">상영시간표</a></li>
+								<li><a href="">예매안내</a></li>
+								<li><a href="">더 부티크 프라이빗 예매</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="" class="gnb-txt-theater">극장</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="">전체극장</a></li>
+								<li><a href="">특별관</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="" class="gnb-txt-event">이벤트</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="">진행중 이벤트</a></li>
+								<li><a href="">지난 이벤트 </a></li>
+								<li><a href="">당첨자발표</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="" class="gnb-txt-store">스토어</a></li>
+					<li><a href="" class="gnb-txt-benefit">혜택</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="">VIP안내</a></li>
+								<li><a href="">멤버십</a></li>
+								<li><a href="">할인카드</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<!--// gnb -->
+
+			<!-- 레이어 : 사이트맵 -->
+			<div id="layer_sitemap" class="header-layer layer-sitemap">
+				<!-- wrap -->
+				<div class="wrap">
+					<a href="" class="link-acc">사이트맵 레이어 입니다.</a>
+
+					<p class="tit">SITEMAP</p>
+
+					<div class="list position-1">
+						<p class="tit-depth">영화</p>
+
+						<ul class="list-depth">
+							<li><a href="">전체영화</a></li>
+							<li><a href="">큐레이션</a></li>
+							<li><a href="">영화제</a></li>
+							<li><a href="">무비포스트</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-2">
+						<p class="tit-depth">예매</p>
+
+						<ul class="list-depth">
+							<li><a href="">빠른예매</a></li>
+							<li><a href="">상영시간표</a></li>
+							<li><a href="">더 부티크 프라빗 예매</a></li>
+							<li><a href="">English Ticketing</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-3">
+						<p class="tit-depth">극장</p>
+
+						<ul class="list-depth">
+							<li><a href="">전체극장</a></li>
+							<li><a href="">특별관</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-4">
+						<p class="tit-depth">이벤트</p>
+
+						<ul class="list-depth">
+							<li><a href="">진행중 이벤트</a></li>
+							<li><a href="">지난 이벤트</a></li>
+							<li><a href="">당첨자발표</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-5">
+						<p class="tit-depth">스토어</p>
+
+						<ul class="list-depth">
+							<li><a href="">새로운 상품</a></li>
+							<li><a href="">관람권/패키지</a></li>
+							<li><a href="">기프트카드</a></li>
+							<li><a href="">메가찬스</a></li>
+							<li><a href="">콤보/팝콘/스낵</a></li>
+							<li><a href="">스페셜굿즈</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-6">
+						<p class="tit-depth">나의 메가박스</p>
+
+						<ul class="list-depth">
+							<li><a href="">나의 메가박스 홈</a></li>
+							<li><a href="">예매/구매내역</a></li>
+							<li><a href="">영화관람권</a></li>
+							<li><a href="">스토어교환권</a></li>
+							<li><a href="">기프트카드</a></li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">멤버십포인트</a></li>
+							<li><a href="">나의 무비스토리</a></li>
+							<li><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-7">
+						<p class="tit-depth">혜택</p>
+
+						<ul class="list-depth">
+							<li><a href="">멤버십안내</a></li>
+							<li><a href="">VIP라운지</a></li>
+							<li><a href="">제휴/할인</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-8">
+						<p class="tit-depth">고객센터</p>
+
+						<ul class="list-depth">
+							<li><a href="">고객센터 홈</a></li>
+							<li><a href="">자주묻는질문</a></li>
+							<li><a href="">공지사항</a></li>
+							<li><a href="">1:1문의</a></li>
+							<li><a href="">단체/대관문의</a></li>
+							<li><a href="">분실물문의</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-9">
+						<p class="tit-depth">회사소개</p>
+
+						<ul class="list-depth">
+							<li><a href="" target="_blank" title="새창 열림">메가박스소개</a></li>
+							<li><a href="" target="_blank" title="새창 열림">사회공헌</a></li>
+							<li><a href="" target="_blank" title="새창 열림">홍보자료</a></li>
+							<li><a href="" target="_blank" title="새창 열림">제휴/부대사업문의</a></li>
+							<li><a href="" target="_blank" title="새창 열림">온라인제보센터</a></li>
+							<li><a href="" target="_blank" title="새창 열림">IR자료</a></li>
+							<li><a href="" target="_blank" title="새창 열림">인재채용</a></li>
+							<li><a href="" target="_blank" title="새창 열림">윤리경영</a></li>
+						</ul>
+					</div>
+
+					<div class="list position-10">
+						<p class="tit-depth">이용정책</p>
+
+						<ul class="list-depth">
+							<li><a href="">이용약관</a></li>
+							<li><a href="">개인정보처리방침</a></li>
+							<li><a href="">스크린수배정에관한기준</a></li>
+						</ul>
+					</div>
+
+					<div class="ir">
+						<a href="" class="layer-close">레이어닫기</a>
+					</div>
+				</div>
+				<!--// wrap -->
+			</div>
+			<!--// 레이어 : 사이트맵 -->
+
+			<!-- 레이어 : 검색 -->
+			<div id="layer_header_search" class="header-layer layer-header-search">
+				<div class="wrap">
+					<a href="" class="link-acc">검색 레이어 입니다.</a>
+
+					<div class="tab-rank tab-layer">
+						<ul>
+							<li class="on"><button type="button" class="btn">예매율 순</button></li>
+							<li><button type="button" class="btn">누적관객순</button></li>
+							<li><button type="button" class="btn">메가스코어순</button></li>
+						</ul>
+					</div>
+
+					<div class="rank-cont">
+						<p class="img"><img src="../../../static/pc/images/contents/header-movie.png" alt="후드" /></p>
+
+						<div class="list">
+							<ol>
+								<li><em>1</em> <a href="" data-imgsrc="../../../static/pc/images/@img-poster.jpg">암수살인</a></li>
+								<li class="on"><em>2</em> <a href="" data-imgsrc="../../../static/pc/images/@img-poster2.jpg">후드</a></li>
+								<li><em>3</em> <a href="" data-imgsrc="../../../static/pc/images/@img-poster.jpg">은혼2: 규칙은 깨라고 있는 것</a></li>
+								<li><em>4</em> <a href="" data-imgsrc="../../../static/pc/images/@img-poster2.jpg">미쓰백</a></li>
+								<li><em>5</em> <a href="" data-imgsrc="../../../static/pc/images/@img-poster.jpg">곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸 곰돌이푸</a></li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="header-search-area">
+						<input type="text" title="영화명을 검색해 주세요" placeholder="영화를 검색하세요" class="input-text" />
+						<button type="button" class="btn-search">검색</button>
+					</div>
+
+					<div class="ir">
+						<a href="" class="layer-close">레이어닫기</a>
+					</div>
+				</div>
+			</div>
+			<!--// 레이어 : 검색 -->
+
+			<!-- 레이어 : 마이페이지 -->
+			<div id="layer_mymega" class="header-layer layer-mymege">
+				<a href="" class="ir">나믜 메가박스 레이어 입니다.</a>
+
+				<!-- wrap -->
+				<div class="wrap">
+
+					<!-- 로그인 전 -->
+					<!--
+					<div class="login-before">
+						<p class="txt">
+							로그인 하시면 나의 메가박스를 만날 수 있어요.<br />
+							영화를 사랑하는 당신을 위한 꼭 맞는 혜택까지 확인해 보세요!
+						</p>
+
+						<div class="mb50">
+							<a href="#layer_login_common" class="button w120px btn-modal-open" w-data='850' h-data='484'>로그인</a>
+						</div>
+
+						<a href="" class="link">혹시 아직 회원이 아니신가요?</a>
+					</div>
+					 -->
+					<!--// 로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<div class="login-after">
+						<!-- user-info -->
+						<div class="user-info">
+							<p class="txt">안녕하세요!</p>
+
+							<p class="info">
+								<!--
+									vip 일때만 출력
+									vip 아닐때는 태그 자체 삭제
+								-->
+								<em class="vip">VIP</em>
+								<em class="name">김메가</em>
+								<span>회원님</span>
+							</p>
+
+							<div class="last-date">마지막 접속일 : 2018.10.25 25:12</div>
+
+							<!-- vip, 멤버십 없을때는 미 출력  -->
+							<div class="membership">
+								<i class="iconset ico-header-vip"></i>
+								<i class="iconset ico-header-film"></i>
+								<i class="iconset ico-header-classic"></i>
+							</div>
+
+							<div class="btn-fixed">
+								<a href="" class="button">나의  메가박스</a>
+							</div>
+						</div>
+						<!--// user-info -->
+
+						<div class="box">
+							<div class="point">
+								<p class="tit">Point</p>
+
+								<p class="count">
+									9,999,000
+								</p>
+
+								<div class="btn-fixed">
+									<a href="" class="button">멤버십 포인트</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="box">
+							<div class="coupon">
+								<p class="tit">쿠폰/관람권 <i class="iconset ico-header-new"></i></p>
+
+								<p class="count">
+									<em title="쿠폰 수">111</em>
+									<span title="관람권 수">999</span>
+								</p>
+
+								<div class="btn-fixed">
+									<a href="" class="button">쿠폰</a>
+									<a href="" class="button">관람권</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="box">
+							<div class="reserve">
+								<p class="tit">예매 <i class="iconset ico-header-new"></i></p>
+
+								<p class="txt">
+									알제리의 이탈리아 여인 15자이내
+								</p>
+
+								<div class="btn-fixed">
+									<a href="" class="button">예매내역 100건</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="box">
+							<div class="buy">
+								<p class="tit">구매 <i class="iconset ico-header-new"></i></p>
+
+								<p class="count">
+									<em>99</em>
+									<span>건</span>
+								</p>
+							</div>
+
+							<div class="btn-fixed">
+								<a href="" class="button">구매내역</a>
+							</div>
+						</div>
+					</div>
+					<!--// 로그인 후 -->
+				</div>
+				<!--// wrap -->
+
+				<div class="ir">
+					<a href="" class="layer-close">레이어닫기</a>
+				</div>
+			</div>
+			<!--// 레이어 : 마이페이지 -->
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			주의!
+
+			서브 기본
+			<div class="container">
+
+			메인페이지만
+			<div class="container main-container">
+		 -->
+		<div class="container main-container">
+
+			<!-- contents -->
+			<div id="contents">
+
+				<!-- main-page -->
+				<div class="main-page">
+
+					<!--
+						2019-02-14 : 공지 팝업 추가
+
+						보일때
+						<div class="main-notice-layer">
+
+						보이지 않을 때
+						<div class="main-notice-layer" style="display:none;">
+
+						혹은 tag 자체를 remove 처리
+					 -->
+					<!-- 공지 팝업 -->
+					<div class="main-notice-layer" style="display:none;">
+						<div class="img">
+							<a href=""><img src="../../../static/pc/images/main/@img-main-notice.png" alt="메가박스 문화가 있는 날. 매월 마지막주 수요일" /></a>
+						</div>
+
+						<div class="util">
+							<!--
+								체크박스의 id 값 바꾸실때 label for 값도 동일하게 바꿔주세요 : 웹접근성
+							 -->
+							<input type="checkbox" id="no_see" />
+							<label for="no_see">다시 보지 않기</label>
+							<button type="button" class="btn-close-main-notice">메인 공지 닫기</button>
+						</div>
+					</div>
+					<!--// 공지 팝업 -->
+
+					<!-- 로그인 후에만 출력 -->
+					<div class="my-movie-main on">
+						<div class="wrap">
+							<p class="tit">MY MOVIE <i class="iconset ico-corss white"></i></p>
+
+							<div class="btn-util open">
+								<button type="button" class="btn-arr-my-movie open">보기</button>
+							</div>
+
+							<ul class="list">
+								<li>
+									<p class="circle purple"><span>관람</span><em>D-3</em></p>
+									<a href="" class="poster"><img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" /></a>
+									<a href="" class="link">기대평등록</a>
+								</li>
+
+								<li>
+									<p class="circle red"><span>10P</span><em>적립</em></p>
+									<a href="" class="poster"><img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" /></a>
+									<a href="" class="link">관람평등록</a>
+								</li>
+
+								<li>
+									<p class="circle gblue"><span>개봉</span><em>D-3</em></p>
+									<a href="" class="poster"><img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" /></a>
+									<a href="" class="link">예매</a>
+								</li>
+
+								<!--
+								<li class="txt">
+									<p>
+										김메가님이<br />
+										자주가는<br />
+										영화관은?
+									</p>
+									<a href="">설정 <i class="iconset ico-arr-right-white"></i></a>
+								</li>
+
+								<li class="txt">
+									<p>
+										김메가님이<br />
+										선호하는<br />
+										영화장르는?
+									</p>
+									<a href="">설정 <i class="iconset ico-arr-right-white"></i></a>
+								</li>
+								 -->
+							</ul>
+
+							<div class="btn-util close">
+								<button type="button" class="btn-arr-my-movie close">닫기</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- section main-movie : 영화 -->
+					<div id="main_section01" class="section main-movie">
+
+						<div class="bg">
+							<div class="bg-pattern"></div>
+							<img src="../../../static/pc/images/main/@bg-main-movie.jpg" alt="" />
+						</div>
+
+						<!-- cont-area  -->
+						<div class="cont-area">
+
+							<!-- tab-sorting -->
+							<div class="tab-sorting">
+								<button type="button" class="on">박스오피스순</button>
+								<button type="button">누적관객순</button>
+								<button type="button">메가스코어순</button>
+							</div>
+							<!-- tab-sorting -->
+
+							<a href="" class="more-movie">
+								더 많은 영화보기 <i class="iconset ico-more-corss gray"></i>
+							</a>
+
+							<!-- main-movie-list -->
+							<div class="main-movie-list">
+								<ol class="list">
+									<li class="first">
+										<a href="" class="movie-list-info">
+
+											<p class="rank">1<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" data-url="../../../static/pc/images/main/@bg-main-movie.jpg" class="poster" />
+
+											<div class="wrap">
+												<div class="summary">
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+												</div>
+
+												<!--
+													관람 전이 더 높을 때
+													<div class="my-score small">
+
+													관람 후가 더 높을 때
+													<div class="my-score big">
+
+													관람 후가 더 같을 때
+													<div class="my-score equal">
+												 -->
+												<div class="score">
+													<div class="preview">
+														<p class="tit">기대평</p>
+														<p class="number">8.5<span class="ir">점</span></p>
+													</div>
+
+													<!--
+														기대평이 클때
+														<span class="sign small">보다 크다</span>
+
+														관람후가 클때
+														<span class="sign big">보다 작다</span>
+
+														같을 때
+														<span class="sign equal">같다</span>
+													 -->
+													<span class="sign small">보다 크다</span>
+
+													<div class="review">
+														<p class="tit">관람평</p>
+														<p class="number">5.5<span class="ir">점</span></p>
+													</div>
+												</div>
+											</div>
+										</a>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+
+											<div class="case col-2">
+												<a href="" class="button gblue">예매</a>
+												<a href="" class="button gblue2">MX</a>
+											</div>
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button gblue">예매</a>
+												<a href="" class="button gblue2">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+											 -->
+										</div>
+									</li>
+
+									<li>
+										<a href="" class="movie-list-info">
+											<p class="rank">2<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" data-url="../../../static/pc/images/main/@bg-main-movie.jpg" class="poster" />
+
+											<div class="wrap">
+												<div class="summary">
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+												</div>
+
+												<!--
+													관람 전이 더 높을 때
+													<div class="my-score small">
+
+													관람 후가 더 높을 때
+													<div class="my-score big">
+
+													관람 후가 더 같을 때
+													<div class="my-score equal">
+												 -->
+												<div class="score">
+													<div class="preview">
+														<p class="tit">기대평</p>
+														<p class="number">5.5<span class="ir">점</span></p>
+													</div>
+
+													<!--
+														기대평이 클때
+														<span class="sign small">보다 크다</span>
+
+														관람후가 클때
+														<span class="sign big">보다 작다</span>
+
+														같을 때
+														<span class="sign equal">같다</span>
+													 -->
+													<span class="sign equal">같다</span>
+
+													<div class="review">
+														<p class="tit">관람평</p>
+														<p class="number">5.5<span class="ir">점</span></p>
+													</div>
+												</div>
+											</div>
+										</a>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button gblue">예매</a>
+												<a href="" class="button gblue2">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+											 -->
+										</div>
+									</li>
+
+									<li>
+										<a href="" class="movie-list-info">
+											<p class="rank">2<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" data-url="../../../static/pc/images/main/@bg-main-movie.jpg" class="poster" />
+
+											<div class="wrap">
+												<div class="summary">
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+												</div>
+
+												<!--
+													관람 전이 더 높을 때
+													<div class="my-score small">
+
+													관람 후가 더 높을 때
+													<div class="my-score big">
+
+													관람 후가 더 같을 때
+													<div class="my-score equal">
+												 -->
+												<div class="score">
+													<div class="preview">
+														<p class="tit">기대평</p>
+														<p class="number">5.5<span class="ir">점</span></p>
+													</div>
+
+													<!--
+														기대평이 클때
+														<span class="sign small">보다 크다</span>
+
+														관람후가 클때
+														<span class="sign big">보다 작다</span>
+
+														같을 때
+														<span class="sign equal">같다</span>
+													 -->
+													<span class="sign equal">같다</span>
+
+													<div class="review">
+														<p class="tit">관람평</p>
+														<p class="number after">5.5<span class="ir">점</span></p>
+													</div>
+												</div>
+											</div>
+										</a>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button gblue">예매</a>
+												<a href="" class="button gblue2">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+											 -->
+										</div>
+									</li>
+
+									<li>
+										<a href="" class="movie-list-info">
+											<p class="rank">2<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" data-url="../../../static/pc/images/main/@bg-main-movie.jpg" class="poster" />
+
+											<div class="wrap">
+												<div class="summary">
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+													나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+													공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+												</div>
+
+												<!--
+													관람 전이 더 높을 때
+													<div class="my-score small">
+
+													관람 후가 더 높을 때
+													<div class="my-score big">
+
+													관람 후가 더 같을 때
+													<div class="my-score equal">
+												 -->
+												<div class="score">
+													<div class="preview">
+														<p class="tit">기대평</p>
+														<p class="number">5.5<span class="ir">점</span></p>
+													</div>
+
+													<!--
+														기대평이 클때
+														<span class="sign small">보다 크다</span>
+
+														관람후가 클때
+														<span class="sign big">보다 작다</span>
+
+														같을 때
+														<span class="sign equal">같다</span>
+													 -->
+													<span class="sign equal">같다</span>
+
+													<div class="review">
+														<p class="tit">관람평</p>
+														<p class="number after">5.5<span class="ir">점</span></p>
+													</div>
+												</div>
+											</div>
+										</a>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button gblue">예매</a>
+												<a href="" class="button gblue2">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button gblue">예매</a>
+											</div>
+											 -->
+										</div>
+									</li>
+								</ol>
+							</div>
+							<!--// main-movie-list -->
+
+							<div class="search-link">
+								<div class="cell">
+									<div class="search">
+										<input type="text" placeholder="영화명을 입력해 주세요" title="영화 검색" class="input-text" />
+										<button type="button" class="btn"><i class="iconset ico-search-w"></i> 검색</button>
+									</div>
+								</div>
+
+								<div class="cell"><a href=""><i class="iconset ico-schedule-main"></i> 상영시간표</a></div>
+								<div class="cell"><a href=""><i class="iconset ico-boxoffice-main"></i> 박스오피스</a></div>
+								<div class="cell"><a href=""><i class="iconset ico-quick-reserve-main"></i> 빠른예매</a></div>
+							</div>
+
+							<!-- 2019-02-22 추가 : 마우스 아이콘 영역 추가 -->
+							<div class="moving-mouse">
+								<i class="iconset ico-mouse"></i>
+							</div>
+							<!--// 2019-02-22 추가 : 마우스 아이콘 영역 추가 -->
+						</div>
+						<!--// cont-area -->
+					</div>
+					<!--// section main-movie : 영화 -->
+
+					<!-- section main-benefit : 혜택 -->
+					<div id="main_section02" class="section main-benefit">
+						<!-- wrap -->
+						<div class="wrap">
+							<div class="tit-util">
+								<h2 class="tit">혜택</h2>
+								<a href="" class="btn-more-cross purple">더보기</a>
+							</div>
+
+							<!--
+								왼쪽 글씨 이미지 사이즈 300 * 230, 오른쪽 이미지 635 * 325
+							 -->
+							<div class="slider main-condition">
+								<div class="slider-view">
+									<div class="cell">
+										<div class="position">
+											<div class="txt"><a href=""><img src="../../../static/pc/images/main/@txt-benefit-slider.png" alt="메가박스 마티네 데이" /></a></div>
+											<div class="bg"><a href=""><img src="../../../static/pc/images/main/@img-benefit-slider.png" alt="메가박스 마티네 데이 상품이미지" /></a></div>
+										</div>
+									</div>
+
+									<div class="cell">
+										<div class="position">
+											<div class="txt"><a href=""><img src="../../../static/pc/images/main/@txt-benefit-slider.png" alt="메가박스 마티네 데이" /></a></div>
+											<div class="bg"><a href=""><img src="../../../static/pc/images/main/@img-benefit-slider.png" alt="메가박스 마티네 데이 상품이미지" /></a></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="slider-control">
+
+									<div class="page">
+										<!--
+											cell 갯수만큼 span 반복
+										 -->
+										<span style="width:25%;"></span>
+										<span class="on" style="width:25%;"></span>
+										<span style="width:25%;"></span>
+										<span style="width:25%;"></span>
+									</div>
+
+									<div class="util">
+										<button type="button" class="btn-prev">이전 이벤트 보기</button>
+										<button type="button" class="btn-next">다음 이벤트 보기</button>
+
+										<button type="button" class="btn-pause on">일시정지</button>
+										<button type="button" class="btn-play">자동재생</button>
+									</div>
+
+									<div class="page-count">
+										<span>1</span> / <em>8</em>
+									</div>
+
+								</div>
+							</div>
+
+
+							<div class="brn-ad">
+								<div class="banner">
+									<div class="size">
+										<img src="../../../static/pc/images/main/@img-main-benefit01.png" alt="가버나움 개봉주 현장 경품 이벤트" />
+									</div>
+									<div class="size big">
+										<img src="../../../static/pc/images/main/@img-main-benefit02-01.png" alt="케이뱅크 더블혜택 체크카드로 결제시 최대혜택 9천원" />
+									</div>
+									<div class="size small">
+										<img src="../../../static/pc/images/main/@img-main-benefit02-02.png" alt="케이뱅크 더블혜택 체크카드로 결제시 최대혜택 9천원" />
+									</div>
+								</div>
+
+								<div class="ad-img">
+									<img src="../../../static/pc/images/main/@img-main-ad.png" alt="블루멤버스 포인트로" />
+								</div>
+							</div>
+
+							<div class="menu-link">
+								<div class="cell vip"><a href="">VIP</a></div>
+								<div class="cell membership"><a href="">멤버십</a></div>
+								<div class="cell card"><a href="">할인카드안내</a></div>
+								<div class="cell event"><a href="">이벤트</a></div>
+								<div class="cell store"><a href="">스토어</a></div>
+							</div>
+
+
+							<!--
+								2019-02-22
+								그랜드 오픈 부분 마크업 전부 수정, slider 기능 추가 됨. script 는 작업 예정
+							-->
+							<!-- grand-open -->
+							<div class="grand-open">
+								<p class="tit">
+									<span>LIFE THEATER MEGABOX</span>
+									<strong>GRAND<br />OPENING</strong>
+								</p>
+
+								<div class="open-cont">
+									<div class="open-pagination"></div>
+
+									<div class="open-control">
+										<button type="button" class="open-prev">이전 이벤트 보기</button>
+										<button type="button" class="open-next">다음 이벤트 보기</button>
+
+										<button type="button" class="open-pause on">일시정지</button>
+										<button type="button" class="open-play">자동재생</button>
+									</div>
+
+									<div class="count-num">
+										<span title="현재 페이지" class="active">1</span> /
+										<span title="전체 페이지" class="total">5</span>
+									</div>
+
+									<div class="open-swiper">
+										<div class="swiper-wrapper">
+											<div class="cell swiper-slide">
+												<a href="" class="new">
+													<span class="label"><em>신규오픈</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>상암월드컵경기장</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+
+											<div class="cell swiper-slide">
+												<a href="" class="renewal">
+													<span class="label"><em>리뉴얼오픈</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>대구신세계(동대구)</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+
+											<div class="cell swiper-slide">
+												<a href="" class="open">
+													<span class="label"><em>오픈예정</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>영종</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="" class="etc">
+													<span class="label"><em>기타</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>영종</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="" class="new">
+													<span class="label"><em>신규오픈</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>영종</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="" class="new">
+													<span class="label"><em>신규오픈</em></span>
+
+													<p class="area">
+														<span>인천광역시</span>
+														<strong>영종</strong>
+													</p>
+
+													<p class="date">12월 32일</p>
+
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--
+								<div class="theater-slider">
+									<div class="theater-control">
+										<div class="page">
+											<span style="width:25%;"></span>
+											<span class="on" style="width:25%;"></span>
+											<span style="width:25%;"></span>
+											<span style="width:25%;"></span>
+										</div>
+
+										<div class="util">
+											<button type="button" class="btn-prev">이전 이벤트 보기</button>
+											<button type="button" class="btn-next">다음 이벤트 보기</button>
+
+											<button type="button" class="btn-pause on">일시정지</button>
+											<button type="button" class="btn-play">자동재생</button>
+										</div>
+
+										<div class="page-count">
+											<span>1</span> / <em>8</em>
+										</div>
+									</div>
+
+									<div class="theater-link">
+										<div class="wrap">
+											<div class="view">
+												<div class="cell">
+													<a href="" class="new">
+														<span class="label">신규오픈</span>
+
+														<p class="area">
+															<span>인천광역시</span>
+															<strong>영종</strong>
+														</p>
+
+														<p class="date">12월 32일</p>
+
+														<img src="../../../static/pc/images/main/@img-main-theater01.png" alt="" />
+													</a>
+												</div>
+												<div class="cell">
+													<a href="" class="new">
+														<span class="label">신규오픈</span>
+
+														<p class="area">
+															<span>인천광역시</span>
+															<strong>영종</strong>
+														</p>
+
+														<p class="date">12월 32일</p>
+
+														<img src="../../../static/pc/images/main/@img-main-theater01.png" alt="" />
+													</a>
+												</div>
+												<div class="cell">
+													<a href="" class="renewal">
+
+														<span class="label">리뉴얼오픈</span>
+
+														<p class="area">
+															<span>인천광역시</span>
+															<strong>영종</strong>
+														</p>
+
+														<p class="date">12월 32일</p>
+
+														<img src="../../../static/pc/images/main/@img-main-theater01.png" alt="" />
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								-->
+							</div>
+							<!--// grand-open -->
+							<!--// 2019-02-22 수정 -->
+						</div>
+						<!--// wrap -->
+					</div>
+					<!--// section main-benefit : 혜택 -->
+
+					<!-- section main-curation : 큐레이션 -->
+					<div id="main_section03" class="section main-curation">
+
+						<div class="bg">
+							<!-- 2019-07-23 : 이미지 삭제. 단색으로 갑니다. -->
+							<img src="../../../static/pc/images/main/@bg-main-curation.jpg" alt="" />
+							<!-- <canvas id="blur_canvas2"></canvas> -->
+						</div>
+
+						<!--
+							2019-02-14 : js 이벤트 제거
+						-->
+						<!-- wrap -->
+						<div class="wrap">
+							<div class="tit-util">
+								<h2 class="tit">큐레이션</h2>
+
+								<div class="right">
+
+									<!-- 2019-02-14 : 더보기 부분 글자 수정 : 링크값음 기획 문의 필요  -->
+									<a href="">
+										큐레이션 더보기 <i class="iconset ico-more-corss gray"></i>
+									</a>
+								</div>
+							</div>
+
+							<!-- curation-area -->
+							<div class="curation-area">
+								<!-- curr-img -->
+								<div class="curr-img">
+									<p class="bage film">메가박스 필림소사이어티</p>
+
+									<div class="img">
+
+										<!-- 2019-02-14 : 링크 추가 -->
+										<a href=""><img src="../../../static/pc/images/main/@img-main-curation01.png" alt="안나카레니나" /></a>
+									</div>
+
+									<div class="btn-group justify">
+										<div class="left">
+											<a href="" class="button">상세정보</a>
+										</div>
+										<div class="right">
+											<a href="" class="button gblue">예매</a>
+										</div>
+									</div>
+									
+									<div class="btn-group justify inMx">
+										<div class="left">
+											<a href="" class="button">상세정보</a>
+										</div>
+										<div class="right">
+											<a href="" class="button gblue">예매</a>
+											<a href="" class="button gblue2">MX</a>
+										</div>
+									</div>
+
+									<div class="info film">
+										<p class="txt">#<span>필름소사이어티</span></p>
+
+										<p class="tit">그랜드부다페스트호텔</p>
+
+										<p class="summary">
+											세계 최고 부호 마담 D.의 피살사건! 범인은 전설적인 호텔 지배인이자 그녀의 연인 구스타브?!<br />
+											1927년 세계대전이 한창이던 어느 날, 세계 최고 부호 ‘마담 D.(틸]다 스윈튼)’가 ‘그랜드 부다페스트 호텔’에 다녀간 지 얼마 지나지 않아 의문의 살인을 당한다. 그녀는 유언을 통해 가문 대대로 내려오던 명화 ‘사과를 든 소년’을 전설적인 호텔 지배인이자 연인 ‘구스타브(랄프 파인즈)’ 앞으로 남긴다.
+										</p>
+									</div>
+								</div>
+								<!--// curr-img -->
+
+								<!--
+									to 개발 :
+									배경 이미지는 a 태그에 background 속성으로 불러오고
+									스틸컷은 div 안의 img 태그에 불러와야 함.
+								-->
+								<div class="list">
+									<ul>
+										<li>
+											<!--
+												2019-02-14 : 배경 이미지 삭제
+											-->
+											<a href="">
+												<p class="bage film">필름소사이어티</p>
+
+												<div class="img"><img src="../../../static/pc/images/main/@img-poster01.jpg" alt="" /></div>
+
+												<p class="tit">제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1 제목 1</p>
+
+												<p class="summary">
+													줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1
+													줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1
+													줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1 줄거리 1
+												</p>
+											</a>
+										</li>
+										<li>
+											<!--
+												2019-02-14 : 배경 이미지 삭제
+											-->
+											<a href="">
+												<p class="bage film">필름소사이어티</p>
+
+												<div class="img"><img src="../../../static/pc/images/main/@img-poster02.jpg" alt="" /></div>
+
+												<p class="tit">
+													제목2
+												</p>
+
+												<p class="summary">
+													줄거리2
+												</p>
+											</a>
+										</li>
+										<li>
+											<!--
+												2019-02-14 : 배경 이미지 삭제
+											-->
+											<a href="">
+												<p class="bage classic">클래식소사이어티</p>
+
+												<div class="img"><img src="../../../static/pc/images/main/@img-poster03.jpg" alt="" /></div>
+
+												<p class="tit">
+													제목3
+												</p>
+
+												<p class="summary">
+													줄거리4
+												</p>
+											</a>
+										</li>
+										<li>
+											<!--
+												2019-02-14 : 배경 이미지 삭제
+											-->
+											<a href="">
+												<p class="bage classic">클래식소사이어티</p>
+
+												<div class="img"><img src="../../../static/pc/images/main/@img-poster04.jpg" alt="" /></div>
+
+												<p class="tit">
+													제목4
+												</p>
+
+												<p class="summary">
+													줄거리4
+												</p>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!--// curation-area -->
+						</div>
+					</div>
+					<!--// section main-curation : 큐레이션 -->
+
+					<!-- section main-info : 메가막스 안내 -->
+					<div id="main_section04" class="section main-info">
+
+						<h2 class="tit">메가박스 안내</h2>
+
+						<div class="info-special">
+							<a href="" title="THE BOUTIQUE" class="bg-boutique">부티끄</a>
+							<a href="" title="MX" class="bg-mx">MX</a>
+							<a href="" title="COMFORT" class="bg-comfort">COMFORT</a>
+							<a href="" title="MEGA KIDS BOX" class="bg-kids">MEGA KIDS BOX</a>
+							<a href="" title="THE FIRST CLUB" class="bg-first">THE FIRST CLUB</a>
+							<a href="" title="BALCONY" class="bg-balcony">발코니</a>
+						</div>
+
+						<!-- <div class="info-etc">
+							<div class="cell"><a href="">VIP ZONE</a></div>
+							<div class="cell"><a href="">멤버십안내</a></div>
+							<div class="cell"><a href="">이벤트</a></div>
+							<div class="cell"><a href="">할인카드</a></div>
+						</div> -->
+
+						<!-- info-notice -->
+						<div class="info-notice">
+							<div class="wrap">
+								<p class="tit">전체공지</p>
+
+								<p class="link">
+									<a href=""><strong>[무대인사]</strong> &lt;수요일엔 메가박스&gt; 이벤트 일자 변경 안내</a>
+								</p>
+
+								<p class="date">2018.10.10</p>
+
+								<p class="more">
+									<a href="" title="전체공지 더보기">더보기 <i class="iconset ico-arr-right-gray"></i></a>
+								</p>
+							</div>
+						</div>
+						<!--// info-notice -->
+
+						<!-- info-link -->
+						<div class="info-link">
+							<div class="table">
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-customer"></i>
+										<span>고객센터</span>
+									</a>
+								</div>
+
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-faq"></i>
+										<span>자주 묻는 질문</span>
+									</a>
+								</div>
+
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-qna"></i>
+										<span>1:1 문의</span>
+									</a>
+								</div>
+
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-group"></i>
+										<span>단체/대관문의</span>
+									</a>
+								</div>
+
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-lost"></i>
+										<span>분실물 문의/접수</span>
+									</a>
+								</div>
+
+								<div class="cell">
+									<a href="">
+										<i class="iconset ico-main-boutique"></i>
+										<span>부티크 프라이빗<br />대관예매</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!--// info-link -->
+					</div>
+					<!--// section main-info : 메가막스 안내 -->
+
+					<!-- main-bottom-ad : 메인 하단 광고 영역 -->
+					<div class="main-bottom-ad">
+						메인 하단 광고
+					</div>
+					<!--// main-bottom-ad : 메인 하단 광고 영역 -->
+				</div>
+
+			</div>
+			<!--// contents -->
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<!-- footer-top -->
+			<div class="footer-top">
+				<div class="inner-wrap">
+					<ul class="fnb">
+						<li><a href="">회사소개</a></li>
+						<li><a href="">인재채용</a></li>
+						<li><a href="">사회공헌</a></li>
+						<li><a href="">제휴/광고/부대사업문의</a></li>
+						<li><a href="">이용약관</a></li>
+						<li><a href="">개인정보처리방침</a></li>
+						<li><a href="">메가박스 온라인소개</a></li>
+						<li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="새창 열림">윤리경영</a></li>
+					</ul>
+
+					<a href="" class="btn-looking-theater"><i class="iconset ico-footer-search"></i> 극장찾기</a>
+				</div>
+			</div>
+			<!--// footer-top -->
+
+			<!-- footer-bottom -->
+			<div class="footer-bottom">
+				<div class="inner-wrap">
+					<div class="ci">MEGABOX : Life Theater</div>
+
+					<div class="footer-info">
+						<div>
+							<address>서울특별시 강남구 도산대로 156, 2층 메가박스중앙(주) (논현동, 중앙엠앤비사옥)</address>
+							<p>ARS 1544-0070</p>
+						</div>
+						<p>대표자명 김진선</p>
+						<p>&middot; 개인정보보호 책임자 경영지원실 실장 박영진</p>
+						<p>&middot; 사업자등록번호 211-86-59478</p>
+						<p>&middot; 통신판매업신고번호 제 833호</p>
+						<p class="copy">COPYRIGHT &copy; 2018 by MegaboxJoongAng, Inc. All rights reserved</p>
+					</div>
+
+					<div class="footer-sns">
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-twitter">트위터</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-facebook">페이스북</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-instagram">인스타그램</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-googleplay">구글플레이</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-appstore">앱스토어</i></a>
+					</div>
+				</div>
+			</div>
+			<!--// footer-bottom -->
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

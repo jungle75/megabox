@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*
+	roboto
+*/
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300; /* light */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Light.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Light.woff2') format('woff2'),
+        url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Light.ttf') format('truetype'),
+        url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Light.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400; /* medium */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Medium.woff2') format('woff2'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Medium.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Medium.ttf') format('truetype'),
+        url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Medium.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: bold;
+	font-weight: 700; /* bold */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Bold.woff2') format('woff2'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Bold.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Bold.ttf') format('truetype'),
+        url('https://img.megabox.co.kr/static/mb/font/roboto/Roboto-Bold.otf') format('opentype');
+}

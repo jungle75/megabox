@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>메인 &gt; 영화 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	function fn_movieMainListChg(idx){
+
+	}
+</script>
+<script>
+$(function(){
+	
+	// 메인 탭
+	if( $('.main-movie-tab').length > 0 ){
+		var list_swiper = new Swiper('.main-movie-tab', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 20,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 메인 슬라이드
+	if( $('.movie-swipe-wrap').length > 0 ){
+		var main_swiper = new Swiper('.movie-swipe-wrap', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 0,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+
+		// 현재 활성화된 swiper
+		main_swiper.on('slideChange', function(){
+			//alert(main_swiper.activeIndex);
+			if ( main_swiper.activeIndex >= 3 ) {
+				$('.gofirst').addClass('on');
+			}
+			else {
+				$('.gofirst').removeClass('on');
+			}
+		});
+		
+		$(document).on('click', 'button.btn-gofirst', function(e){
+			e.preventDefault();
+			$( main_swiper.slideTo(0) );
+		});
+		
+	}
+
+
+
+	// 핫클립
+	if( $('.clip-slide').length > 0 ){
+		var list_swiper = new Swiper('.clip-slide', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 8,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 무대인사 시사
+	if( $('.movie-preview').length > 0 ){
+		var list_swiper = new Swiper('.movie-preview', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 8,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 이벤트
+	if( $('.movie-event').length > 0 ){
+		var list_swiper = new Swiper('.movie-event', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 8,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 특별관
+	if( $('.special-theater').length > 0 ){
+		var list_swiper = new Swiper('.special-theater', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 15,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	//무비포스트
+	if( $('.main-moviepost').length > 0 ){
+		var list_swiper = new Swiper('.main-moviepost', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 8,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+
+});
+
+</script>
+</head>
+<body>
+	<header id="headerMain" class="movie-main hd-bg-chg">
+		<h1 class="ci"><a href=""></a></h1>
+		<div class="ticket-count">
+			<a href="" class="h-ticket"><i class="iconset ico-ticket-w"></i></a>
+			<div class="count">12</div>
+		</div>
+		<div class="r-util">
+			<button type="button" class="h-alarm"><i class="iconset ico-alarm"></i></button>
+			<button type="button" class="h-burger"><i class="iconset ico-burger-w"></i></button>
+		</div>
+
+	</header>
+	<div id="rnb">
+
+	</div>
+
+
+	<div class="container movie-wrap bg-use">
+		<p class="tit"><span>예슬</span>님, 다들 보신 이 영화<br />이번주에도 안보실거에요?</p>
+
+		<div class="main-movie-tab">
+			<div class="list-btn swiper-wrapper">
+				<button type="button" class="btn swiper-slide on"><span>박스오피스</span></button>
+				<button type="button" class="btn swiper-slide"><span>상영예정작</span></button>
+				<button type="button" class="btn swiper-slide"><span>큐레이션</span></button>
+				<button type="button" class="btn swiper-slide"><span>단독상영</span></button>
+				<button type="button" class="btn swiper-slide"><span>무대인사</span></button>
+				<button type="button" class="btn swiper-slide"><span>싱어롱</span></button>
+				<button type="button" class="btn swiper-slide"><span>마블스페셜</span></button>
+			</div>
+		</div>
+
+		<div class="movie-swipe-wrap">
+			<div class="gofirst"><button type="button" class="btn-gofirst"></button></div>
+			<div class="swiper-wrapper">
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">2</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area col-2">
+							<a href="" class="movie-detail"><i class="iconset ico-mxlogo"></i> 예매</a>
+							<a href="" class="vote-now">바로예매</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item swiper-slide ad-zone">
+					<a href="">
+						<div class="img"></div>
+						<div class="ad-tit"> 증인</div>
+						<div class="ad-txt"> 테스트입니다</div>
+					</a>
+
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">3</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-none">미정</i> 증인</div>
+					</a>
+					<!-- 개봉예정 영화에는 coming-soon class 가 추가됨 2019-06-21 -->
+					<div class="movie-info-util coming-soon">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">개봉예정</span>
+								<span class="roboto">6월경</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">7.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">8.8</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">보고싶어</span>
+								<span class="roboto">8.8K</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now" >상영예정</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">2</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">상영예정</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">3</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="item swiper-slide">
+					<a href="">
+						<div class="img"></div>
+						<div class="rank">1</div>
+						<div class="badge"><i class="iconset ico-classic"></i></div>
+						<div class="movie-name"> <i class="iconset ico-pg-15">15세 이상관람</i> 증인</div>
+					</a>
+
+					<div class="movie-info-util">
+						<div class="movie-count">
+							<div class="box">
+								<span class="item-tit">예매율</span>
+								<span class="roboto">54.6%</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">기대평</span>
+								<span class="roboto">7.6</span>
+							</div>
+							<div class="box">
+								<span class="item-tit">관람평</span>
+								<span class="roboto">8.8</span>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<a href="" class="vote-now">바로예매</a>
+							<!-- <a href="" class="vote-now">상영예정</a> -->
+						</div>
+					</div>
+				</div>
+				<!-- 더보기  2019-07-23 버튼추가-->
+				<div class="item swiper-slide">
+					<a href="" class="circle-more-btn"><span class=""><i class="iconset ico-plus24"></i></span> <em>더보기</em></a>
+				</div>
+			</div>
+
+		</div>
+		
+		<a href="#" class="btn-more-movie">더 많은 영화보기 <i class="iconset ico-more-wh"></i></a>
+
+		<hr class="section-line" />
+
+		<!-- 핫클립 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">핫클립</p>
+					<a href="#" class="btn-more-link">더보기<i class="iconset ico-more"></i></a>
+				</div>
+			</div>
+
+			<!--
+			<i class="iconset ico-pg-12">12세 관람가</i>
+			<i class="iconset ico-pg-15">15세 관람가</i>
+			<i class="iconset ico-pg-20">청소년 관람불가</i>
+			<i class="iconset ico-pg-all">전체관람가</i>
+			<i class="iconset ico-pg-none">미정</i>
+			-->
+
+			<div class="hot-clip-wrap">
+				<div class="top-clip">
+					<div class="item">
+						<div class="cilp-con">
+							<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+							<img src="../../../static/mb/images/movie/img-stillcut03.png" />
+						</div>
+						<div class="info">
+							<p class="title"><i class="iconset ico-pg-12">12세 관람가</i>일일시호일</p>
+							<p class="text">키키 키린, 그녀가 건넨 일상의 따스함 “당신의 일상이 변하는 차 한 잔의 마법” 스무살의 노리코는 아직 자신이 하고 싶은 것을…</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="clip-slide">
+					<div class="swiper-wrapper">
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-20">청소년 관람불가</i>
+									<span>콜드워</span>
+								</p>
+								<p class="text">불가능한 시대, 불가능한 사랑 사랑만이 전부였던 그들의 클</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-all">전체관람가</i>
+									<span>그린치</span>
+								</p>
+								<p class="text">불가능한 시대, 불가능한 사랑 사랑만이 전부였던 그들의 클</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-15">15세 관람가</i>
+									<span>그린치</span>
+								</p>
+								<p class="text">불가능한 시대, 불가능한 사랑 사랑만이 전부였던 그들의 클</p>
+							</div>
+						</div>
+						<div class="item swiper-slide">
+							<div class="img">
+								<a href="" class="cilp-link"><img src="../../../static/mb/images/common/ico/ico-play.png" alt=""></a>
+								<img src="../../../static/mb/images/movie/img-stillcut03.png">
+							</div>
+							<div class="info">
+								<p class="title">
+									<i class="iconset ico-pg-none">미정</i>
+									<span>그린치</span>
+								</p>
+								<p class="text">불가능한 시대, 불가능한 사랑 사랑만이 전부였던 그들의 클</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 핫클립 -->
+
+		<!-- 링크 -->
+		<div class="inner-wrap">
+			<div class="main-pagelink">
+				<div class="link new"><!-- 새로운게 있을때 new 클래스 추가 -->
+					<a href="">
+						<i class="iconset ico-hotdeal2"></i>
+						메가핫딜
+					</a>
+				</div>
+				<div class="link">
+					<a href="">
+						<i class="iconset ico-photocard"></i>
+						포토카드
+					</a>
+				</div>
+				<div class="link new"><!-- 새로운게 있을때 new 클래스 추가 -->
+					<a href="">
+						<i class="iconset ico-theater"></i>
+						극장
+					</a>
+				</div>
+				<div class="link">
+					<a href="">
+						<i class="iconset ico-add-movie"></i>
+						본영화등록
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- // 링크 -->
+
+		<!-- 메가핫딜 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">메가핫딜</p>
+					<a href="#" class="btn-more-link">더보기<i class="iconset ico-more"></i></a>
+				</div>
+
+				<div class="mega-hotdeal">
+					<!-- 반복 -->
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img">
+							</div>
+							<div class="cont-text">
+								<p class="img-poster"></p>
+								<p class="title"></p>
+								<div class="info">
+									<span class="date"></span>
+									<span class="theater"></span>
+									<div class="price">
+										<i class="iconset ico-hotdeal2"></i>
+										<strong class="roboto"></strong>
+										<em class="roboto light default"></em>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<!-- // 반복 -->
+				</div>
+			</div>
+		</div>
+		<!-- // 메가핫딜 -->
+
+		<hr class="section-line" />
+
+		<!-- 무대인사 & 시사 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">무대인사 &amp; 시사</p>
+				</div>
+			</div>
+
+			<div class="movie-preview">
+				<div class="swiper-wrapper">
+					<!-- 반복 -->
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="badge"><span></span></p>
+								<p class="title"></p>
+								<p class="txt ellipsis-line3 "></p>
+							</div>
+						</a>
+						<div class="btn-area">
+							<a href="" class="movie-detail">영화상세</a>
+							<a href="" class="vote-now">일정보기</a>
+						</div>
+					</div>
+					<!-- // 반복 -->
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="badge"><span></span></p>
+								<p class="title"></p>
+								<p class="txt ellipsis-line3"></p>
+							</div>
+						</a>
+						<div class="btn-area">
+							<a href="" class="movie-detail">영화상세</a>
+							<a href="" class="vote-now">응모하기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 무대인사 & 시사 -->
+
+		<hr class="section-line" />
+
+		<!-- 메가박스 소식 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">메가박스 소식</p>
+				</div>
+
+				<div class="mega-notice-banner">
+					<div class="item">
+						<a href=""></a>
+					</div>
+					<div class="item">
+						<a href=""></a>
+					</div>
+					<div class="item">
+						<a href=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 메가박스 소식 -->
+
+		<hr class="section-line" />
+
+		<!-- 영화 이벤트 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">영화 이벤트</p>
+					<a href="#" class="btn-more-link">더보기<i class="iconset ico-more"></i></a>
+				</div>
+			</div>
+
+			<div class="movie-event">
+				<div class="swiper-wrapper">
+					<!-- 반복 -->
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+					<!-- // 반복 -->
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title">아트나인과 함께하는 &lt;콜드 워&gt; 예매 경품 이벤트</p>
+								<p class="date roboto light">2019. 02. 01 - 2019. 02. 14</p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+					
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+					
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+					
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img"></div>
+							<div class="cont-text">
+								<p class="title"></p>
+								<p class="date roboto light"></p><!-- 20190411 roboto 클래스추가 -->
+							</div>
+						</a>
+					</div>
+						
+					<!-- 더보기  2019-08-14 버튼추가 // 더보기에는 more-btn 클래스 추가 -->
+					<div class="item swiper-slide more-btn">
+						<a href="" class="circle-more-btn"><span class=""><i class="iconset ico-plus24"></i></span> <em>더보기</em></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 영화 이벤트 -->
+
+		<hr class="section-line" />
+
+		<!-- 특별관 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">특별관</p>
+				</div>
+			</div>
+
+			<div class="special-theater">
+				<div class="swiper-wrapper">
+					<div class="item swiper-slide">
+						<a href="">
+							더 부띠크
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="">
+							MX관
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="">
+							COMFORT관
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="">
+							키즈관
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="">
+							더 퍼스트클럽
+						</a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="">
+							발코니
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 특별관 -->
+
+		<hr class="section-line" />
+
+		<!-- 무비포스트 -->
+		<div class="section-box">
+			<div class="inner-wrap">
+				<div class="title-area">
+					<p class="title">무비 포스트</p>
+					<a href="#" class="btn-more-link">더보기<i class="iconset ico-more"></i></a>
+				</div>
+
+				<p class="tit small"><a href="#" class="post-write">포스트 쓰기</a> </p>
+			</div>
+
+			<div class="main-moviepost ">
+				<div class="swiper-wrapper">
+					<!-- 반복 -->
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img-area">
+								<p class="img"></p>
+								<div class="badge">
+									<span class="mania"></span>
+									<span class="pick"></span>
+								</div>
+							</div>
+							<div class="post-txt">
+								<div class="top">
+									<span class="info-id"></span>
+								</div>
+								<div class="tit ellipsis"></div>
+								<div class="text ellipsis-line3"></div>
+							</div>
+						</a>
+
+						<div class="btn-area">
+							<button type="button" class="like"><i class="iconset ico-review-like-gray"></i></button> <!-- 좋아요 클릭시 button 태그 on 클래스 추가 -->
+							<span class="ripple"><i class="iconset ico-review-ripple-gray"></i> </span>
+						</div>
+					</div>
+					<!-- //반복 -->
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img-area">
+								<p class="img"></p>
+								<div class="badge">
+									<span class="mania">Movie mania</span>
+									<span class="pick">Editor's Pick</span>
+								</div>
+							</div>
+							<div class="post-txt">
+								<div class="top">
+									<span class="info-id">thtjsal11**</span>
+								</div>
+								<div class="tit ellipsis">어벤져스 : 엔드게임</div>
+								<div class="text ellipsis-line3">소중한 저와 제 가족이 꼭 기억하고 항상 잊지않겠습니다. 잊지않겠습니다 잊지않겠습니다</div>
+							</div>
+						</a>
+
+						<div class="btn-area">
+							<button type="button" class="like on"><i class="iconset ico-review-like-gray"></i>500</button> <!-- 좋아요 클릭시 button 태그 on 클래스 추가 -->
+							<span class="ripple"><i class="iconset ico-review-ripple-gray"></i> 29</span>
+						</div>
+
+						<!-- 2019-07-16 차단 영역 추가
+									- 상황별 문구  
+									비방/욕설/선정적 내용 : 비방,욕설,선정적 내용이 포함되어 있어 내용을 표시하지 않습니다.
+									스포일러 : 영화 내용에 대한 스포일러가 포함되어 있어 내용을 표시하지 않습니다.
+									광고성 내용 : 광고, 홍보성 내용이 포함되어 있어 내용을 표시하지 않습니다.
+									내용 불량 : 작성된 내용이 무의미한 문자의 나열로 구성되어 내용을 표시하지 않습니다.
+									기타 : 관리자가 내용의 표시를 차단했습니다.
+						-->
+						<div class="warning">
+							<div class="inner-text">
+								<i class="iconset ico-ping-triangle"></i>
+								<p>비방,욕설,선정적 내용이 포함되어 있어 내용을 표시하지 않습니다.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img-area">
+								<p class="img"></p>
+								<div class="badge">
+									<span class="mania">Movie mania</span>
+									<span class="pick">Editor's Pick</span>
+								</div>
+							</div>
+							<div class="post-txt">
+								<div class="top">
+									<span class="info-id">thtjsal11**</span>
+								</div>
+								<div class="tit ellipsis">어벤져스 : 엔드게임</div>
+								<div class="text ellipsis-line3">소중한</div>
+							</div>
+						</a>
+
+						<div class="btn-area">
+							<button type="button" class="like"><i class="iconset ico-review-like-gray"></i>500</button> <!-- 좋아요 클릭시 button 태그 on 클래스 추가 -->
+							<span class="ripple"><i class="iconset ico-review-ripple-gray"></i> 29</span>
+						</div>
+					</div>
+
+					<div class="item swiper-slide">
+						<a href="#">
+							<div class="img-area">
+								<p class="img"></p>
+								<div class="badge">
+									<span class="mania">Movie mania</span>
+									<span class="pick">Editor's Pick</span>
+								</div>
+							</div>
+							<div class="post-txt">
+								<div class="top">
+									<span class="info-id">thtjsal11**</span>
+								</div>
+								<div class="tit ellipsis">어벤져스 : 엔드게임</div>
+								<div class="text ellipsis-line3">소중한 저와 제 가족이 꼭 기억하</div>
+							</div>
+						</a>
+
+						<div class="btn-area">
+							<button type="button" class="like"><i class="iconset ico-review-like-gray"></i>500</button> <!-- 좋아요 클릭시 button 태그 on 클래스 추가 -->
+							<span class="ripple"><i class="iconset ico-review-ripple-gray"></i> 29</span>
+						</div>
+					</div>
+
+					<!-- 더보기  2019-08-14 버튼추가-->
+					<div class="item swiper-slide more-btn">
+						<a href="" class="circle-more-btn"><span class=""><i class="iconset ico-plus24"></i></span> <em>더보기</em></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- // 무비포스트 -->
+		
+		<div class="btn-bottom bnb-main col-5">
+			<button type="button" class="button-bot on">
+				<i class="iconset ico-bnb-movie"></i>
+				<span>영화</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-store"></i>
+				<span>스토어</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-reserve"></i>
+				<span>예매</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-event"></i>
+				<span>이벤트</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-mymega"></i>
+				<span>마이</span>
+			</button>
+		</div>
+
+	</div>
+
+	<footer id="footer">
+		<ul class="link">
+			<li><a href="">이용약관</a></li>
+			<li><a href="">개인정보처리방침</a></li>
+			<li><a href="">고객센터</a></li>
+			<li><a href="">PC버전</a></li>
+		</ul>
+
+		<address>서울특별시 강남구 도산대로 156, 2층(논현동, 중앙엠엔비사옥)</address>
+		<p class="txt">대표자 김진선 개인정보보호책임자 <span>경영지원실 실장 박영진</span></p>
+		<p class="txt">사업자등록번호 211-86-59478 <span>통신판매업신고번호 제 833호</span></p>
+		<p class="copyright">&#9400 MegaboxJoonAng. Inc.</p>
+	</footer>
+</body>
+</html>

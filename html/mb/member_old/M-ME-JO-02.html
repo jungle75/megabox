@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>보호자 인증 &gt; 회원가입 &gt; 로그인 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+	<div class="login-wrap">
+
+		<div class="login-inner join">
+
+			<div class="border-box">
+				<div class="a-c mt30">
+					<p><b>만 14세 미만 회원 가입</b></p>
+					<p>만 14세 미만의 어린이는 보호자 동의가 필요합니다.</p>
+				</div>
+
+				<div class="authen-select">
+					<div class="authen-select-box">
+						<div class="left-con">
+							<div class="left-content">
+								<a href="">
+									<p class="txt">보호자<br />휴대폰 인증</p>
+								</a>
+							</div>
+						</div>
+						
+						<div class="right-con">
+							<div class="right-content">
+								<a href="">
+									<p class="txt">보호자<br />아이핀 인증</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		
+			<div class="form-line">
+				<label for="username">보호자 이름</label>
+				<input type="text" placeholder="보호자 이름을 입력해주세요" id="username" class="input-text"/>
+			</div>
+			
+			<div class="form-line">
+				<label for="usercell">보호자 휴대폰번호</label>
+				<input type="text" placeholder="'-'없이 입력" id="usercell" class="input-text" />
+			</div>
+
+			<div class="agree-check mt30">
+				<div class="tit-area">
+					<button type="button" class="btn-arr-policy"></button>
+					<span class="bg-chk">
+						<input type="checkbox" id="policy"> <label for="policy">개인정보 처리동의</label>
+					</span>
+				</div>
+				<div class="cont-area gray-box">
+					<div class="thumbs">
+						<p class="txt1">보호자 이름 및 휴대폰번호는 보호자 동의 확인을 위하여 만 14세 미만의 어린이 회원의 정보와 함께 저장됩니다.</p>
+					</div>
+					<div class="thumbs">
+						<p class="txt1">개인정보 처리동의에 대해 거부하실 수 있으나, 미 동의 시 만 14세 미만의 어린이는 회원가입을 할 수 없습니다</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-bottom">
+				<button type="button" class="button">확인</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

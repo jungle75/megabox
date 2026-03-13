@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>극장안내 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+
+	// footer 토글
+	$('#footer .arrow').click(function() {
+        $('.footerHide').toggleClass('act');
+    });
+
+	// 선호극장상단배너
+	if( $('.customSwiper').length > 0 ){
+		var customSwiper = new Swiper('.customSwiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:18,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+
+});
+
+
+$(window).on('scroll', function() {
+	var r24_header = $('.r24_header');
+    if (r24_header.length > 0) {
+        var scrollTop = $(window).scrollTop();
+        
+        if (scrollTop > 0) {
+            r24_header.addClass('scrollon');
+        } else {
+            r24_header.removeClass('scrollon');
+        }
+    };
+});
+</script>
+</head>
+<body>
+
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+			</div>
+			<h2 class="headTite">접속 대기 안내</h2>
+		</div>
+	</header>
+
+
+	<!-- container -->
+	<div class="container">
+
+		<!-- 선호극장 상단 -->
+		<section class="favoriteTheaterTop pt12"> <!--상단메뉴 submenu 없을때-->
+
+			<div class="movieInfoTitle">
+				<div class="title">코엑스<i class="icon2 i_star_w24">즐겨찾기</i></div> <!--i 태그에 act 추가-->
+				<div class="subText">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+			</div>
+
+			<div class="ft_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+					<a href="#" class="item swiper-slide"><img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" /></a>
+				</div>
+			</div>
+
+			<div class="infoAreaBox">
+				<div class="notice">
+					<div class="text">카카오뱅크 본인인증 시스템 정기점검에 따른 일부 결제 기....</div>
+					<a href="#" class="link">전체</a>
+				</div>
+
+				<ul class="linkArea">
+					<li><a href="#"><i class="icon2 i_flow_20">층별안내</i>층별안내</a></li>
+					<li><a href="#"><i class="icon2 i_parking_20">주차정보</i>주차정보</a></li>
+					<li><a href="#"><i class="icon2 i_sns_in_20">인스타그램</i>인스타그램</a></li>
+				</ul>
+			</div>
+		</section>
+		<!--//선호극장 상단 end -->
+
+		<!-- 이곳에서 만나는 특별관 -->
+		<section class="specialTheaterArea">
+			<div class="titleAreaBox">
+				<h4 class="title">이곳에서 만나는 특별관</h4>
+			</div>
+
+			<div class="st_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="info">
+							<div class="title">Dolby Cinema</div>
+							<div class="text">완벽한 영화관람을 완성하는<br>하이엔드 시네마</div>
+						</div>
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--//이곳에서 만나는 특별관 end -->
+
+		<!-- 굿즈 소진 현황 -->
+		<section class="goodsAmount">
+			<div class="titleAreaBox">
+				<h4 class="title">굿즈 소진 현황</h4>
+				<p class="text">선착순 증정으로 현장 상황과 다를 수 있습니다.</p>
+			</div>
+
+			<div class="ga_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag off">소진</div> <!--소진되었을경우 off 클래스 추가-->
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<div class="tag">보유</div>
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--//굿즈 소진 현황 end -->
+
+		<!-- 진행 중인 무대인사·GV -->
+		<section class="cinemaDetails">
+			<div class="titleAreaBox">
+				<h4 class="title">진행 중인 무대인사·GV</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<div class="cd_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<!-- item type1 GV용 -->
+					<a href="#" class="item swiper-slide type1">
+						<div class="top">
+							<div class="tag">GV</div>
+							<div class="seat"><span>209</span><em>348</em></div>
+						</div>
+						<div class="bot">
+							<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>	
+							<ul>
+								<li>7/28 (일)</li>
+								<li>13:50~15:49</li>
+								<li>상영후</li>
+							</ul>
+						</div>
+					</a>
+					<!--//item type1 GV용 end -->
+					<!-- item type2 무대인사용 -->
+					<a href="#" class="item swiper-slide type2">
+						<div class="top">
+							<div class="tag">무대인사</div>
+							<div class="seat"><span>209</span><em>348</em></div>
+						</div>
+						<div class="bot">
+							<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>	
+							<ul>
+								<li>7/28 (일)</li>
+								<li>13:50~15:49</li>
+								<li>상영후</li>
+							</ul>
+						</div>
+					</a>
+					<!--//item type2 무대인사용 end -->
+					<!-- item type1 GV용 -->
+					<a href="#" class="item swiper-slide type1">
+						<div class="top">
+							<div class="tag">GV</div>
+							<div class="seat"><span>209</span><em>348</em></div>
+						</div>
+						<div class="bot">
+							<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>	
+							<ul>
+								<li>7/28 (일)</li>
+								<li>13:50~15:49</li>
+								<li>상영후</li>
+							</ul>
+						</div>
+					</a>
+					<!--//item type1 GV용 end -->
+					<!-- item type2 무대인사용 -->
+					<a href="#" class="item swiper-slide type2">
+						<div class="top">
+							<div class="tag">무대인사</div>
+							<div class="seat"><span>209</span><em>348</em></div>
+						</div>
+						<div class="bot">
+							<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>	
+							<ul>
+								<li>7/28 (일)</li>
+								<li>13:50~15:49</li>
+								<li>상영후</li>
+							</ul>
+						</div>
+					</a>
+					<!--//item type2 무대인사용 end -->
+				</div>
+			</div>
+		</section>
+		<!--//진행 중인 무대인사·GV end -->
+
+		<!-- 지금 상영중인 -->
+		<section class="nowMovieStore">
+			<div class="titleAreaBox">
+				<h4 class="title">지금 상영중인</h4>
+				<ul class="tabRight">
+					<li class="act"><a href="#">영화</a></li>
+					<li><a href="#">상품</a></li>
+				</ul>
+			</div>
+			<!-- 상영중인 -->
+			<div class="nm_Swiper customSwiper" style="display:none;">
+				<div class="swiper-wrapper">
+					<!-- item -->
+					<div class="item swiper-slide">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+						<button class="btn2">바로예매</button>
+					</div>
+					<!--//item end -->
+					<!-- item -->
+					<div class="item swiper-slide">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+						<button class="btn2">바로예매</button>
+					</div>
+					<!--//item end -->
+					<!-- item -->
+					<div class="item swiper-slide">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+						<button class="btn2">바로예매</button>
+					</div>
+					<!--//item end -->
+					<!-- item -->
+					<div class="item swiper-slide">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+						<button class="btn2">바로예매</button>
+					</div>
+					<!--//item end -->
+				</div>
+			</div>
+			<!--//상영중인 end -->
+			<!-- 판매중인 -->
+			<div class="ns_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+						<div class="pay">10,000원</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+						<div class="pay">10,000원</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+						<div class="pay">10,000원</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+						<div class="pay">10,000원</div>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<div class="img">
+							<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						</div>
+						<div class="title">인사이드 아웃 2 오리지널 티켓 No.115</div>
+						<div class="pay">10,000원</div>
+					</a>
+				</div>
+			</div>
+			<!--//판매중인 end -->
+		</section>
+		<!--//지금 상영중인 end -->
+
+		<!-- 이 극장과 가까운 극장 -->
+		<section class="adjacentCinema">
+			<div class="titleAreaBox">
+				<h4 class="title">이 극장과 가까운 극장</h4>
+			</div>
+
+			<div class="adjacentArea">
+				<div class="item">
+					<div class="title">남양주현대아울렛스 페이스원</div>
+					<div class="distance">6.7Km</div>
+					<div class="star">즐겨찾기</div>
+				</div>
+				<div class="item">
+					<div class="title">남양주현대아울렛스 페이스원</div>
+					<div class="distance">6.7Km</div>
+					<div class="star act">즐겨찾기</div>
+				</div>
+			</div>
+		</section>
+		<!--//이 극장과 가까운 극장 end -->
+
+		<!-- 단체 관람을 원한다면? -->
+		<a href="" class="groupTicket">
+			<div class="title">단체 관람을 원한다면?</div>
+			<div class="text">보고싶은 영화와 관람 예정일을 문의해보세요.</div>
+		</a>
+		<!--//단체 관람을 원한다면? end -->
+
+		<!-- 편의시설 -->
+		<section class="convenienceList">
+			<div class="titleAreaBox">
+				<h4 class="title">편의시설</h4>
+			</div>
+
+			<div class="convenience col4"> <!--4개 이상일때 col4, 적으면 제거 -->
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_disabled_bl40.png" alt="장애인석" /></div>
+					<p class="name">장애인석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_general_bl40.png" alt="일반석" /></div>
+					<p class="name">일반석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_balcony_bl40.png" alt="발코니석" /></div>
+					<p class="name">발코니석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_kid_bl40.png" alt="키즈석" /></div>
+					<p class="name">키즈석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_couple_bl40.png" alt="커플석" /></div>
+					<p class="name">커플석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_special_bl40.png" alt="스페셜석" /></div>
+					<p class="name">스페셜석</p>
+				</div>
+				<div class="item">
+					<div class="img"><img src="../../../static/mb/images/2024renewal/icon/icon_con_table_bl40.png" alt="테이블석" /></div>
+					<p class="name">테이블석</p>
+				</div>
+			</div>
+		</section>
+		<!--//편의시설 end -->
+
+		<!-- 분단선 -->
+		<div class="hrline m28"></div>
+		<!--//분단선 end -->
+
+		<!-- 위치 -->
+		<section class="positionInfo">
+			<div class="titleAreaBox">
+				<h4 class="title">위치</h4>
+				<a href="#" class="btnW60 poRbtn">길 찾기</a>
+			</div>
+
+			<div class="infoList">
+				<h5 class="title">도로명 주소</h5>
+				<ul>
+					<li>서울특별시 강남구 봉은사로 536, (삼성동) 코엑스몰 지하 2층 서울특별시 강남구 봉은사로 536, (삼성동) 코엑스몰 지하 2층</li>
+				</ul>
+			</div>
+
+
+			<div class="titleAreaBox">
+				<h4 class="title">대중교통</h4>
+			</div>
+
+			<div class="infoList">
+				<h5 class="title">버스</h5>
+				<ul>
+					<li>500-2번, 1100번, 1700번, 2000번, 7007번, 8001번, 9407번, 9414번, 9507번, 9607번</li>
+					<li>500-2번, 1100번, 1700번, 2000번, 7007번, 8001번, 9407번, 9414번, 9507번, 9607번</li>
+					<li>500-2번, 1100번, 1700번, 2000번, 7007번, 8001번, 9407번, 9414번, 9507번, 9607번</li>
+					<li>500-2번, 1100번, 1700번, 2000번, 7007번, 8001번, 9407번, 9414번, 9507번, 9607번</li>
+				</ul>
+			</div>
+
+			<div class="infoList">
+				<h5 class="title">지하철</h5>
+				<ul>
+					<li>지하철 2호선 ‘삼성역’하차 → 지하철 5,6번 출구 이용</li>
+					<li>지하철 2호선 ‘삼성역’하차 → 지하철 5,6번 출구 이용</li>
+				</ul>
+			</div>
+		</section>
+		<!--//위치 end -->
+
+		<!-- 분단선 -->
+		<div class="hrline m28"></div>
+		<!--//분단선 end -->
+
+		<!-- 극장 공지사항 -->
+		<section class="cinemaNotice">
+			<div class="titleAreaBox">
+				<h4 class="title">극장 공지사항</h4>
+				<a href="#" class="btnW60 poRbtn">전체보기</a>
+			</div>
+
+			<div class="linkTitleList">
+				<a href="" class="item">
+					<div class="title">[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)</div>
+					<div class="info"><em>공지</em><span>2024.06.14</span></div>
+				</a>
+				<a href="" class="item">
+					<div class="title">[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)</div>
+					<div class="info"><em>공지</em><span>2024.06.14</span></div>
+				</a>
+				<a href="" class="item">
+					<div class="title">[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)</div>
+					<div class="info"><em>공지</em><span>2024.06.14</span></div>
+				</a>
+				<a href="" class="item">
+					<div class="title">[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)</div>
+					<div class="info"><em>공지</em><span>2024.06.14</span></div>
+				</a>
+				<a href="" class="item">
+					<div class="title">[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)[코엑스지점] 시사회 진행에 따른 고객 안내문 (6/18)</div>
+					<div class="info"><em>공지</em><span>2024.06.14</span></div>
+				</a>
+			</div>
+		</section>
+		<!--//극장 공지사항 end -->
+
+
+	</div>
+	<!--//container end -->
+</body>
+</html>

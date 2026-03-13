@@ -1,0 +1,402 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>무비포스트 &gt; 영화 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<!-- page-tit-area -->
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">영화</a>
+						<a href="">무비포스트</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+			<!--// page-tit-area -->
+
+			<!-- contents -->
+			<div id="contents">
+
+				<!-- inner-wrap -->
+				<div class="inner-wrap">
+					<h2 class="tit">무비포스트 작성</h2>
+
+					<div class="user-post-top">
+						<p class="tit">
+							무비포스트로 등록하실 영화를 선택해주세요!
+						</p>
+
+						<div class="right">
+							등록가능한 영화 <strong class="font-gblue">56</strong> 건
+						</div>
+					</div>
+
+					<!-- movie-post-step01 -->
+					<div class="movie-post-step01">
+						<div class="movie-post">
+							<!-- post-list -->
+							<div class="select-post-list">
+								<ul class="select-post">
+									<li>
+										<a href="">
+											<div class="bg-chk"></div>
+											<div class="bg-done">작성완료</div>
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="">
+										</a>
+									</li>
+
+									<!-- 클릭했을 때 on -->
+									<li>
+										<a href="" class="on">
+											<div class="bg-chk"></div>
+											<div class="bg-done">작성완료</div>
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="">
+										</a>
+									</li>
+
+									<!-- 포스트 썼을 때 done -->
+									<li>
+										<a href="" class="done">
+											<div class="bg-chk"></div>
+											<div class="bg-done">작성완료</div>
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="">
+										</a>
+									</li>
+
+									<li>
+										<a href="">
+											<div class="bg-chk"></div>
+											<div class="bg-done">작성완료</div>
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<div class="bg-chk"></div>
+											<div class="bg-done">작성완료</div>
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!--// post-list -->
+						</div>
+
+						<!--
+							to 개발 :
+							웹접근성 이슈 : 더보기 클릭시 새로 생성되는 목록의 첫번째 li 로 focus 가 이동되어야 합니다. (tabindex="0")
+						 -->
+						<div class="btn-more v1 pt00">
+							<button type="button" class="btn">더보기 <i class="iconset ico-btn-more-arr"></i></button>
+						</div>
+
+						<ul class="dot-list mt20">
+							<li>무비포스트는 실관람 영화로 등록 가능합니다.</li>
+							<li>현장에서 예매한 경우 티켓 거래번호를 통해 실관람 등록 후 이용하실 수 있습니다. <a href="#saw_movie_regi" class="btn-modal-open font-gblue" w-data='800' h-data='430'>[실관람 등록하기]</a></li>
+						</ul>
+
+						<section id="saw_movie_regi" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">본 영화 등록</h3>
+								</header>
+
+								<div class="layer-con">
+									<p class="reset">보유하신 티켓의 거래번호를 입력해 주세요.</p>
+
+									<div class="pop-gray mt10 mb30">
+										<label for="movie_regi" class="mr10">거래번호</label>
+										<input type="text" id="movie_regi" class="input-text w350px" placeholder="숫자만 입력해 주세요" title="티켓 거래번호 입력" />
+										<button class="button gray ml05">등록</button>
+									</div>
+
+									<div class="box-border v1 mt30">
+										<p class="tit-box">이용안내</p>
+
+										<ul class="dot-list">
+											<li>극장에서 발권하신 티켓 바코드 하단의 거래번호를 통해 본 영화 등록을 하실 수 있습니다.</li>
+											<li>본 영화 리스트는 실제 관람한 이력으로 보여지며, 상영일 익일에 자동 노출됩니다.</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="btn-group-fixed">
+									<button type="button" class="button purple close-layer">닫기</button>
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+
+						<div class="btn-group mt20">
+							<a href="" class="button large">취소</a>
+							<a href="" class="button large purple">등록</a>
+						</div>
+					</div>
+					<!--// movie-post-step01 -->
+
+
+					<div class="movie-post-step02">
+						<div class="user-post-top">
+							<p class="tit">
+								보헤미안랩소디
+							</p>
+
+							<div class="right">
+								<a href="" class="button"><i class="iconset ico-post-review"></i> 다시선택</a></h3>
+							</div>
+						</div>
+
+						<!-- post-layout-select -->
+						<div class="post-layout-select">
+							<!-- left-cont -->
+							<div class="left-cont">
+								<p class="tit">원하시는 스틸컷/예고편을 선택해주세요.</p>
+
+								<div class="layout-wrap">
+									<div class="post-list-util">
+										<div class="post-sorting">
+											<span><button type="button" class="btn">스틸컷</button></span>
+											<span><button type="button" class="btn on">예고편</button></span>
+											<span><button type="button" class="btn">내사진</button></span>
+										</div>
+									</div>
+
+									<!-- kind-list : 스틸컷 -->
+									<div class="kind-list">
+										<ul>
+											<li class="on">
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/@img-movie-list-02.jpg" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/img-P-MO-EX-02.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-poster03.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/@img-movie-list-event.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/img-post-layout06.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/@img-movie-list-event.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href=""><img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" /></a>
+											</li>
+											<li>
+												<div class="selected-line"></div>
+												<a href="">
+													<video preload="none" poster="http://image2.megabox.co.kr/mop/trailer/2018/A0/12EA24-C902-4BED-9027-321CB667EF89.large.jpg">
+													<source src="http://mvod.megabox.co.kr/encodeFile/3550/2018/11/16/a113dde2142fa93a0f44ec8602d07fe2_W.mp4"></video>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!--// kind-list : 스틸컷 -->
+
+
+									<!-- movie-list : 예고편 -->
+									<div class="movie-list" style="display:none;">
+										<ul>
+											<li>
+												<a href="">
+													<video preload="none" poster="http://image2.megabox.co.kr/mop/trailer/2018/A0/12EA24-C902-4BED-9027-321CB667EF89.large.jpg">
+													<source src="http://mvod.megabox.co.kr/encodeFile/3550/2018/11/16/a113dde2142fa93a0f44ec8602d07fe2_W.mp4"></video>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!--// movie-list : 예고편 -->
+
+									<!-- add-userfile : 내 사진 -->
+									<div class="add-userfile" style="display:none;">
+										<div class="">
+											<input type="file" title="파일 첨부">
+										</div>
+										<p>※ 2M 이내의 jpg,gif,png 파일만 등록이 가능합니다. </p>
+										<div class="btn-group a-c">
+											<button type="button" class="button purple">등록</button>
+										</div>
+									</div>
+									<!--// add-userfile : 내 사진 -->
+								</div>
+							</div>
+							<!--// left-cont -->
+
+							<div class="right-cont">
+								<p class="tit">원하시는 스틸컷/예고편을 선택해주세요.</p>
+
+								<div class="layout-wrap">
+									<div class="post-wrap">
+										<div class="select on">
+											<div class="post-layer add-post">
+												<div class="post-bg"><img src="../../../static/pc/images/movie/bg-img-select.png" alt=""></div>
+
+												<div class="post-txt">
+													<textarea title="무비포스트 내용 입력" placeholder="내용을 작성해 주세요!" /></textarea>
+													<div class="text-count">0 / 50</div>
+												</div>
+												<div class="cancle-select"><a href="" class="layer-close"><i class="iconset ico-layer-close"></i></a></div>
+											</div>
+										</div>
+
+										<div class="select">
+											<div class="post-layer add-post">
+												<div class="post-bg"><img src="../../../static/pc/images/movie/img-P-MO-EX-02.png" alt=""></div>
+
+												<div class="post-txt">
+													<textarea title="무비포스트 내용 입력" placeholder="내용을 작성해 주세요!" /></textarea>
+													<div class="text-count">0 / 50</div>
+												</div>
+												<div class="cancle-select"><a href="" class="layer-close"><i class="iconset ico-layer-close"></i></a></div>
+											</div>
+										</div>
+
+										<!-- 비디오 선택 후 화면 -->
+										<div class="select">
+											<div class="post-layer add-post">
+												<div class="post-bg">
+													<video controls="controls" preload="none" poster="http://image2.megabox.co.kr/mop/trailer/2018/12/18AD92-738E-4E99-AEB1-9FDD04EB3DC2.large.jpg"><source src="http://mvod.megabox.co.kr/encodeFile/3550/2018/11/30/3556ebf4ebf83f6baaf3753db775efa1_W.mp4"></video>
+												</div>
+
+												<div class="post-txt">
+													<textarea title="무비포스트 내용 입력" placeholder="내용을 작성해 주세요!" /></textarea>
+													<div class="text-count">0 / 50</div>
+												</div>
+												<div class="cancle-select"><a href="" class="layer-close"><i class="iconset ico-layer-close"></i></a></div>
+											</div>
+										</div>
+										<!-- // 비디오 선택 후 화면 -->
+
+										<div class="btn-group a-c">
+											<button type="button" class="button dash-btn"><i class="iconset ico-"></i> 포스트 추가</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!--// post-layout-select -->
+
+						<div class="mt10 a-c">
+							※ 고의적인 영업방해 또는 운영원칙에 어긋나는 게시물은 관라지의 제재 또는 형사적 책임이 수반될 수 있습니다.
+						</div>
+
+						<div class="btn-group mt20">
+							<a href="" class="button large">취소</a>
+							<a href="" class="button large purple">등록</a>
+						</div>
+					</div>
+				</div>
+
+				<!--// inner-wrap -->
+			</div>
+			<!--// contents -->
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

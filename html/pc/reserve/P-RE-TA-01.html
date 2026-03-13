@@ -1,0 +1,2678 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>상영시간표 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">예매</a>
+						<a href="">상영시간표</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents">
+				<!-- inner-wrap -->
+				<div class="inner-wrap">
+
+					<!-- time-table-page -->
+					<div class="time-table-page">
+						<h2 class="tit">상영시간표</h2>
+
+						<!-- movie-choice-area -->
+						<div class="movie-choice-area">
+							<div class="tab-left-area">
+								<ul>
+									<li class="on"><a href="#ltab01" class="btn"><i class="iconset ico-tab-movie"></i> 영화별</a></li>
+									<li><a href="#ltab02" class="btn"><i class="iconset ico-tab-theater"></i> 극장별</a></li>
+									<li><a href="#ltab03" class="btn"><i class="iconset ico-tab-special"></i> 특별관</a></li>
+								</ul>
+							</div>
+
+							<div class="ltab-layer-wrap">
+								<div id="ltab01" class="ltab-layer-cont has-img on" >
+									<!-- wrap -->
+									<div class="wrap tab-area">
+										<div class="tab-list-choice">
+											<ul>
+												<li><a href="#tab01" class="btn on">전체영화</a></li>
+												<li><a href="#tab02" class="btn">큐레이션</a></li>
+											</ul>
+										</div>
+
+										<!-- list-section -->
+										<div class="list-section">
+											<div id="tab01" class="tab-layer-cont on">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn">스윙즈</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn on">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab02" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn">스윙즈</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">극한직업</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디</button></li>
+														<li><button type="button" class="btn">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</button></li>
+														<li><button type="button" class="btn">보헤미안랩소디 보헤미안랩소디</button></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!--// list-section -->
+									</div>
+									<!--// wrap -->
+
+									<!-- poster-section -->
+									<div class="poster-section">
+										<div class="table">
+											<div class="td">
+												<img src="../../../static/pc/images/reserve/@img-poster01.jpg" alt="" class="poster" />
+											</div>
+										</div>
+									</div>
+									<!--// poster-section -->
+								</div>
+
+								<div id="ltab02" class="ltab-layer-cont" >
+									<!-- wrap -->
+									<div class="wrap tab-area">
+										<div class="tab-list-choice">
+											<ul>
+												<li><a href="#tab03" class="btn on">서울(32)</a></li>
+												<li><a href="#tab04" class="btn">경기(10)</a></li>
+												<li><a href="#tab05" class="btn">인천(5)</a></li>
+												<li><a href="#tab06" class="btn">대전/충청/세종(7)</a></li>
+												<li><a href="#tab07" class="btn">부산/대구/경상(8)</a></li>
+												<li><a href="#tab08" class="btn">광주/전라(2)</a></li>
+												<li><a href="#tab09" class="btn">강원(1)</a></li>
+												<li><a href="#tab10" class="btn">제주(1)</a></li>
+											</ul>
+										</div>
+
+										<!-- list-section -->
+										<div class="list-section">
+											<div id="tab03" class="tab-layer-cont on">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">강남</button></li>
+														<li><button type="button" class="btn">강남대로(씨티)</button></li>
+														<li><button type="button" class="btn">강동</button></li>
+														<li><button type="button" class="btn">군자</button></li>
+														<li><button type="button" class="btn">동대문</button></li>
+														<li><button type="button" class="btn">마곡</button></li>
+														<li><button type="button" class="btn">목동 <i class="iconset ico-theater-new"></i></button></li>
+														<li><button type="button" class="btn">상봉</button></li>
+														<li><button type="button" class="btn">상암월드컵경기장</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">송파파크하비오</button></li>
+														<li><button type="button" class="btn">신촌</button></li>
+														<li><button type="button" class="btn">은평</button></li>
+														<li><button type="button" class="btn">이수</button></li>
+														<li><button type="button" class="btn">창동</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">화곡</button></li>
+														<li><button type="button" class="btn">ARTNINE</button></li>
+														<li><button type="button" class="btn">EOE4</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab04" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab05" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab06" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab07" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab08" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab09" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">강원</button></li>
+													</ul>
+												</div>
+											</div>
+
+											<div id="tab10" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">제주</button></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!--// list-section -->
+									</div>
+									<!--// wrap -->
+								</div>
+
+								<div id="ltab03" class="ltab-layer-cont has-img" >
+									<!-- wrap -->
+									<div class="wrap tab-area">
+										<div class="tab-list-choice">
+											<ul>
+												<li><a href="#tab11" class="btn on">MX(10)</a></li>
+												<li><a href="#tab12" class="btn">COMFORT(10)</a></li>
+												<li><a href="#tab13" class="btn">THE BOUTIQUE(10)</a></li>
+												<li><a href="#tab14" class="btn">MEGA KIDS(10)</a></li>
+												<li><a href="#tab15" class="btn">THE FIRST CLUB(10)</a></li>
+												<li><a href="#tab16" class="btn">BALCONY(10)</a></li>
+											</ul>
+										</div>
+
+										<!-- list-section -->
+										<div class="list-section">
+											<div id="tab11" class="tab-layer-cont on">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>MX</strong>
+																	진정한 영화 사운드를 통한<br />
+																	최고의 영화! <br />
+																	메가박스의 차세대 <br />
+																	표준 상영관
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-mx.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="tab12" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>COMFORT</strong>
+																	더욱 편안한 영화 관람을<br />
+																	위한 다양한 여유공간
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-comfort.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="tab13" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>THE BOUTIQUE</strong>
+																	영화를 본다는 것,<br />
+																	그 놀라운 경험을 위하여
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-boutique.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="tab14" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>MEGA KIDS</strong>
+																	아이와 가족이 함께 머물며<br />
+																	삶의 소중한 가치를 배우는<br />
+																	더 행복한 놀이공간
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-kids.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="tab15" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>THE FIRST CLUB</strong>
+																	특별한 날,<br />
+																	특별한 당신을 위한<br />
+																	단 하나의<br />
+																	THE FIRST CLUB
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-firstclub.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="tab16" class="tab-layer-cont">
+												<div class="scroll m-scroll">
+													<ul class="list">
+														<li><button type="button" class="btn on">분당</button></li>
+														<li><button type="button" class="btn">센트럴</button></li>
+														<li><button type="button" class="btn">일산벨라시타</button></li>
+														<li><button type="button" class="btn">코엑스</button></li>
+														<li><button type="button" class="btn">하남스타필드</button></li>
+													</ul>
+												</div>
+
+												<div class="theater-section">
+													<div class="table">
+														<div class="td">
+															<a href="">
+																<p>
+																	<strong>BALCONY</strong>
+																	CINEMA IN CINEMA,<br />
+																	영화관 속<br />
+																	나만의 개인 영화관
+																</p>
+																<i class="iconset ico-arrow-half"></i>
+																<img src="../../../static/pc/images/reserve/img-theater-balcony.png" alt="" class="poster" />
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--// list-section -->
+									</div>
+									<!--// wrap -->
+
+								</div>
+							</div>
+						</div>
+						<!--// movie-choice-area -->
+
+						<!-- 영화 선택후
+						<div class="select-option" style="display:none;"> -->
+
+						<!-- 영화 선택전 -->
+						<!-- 가이드 수정 -->
+						<div class="select-option mt70" style="display:block;">
+							<h3 class="tit"><span class="font-green">영화</span>를 선택해 주세요</h3>
+
+							<div class="select-option-txt">
+								<div class="bg-film"></div>
+								<p class="text">영화를 선택해 주세요</p>
+								<p>영화를선택하시면<br />상영시간표를 비교하여 볼 수 있습니다.</p>
+							</div>
+						</div>
+
+						<div class="box-alert mt40">
+							<i class="iconset ico-bell"></i>
+							<strong>[알리타] 알림</strong>
+							<span>
+								관리자에서 입력된 텍스트
+							</span>
+						</div>
+
+						<!-- 영화관 선택후 -->
+						<!-- 가이드 수정 -->
+						<h3 class="tit mt70"><span class="font-green">알리타</span> 무대인사</h3>
+
+						<!-- movie-greeting  -->
+						<div class="reserve movie-greeting">
+							<ul>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸 브라이언 싱어, 조셉 마젤로, 퀸브라이언 싱어, 조셉 마젤로, 퀸브라이언 싱어, 조셉 마젤로, 퀸브라이언 싱어, 조셉 마젤로, 퀸브라이언 싱어, 조셉 마젤로, 퀸브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+									<div class="greeting-infomation">
+										<p class="greeting-location"><strong>코엑스 컴포트 3관</strong></p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<span class="button gray">매진</span>
+										</p>
+									</div>
+								</li>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+								</li>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+								</li>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+								</li>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+								</li>
+								<li>
+									<p class="greeting-date">2018.10.26</p>
+									<div class="greeting-infomation">
+										<p class="greeting-location">코엑스 컴포트 3관</p>
+										<p class="greeting-time">13:00~15:11</p>
+										<p class="greeting-moment">영화시작시</p>
+										<p class="greeting-person">브라이언 싱어, 조셉 마젤로, 퀸</p>
+										<p class="btn">
+											<a href="" class="button purple">바로예매</a>
+										</p>
+									</div>
+								</li>
+							</ul>
+
+							<div class="btn-more">
+								<button type="button" class="btn"><span>닫기</span> <i class="iconset ico-btn-more-arr"></i></button>
+							</div>
+						</div>
+						<!--// movie-greeting  -->
+
+						<!-- 가이드 수정 -->
+						<h3 class="tit mt70"><span class="font-green">알리타</span> 상영시간표</h3>
+
+						<!-- 달력 -->
+						<div class="time-schedule mb30">
+							<div class="wrap">
+
+								<!-- 이전날짜 -->
+								<button type="button" title="이전 날짜 보기" class="btn-pre">
+									<i class="iconset ico-cld-pre"></i> <em>이전</em>
+								</button>
+								<!--// 이전날짜 -->
+
+								<div class="date-list">
+									<!-- 년도, 월 표시 -->
+									<div class="year-area">
+										<div class="year" style="left:30px;">2018.12</div>
+										<div class="year" style="left:450px;">2019.01</div>
+									</div>
+
+									<div class="date-area">
+										<!--
+											날짜클릭시 class : on
+
+											토요일 class : sat
+											공휴일 class : holi
+
+											클릭불가능 class : imposs
+										-->
+
+										<!-- 날짜가 오늘인것은 요일에 오늘 표시 -->
+										<button type="button" class="on sat"><span class="ir">2018년 12월</span><em>25<span class="ir">일</span></em> <span>오늘</span></button>
+										<!-- 날짜가 내일인것은 요일에 내일 표시 -->
+										<button type="button" class="holi"><span class="ir">2018년 12월</span><em>25<span class="ir">일</span></em> <span>내일</span></button>
+										<button type="button" class=""><span class="ir">2018년 12월</span><em>26<span class="ir">일</span></em> <span>월</span></button>
+										<button type="button" class=""><span class="ir">2018년 12월</span><em>27<span class="ir">일</span></em> <span>화</span></button>
+										<button type="button" class=""><span class="ir">2018년 12월</span><em>28<span class="ir">일</span></em> <span>수</span></button>
+										<button type="button" class=""><span class="ir">2018년 12월</span><em>29<span class="ir">일</span></em> <span>목</span></button>
+										<button type="button" class=""><span class="ir">2018년 12월</span><em>30<span class="ir">일</span></em>	<span>금</span></button>
+										<button type="button" class="sat"><span class="ir">2018년 12월</span><em>31<span class="ir">일</span></em>	<span>토</span></button>
+										<button type="button" class="holi"><span class="ir">2019년 1월</span><em>1<span class="ir">일</span></em>	<span>일</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>2<span class="ir">일</span></em>	<span>월</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>3<span class="ir">일</span></em>	<span>화</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>4<span class="ir">일</span></em>	<span>수</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>5<span class="ir">일</span></em>	<span>목</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>6<span class="ir">일</span></em>	<span>금</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>7<span class="ir">일</span></em>	<span>금</span></button>
+										<button type="button" class="sat"><span class="ir">2019년 1월</span><em>8<span class="ir">일</span></em>	<span>토</span></button>
+										<button type="button" class="holi"><span class="ir">2019년 1월</span><em>9<span class="ir">일</span></em>	<span>일</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>10<span class="ir">일</span></em>	<span>월</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>11<span class="ir">일</span></em>	<span>화</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>12<span class="ir">일</span></em>	<span>수</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>13<span class="ir">일</span></em>	<span>목</span></button>
+										<button type="button" class=""><span class="ir">2019년 1월</span><em>14<span class="ir">일</span></em>	<span>금</span></button>
+									</div>
+								</div>
+
+								<!-- 다음날짜 -->
+								<button type="button"  title="다음 날짜 보기" class="btn-next">
+									<i class="iconset ico-cld-next"></i> <em>다음</em>
+								</button>
+								<!--// 다음날짜 -->
+
+								<!-- 달력보기 -->
+								<div class="bg-line">
+									<button type="button" class="btn-calendar-large" title="달력보기"> 달력보기</button>
+								</div>
+								<!--// 달력보기 -->
+							</div>
+						</div>
+						<!--// 달력 -->
+
+						<div class="movie-option mb20">
+							<div class="option">
+								<ul>
+									<li><i class="iconset ico-stage" title="무대인사"></i>무대인사</li>
+									<li><i class="iconset ico-user" title="회원시사"></i>회원시사</li>
+									<li><i class="iconset ico-open" title="오픈시사"></i>오픈시사</li>
+									<li><i class="iconset ico-sun" title="조조"></i>조조</li>
+									<li><i class="iconset ico-brunch" title="브런치"></i>브런치</li>
+									<li><i class="iconset ico-moon" title="심야"></i>심야</li>
+								</ul>
+							</div>
+
+							<div class="rateing-lavel">
+								<a href="#rateing-pop" class="btn-layer-open"  w-data="600" h-data="600">관람등급안내</a>
+							</div>
+							<!-- 관람등급안내 팝업 -->
+							<section id="rateing-pop" class="layer-popup" style="top: 51.5px; left: 214px; width: 850px; opacity: 1; display: none;">
+								<div class="wrap">
+									<header class="layer-header">
+										<h3 class="tit">
+											관람등급안내
+										</h3>
+									</header>
+
+									<div class="layer-con" style="height: 683px;">
+										<div class="table-wrap">
+											<table class="data-table grade-table">
+												<caption>관람 등급을 등급명, 설명 순서로 보여줍니다.</caption>
+												<colgroup>
+													<col style="width:25%" />
+													<col />
+												</colgroup>
+												<thead>
+													<tr>
+														<th>등급명</th>
+														<th>설명</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<p class="movie-grade age-all">전체 관람가</p>
+														</td>
+														<td>모든 연령의 고객이 관람 가능</td>
+													</tr>
+													<tr>
+														<td>
+															<p class="movie-grade age-12">12세 이상 관람가</p>
+														</td>
+														<td>
+															만 12세 이상(주민등록상 생일기준) 관람 가능<br />
+															만 12세 미만 고객은 보호자(성인) 동반 시 관람 가능
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p class="movie-grade age-15">15세 이상 관람가</p>
+														</td>
+														<td>
+															만 15세 이상(주민등록상 생일기준) 관람 가능<br />
+															만 15세 미만 고객은 보호자(성인) 동반 시 관람 가능
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p class="movie-grade age-19">청소년 관람 불가</p>
+														</td>
+														<td>
+															만 18세 이상(주민등록상 생일기준) 관람 가능<br />
+															- 만 18세 이상이더라도 고등학교 재학중인 경우 관람 불가<br />
+															- 신분증을 지참 필수(구매, 입장 시 신분증 확인)<br />
+															만 18세 미만 고객은 보호자(성인) 동반 시에도 관람 불가
+														</td>
+													</tr>
+													<tr>
+														<td>
+
+															<p class="movie-grade age-no">미정</p>
+														</td>
+														<td>등급 미정 영화</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+
+									<button type="button" class="btn-layer-close">레이어 닫기</button>
+								</div>
+							</section>
+							<!--// 관람등급안내 팝업 -->
+						</div>
+
+						<!-- theater-list  -->
+						<div class="reserve theater-list-box">
+							<div class="tab-block tab-layer mb30">
+								<ul>
+									<li class="on"><a href="" class="btn">서울</a></li>
+									<li><a href="" class="btn">경기</a></li>
+									<li><a href="" class="btn">인천</a></li>
+									<li><a href="" class="btn">대전/충청/세종</a></li>
+									<li><a href="" class="btn">부산/대구/경상</a></li>
+									<li><a href="" class="btn">광주/전라</a></li>
+									<li><a href="" class="btn">강원</a></li>
+									<li><a href="" class="btn">제주</a></li>
+								</ul>
+							</div>
+
+							<div class="no-location-result">
+								<div class="bg-film"></div>
+								해당 지역에 상영 시간표가 없습니다.<br />
+								다른지역을 선택해 주세요.
+							</div>
+
+							<div class="theater-list">
+								<!-- 지역 -->
+								<div class="theater-area-click">
+									<a href="">서울</a>
+								</div>
+
+								<div class="theater-tit">
+									<!--
+									관람 등급 표시
+									<p class="movie-grade age-all">전체 관람가</p>
+									<p class="movie-grade age-12">12세 이상 관람가</p>
+									<p class="movie-grade age-15">15세 이상 관람가</p>
+									<p class="movie-grade age-19">청소년 관람 불가</p>
+									<p class="movie-grade age-no">미정</p>
+									 -->
+									<p class="movie-grade age-12">12세 이상 관람가</p>
+									<p>알리타</p>
+									<p class="infomation"><span>상영중</span>/상영시간120분</p>
+								</div>
+								<!-- list 1 -->
+								<div class="theater-type-box">
+									<div class="theater-type">
+										<p class="theater-name">관명</p>
+										<p class="chair">총 좌석수</p>
+										<!-- <p class="type">디지털(자막)</p> -->
+									</div>
+									<div class="theater-time">
+										<div class="theater-type-area" >
+											영화타입
+										</div>
+										<div class="theater-time-box">
+											<table class="time-list-table">
+												<caption>상영시간을 보여주는 표 입니다.</caption>
+												<colgroup>
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+												</colgroup>
+												<tbody>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+															<!-- to 개발 : 매진일때 class에 end-time 추가
+															<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때 -->
+																		<div class="ico-box">
+																			<!-- 조조 심야가 없을때 clss에 off 추가
+																			<div class="ico-box off">-->
+																			<!-- 조조 : class ico-sun
+																				심야 : class ico-moon -->
+																			<i class="iconset ico-sun">조조</i>
+																			<!-- <i class="iconset ico-moon">심야</i> -->
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																			<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																			<ul class="option off"> -->
+																			<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																			<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>25:45~25:55</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때 -->
+																		<div class="ico-box">
+																			<!-- 조조 심야가 없을때 clss에 off 추가
+																			<div class="ico-box off">-->
+																			<!--
+																				조조 : class -> ico-sun
+																				심야 : class -> ico-moon
+																			 -->
+																			<i class="iconset ico-sun">조조</i>
+																			<!-- <i class="iconset ico-moon">심야</i> -->
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																			<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																			<ul class="option off"> -->
+																			<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때
+																		<div class="ico-box"> -->
+																		<!-- 조조 심야가 없을때 clss에 off 추가-->
+																		<div class="ico-box off">
+																			<!--
+																				조조 : class ico-sun
+																				심야 : class ico-moon
+																			 -->
+																			<i class="iconset ico-sun">조조</i>
+																			<!-- <i class="iconset ico-moon">심야</i> -->
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																			<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																			<ul class="option off"> -->
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																			<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때
+																		<div class="ico-box"> -->
+																		<!-- 조조 심야가 없을때 clss에 off 추가-->
+																		<div class="ico-box off">
+																			<!--
+																				조조 : class ico-sun
+																				심야 : class ico-moon
+																			 -->
+																			<!-- <i class="iconset ico-sun">조조</i> -->
+																			<i class="iconset ico-moon">심야</i>
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때
+																		<div class="ico-box"> -->
+																		<!-- 조조 심야가 없을때 clss에 off 추가-->
+																		<div class="ico-box off">
+																			<!--
+																				조조 : class ico-sun
+																				심야 : class ico-moon
+																			 -->
+																			<i class="iconset ico-sun">조조</i>
+																			<!-- <i class="iconset ico-moon">심야</i> -->
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																		<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																		<ul class="option off"> -->
+																			<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																			<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때
+																		<div class="ico-box"> -->
+																		<!-- 조조 심야가 없을때 clss에 off 추가-->
+																		<div class="ico-box off">
+																			<!--
+																				조조 : class ico-sun
+																				심야 : class ico-moon
+																			 -->
+																			<!-- <i class="iconset ico-sun">조조</i> -->
+																			<i class="iconset ico-moon">심야</i>
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																		<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																		<ul class="option off"> -->
+																			<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																			<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<a href="">
+																		<!-- 조조 심야가 있을때 -->
+																		<div class="ico-box">
+																		<!-- 조조 심야가 없을때 clss에 off 추가
+																		<div class="ico-box off">-->
+																			<!--
+																				조조 : class ico-sun
+																				심야 : class ico-moon
+																			 -->
+																			<!-- <i class="iconset ico-sun">조조</i> -->
+																			<i class="iconset ico-moon">심야</i>
+																		</div>
+																		<p class="time">08:45</p>
+																		<p class="chair">45석</p>
+
+																		<!-- to 개발 : 행사이벤트가 있을때-->
+																		<ul class="option">
+																		<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																		<ul class="option off"> -->
+																			<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																			<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																			<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																		</ul>
+																		<div class="play-time">
+																			<p>09:45~11:00</p>
+																			<p>1회차</p>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- list 1 -->
+
+								<!-- list 2 -->
+								<div class="theater-type-box">
+									<div class="theater-type">
+										<p class="theater-name">컴포넌트 3관</p>
+										<p class="chair">총 348석</p>
+										<!-- <p class="type">디지털(자막)</p> -->
+									</div>
+									<div class="theater-time">
+										<div class="theater-type-area" >
+											2D
+										</div>
+										<div class="theater-time-box">
+											<table class="time-list-table">
+												<caption>상영시간을 보여주는 표 입니다.</caption>
+												<colgroup>
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+												</colgroup>
+												<tbody>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!-- 조조 : class ico-sun
+																			심야 : class ico-moon -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>25:45~25:55</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class -> ico-sun
+																			심야 : class -> ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+																	<ul class="option">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+																<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+
+															</div>
+
+														</div>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- list 2 -->
+
+								<!-- list 3 -->
+								<div class="theater-type-box">
+									<div class="theater-type">
+										<p class="theater-name">컴포넌트 3관</p>
+										<p class="chair">총 348석</p>
+										<!-- <p class="type">디지털(자막)</p> -->
+									</div>
+									<div class="theater-time">
+										<div class="theater-type-area" >
+											3D
+										</div>
+										<div class="theater-time-box">
+											<table class="time-list-table">
+												<caption>상영시간을 보여주는 표 입니다.</caption>
+												<colgroup>
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+												</colgroup>
+												<tbody>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!-- 조조 : class ico-sun
+																			심야 : class ico-moon -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>25:45~25:55</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class -> ico-sun
+																			심야 : class -> ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+																	<ul class="option">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+																<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+
+															</div>
+
+														</div>
+													</tr>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때-->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!--  <i class="iconset ico-sun">조조</i>  -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div class="theater-time">
+										<div class="theater-type-area" >
+											3D
+										</div>
+										<div class="theater-time-box">
+											<table class="time-list-table">
+												<caption>상영시간을 보여주는 표 입니다.</caption>
+												<colgroup>
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+													<col style="width:99px;" />
+												</colgroup>
+												<tbody>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!-- 조조 : class ico-sun
+																			심야 : class ico-moon -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>25:45~25:55</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class -> ico-sun
+																			심야 : class -> ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+																	<ul class="option">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+																<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때 -->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!-- <i class="iconset ico-sun">조조</i> -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+
+															</div>
+
+														</div>
+													</tr>
+													<tr>
+														<!-- to 개발 : 매진이 아닐때
+														<td class=""> -->
+														<!-- to 개발 : 매진일때 class에 end-time 추가-->
+														<td class="end-time">
+															<p class="time">08:45</p>
+															<p class="chair">매진</p>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때-->
+																	<ul class="option">
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가
+																	<ul class="option off"> -->
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+
+															<div class="td-ab">
+
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때
+																	<div class="ico-box"> -->
+																	<!-- 조조 심야가 없을때 clss에 off 추가-->
+																	<div class="ico-box off">
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<i class="iconset ico-sun">조조</i>
+																		<!-- <i class="iconset ico-moon">심야</i> -->
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+
+														<!-- to 개발 : 매진이 아닐때 -->
+														<td class="">
+														<!-- to 개발 : 매진일때 class에 end-time 추가
+														<td class="end-time">-->
+															<div class="td-ab">
+																<div class="txt-center">
+																	<!-- 조조 심야가 있을때-->
+																	<div class="ico-box">
+																	<!-- 조조 심야가 없을때 clss에 off 추가
+																	<div class="ico-box off">-->
+																		<!--
+																			조조 : class ico-sun
+																			심야 : class ico-moon
+																		 -->
+																		<!--  <i class="iconset ico-sun">조조</i>  -->
+																		<i class="iconset ico-moon">심야</i>
+																	</div>
+																	<p class="time">08:45</p>
+																	<p class="chair">45석</p>
+
+																	<!-- to 개발 : 행사이벤트가 있을때
+																	<ul class="option">-->
+																	<!-- to 개발 : 행사이벤트가 없을때 class에 off 추가-->
+																	<ul class="option off">
+																		<li><i class="iconset ico-stage" title="무대인사">무대인사</i></li>
+																		<li><i class="iconset ico-user" title="회원시사">회원시사</i></li>
+																		<li><i class="iconset ico-open" title="오픈시사">오픈시사</i></li>
+																	</ul>
+																	<div class="play-time">
+																		<p>09:45~11:00</p>
+																		<p>1회차</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+								</div>
+								<!-- list 3 -->
+							</div>
+
+						</div>
+						<!--// theater-list  -->
+
+						<div class="box-border v1 mt40">
+							<ul class="dot-list gray">
+								<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>
+								<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>
+							</ul>
+						</div>
+						<!--// time-table-page -->
+					</div>
+
+				</div>
+				<!--// inner-wrap -->
+			</div>
+			<!--// contents -->
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

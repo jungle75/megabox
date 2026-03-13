@@ -1,0 +1,4624 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>메가박스</title>
+<style type="text/css">
+* {margin: 0; padding: 0;}
+body {	min-width: 1160px;	padding: 0 20px 60px 20px; color: #333; font-family: 'Nanum Gothic', '나눔고딕', 'Malgun Gothic', '맑은 고딕', Verdana, Tahoma, "돋움", Dotum, "굴림", Gulim, Geneva, ans-serif, Apple Gothic, AppleGothic; font-size: 14px;}
+xmp {	font-family: 'Nanum Gothic', '나눔고딕', 'Malgun Gothic', '맑은 고딕', Verdana, Tahoma, "돋움", Dotum, "굴림", Gulim, Geneva, sans-serif, Apple Gothic, AppleGothic;	font-size: 12px;}
+a {color: #666; text-decoration: none;}
+a:hover {color: #333;}
+a:visited, a:focus, a:active {color: #333;}
+caption {display: none;}
+.font-red {color: #ff0000 !important;}
+.font-white {color: #fff !important;}
+.font-yellow {color: #fff000 !important;}
+h1 {position: relative; margin: 20px 0;	font-size: 30px; letter-spacing: -1px;}
+h1 span {color: #000;}
+.info_wrap {position: absolute;	right: 10px; top: 40px;}
+.info_wrap span {position: relative;	display: inline-block; padding: 0 20px; font-weight: bold;}
+.info_wrap span:before {content: ""; display: block;	position: absolute;	top: 1px;	left: 0;	width: 14px;	height: 14px;	background-color: #e4e4e4;}
+.link_area {overflow: hidden; width: 100%;}
+.link_area li {	float: left;	margin-left: 5px;	list-style: none;	font-weight: bold;}
+.link_area li:first-child {margin-left: 0;}
+.link_area a {	display: inline-block;padding: 5px 12px;height: 30px;	border-radius: 5px;	box-sizing: border-box;	background-color: #333;	color: #fff;line-height: 20px;	transition: background 0.2s ease;}
+.link_area a.on, .link_area a:hover {	background-color: #999;}
+.link_area.fixed {	position: fixed;	bottom: 0;	left: 0;	padding: 10px 20px; background-color: rgba(0, 0, 0, 0.75);	z-index: 10;}
+.link_area.fixed a {color: #333;background-color: #fff;}
+div.cont {padding: 15px 0;}
+h2 {	padding: 10px 0;	background-color: #fff; color: #000; font-size: 25px;}
+.rate {	float: right;font-weight: normal;}
+table {	width: 100%;	border-spacing: 0;	border-collapse: collapse;}
+table thead th, table tbody th {	padding: 6px 3px;	border: 1px solid #ccc;	background: #eee;}
+table tbody td {	padding: 6px 10px;	border: 1px solid #ccc;	color: #222;	text-align: left;}
+table tbody td:first-child {	font-weight: bold;}
+table tbody td:last-child {	padding: 6px 10px 6px 6px;}
+table tbody tr:hover td {	background-color: #eee;}
+table tbody tr.hidden td {	background-color: #f9f9f9;	color: #bbb;}
+table tbody tr.tit td {	position: relative;	padding: 40px 10px 10px 0;border-width: 1px 0;	color: #333;font-size: 20px;font-weight: 700;	text-align: left;background-color: #fff;}
+table tbody tr.ing td a, table tbody tr.end td a, table tbody tr.modify td a, table tbody tr.modify02 td a {	color: #ff0000;}
+table tbody tr.finish td {background-color:#b1d694; border-color:#999;}
+table tbody tr.issue td {background-color:#ccccff; border-color:#999;}
+table tbody tr.remove td {	overflow: hidden;	padding-top: 0;	padding-bottom: 0;	text-decoration: line-through;	color: #888;	background-color: #444;	font-size: 11px;}
+table tbody tr.remove td a {	text-decoration: line-through;	color: #888;}
+table tbody tr.remove td:last-child {	text-decoration: none;	color: #ccc;}
+table tbody tr.ing td:last-child:before, .info_wrap span.ing:before {background-color: #b8c6d6;}
+table tbody tr.end td:last-child:before, .info_wrap span.end:before {background-color: #78828d;}
+table tbody tr.modify td:last-child:before, .info_wrap span.modify:before {background-color: #ff8a18;}
+table tbody tr.modify02 td:last-child:before, .info_wrap span.modify02:before {background-color: #53b100;}
+table tbody tr.hidden td a {color: #bbb;}
+.explain {	display: inline-block;	position: relative;	float: right;}
+.explain>a {	display: inline-block;	position: relative;	padding: 0 5px;	border-radius: 3px;	background-color: #09F;	color: #fff !important;}
+.explain>a.on:before {	content: "";	position: absolute;	right: 3px;	bottom: -7px;	border-bottom: 7px solid #09F;	border-left: 7px solid transparent;	border-right: 7px solid transparent;}
+.explain>div {display: none;	position: absolute;	right: 0;	top: 21px;	width: 800px;max-height: 400px;	padding: 0 10px;	border: 2px solid #09F;	background-color: #fff;overflow: scroll;	z-index: 11;	box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.22);}
+.explain>div xmp {font-size: 11px;	font-weight: normal;	color: #444;}
+#toTop {display: none;	position: fixed;	bottom: 5px;	right: 10px;z-index: 11;}
+#toTop a {display: block; padding: 9px 10px; color: #FFF; text-align: center;}
+.red {color: red !important;}
+.blue {color: blue !important;}
+.guide_info {margin-bottom: 20px;}
+.guide_info p {font-size: 14px;	color: #000;}
+.guide_info p + p {margin-top: 5px;}
+.guide_info p strong {color: #da0b0d;}
+.cont table tr th:nth-child(1), .cont table tr td:nth-child(1) {width: 170px !important;}
+.cont table tr th:nth-child(2), .cont table tr td:nth-child(2) {width: 170px !important;}
+.cont table tr th:nth-child(3), .cont table tr td:nth-child(3) {width: 170px !important;}
+.cont table tr th:nth-child(4), .cont table tr td:nth-child(4) {width: 120px !important;}
+.cont table tr th:nth-child(5), .cont table tr td:nth-child(5) {width: 230px !important;}
+.cont table tr th:nth-child(6), .cont table tr td:nth-child(6) {width: 50px !important; text-align: center;}
+.cont table tr th:nth-child(7), .cont table tr td:nth-child(7) {width: 80px !important; text-align: center;}
+.cont table tr th:nth-child(8), .cont table tr td:nth-child(8) {width: 80px !important; text-align: center;}
+.cont table tr th:nth-child(9), .cont table tr td:nth-child(9) {width: 60px !important; text-align: center;}
+.cont table tr th:nth-child(10), .cont table tr td:nth-child(10) {width: auto !important;}
+</style>
+
+<script src="../../static/mb/js/jquery-1.12.4.js"></script>
+<script>
+	$(document)
+			.ready(
+					function() {
+
+						$('body')
+								.append(
+										'<div id="toTop" ><a href="javascript:void(0);">↑ 처음으로 이동</a></div>');
+						/*
+						 $(".cont").each(function() {
+						 $(this).find("table tbody tr:not(.hidden)").each(function(index) {
+						 $("td:first-child", this).text(index +1); 
+						 }); 
+						 $tr = $(this).find("table tbody tr:not(.hidden)"); 
+						 $trIng = $(this).find("table tbody tr.ing:not(.hidden)"); 
+						 $trEnd = $(this).find("table tbody tr.end:not(.hidden)"); 
+						 //$(this).find(".rate").html("총 : "+$tr.length+" &nbsp; &nbsp;  잔여 : "+($tr.length - $trEnd.length)+" &nbsp; &nbsp;  진행 : "+parseInt($trEnd.length/$tr.length*100)+"%"); 
+						 $(this).find(".rate").html("총 : "+ $tr.length +" &nbsp; &nbsp;  잔여 : "+ ($tr.length - ($trIng.length + $trEnd.length)) +" &nbsp; &nbsp;  진행 : "+ parseInt(($trIng.length + $trEnd.length)/$tr.length*100) +"% &nbsp; &nbsp;  완료 : "+parseInt($trEnd.length/$tr.length*100)+"%"); 
+						 });  */
+
+						$('#toTop').click(function() {
+							$('html, body').animate({
+								scrollTop : 0
+							}, 200);
+							return false;
+						});
+
+						$('ul.link_area li').find('a').each(function() {
+							$(this).click(function() {
+								var tabB = $(this).attr('href');
+								var tabT = $(tabB).offset();
+								$('html, body').animate({
+									scrollTop : (tabT.top) - 5
+								}, 200);
+								return false;
+							});
+						});
+
+						$('.explain > a').each(
+								function() {
+									$(this).click(
+											function() {
+												if ($(this).next('div')
+														.hasClass('on')) {
+													$(this).removeClass('on');
+													$(this).next('div')
+															.removeClass('on')
+															.slideUp(200);
+												} else {
+													$('.explain > div')
+															.removeClass('on')
+															.slideUp(200);
+													$(this).next('div')
+															.addClass('on')
+															.slideDown(200);
+													$(this).addClass('on');
+												}
+												return false;
+											});
+								});
+
+					});
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() >= 81) {
+			$('#toTop').fadeIn();
+			$('.link_area').addClass('fixed');
+			$('h1').css('margin-bottom', '55px');
+		} else {
+			$('#toTop').fadeOut();
+			$('.link_area').removeClass('fixed');
+			$('h1').removeAttr('style')
+		}
+		;
+	});
+</script>
+</head>
+
+<body>
+
+	<h1>
+		<span>메가박스</span> : Mobile List
+	</h1>
+	<!-- Mobile -->
+
+	<div class="guide_info">
+		<p>
+			<strong>크로스브라우징 범위 : </strong>IE 9 이상, MS Edge, 크롬, 파이어폭스, 사파리
+		</p>
+		<p>
+			<strong>PC 웹 : </strong>웹 접근성
+		</p>
+	</div>
+
+	<div class="info_wrap">
+		<span class="ing"> : 컨펌중 (기획확인)</span> <span class="end"> :
+			컨펌완료</span> <span class="modify red"> : 완료 후 수정 (개발확인)</span>
+		<!--<span class="modify02"> : 웹접근성 수정</span>-->
+	</div>
+
+	<ul class="link_area">
+		<li><a href="#section02">영화</a></li>
+		<li><a href="#section03">스토어</a></li>
+		<li><a href="#section04">예매</a></li>
+		<li><a href="#section05">이벤트</a></li>
+		<li><a href="#section06">나의메가박스</a></li>
+		<li><a href="#section07">설정</a></li>
+		<li><a href="#section10">극장</a></li>
+		<li><a href="#section11">무비포스트</a></li>
+		<li><a href="#section12">혜택</a></li>
+		<li><a href="#section14">회원</a></li>
+		<li><a href="#section16">고객센터</a></li>
+		<li><a href="#section18">English ticket</a></li>
+	</ul>
+
+	<div class="cont" id="section01">
+		<h2>Guide</h2>
+
+		<table>
+			<caption></caption>
+			<colgroup></colgroup>
+			<thead>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>mobile guide</td><!--1 depth -->
+					<td></td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td></td><!--id -->
+					<td class="url"><a href="./@guide/guide.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>진행중</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>RNB</td><!--1 depth -->
+					<td></td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-RNB-01</td><!--id -->
+					<td class="url"><a href="./main/M-RNB-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-17</td><!--완료날짜 -->
+					<td>2019-07-02</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>메뉴3개 추가</td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>barcode</td><!--1 depth -->
+					<td>주문내역</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-BARCODE-01</td><!--id -->
+					<td class="url"><a href="./main/M-BARCODE-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-28</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1 depth -->
+					<td>멤버십카드</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-BARCODE-02</td><!--id -->
+					<td class="url"><a href="./main/M-BARCODE-02.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-28</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>앱접근권한</td><!--1 depth -->
+					<td>팝업</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-AN-01</td><!--id -->
+					<td class="url"><a href="./main/M-AN-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>error</td><!--1 depth -->
+					<td>페이지 에러</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-ER-01</td><!--id -->
+					<td class="url"><a href="./main/M-ER-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1 depth -->
+					<td>연결 지연</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-ER-02</td><!--id -->
+					<td class="url"><a href="./main/M-ER-02.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1 depth -->
+					<td>시스템점검</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-ER-03</td><!--id -->
+					<td class="url"><a href="./system/M-ER-03.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td><strong class="font-red">시스템 점검은 완전 독립된 페이지. css, image, font 다 독립 경로, 폴더명 주의!!!</strong></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1 depth -->
+					<td>접속대기안내</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-ER-04</td><!--id -->
+					<td class="url"><a href="./main/M-ER-04.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>공유하기</td><!--1 depth -->
+					<td>팝업</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>M-SH-01</td><!--id -->
+					<td class="url"><a href="./main/M-SH-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>댓글 신고</td><!--1 depth -->
+					<td>팝업</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>TBD-01</td><!--id -->
+					<td class="url"><a href="./main/TBD-01.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-29</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+				<tr class="finish">
+					<td>메인</td><!--1 depth -->
+					<td>광고 팝업</td><!--2 depth -->
+					<td></td><!--3 depth -->
+					<td>TBD-02</td><!--id -->
+					<td class="url"><a href="./main/TBD-02.html" target="_blank"></a></td><!--url -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-11-28</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--기타사항 -->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- //Guide -->
+
+	<div class="cont">
+
+		<table>
+			<tbody>
+				<!-- // 영화 -->
+				<tr class="hidden tit" id="section02">
+					<td colspan="10">영화</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>영화</td><!--1depth -->
+					<td>메인</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-MO-BO-01</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-01.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-21</td><!--완료날짜 -->
+					<td>2019-07-23</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>2019-06-21 - 박스오피스 mx예매,개봉예정 등 경우의 수 추가<br />2019-06-24 / 모든 슬라이드 부분 스크롤에서 스와이퍼로 변경, 무비포스트 구조 변경<br />2019-07-02 맨처음으로가기 버튼 추가<br /> 무비포스트 내용 차단 영역 추가 / 특별관 발코니 추가<br />2019-07-23 더보기 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>메인 No-data(이미지)</td><!--3depth -->
+					<td>M-MO-BO-01-YL</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-01-YL.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-09-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>목록</td><!--2depth -->
+					<td>박스오피스</td><!--3depth -->
+					<td>M-MO-BO-02</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-02.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-12</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>영화검색</td><!--3depth -->
+					<td>M-MO-BO-0201</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-0201.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>영화검색 완료</td><!--3depth -->
+					<td>M-MO-BO-020101</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-020101.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>영화검색 완료(해시태그)</td><!--3depth -->
+					<td>M-MO-BO-0202</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-0202.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>상영예정작</td><!--3depth -->
+					<td>M-MO-BO-03</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-03.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>큐레이션</td><!--3depth -->
+					<td>M-MO-BO-04</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-04.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>영화제 (타입1)</td><!--3depth -->
+					<td>M-MO-BO-05</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-05.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>영화제 (타입2)</td><!--3depth -->
+					<td>M-MO-BO-05_Type01</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-05_Type01.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>장르모아보기</td><!--3depth -->
+					<td>M-MO-BO-06</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-BO-06.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>20190411 주석 확인요망</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>상세</td><!--2depth -->
+					<td>영화정보</td><!--3depth -->
+					<td>M-MO-DT-01</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-01.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-24</td><!--완료날짜 -->
+					<td>2019-07-23</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>그래프영역 추가 및 헤더 클래스 추가<br />예매 버튼 추가<br /> 스틸컷 핀터레스트 추가<br />메가큐브 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>스틸컷팝업</td><!--3depth -->
+					<td>M-MO-DT-0101</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-0101.html" target="_blank"></a></td><!--URL -->
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>한줄평</td><!--3depth -->
+					<td>M-MO-DT-02</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-02.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-20</td><!--완료날짜 -->
+					<td>2019-07-01</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>한줄평 / 관람평 기대평 분류 및 기대평 속의 관람평 보기 버튼 및 내용 추가<br /> 예매버튼 추가<br />메가큐브 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>필터 팝업</td><!--3depth -->
+					<td>M-MO-DT-02P</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-02P.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-08-07</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>한줄평(기대평 쓰기 팝업)</td><!--3depth -->
+					<td>M-MO-DT-0201</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-0201.html" target="_blank"></a></td><!--URL -->
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-20</td><!--완료날짜 -->
+					<td>2019-06-20</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>한줄평(관람평 쓰기 팝업)</td><!--3depth -->
+					<td>M-MO-DT-0202</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-0202.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-20</td><!--완료날짜 -->
+					<td>2019-07-04</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>별점 및 전반적 수정<br />문구수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>한줄평(본영화등록 팝업)</td><!--3depth -->
+					<td>M-MO-DT-0203</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-0203.html" target="_blank"></a></td><!--URL -->
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>별점 및 전반적 수정</td><!--비고 -->
+				</tr>
+				<tr class="remove">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>한줄평(관람내역안내 팝업)</td><!--3depth -->
+					<td>M-MO-DT-020301</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-020301.html" target="_blank"></a></td><!--URL -->
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>무비포스트</td><!--3depth -->
+					<td>M-MO-DT-03</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-03.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-22</td><!--완료날짜 -->
+					<td>2019-07-01</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>예매버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>무대인사</td><!--3depth -->
+					<td>M-MO-DT-04</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-DT-04.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>큐레이션</td><!--1depth -->
+					<td>큐레이션소개</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-MO-QU-01</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-01.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>큐레이션소개 (팝업)</td><!--2depth -->
+					<td>클래스 및 기획전 할인</td><!--3depth -->
+					<td>M-MO-QU-01-P01</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-01-P01.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>계단아래 만화방 무료 입장</td><!--3depth -->
+					<td>M-MO-QU-01-P02</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-01-P02.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>클래식 소아이어티 상영작 상시 10% 할인</td><!--3depth -->
+					<td>M-MO-QU-01-P03</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-01-P03.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>클래식 소아이어티 프로그램 10% 할인</td><!--3depth -->
+					<td>M-MO-QU-01-P04</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-01-P04.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>스페셜멤버십 회원가입 (필름)</td><!--3depth -->
+					<td>M-MO-QU-0101</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-0101.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>스페셜멤버십 회원가입 (클래식)</td><!--3depth -->
+					<td>M-MO-QU-0102</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-0102.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>필름소사이어티</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-MO-QU-02</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-02.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>클래식소사이어티</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-MO-QU-03</td><!--ID -->
+					<td class="url"><a href="./movie/M-MO-QU-03.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>메가핫딜</td><!--1depth -->
+					<td>메인</td><!--2depth -->
+					<td>진행중 핫딜</td><!--3depth -->
+					<td>M-RE-HO-01</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-01.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-04-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>화면 ID 변경됨 (확인필수) <br /> 탭메뉴 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>지난 핫딜</td><!--3depth -->
+					<td>M-RE-HO-0101</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-0101.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-04-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>화면 ID 변경됨 (확인필수)<br /> 탭메뉴 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>메가핫딜 이용 안내 팝업</td><!--3depth -->
+					<td>M-RE-HO-0102</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-0102.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>화면 ID 변경됨 (확인필수)</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>메가핫딜 예매 목록</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-RE-HO-02</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-02.html" target="_blank"></a></td><!--URL -->
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-12</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>매진 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>결제</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-RE-HO-03</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-03.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-07</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>기프트카드(팝업)</td><!--3depth -->
+					<td>M-RE-HO-0301</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-0301.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td></td><!--2depth -->
+					<td>기프트카드 등록(팝업)</td><!--3depth -->
+					<td>M-RE-HO-0302</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-0302.html" target="_blank"></a></td><!--URL -->
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td><!--1depth -->
+					<td>임시 예매권</td><!--2depth -->
+					<td></td><!--3depth -->
+					<td>M-RE-HO-04</td><!--ID -->
+					<td class="url"><a href="./movie/M-RE-HO-04.html" target="_blank"></a></td><!--URL -->
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-12</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>버튼 문구 수정</td><!--비고 -->
+				</tr>
+
+				<!-- // 스토어 -->
+				<tr class="hidden tit" id="section03">
+					<td colspan="10">스토어</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>스토어</td>
+					<td>메인</td>
+					<td></td>
+					<td>M-ST-MA-01</td>
+					<td class="url"><a href="./store/M-ST-MA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-08</td><!--완료날짜 -->
+					<td>2019-06-27</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>swiper 수정<br />푸터추가<br />스토어기획전 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>상세</td>
+					<td>기프트카드</td>
+					<td>M-ST-MA-02_type1</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type1.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권</td>
+					<td>M-ST-MA-02_type2</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type2.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>푸드</td>
+					<td>M-ST-MA-02_type3</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type3.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>굿즈</td>
+					<td>M-ST-MA-02_type4</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type4.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가찬스</td>
+					<td>M-ST-MA-02_type5</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type5.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>SOLDOUT</td>
+					<td>M-ST-MA-02_type6</td>
+					<td class="url"><a href="./store/M-ST-MA-02_type6.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>사용가능 영화관</td>
+					<td>M-ST-MA-0201</td>
+					<td class="url"><a href="./store/M-ST-MA-0201.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td>2019-05-27</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공통 극장선택으로 포멧변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>사용가능 영화관 2</td>
+					<td>M-ST-MA-0202</td>
+					<td class="url"><a href="./store/M-ST-MA-0202.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반 수량 선택형</td>
+					<td>M-ST-MA-0203</td>
+					<td class="url"><a href="./store/M-ST-MA-0203.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>기프트카드 충전형</td>
+					<td>M-ST-MA-0204</td>
+					<td class="url"><a href="./store/M-ST-MA-0204.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반 수량 1개형</td>
+					<td>M-ST-MA-0205</td>
+					<td class="url"><a href="./store/M-ST-MA-0205.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>굿즈 포함 상품형</td>
+					<td>M-ST-MA-0206</td>
+					<td class="url"><a href="./store/M-ST-MA-0206.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>결제</td>
+					<td></td>
+					<td>M-ST-MA-03</td>
+					<td class="url"><a href="./store/M-ST-MA-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-18</td><!--완료날짜 -->
+					<td>2019-07-01</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로<br />포인트 차감 영역 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트(구) 팝업</td>
+					<td>M-ST-MA-03-P01</td>
+					<td class="url"><a href="./store/M-ST-MA-03-P01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트(신) 팝업</td>
+					<td>M-ST-MA-03-P02</td>
+					<td class="url"><a href="./store/M-ST-MA-03-P02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>선물하기</td>
+					<td></td>
+					<td>M-ST-MA-04</td>
+					<td class="url"><a href="./store/M-ST-MA-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>구매정보확인</td>
+					<td>M-ST-MA-0401</td>
+					<td class="url"><a href="./store/M-ST-MA-0401.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-21</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>구매완료</td>
+					<td></td>
+					<td>M-ST-MA-05</td>
+					<td class="url"><a href="./store/M-ST-MA-05.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-18</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>버튼 명 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>구매하기완료</td>
+					<td>M-ST-MA-05-1</td>
+					<td class="url"><a href="./store/M-ST-MA-05-1.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-18</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>버튼 명 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>선물하기완료</td>
+					<td>M-ST-MA-05-2</td>
+					<td class="url"><a href="./store/M-ST-MA-05-2.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-18</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>버튼 명 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>모바일 오더</td>
+					<td>모바일 오더 안내</td>
+					<td></td>
+					<td>M-AM-PO-01</td>
+					<td class="url"><a href="./combo/M-AM-PO-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>극장 선택</td>
+					<td></td>
+					<td>M-AM-PO-02</td>
+					<td class="url"><a href="./combo/M-AM-PO-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>주문 극장 확인</td>
+					<td>M-AM-PO-02_P01</td>
+					<td class="url"><a href="./combo/M-AM-PO-02-P01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>모바일 오더 메인</td>
+					<td></td>
+					<td>M-AM-PO-03</td>
+					<td class="url"><a href="./combo/M-AM-PO-03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td>2019-05-27</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>카트영역 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>사용 가능한 스토어 교환권 팝업</td>
+					<td>M-AM-PO-03-P01</td>
+					<td class="url"><a href="./combo/M-AM-PO-03-P01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>구조 전체가 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>최근 주문 내역 팝업</td>
+					<td>M-AM-PO-03-P02</td>
+					<td class="url"><a href="./combo/M-AM-PO-03-P02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>상품 상세</td>
+					<td></td>
+					<td>M-AM-PO-04</td>
+					<td class="url"><a href="./combo/M-AM-PO-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-12</td><!--완료날짜 -->
+					<td>2019-06-05</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>카트 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>주문 확인 팝업</td>
+					<td>M-AM-PO-04-P01</td>
+					<td class="url"><a href="./combo/M-AM-PO-04-P01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>주문 확인 팝업</td>
+					<td>M-AM-PO-04-P02</td>
+					<td class="url"><a href="./combo/M-AM-PO-04-P02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-12</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>장바구니</td>
+					<td></td>
+					<td>M-AM-PO-05</td>
+					<td class="url"><a href="./combo/M-AM-PO-05.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-11</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>결제</td>
+					<td></td>
+					<td>M-AM-PO-06</td>
+					<td class="url"><a href="./combo/M-AM-PO-06.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-07-30</td><!--완료날짜 -->
+					<td>수정</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>쿠폰/포인트 결제영역 구조 전체변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트 팝업</td>
+					<td>M-AM-PO-06-P01</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-P01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>전체구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트 결과없음</td>
+					<td>M-AM-PO-0601</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-P0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>전체구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어교환권 팝업</td>
+					<td>M-AM-PO-06-P02</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-P02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>전체구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>매점 할인 쿠폰 팝업</td>
+					<td>M-AM-PO-06-P03</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-P03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>전체구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>기프트카드 팝업</td>
+					<td>M-AM-PO-06-P04</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-P04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-11</td><!--완료날짜 -->
+					<td>2019-06-12</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>전체구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어교환권 등록</td>
+					<td>M-AM-PO-0602</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-TBD.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>매점 할인 쿠폰 등록</td>
+					<td>M-AM-PO-0603</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-TBD01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>기프트카드 등록</td>
+					<td>M-AM-PO-0604</td>
+					<td class="url"><a href="./combo/M-AM-PO-06-TBD02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="remove">
+					<td></td>
+					<td>주문 완료</td>
+					<td></td>
+					<td>M-AM-PO-07</td>
+					<td class="url"><a href="./combo/M-AM-PO-07.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>주문표</td>
+					<td></td>
+					<td>M-AM-PO-08</td>
+					<td class="url"><a href="./combo/M-AM-PO-08.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-06</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 버튼 제거 및 문구수정</td><!--비고 -->
+				</tr>
+				<tr class="remove">
+					<td></td>
+					<td>나의 결제내역</td>
+					<td></td>
+					<td>M-AM-PO-TBD</td>
+					<td class="url"><a href="./combo/M-AM-PO-TBD.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>조회설정</td>
+					<td>M-AM-PO-TBD01</td>
+					<td class="url"><a href="./combo/M-AM-PO-TBD01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>결제상세</td>
+					<td>M-AM-PO-TBD02</td>
+					<td class="url"><a href="./combo/M-AM-PO-TBD02.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // 예매 -->
+				<tr class="hidden tit" id="section04">
+					<td colspan="10">예매</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>예매</td>
+					<td>메인</td>
+					<td></td>
+					<td>M-RE-MA-01</td>
+					<td class="url"><a href="./reserve/M-RE-MA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-01</td><!--완료날짜 -->
+					<td>2019-06-26</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>푸터 추가/ 헤더 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>영화별 예매</td>
+					<td>영화 목록</td>
+					<td>리스트형</td>
+					<td>M-RE-MO-01</td>
+					<td class="url"><a href="./reserve/M-RE-MO-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-24</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>이미지형</td>
+					<td>M-RE-MO-0101</td>
+					<td class="url"><a href="./reserve/M-RE-MO-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-24</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>스케줄 목록</td>
+					<td></td>
+					<td>M-RE-MO-02</td>
+					<td class="url"><a href="./reserve/M-RE-MO-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>극장별 예매</td>
+					<td>극장 목록</td>
+					<td></td>
+					<td>M-RE-TH-01</td>
+					<td class="url"><a href="./reserve/M-RE-TH-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>스케줄 목록</td>
+					<td></td>
+					<td>M-RE-TH-02</td>
+					<td class="url"><a href="./reserve/M-RE-TH-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>영화별/극장별 예매</td>
+					<td>좌석미리보기</td>
+					<td></td>
+					<td>M-RE-CM-01</td>
+					<td class="url"><a href="./reserve/M-RE-CM-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-24</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>인원선택</td>
+					<td></td>
+					<td>M-RE-CM-02</td>
+					<td class="url"><a href="./reserve/M-RE-CM-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-02</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>좌석선택</td>
+					<td></td>
+					<td>M-RE-CM-03</td>
+					<td class="url"><a href="./reserve/M-RE-CM-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-24</td><!--완료날짜 -->
+					<td>2019-07-08</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>미니좌석도 추가 및 범례 위치변경<br />2인/4인 좌석 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>풀화면</td>
+					<td>M-RE-CM-0301</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0301.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-24</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>결제</td>
+					<td></td>
+					<td>M-RE-CM-04</td>
+					<td class="url"><a href="./reserve/M-RE-CM-04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-07</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>결제 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권 및 할인수단 적용 전</td>
+					<td>M-RE-CM-04-01</td>
+					<td class="url"><a href="./reserve/M-RE-CM-04-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-07</td><!--완료날짜 -->
+					<td>2019-07-30</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>쿠폰/포인트 적용 후 분기처리 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권 및 할인수단 적용 후</td>
+					<td>M-RE-CM-04-02</td>
+					<td class="url"><a href="./reserve/M-RE-CM-04-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-07</td><!--완료날짜 -->
+					<td>2019-07-30</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>쿠폰/포인트 적용 후 분기처리 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>즉시할인카드</td>
+					<td>M-RE-CM-04-03</td>
+					<td class="url"><a href="./reserve/M-RE-CM-04-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-02</td><!--완료날짜 -->
+					<td>2019-07-09</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 약관동의추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>현금영수증 발급</td>
+					<td></td>
+					<td>M-RE-CM-05</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>결제완료</td>
+					<td></td>
+					<td>M-RE-CM-0501</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0501.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-08-02</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP쿠폰</td>
+					<td>M-RE-CM-0401</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0401.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 관람권</td>
+					<td>M-RE-CM-0402</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0402.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td>2019-06-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>라디오버튼을 체크박스로 수정<br />상단 뒤로가기버튼 제거 및 창종료 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트 (팝업)</td>
+					<td>M-RE-CM-0403</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0403.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-04</td><!--완료날짜 -->
+					<td>2019-06-13</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>포인트 리스트 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>기프티콘</td>
+					<td>M-RE-CM-0404</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0404.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>지마켓 (팝업)</td>
+					<td>M-RE-CM-0405</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0405.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>기프티쇼 (팝업)</td>
+					<td>M-RE-CM-0406</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0406.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>아이넘버 (팝업)</td>
+					<td>M-RE-CM-0407</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0407.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>도넛북 (팝업)</td>
+					<td>M-RE-CM-0408</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0408.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스마트콘 (팝업)</td>
+					<td>M-RE-CM-0409</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0409.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>제휴예매권</td>
+					<td>M-RE-CM-0410</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0410.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td>2019-06-13</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>라디오버튼을 체크박스로 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 스타카드 (팝업)</td>
+					<td>M-RE-CM-0411</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0411.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-04</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 아너스카드 (팝업)</td>
+					<td>M-RE-CM-0412</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0412.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-04</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>프렌즈 멤버십 (팝업)</td>
+					<td>M-RE-CM-0413</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0413.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 할인쿠폰</td>
+					<td>M-RE-CM-0414</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0414.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td>2019-07-29</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀명 수정</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>SKT 멤버십 (팝업)</td>
+					<td>M-RE-CM-0415</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0415.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-20</td><!--완료날짜 -->
+					<td>2019-07-29</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀명 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>현대카드 M포인트 (팝업)</td>
+					<td>M-RE-CM-0417</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0417.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td>2019-07-29</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 약관동의추가 및 placeholder 변경<br /> 체크박스 추가 / 타이틀 명 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>문화누리카드 (팝업)</td>
+					<td>M-RE-CM-0418</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0418.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>GS&POINT (팝업)</td>
+					<td>M-RE-CM-0419</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0419.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td>2019-06-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>현대오일뱅크 (팝업)</td>
+					<td>M-RE-CM-0420</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0420.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td>2019-06-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>해피포인트 (팝업)</td>
+					<td>M-RE-CM-0421</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0421.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-17</td><!--완료날짜 -->
+					<td>2019-06-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>블루멤버스 포인트 (팝업)</td>
+					<td>M-RE-CM-0422</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0422.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-21</td><!--완료날짜 -->
+					<td>2019-06-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>비밀번호 입력칸 추가</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>중앙멤버십 (팝업)</td>
+					<td>M-RE-CM-0423</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0423.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-20</td><!--완료날짜 -->
+					<td>2019-06-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="issue">
+					<td></td>
+					<td></td>
+					<td>OK 캐쉬백 (팝업)</td>
+					<td>M-RE-CM-0424</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0424.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-04</td><!--완료날짜 -->
+					<td>2019-06-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 관람권 등록</td>
+					<td>M-RE-CM-0425</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0425.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td>2019-06-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어 교환권 적용</td>
+					<td>M-RE-CM-0426</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0426.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어 교환권 등록</td>
+					<td>M-RE-CM-0427</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0427.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>영화할인 쿠폰 등록</td>
+					<td>M-RE-CM-0428</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0428.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>모바일 티켓</td>
+					<td>회원/앱</td>
+					<td>M-RE-CM-05-type01</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type0102</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type02</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type0202</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type0202.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type03</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type04</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type05</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type05.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>M-RE-CM-05-type06</td>
+					<td class="url"><a href="./reserve/M-RE-CM-05-type06.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>티켓나누기</td>
+					<td>M-RE-CM-0502</td>
+					<td class="url"><a href="./reserve/M-RE-CM-0502.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>토글 스크립트 미적용</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>더 부티크 프라이빗 대관예매</td>
+					<td></td>
+					<td>M-RE-ST-01</td>
+					<td class="url"><a href="./reserve/M-RE-ST-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-09</td><!--완료날짜 -->
+					<td>2019-07-02</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>스토어교환권 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>No-list</td>
+					<td>M-RE-ST-01NONE</td>
+					<td class="url"><a href="./reserve/M-RE-ST-01NONE.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-11-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>식음료 신청</td>
+					<td>M-RE-ST-0101</td>
+					<td class="url"><a href="./reserve/M-RE-ST-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권</td>
+					<td>M-RE-ST-0102</td>
+					<td class="url"><a href="./reserve/M-RE-ST-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-09</td><!--완료날짜 -->
+					<td>2019-07-02</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 오타 수정 및 헤더수정</td><!--비고 -->
+				</tr>
+
+				<!-- // 이벤트 -->
+				<tr class="hidden tit" id="section05">
+					<td colspan="10">이벤트</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>이벤트</td>
+					<td>메인</td>
+					<td></td>
+					<td>M-EV-MA-01</td>
+					<td class="url"><a href="./event/M-EV-MA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-01-25</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>swiper 슬라이드 수정<br /> 푸터추가<br />메인 배너쪽 스와이퍼 추가 및 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>상세</td>
+					<td>댓글응모</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-01-30</td><!--완료날짜 -->
+					<td>2019-08-21</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>파일내 type0101 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로<br /> 투표결과 투표율 추가
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>댓글응모 - 지점선택</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-01-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type0102 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>댓글응모 - 댓글 신고여부 팝업</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02-P.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-01-30</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>버튼 감싸는 class 변경 btn-group 에서 btn-bottom으로</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>이벤트응모</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type03 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>무대인사 이벤트</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type0401 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>시사회 이벤트</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type0402 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반응모/쿠폰다운로드/선착순응모</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-01-29</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 btn-group 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스탬프이벤트</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type05 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>당첨자발표</td>
+					<td>상세</td>
+					<td>M-EV-MA-02</td>
+					<td class="url"><a href="./event/M-EV-MA-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td>파일내 type07 클래스참고<br />버튼 감싸는 class 변경 btn-group 에서
+						btn-bottom으로
+					</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>목록</td>
+					<td>M-EV-MA-03</td>
+					<td class="url"><a href="./event/M-EV-MA-03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // 나의메가박스 -->
+				<tr class="hidden tit" id="section06">
+					<td colspan="10">나의메가박스</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>나의메가박스</td>
+					<td>메인</td>
+					<td>로그인</td>
+					<td>M-MY-MA-01</td>
+					<td class="url"><a href="./mymega/M-MY-MA-login.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-12</td><!--완료날짜 -->
+					<td>2019-06-26</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>푸터추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반회원</td>
+					<td>M-MY-MA-01</td>
+					<td class="url"><a href="./mymega/M-MY-MA-member.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-12</td><!--완료날짜 -->
+					<td>2019-07-04</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>푸터추가<br />VIP혜택존 버튼추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>OK캐쉬백 포인트적립</td>
+					<td>M-MY-MA-01</td>
+					<td class="url"><a href="./mymega/M-MY-MA-member-okay.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2020-02-07</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP</td>
+					<td>M-MY-MA-01</td>
+					<td class="url"><a href="./mymega/M-MY-MA-vip.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-12</td><!--완료날짜 -->
+					<td>2019-06-26</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>푸터추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비회원</td>
+					<td>M-MY-MA-01</td>
+					<td class="url"><a href="./mymega/M-MY-MA-guest.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-12</td><!--완료날짜 -->
+					<td>2019-06-28</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>푸터추가/비회원쪽 아래 영역 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 등급 이력</td>
+					<td>M-MY-MA-0101</td>
+					<td class="url"><a href="./mymega/M-MY-MA-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-09</td><!--완료날짜 -->
+					<td>2019-06-17</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>멤버십</td>
+					<td>멤버십 포인트</td>
+					<td>멤버십 포인트 현황</td>
+					<td>M-MY-MP-01</td>
+					<td class="url"><a href="./mymega/M-MY-MP-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td>2019-07-09</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>소멸예정 부분 a 태그 추가<br />포인트 리스트 기타영역제거 및 날짜추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 포인트 내역</td>
+					<td>M-MY-MP-0101</td>
+					<td class="url"><a href="./mymega/M-MY-MP-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td>2019-07-17</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>리스트내 구분 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십 등급 조회 팝업</td>
+					<td>M-MY-MP-0102</td>
+					<td class="url"><a href="./mymega/M-MY-MP-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td>2019-07-17</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>이벤트 칸 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트 비밀번호 설정</td>
+					<td>M-MY-MP-02</td>
+					<td class="url"><a href="./mymega/M-MY-MP-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트 선물하기</td>
+					<td>M-MY-MP-03</td>
+					<td class="url"><a href="./mymega/M-MY-MP-03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>멤버십포인트 안내팝업</td>
+					<td>M-MY-MP-04</td>
+					<td class="url"><a href="./mymega/M-MY-MP-04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트 소멸예정 안내 팝업</td>
+					<td>M-MY-MP-05</td>
+					<td class="url"><a href="./mymega/M-MY-MP-05.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-17</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>관람권/상품권</td>
+					<td>영화관람권</td>
+					<td>관람권 목록</td>
+					<td>M-MY-MT-01</td>
+					<td class="url"><a href="./mymega/M-MY-MT-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>(조회팝업)</td>
+					<td>M-MY-MT-0101</td>
+					<td class="url"><a href="./mymega/M-MY-MT-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권 상세</td>
+					<td>M-MY-MT-02</td>
+					<td class="url"><a href="./mymega/M-MY-MT-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권 등록</td>
+					<td>M-MY-MT-03</td>
+					<td class="url"><a href="./mymega/M-MY-MT-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람권 안내</td>
+					<td>M-MY-MT-04</td>
+					<td class="url"><a href="./mymega/M-MY-MT-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>스토어교환권</td>
+					<td>스토어교환권 목록</td>
+					<td>M-MY-SE-01</td>
+					<td class="url"><a href="./mymega/M-MY-SE-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어교환권 상세</td>
+					<td>M-MY-SE-02</td>
+					<td class="url"><a href="./mymega/M-MY-SE-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어교환권 등록</td>
+					<td>M-MY-SE-03</td>
+					<td class="url"><a href="./mymega/M-MY-SE-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어교환권 안내</td>
+					<td>M-MY-SE-04</td>
+					<td class="url"><a href="./mymega/M-MY-SE-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-25</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>쿠폰</td>
+					<td>메가박스쿠폰목록</td>
+					<td></td>
+					<td>M-MY-CO-01</td>
+					<td class="url"><a href="./mymega/M-MY-CO-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>제휴쿠폰목록</td>
+					<td></td>
+					<td>M-MY-CO-0102</td>
+					<td class="url"><a href="./mymega/M-MY-CO-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>쿠폰상세</td>
+					<td></td>
+					<td>M-MY-CO-02</td>
+					<td class="url"><a href="./mymega/M-MY-CO-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>쿠폰조회</td>
+					<td></td>
+					<td>M-MY-CO-03</td>
+					<td class="url"><a href="./mymega/M-MY-CO-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>메가박스 쿠폰조회</td>
+					<td>M-MY-CO-0301</td>
+					<td class="url"><a href="./mymega/M-MY-CO-0301.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-24</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>쿠폰안내</td>
+					<td></td>
+					<td>M-MY-CO-04</td>
+					<td class="url"><a href="./mymega/M-MY-CO-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-09</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>VIP쿠폰</td>
+					<td>VIP쿠폰북 선택</td>
+					<td>일반형 - VIP</td>
+					<td>M-MY-VC-01</td>
+					<td class="url"><a href="./mymega/M-MY-VC-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반형 - VIP PREMIUM</td>
+					<td>M-MY-VC-01-01</td>
+					<td class="url"><a href="./mymega/M-MY-VC-01-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>일반형 - VVIP</td>
+					<td>M-MY-VC-01-02</td>
+					<td class="url"><a href="./mymega/M-MY-VC-01-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>DIY형 - VIP</td>
+					<td>M-MY-VC-0101</td>
+					<td class="url"><a href="./mymega/M-MY-VC-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>DIY형 - VIP PREMIUM</td>
+					<td>M-MY-VC-0101-01</td>
+					<td class="url"><a href="./mymega/M-MY-VC-0101-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>DIY형 - VVIP</td>
+					<td>M-MY-VC-0101-02</td>
+					<td class="url"><a href="./mymega/M-MY-VC-0101-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>안내</td>
+					<td>M-MY-VC-02</td>
+					<td class="url"><a href="./mymega/M-MY-VC-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>최종선택</td>
+					<td>M-MY-VC-03</td>
+					<td class="url"><a href="./mymega/M-MY-VC-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>진행중</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>기프트카드</td>
+					<td>기프트카드 보유목록</td>
+					<td>카드리스트</td>
+					<td>M-MY-GC-01</td>
+					<td class="url"><a href="./mymega/M-MY-GC-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td>2019-07-10</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>각 타입별 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>바코드</td>
+					<td>M-MY-GC-0102</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>분실카드</td>
+					<td>M-MY-GC-0103</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0103.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>유효기간 지남</td>
+					<td>M-MY-GC-0104</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0104.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>폐기된 카드</td>
+					<td>M-MY-GC-0105</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0105.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>카드구입</td>
+					<td>M-MY-GC-0106</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0106.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-08</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>카드추가등록</td>
+					<td></td>
+					<td>M-MY-GC-02</td>
+					<td class="url"><a href="./mymega/M-MY-GC-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-29</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>충전하기</td>
+					<td></td>
+					<td>M-MY-GC-03</td>
+					<td class="url"><a href="./mymega/M-MY-GC-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-02</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>이용내역</td>
+					<td></td>
+					<td>M-MY-GC-04</td>
+					<td class="url"><a href="./mymega/M-MY-GC-04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-04</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>환불하기</td>
+					<td></td>
+					<td>M-MY-GC-05</td>
+					<td class="url"><a href="./mymega/M-MY-GC-05.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-02</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>카드관리</td>
+					<td>분실신고</td>
+					<td>M-MY-GC-06</td>
+					<td class="url"><a href="./mymega/M-MY-GC-06.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-04</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>분실해제</td>
+					<td>M-MY-GC-0601</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0601.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>잔액이전</td>
+					<td>M-MY-GC-0602</td>
+					<td class="url"><a href="./mymega/M-MY-GC-0602.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>사용가능 극장</td>
+					<td></td>
+					<td>M-MY-GC-07</td>
+					<td class="url"><a href="./mymega/M-MY-GC-07.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-29</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>예매/구매 내역</td>
+					<td>영화예매 목록</td>
+					<td></td>
+					<td>M-MY-RE-01</td>
+					<td class="url"><a href="./mymega/M-MY-RE-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-21</td><!--완료날짜 -->
+					<td>2019-04-19</td><!-- 수정날짜 -->
+					<td>수정완료</td><!-- 진행상태 -->
+					<td>탭 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>예매 상세</td>
+					<td>M-MY-RE-0101</td>
+					<td class="url"><a href="./mymega/M-MY-RE-0101.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-25</td><!--완료날짜 -->
+					<td>2019-07-10</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>영수증 버튼 추가 및 이용안내추가<br /> 문구삭제 <br / >상단 구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>예매 내역 목록 조회설정</td>
+					<td>M-MY-RE-0102</td>
+					<td class="url"><a href="./mymega/M-MY-RE-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-22</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>검색조건 변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>비회원 예매 내역 목록</td>
+					<td></td>
+					<td>M-MY-NM-01</td>
+					<td class="url"><a href="./mymega/M-MY-NM-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-28</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>구매내역 목록</td>
+					<td></td>
+					<td>M-MY-RE-02</td>
+					<td class="url"><a href="./mymega/M-MY-RE-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-22</td><!--완료날짜 -->
+					<td>2019-06-28</td><!-- 수정날짜 -->
+					<td>수정완료</td><!-- 진행상태 -->
+					<td>타이틀문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>스토어 구매 상세</td>
+					<td>M-MY-RE-0201</td>
+					<td class="url"><a href="./mymega/M-MY-RE-0201.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-22</td><!--완료날짜 -->
+					<td>2019-07-10</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>영수증 버튼 추가 및 이용안내추가<br /> 문구삭제 <br / >상단 구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>모바일 오더 상세</td>
+					<td>M-MY-RE-0202</td>
+					<td class="url"><a href="./mymega/M-MY-RE-0202.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-22</td><!--완료날짜 -->
+					<td>2019-07-10</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>영수증 버튼 추가 및 이용안내추가<br /> 문구삭제 <br / >상단 구조변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>구매 내역 목록 조회설정</td>
+					<td>M-MY-RE-0203</td>
+					<td class="url"><a href="./mymega/M-MY-RE-0203.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-07-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>영수증팝업</td>
+					<td>M-MY-RE-03</td>
+					<td class="url"><a href="./mymega/M-MY-RE-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-22</td><!--완료날짜 -->
+					<td>2019-07-09</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>무비스토리</td>
+					<td>무비 타임라인</td>
+					<td></td>
+					<td>M-MY-MS-01</td>
+					<td class="url"><a href="./mymega/M-MY-MS-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>본 영화</td>
+					<td></td>
+					<td>M-MY-MS-02</td>
+					<td class="url"><a href="./mymega/M-MY-MS-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>본 영화 등록</td>
+					<td>M-MY-MS-0201</td>
+					<td class="url"><a href="./mymega/M-MY-MS-0201.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-13</td><!--완료날짜 -->
+					<td>2019-08-05</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>문구수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>보고싶어</td>
+					<td></td>
+					<td>M-MY-MS-03</td>
+					<td class="url"><a href="./mymega/M-MY-MS-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>한줄평</td>
+					<td></td>
+					<td>M-MY-MS-04</td>
+					<td class="url"><a href="./mymega/M-MY-MS-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>무비포스트</td>
+					<td>나의 포스트</td>
+					<td>M-MY-MS-0501</td>
+					<td class="url"><a href="./mymega/M-MY-MS-0501.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>구독중인 포스트</td>
+					<td>M-MY-MS-0502</td>
+					<td class="url"><a href="./mymega/M-MY-MS-0502.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>문의내역</td>
+					<td>1:1문의</td>
+					<td>목록</td>
+					<td>M-MY-QA-01</td>
+					<td class="url"><a href="./mymega/M-MY-QA-01.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td>M-MY-QA-0102</td>
+					<td class="url"><a href="./mymega/M-MY-QA-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>단체관람/대관</td>
+					<td>목록</td>
+					<td>M-MY-QA-0201</td>
+					<td class="url"><a href="./mymega/M-MY-QA-0201.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td>M-MY-QA-0202</td>
+					<td class="url"><a href="./mymega/M-MY-QA-0202.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>분실물문의</td>
+					<td>목록</td>
+					<td>M-MY-QA-0301</td>
+					<td class="url"><a href="./mymega/M-MY-QA-0301.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>하단 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td>M-MY-QA-0302</td>
+					<td class="url"><a href="./mymega/M-MY-QA-0302.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-26</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>이벤트 응모 내역</td>
+					<td></td>
+					<td></td>
+					<td>M-EV-MY-01</td>
+					<td class="url"><a href="./mymega/M-EV-MY-01.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-28</td><!--완료날짜 -->
+					<td>2019-07-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>타이틀 문구 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td>내 정보 관리</td>
+					<td>인덱스</td>
+					<td></td>
+					<td>M-MY-PI-01</td>
+					<td class="url"><a href="./mymega/M-MY-PI-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비밀번호 확인</td>
+					<td>M-MY-PI-02</td>
+					<td class="url"><a href="./mymega/M-MY-PI-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>회원정보 관리</td>
+					<td></td>
+					<td>M-MY-PI-03</td>
+					<td class="url"><a href="./mymega/M-MY-PI-03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-23</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>본인인증 수단 선택</td>
+					<td>M-MY-PI-0301</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0301.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>휴대폰번호 변경</td>
+					<td>M-MY-PI-0302</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0302.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>회원탈퇴</td>
+					<td>M-MY-PI-0303</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0303.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>비밀번호 변경</td>
+					<td></td>
+					<td>M-ME-FI-04</td>
+					<td class="url"><a href="./mymega/M-ME-FI-04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-18</td><!--완료날짜 -->
+					<td>2019-06-11</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>로그인 > 비밀번호 재설정 페이지와 함께 사용<br />현재비밀번호 영역추가 및 문구변경</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>마케팅 수신동의</td>
+					<td>M-MY-PI-04</td>
+					<td class="url"><a href="./mymega/M-MY-PI-04.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-23</td><!--완료날짜 -->
+					<td>2019-06-17</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>동의 버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>나만의 메가박스</td>
+					<td></td>
+					<td>M-MY-PI-05</td>
+					<td class="url"><a href="./mymega/M-MY-PI-05.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>선호극장 설정 팝업</td>
+					<td>M-MY-PI-0501</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0501.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-19</td><!--완료날짜 -->
+					<td>2019-06-17</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>선호장르 설정 팝업</td>
+					<td>M-MY-PI-0502</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0502.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>선호시간 설정 팝업</td>
+					<td>M-MY-PI-0503</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0503.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>자주쓰는 할인수단</td>
+					<td>목록</td>
+					<td>M-MY-PI-06</td>
+					<td class="url"><a href="./mymega/M-MY-PI-06.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-13</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>할인수단 등록</td>
+					<td>M-MY-PI-0601</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0601.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>서비스 이용동의 설정</td>
+					<td>M-MY-PI-0602</td>
+					<td class="url"><a href="./mymega/M-MY-PI-0602.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>스페셜 멤버십</td>
+					<td></td>
+					<td>M-MY-PI-07</td>
+					<td class="url"><a href="./mymega/M-MY-PI-07.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!--************************************ 20190118 여기까지 ************************************-->
+
+				<!-- // 설정 -->
+				<tr class="hidden tit" id="section07">
+					<td colspan="10">설정</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>설정</td>
+					<td>메인</td>
+					<td></td>
+					<td>M-AM-ST-01</td>
+					<td class="url"><a href="./setting/M-AM-ST-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비회원로그인</td>
+					<td>M-AM-ST-0101</td>
+					<td class="url"><a href="./setting/M-AM-ST-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비로그인</td>
+					<td>M-AM-ST-0102</td>
+					<td class="url"><a href="./setting/M-AM-ST-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>내계정</td>
+					<td>로그인관리</td>
+					<td>M-AM-ST-02</td>
+					<td class="url"><a href="./setting/M-AM-ST-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>알림</td>
+					<td>PUSH 알람 수신동의</td>
+					<td>M-AM-ST-03</td>
+					<td class="url"><a href="./setting/M-AM-ST-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-05</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>알림함</td>
+					<td>M-NT-LS-01</td>
+					<td class="url"><a href="./setting/M-NT-LS-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // 극장 -->
+				<tr class="hidden tit" id="section10">
+					<td colspan="10">극장</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>전체극장</td>
+					<td>극장 선택</td>
+					<td>목록(지역별)</td>
+					<td>M-TH-MA-01</td>
+					<td class="url"><a href="./theater/M-TH-MA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-03-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>극장 상세</td>
+					<td>극장 정보</td>
+					<td>M-TH-MA-0101</td>
+					<td class="url"><a href="./theater/M-TH-MA-0101.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>목록(특별관)</td>
+					<td>M-TH-MA-01_TYPE1</td>
+					<td class="url"><a href="./theater/M-TH-MA-01_TYPE1.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-03-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>THE BOUTIQUE</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0101</td>
+					<td class="url"><a href="./theater/M-TH-ST-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-03</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>MX</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0102</td>
+					<td class="url"><a href="./theater/M-TH-ST-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>COMFORT</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0103</td>
+					<td class="url"><a href="./theater/M-TH-ST-0103.html" target="_blank"></a></td>
+					<td>윤사랑,조형호</td><!--작업자 -->
+					<td>2019-03-15</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>MEGA KIDS BOX</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0104</td>
+					<td class="url"><a href="./theater/M-TH-ST-0104.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>THE FIRST CLUB</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0105</td>
+					<td class="url"><a href="./theater/M-TH-ST-0105.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>BALCONY</td>
+					<td>극장 정보</td>
+					<td>M-TH-ST-0106</td>
+					<td class="url"><a href="./theater/M-TH-ST-0106.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-04-30</td><!--완료날짜 -->
+					<td>2019-07-16</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>공유하기삭제/대관문의 삭제</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>관람료</td>
+					<td>M-TH-MO-01</td>
+					<td class="url"><a href="./theater/M-TH-MO-01.html" target="_blank"></a></td>
+					<td>박주선</td><!--작업자 -->
+					<td>2019-03-14</td><!--완료날짜 -->
+					<td>2019-07-08</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>2019-07-08 - 텍스트 영역 추가</td><!--비고 -->
+				</tr>
+
+				<!-- // 무비포스트 -->
+				<tr class="hidden tit" id="section11">
+					<td colspan="10">무비포스트</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>무비포스트</td>
+					<td>목록</td>
+					<td>모든영화</td>
+					<td>M-MP-ST-01</td>
+					<td class="url"><a href="./moviepost/M-MP-ST-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>조회설정 팝업</td>
+					<td>M-MP-ST-0101</td>
+					<td class="url"><a href="./moviepost/M-MP-ST-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>타인 무비포스트</td>
+					<td>M-MP-ST-0102</td>
+					<td class="url"><a href="./moviepost/M-MP-ST-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>나의 무비포스트</td>
+					<td>M-MP-ST-0103</td>
+					<td class="url"><a href="./moviepost/M-MP-ST-0103.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-15</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>상세보기</td>
+					<td></td>
+					<td>M-MP-DT-01</td>
+					<td class="url"><a href="./moviepost/M-MP-DT-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>무비포스트 작성</td>
+					<td>영화 선택</td>
+					<td>M-MP-WR-01</td>
+					<td class="url"><a href="./moviepost/M-MP-WR-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>컨텐츠 작성</td>
+					<td>M-MP-WR-02-01</td>
+					<td class="url"><a href="./moviepost/M-MP-WR-02-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>컨텐츠 작성 - 포스트 추가</td>
+					<td>M-MP-WR-02-02</td>
+					<td class="url"><a href="./moviepost/M-MP-WR-02-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>이미지 선택</td>
+					<td>M-MP-WR-0201-01</td>
+					<td class="url"><a href="./moviepost/M-MP-WR-0201-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>이미지 선택 - 내사진</td>
+					<td>M-MP-WR-0201-02</td>
+					<td class="url"><a href="./moviepost/M-MP-WR-0201-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-04-16</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // 혜택-->
+				<tr class="hidden tit" id="section12">
+					<td colspan="10">혜택</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>혜택</td>
+					<td>메가박스 멤버십</td>
+					<td>멤버십 안내</td>
+					<td>M-MS-IP-01 </td>
+					<td class="url"><a href="./benefit/M-MS-IP-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트 안내</td>
+					<td>M-MS-IP-0101</td>
+					<td class="url"><a href="./benefit/M-MS-IP-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-10</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>생일 축하 쿠폰</td>
+					<td>M-MS-IP-0102</td>
+					<td class="url"><a href="./benefit/M-MS-IP-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트 상세 안내</td>
+					<td>M-MS-IP-0103</td>
+					<td class="url"><a href="./benefit/M-MS-IP-0103.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-05-27</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>VIP LOUNGE</td>
+					<td>메인</td>
+					<td>M-VZ-IP-01</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-19</td><!--완료날짜 -->
+					<td>2019-07-24</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>문구수정<br />2019-07-24 : 헤더 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비로그인</td>
+					<td>M-VZ-IP-0101</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP 쿠폰북(팝업)</td>
+					<td>M-VZ-IP-0101-P01</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>5년 연속 VIP 혜택(팝업)</td>
+					<td>M-VZ-IP-0101-P02</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP 미션이벤트(팝업)</td>
+					<td>M-VZ-IP-0101-P03</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP DAY(팝업)</td>
+					<td>M-VZ-IP-0101-P04</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>중앙멤버십 혜택(팝업)</td>
+					<td>M-VZ-IP-0101-P05</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P05.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP CURTURE EVENT(팝업)</td>
+					<td>M-VZ-IP-0101-P06</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P06.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP 스티커(팝업)</td>
+					<td>M-VZ-IP-0101-P07</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P07.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VVIP 멤버십 카드(팝업)</td>
+					<td>M-VZ-IP-0101-P08</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0101-P08.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>VIP 미션 이벤트</td>
+					<td>M-VZ-IP-0102</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>중앙멤버십 신청하기</td>
+					<td>M-VZ-IP-0103</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-0103.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>제 3자 정보제공 동의</td>
+					<td>M-VZ-IP-010301</td>
+					<td class="url"><a href="./benefit/M-VZ-IP-010301.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-19</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>제휴/할인</td>
+					<td>신용카드</td>
+					<td>M-BE-DC-01</td>
+					<td class="url"><a href="./benefit/M-BE-DC-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-11</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>통신사</td>
+					<td>M-BE-DC-0101</td>
+					<td class="url"><a href="./benefit/M-BE-DC-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-11</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>포인트/기타제휴</td>
+					<td>M-BE-DC-0102</td>
+					<td class="url"><a href="./benefit/M-BE-DC-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-11</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상품권</td>
+					<td>M-BE-DC-0103</td>
+					<td class="url"><a href="./benefit/M-BE-DC-0103.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-11</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>제휴/할인 검색</td>
+					<td>M-BE-DC-0104</td>
+					<td class="url"><a href="./benefit/M-BE-DC-0104.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-18</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				
+				<!-- // 회원 -->
+				<tr class="hidden tit" id="section14">
+					<td colspan="10">회원</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>회원</td>
+					<td>로그인</td>
+					<td>일반 로그인</td>
+					<td>M-ME-LO-01</td>
+					<td class="url"><a href="./member/M-ME-LO-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>회원 로그인</td>
+					<td>M-ME-LO-0101</td>
+					<td class="url"><a href="./member/M-ME-LO-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비회원 로그인</td>
+					<td>M-ME-CC-01</td>
+					<td class="url"><a href="./member/M-ME-CC-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비회원 예매확인</td>
+					<td>M-ME-CC-02</td>
+					<td class="url"><a href="./member/M-ME-CC-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>회원재인증</td>
+					<td>간편인증</td>
+					<td>M-ME-DA-01</td>
+					<td class="url"><a href="./member/M-ME-DA-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>본인인증</td>
+					<td>M-ME-DA-0101</td>
+					<td class="url"><a href="./member/M-ME-DA-0101.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>휴면계정 복구</td>
+					<td>본인인증</td>
+					<td>M-ME-DA-02</td>
+					<td class="url"><a href="./member/M-ME-DA-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>복구 정보입력</td>
+					<td>M-ME-DA-0201</td>
+					<td class="url"><a href="./member/M-ME-DA-0201.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>회원가입</td>
+					<td>본인인증</td>
+					<td>M-ME-JO-01</td>
+					<td class="url"><a href="./member/M-ME-JO-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>보호자 인증</td>
+					<td>M-ME-JO-02</td>
+					<td class="url"><a href="./member/M-ME-JO-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>약관동의</td>
+					<td>M-ME-JO-03</td>
+					<td class="url"><a href="./member/M-ME-JO-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>회원정보 입력</td>
+					<td>M-ME-JO-04</td>
+					<td class="url"><a href="./member/M-ME-JO-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>회원가입 완료</td>
+					<td>M-ME-JO-05</td>
+					<td class="url"><a href="./member/M-ME-JO-05.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>마케팅 정보 수신동의</td>
+					<td>M-ME-JO-06</td>
+					<td class="url"><a href="./member/M-ME-JO-06.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>아이디 비밀번호 찾기</td>
+					<td>아이디 찾기</td>
+					<td>M-ME-FI-01</td>
+					<td class="url"><a href="./member/M-ME-FI-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>본인인증 버튼 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비밀번호 찾기</td>
+					<td>M-ME-FI-0102</td>
+					<td class="url"><a href="./member/M-ME-FI-0102.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>본인인증 버튼 수정</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>아이디 등록 (인증)</td>
+					<td>M-ME-FI-02</td>
+					<td class="url"><a href="./member/M-ME-FI-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>아이디 등록 (입력)</td>
+					<td>M-ME-FI-0201</td>
+					<td class="url"><a href="./member/M-ME-FI-0201.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비밀번호 재설정</td>
+					<td>M-ME-FI-03</td>
+					<td class="url"><a href="./member/M-ME-FI-03.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-06-14</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // 고객센터 -->
+				<tr class="hidden tit" id="section16">
+					<td colspan="10">고객센터</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="finish">
+					<td>고객센터</td>
+					<td>고객센터홈</td>
+					<td></td>
+					<td>M-CS-MA</td>
+					<td class="url"><a href="./customer/M-CS-MA.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>자주묻는질문</td>
+					<td>목록</td>
+					<td>M-CS-FA</td>
+					<td class="url"><a href="./customer/M-CS-FA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세보기</td>
+					<td>M-CS-FA-01</td>
+					<td class="url"><a href="./customer/M-CS-FA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>공지사항</td>
+					<td>목록</td>
+					<td>M-CS-NE-01</td>
+					<td class="url"><a href="./customer/M-CS-NE-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>목록 > 극장</td>
+					<td>M-CS-NE-01</td>
+					<td class="url"><a href="./customer/M-CS-NE-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세보기</td>
+					<td>M-CS-NE-02</td>
+					<td class="url"><a href="./customer/M-CS-NE-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-20</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>1:1문의하기</td>
+					<td>로그인 상태</td>
+					<td>M-CS-QA-01</td>
+					<td class="url"><a href="./customer/M-CS-QA-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>일부영역제거</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비로그인 상태</td>
+					<td>M-CS-QA-01</td>
+					<td class="url"><a href="./customer/M-CS-QA-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>개인정보 수집 동의</td>
+					<td>M-CS-QA-01</td>
+					<td class="url"><a href="./customer/M-CS-QA-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>단체관람/대관문의</td>
+					<td>로그인 상태</td>
+					<td>M-CS-TQ-01</td>
+					<td class="url"><a href="./customer/M-CS-TQ-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>일부영역제거</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비로그인 상태</td>
+					<td>M-CS-TQ-01</td>
+					<td class="url"><a href="./customer/M-CS-TQ-0101.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-21</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>개인정보 수집 동의</td>
+					<td>M-CS-TQ-01</td>
+					<td class="url"><a href="./customer/M-CS-TQ-0102.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>분실물문의/접수</td>
+					<td>목록</td>
+					<td>M-CS-LQ-01</td>
+					<td class="url"><a href="./customer/M-CS-LQ-01.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td>2019-03-05</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>등록버튼 추가</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>비밀번호입력 팝업</td>
+					<td>M-CS-LQ-01</td>
+					<td class="url"><a href="./customer/M-CS-LQ-01-pop.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>상세보기</td>
+					<td>M-CS-LQ-02</td>
+					<td class="url"><a href="./customer/M-CS-LQ-02.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>등록 > 로그인상태</td>
+					<td>M-CS-LQ-03</td>
+					<td class="url"><a href="./customer/M-CS-LQ-03.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td>2019-06-18</td><!--수정날짜 -->
+					<td>수정완료</td><!--진행상태 -->
+					<td>일부영역제거</td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>등록 > 비로그인상태</td>
+					<td>M-CS-LQ-03</td>
+					<td class="url"><a href="./customer/M-CS-LQ-0301.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>개인정보 수집 동의</td>
+					<td>M-CS-LQ-03</td>
+					<td class="url"><a href="./customer/M-CS-LQ-0302.html" target="_blank"></a></td>
+					<td>윤사랑</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>이용약관</td>
+					<td>지난 이용약관</td>
+					<td>M-CS-PP-01</td>
+					<td class="url"><a href="./customer/M-CS-PP-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>개인정보처리방침</td>
+					<td>지난 개인정보처리방침</td>
+					<td>M-CS-SP-01</td>
+					<td class="url"><a href="./customer/M-CS-SP-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td>앱개선문의</td>
+					<td>비로그인상태</td>
+					<td>M-CS-AP</td>
+					<td class="url"><a href="./customer/M-CS-AP.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>로그인상태</td>
+					<td>M-CS-AP</td>
+					<td class="url"><a href="./customer/M-CS-AP-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="finish">
+					<td></td>
+					<td></td>
+					<td>개인정보 수집 동의</td>
+					<td>M-CS-AP</td>
+					<td class="url"><a href="./customer/M-CS-AP-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td>2019-02-22</td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td>완료</td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+				<!-- // English ticket -->
+				<tr class="hidden tit" id="section18">
+					<td colspan="10">English ticket</td>
+				</tr>
+				<tr>
+					<th scope="col">1depth</th>
+					<th scope="col">2depth</th>
+					<th scope="col">3depth</th>
+					<th scope="col">ID</th>
+					<th scope="col">URL</th>
+					<th scope="col">작업자</th>
+					<th scope="col">완료날짜</th>
+					<th scope="col">수정날짜</th>
+					<th scope="col">진행상태</th>
+					<th scope="col">기타사항</th>
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td>일시/극장/영화/상영시간선택</td>
+					<td></td>
+					<td>M-ET-GE-01</td>
+					<td class="url"><a href="./engticket/M-ET-GE-01.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td>관람인원/좌석선택</td>
+					<td></td>
+					<td>M-ET-GE-02</td>
+					<td class="url"><a href="./engticket/M-ET-GE-02.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td>결제</td>
+					<td>관람권</td>
+					<td>M-ET-GE-0301</td>
+					<td class="url"><a href="./engticket/M-ET-GE-0301.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td></td>
+					<td>할인수단</td>
+					<td></td>
+					<td class="url"><a href="./engticket/.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td></td>
+					<td>결제수단</td>
+					<td>M-ET-GE-0302</td>
+					<td class="url"><a href="./engticket/M-ET-GE-0302.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+				<tr class="">
+					<td>일반예매</td>
+					<td>결제완료</td>
+					<td></td>
+					<td>M-ET-GE-04</td>
+					<td class="url"><a href="./engticket/M-ET-GE-04.html" target="_blank"></a></td>
+					<td>조형호</td><!--작업자 -->
+					<td></td><!--완료날짜 -->
+					<td></td><!--수정날짜 -->
+					<td></td><!--진행상태 -->
+					<td></td><!--비고 -->
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<!-- //Page -->
+
+	<script>
+		jQuery(function($) {
+			$.each($("td.url > a"), function(i, v) {
+				$(v).text($(v).attr("href"));
+			});
+		});
+	</script>
+
+</body>
+</html>

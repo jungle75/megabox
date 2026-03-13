@@ -1,0 +1,307 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>공지사항 목록 &gt; 고객센터 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">고객센터</a>
+						<a href="">공지사항</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">고객센터</a></p>
+						<ul>
+							<li><a href="">고객센터 홈</a></li>
+							<li><a href="">자주 묻는 질문</a></li>
+							<li class="on"><a href="">공지사항</a></li>
+							<li><a href="">1:1문의</a></li>
+							<li><a href="">단체관람 및 대관문의</a></li>
+							<li><a href="">분실물 문의</a></li>
+							<li><a href="">이용약관</a></li>
+							<li><a href="">개인정보처리방침</a></li>
+							<li><a href="">스크린배정수에관한기준</a></li>
+						</ul>
+
+						<!-- 고객센터 메뉴일때만 출력 -->
+						<div class="left-customer-info">
+							<p class="tit">
+								메가박스 고객센터
+								<span>Dream center</span>
+							</p>
+							<p class="tel">1544-0070</p>
+							<p class="time"><i class="iconset ico-clock"></i> 09:00~21:00</p>
+						</div>
+					</nav>
+				</div>
+
+				<div id="contents">
+					<h2 class="tit">공지사항</h2>
+
+					<div class="tab-block mb30">
+						<ul>
+							<li class="on"><button type="button" class="btn">전체</button></li><!-- 현재 해당페이지 li class="on" -->
+							<li><button type="button" class="btn">메가박스 공지</button></li>
+							<li><button type="button" class="btn">극장 공지</button></li>
+						</ul>
+					</div>
+
+					<div class="board-list-util">
+						<p class="result-count"><strong>전체 <em class="font-gblue">9376</em>건</strong></p>
+
+						<select title="지역 선택" class="selectpicker mr07">
+							<option>지역 선택</option>
+							<option>서울</option>
+						</select>
+
+						<select title="극장 선택" disabled="disabled" class="selectpicker mr07">
+							<option>극장 선택</option>
+						</select>
+
+						<div class="board-search">
+							<input type="text" title="검색어를 입력해 주세요." placeholder="검색어를 입력해 주세요." class="input-text">
+							<button type="button" class="btn-search-input">검색</button>
+						</div>
+					</div>
+
+					<div class="table-wrap">
+						<table class="board-list">
+							<caption>번호, 영화관, 구분, 제목, 등록일이 들어간 공지사항 전체 리스트</caption>
+							<colgroup>
+								<col style="width:72px;">
+								<col style="width:133px;">
+								<col style="width:95px;">
+								<col>
+								<col style="width:116px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">영화관</th>
+									<th scope="col">구분</th>
+									<th scope="col">제목</th>
+									<th scope="col">등록일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>10</td>
+									<td>전체</td>
+									<td>공지</td>
+									<th scope="row">
+										<a href="">2월 21일(수) 일산벨라시타지점 전기설비 점검 및 온라인 2월 21일(수) 일산벨라시타지점 전기설비 점검 및 온라인</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>김포한강신도시</td>
+									<td>무대인사</td>
+									<th scope="row">
+										<a href="">&lt;도어락&gt; 1주차 (12/8~9)</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>전체</td>
+									<td>공지</td>
+									<th scope="row">
+										<a href="">12월 4일 시스템 점검</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>전체</td>
+									<td>라이브뷰잉</td>
+									<th scope="row">
+										<a href="">클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린 클래식 라이브 - 2019 빈 필하모닉 신년음악회 & 베를린</a>
+									</th>
+									<td>2018.03.05</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!-- pagination -->
+					<nav class="pagination">
+						<a href="" class="control first">first</a>
+						<a href="" class="control prev">prev</a>
+						<a href="">1</a>
+						<strong class="active">2</strong>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+						<a href="" class="control next">next</a>
+						<a href="" class="control last">last</a>
+					</nav>
+					<!--// pagination -->
+				</div>
+			</div>
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

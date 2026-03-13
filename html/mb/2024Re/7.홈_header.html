@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>홈 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+	// 상단배너
+	if( $('.topBanner').length > 0 ){
+		var topBannerSwiper = new Swiper('.topBanner', {
+			pagination: {
+		        el: ".swiper-pagination",
+		        type: "custom",
+		        renderCustom: function (swiper, current, total) {
+			        return '<div class="pgCurrent">'+current+'</div>' + '<div class="pgTotal">'+total+'</div>'; 
+			    }
+		      },
+		});
+	}
+
+	// 메인영화리스트
+	if( $('.mainMovieList').length > 0 ){
+		var mainMovieList = new Swiper('.mainMovieList', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 지금주목해야할상품
+	if( $('.fs_Swiper').length > 0 ){
+		var fs_Swiper = new Swiper('.fs_Swiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:18,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 무대인사.시사회
+	if( $('.mp_Swiper').length > 0 ){
+		var mp_Swiper = new Swiper('.mp_Swiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:18,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 진행중인이벤트
+	if( $('.me_Swiper').length > 0 ){
+		var me_Swiper = new Swiper('.me_Swiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:18,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	// 광고스와이프
+	if( $('.adType2_Swiper').length > 0 ){
+		var adType2_Swiper = new Swiper('.adType2_Swiper', {
+			pagination: {
+		        el: ".swiper-pagination",
+		    },
+		});
+	}
+
+	// footer 토글
+	$('#footer .arrow').click(function() {
+        $('.footerHide').toggleClass('act');
+    });
+
+    
+	// var className = 'stpg';
+    var specialTheaterSwiper = new Swiper('.specialTheaterSwiper', {
+    	spaceBetween: 18,
+		slidesOffsetBefore:18,
+		slidesOffsetAfter:18,
+		slidesPerView: 'auto',
+		  pagination: {
+	        el: ".sts_swiperPagination",
+	        clickable: true,
+	        renderBullet: function (index, className) {
+	          return '<span class="' + className  + '"><em></em></span>';
+	        },
+      	},
+    });
+
+});
+
+
+$(window).on('scroll', function() {
+	var r24_header = $('.r24_header');
+    if (r24_header.length > 0) {
+        var scrollTop = $(window).scrollTop();
+        
+        if (scrollTop > 0) {
+            r24_header.addClass('scrollon');
+        } else {
+            r24_header.removeClass('scrollon');
+        }
+
+		if ($('.induceBanner').length > 0) {
+	        if (scrollTop > 54) {
+	            r24_header.css({'top':'0','position':'fixed'});
+	        } else {
+	            r24_header.css({'top':'54px','position':'absolute'});
+	        }
+	    }
+    }
+});
+</script>
+</head>
+<body>
+
+	<div class="induceBanner">
+		<img src="../../../static/mb/images/2024renewal/main/induceBanner_logo.png" alt="상품" />
+		<div class="text">앱에서  더 편리하게 이용하기</div>
+		<button class="btnH30 type_P">앱으로 보기</button>
+	</div>
+
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<h1 class="logo"><a href="">megabox</a></h1>
+			</div>
+			<div class="rtArea">
+				<a href="#" class="btn1"> 
+					<span class="numb">99+</span> <!--있을때 사용, 없을땐 span을 없애주세요-->
+					<i class="icon2 btn_ticket_bl30">티켓</i>
+				</a>
+				<a href="#" class="btn1">
+					<span class="new"></span> <!--있을때 사용, 없을땐 span을 없애주세요-->
+					<i class="icon2 btn_menu_bl30">메뉴</i>
+				</a>
+			</div>
+		</div>
+		<!-- headMenu -->
+		<div class="headMenu">
+			<ul>
+				<li class="act"><a href="#" class="menu">홈</a></li>
+				<li><a href="#" class="menu">이벤트</a></li>
+				<li><a href="#" class="menu">스토어</a></li>
+				<li><a href="#" class="menu">선호극장</a></li>
+			</ul>
+		</div>
+		<!--//headMenu end -->
+	</header>
+
+
+	<!-- mainSection -->
+	<div class="container mainSection"><!--mainSection 클래스 추가-->
+
+		<!-- 상단배너 -->
+		<section class="topBanner">
+			<div class="swiper-wrapper">
+				<a href="#" class="item swiper-slide on">
+					<div class="play">예고편 확인</div>
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+			</div>
+			<div class="swiper-pagination"></div>
+		</section>
+		<!--//상단배너 end -->
+
+		<!-- 영화 카테고리 -->
+		<section class="movieCategory">
+			<a href="#" class="arrowLink">더보기</a>
+			<div class="categoryList">
+				<a href="#" class="item on">무비차트</a>
+				<a href="#" class="item">상영예정</a>
+				<a href="#" class="item new">단독</a>
+				<a href="#" class="item">디즈니시네마</a>
+				<a href="#" class="item">빵원티켓</a>
+				<a href="#" class="item">필소</a>
+				<a href="#" class="item">클소</a>
+			</div>
+		</section>
+		<!--//영화 카테고리 end -->
+
+		<!-- 메인영화리스트 -->
+		<section class="mainMovieList">
+
+			<div class="swiper-wrapper">
+				<!-- item -->
+				<div class="item swiper-slide col2">
+					<!-- topArea -->
+					<div class="topArea">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- 순위/예매율 -->
+							<div class="top">
+								<span class="numb"><img src="../../../static/mb/images/2024renewal/main/chartnum_15.png" alt="15" /></span><!--숫자 이미지 1~15-->
+								<span class="rate">99.9%</span>
+							</div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+						<a href="#" class="banner"><img src="../../../static/mb/images/2024renewal/@sample_104x214.png" alt="광고" /></a>
+					</div>
+					<!--//topArea end -->
+					<!-- botArea -->
+					<div class="botArea">
+						<button class="btn2">바로예매</button>
+						<div class="title">기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름</div>
+						<div class="info">
+							<span class="total">누적관객수 9999.9만</span>
+							<span class="totalRate"><i class="icon2 i_star_p12">평점</i>9.4</span>
+						</div>
+					</div>
+					<!--//botArea end -->
+				</div>
+				<!--//item end -->
+				<!-- item -->
+				<div class="item swiper-slide">
+					<!-- topArea -->
+					<div class="topArea">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="영화" /></div>
+							<!-- 순위/예매율 -->
+							<div class="top">
+								<!-- 예매율 추가 -->
+								<span class="rate">예매율 42.8%</span>
+							</div>
+							<!-- movieType -->
+							<ul class="movieType">
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_megamx4d.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbycinema.png"></li>
+								<li><img src="https://img.megabox.co.kr/static/mb/images/main/type_dolbyatmos.png"></li>
+							</ul>
+							<!-- mega only -->
+							<div class="megaOnly">mega only</div>
+							<!-- 영화등급 -->
+							<div class="filmRate">
+								<i class="icon2 i_12_w20">12세</i>
+								<!--
+									i_all_w20 = 전체이용가
+									i_19_w20 = 19세
+									i_15_w20 = 15세
+									i_12_w20 = 12세
+									i_no_w20 = 미정
+								-->
+							</div>
+						</a>
+						<!--//imgArea end -->
+					</div>
+					<!--//topArea end -->
+					<!-- botArea -->
+					<div class="botArea">
+						<button class="btn2">바로예매</button>
+						<div class="title">기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름 기쿠지로의 여름</div>
+						<div class="info">
+							<span class="total">누적관객수 9999.9만</span>
+							<span class="totalRa te"><i class="icon2 i_star_p12">평점</i>9.4</span>
+						</div>
+					</div>
+					<!--//botArea end -->
+				</div>
+				<!--//item end -->
+				<!-- item 광고-->
+				<div class="item swiper-slide ad">
+					<!-- topArea -->
+					<div class="topArea">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_104x214.png" alt="광고" /></div>
+						</a>
+						<!--//imgArea end -->
+					</div>
+					<!--//topArea end -->
+					<!-- botArea -->
+					<div class="botArea">
+						<button class="btn2">이벤트보기</button>
+						<div class="title">빵원티켓 소개</div>
+						<div class="text">선착순 예매 이벤트</div>
+					</div>
+					<!--//botArea end -->
+				</div>
+				<!--//item 광고 end -->
+				<!-- item 2단 광고-->
+				<div class="item swiper-slide ad col2">
+					<!-- topArea -->
+					<div class="topArea">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="playBtn">재생</div>
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_104x214.png" alt="광고" /></div>
+						</a>
+						<!--//imgArea end -->
+					</div>
+					<!--//topArea end -->
+					<!-- botArea -->
+					<div class="botArea">
+						<button class="btn2">바로예매</button>
+						<div class="title">인사이드 아웃 2, 새로운 감정들의 등장!</div>
+						<div class="text">픽사는 다 계획이 있구나!</div>
+					</div>
+					<!--//botArea end -->
+				</div>
+				<!--//item 2단 광고 end -->
+				<!-- item 광고-->
+				<div class="item swiper-slide ad">
+					<!-- topArea -->
+					<div class="topArea">
+						<!-- imgArea -->
+						<a href="#" class="posterBox imgArea">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_104x214.png" alt="광고" /></div>
+						</a>
+						<!--//imgArea end -->
+					</div>
+					<!--//topArea end -->
+					<!-- botArea -->
+					<div class="botArea">
+						<div class="title">빵원티켓 소개빵원티켓 소개빵원티켓 소개빵원티켓 소개빵원티켓 소개빵원티켓 소개빵원티켓 소개빵원티켓 소개</div>
+						<div class="text">선착순 예매 이벤트선착순 예매 이벤트선착순 예매 이벤트선착순 예매 이벤트선착순 예매 이벤트</div>
+					</div>
+					<!--//botArea end -->
+				</div>
+				<!--//item 광고 end -->
+				<!-- item 더보기-->
+				<div class="item more">
+					<a href="#" class="moreBtn">더보기</a>
+				</div>
+				<!--//item 더보기 end -->
+			</div>
+  
+		</section>
+		<!--//메인영화리스트 end -->
+
+		<!-- quick바로가기 -->
+		<section class="quickMenuLink">
+			<a href="#" class="item it01"><span></span>마이메뉴</a>
+			<a href="#" class="item it03"><span></span>메가굿즈샵</a>
+			<a href="#" class="item it05"><span></span>프라이빗예매</a>
+			<a href="#" class="item it07"><span></span>포토카드</a>
+		</section>
+		<!--//quick바로가기 end -->
+
+		<!-- 지금 주목해야 할 상품 -->
+		<section class="focusStore">
+			<div class="titleAreaBox">
+				<h4 class="title">지금 주목해야 할 상품</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<div class="fs_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide on">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+						<span class="delivery">배송</span>
+						<p class="text">오리지널 비디오북 No.2 디즈니 코코</p>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--//지금 주목해야 할 상품 end -->
+
+		<!-- 광고영역 타입1 -->
+		<section class="adAreaBox type1">
+			<img src="https://mlink-cdn.netinsight.co.kr/2024/08/08/3d2ea3e06999a768f1c1eacc5df9669b.jpg" />
+		</section>
+		<!--//광고영역 타입1 end -->
+
+		<!-- 알고보면 더 재밌는 무비피드 -->
+		<section class="movieFeedArea">
+			<div class="titleAreaBox">
+				<h4 class="title">지금 주목해야 할 상품</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<div class="top">
+				<img src="https://img.megabox.co.kr/SharedImg/movieFeed/2024/08/07/4Hx0Fsl5cKPpYV40dKtNnWrVmuN2W3vv.jpg" alt="무비피드내용" />
+				<div class="like">57</div>
+			</div>
+
+			<div class="mf_list">
+				<div class="item">
+					<img src="https://img.megabox.co.kr/SharedImg/movieFeed/2024/07/22/R3lu2pD7BIuPEpO75cC0jf7k0AusaM5C.jpg" />
+					<dl>
+						<dt>A24의 믿고보는 신작<br>모든 사람의 꿈에 나타난 한 남자</dt>
+						<dd>아리 애스터 감독의 드림시나리오</dd>
+					</dl>
+				</div>
+				<div class="item">
+					<img src="https://img.megabox.co.kr/SharedImg/movieFeed/2024/07/22/R3lu2pD7BIuPEpO75cC0jf7k0AusaM5C.jpg" />
+					<dl>
+						<dt>A24의 믿고보는 신작<br>모든 사람의 꿈에 나타난 한 남자</dt>
+						<dd>아리 애스터 감독의 드림시나리오</dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+		<!--//알고보면 더 재밌는 무비피드 end -->
+
+		<!-- 특별한 만남, 무대인사 ∙ 시사 -->
+		<section class="moviePreview">
+			<div class="titleAreaBox">
+				<h4 class="title">특별한 만남, 무대인사 ∙ 시사</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<div class="mp_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide on">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="title"><탈주> 2주차 무대인사</p>
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--//특별한 만남, 무대인사 ∙ 시사 end -->
+
+		<!-- 진행 중인 이벤트 -->
+		<section class="movieEvent">
+			<div class="titleAreaBox">
+				<h4 class="title">진행 중인 이벤트</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<!-- 카테고리 -->
+			<div class="movieCategory">
+				<div class="categoryList">
+					<a href="#" class="item on">메가Pick</a>
+					<a href="#" class="item">영화</a>
+					<a href="#" class="item new">극장</a>
+					<a href="#" class="item">제휴/할인</a>
+					<a href="#" class="item">시사회/무대인사</a>
+					<a href="#" class="item">시사회/무대인사</a>
+					<a href="#" class="item">시사회/무대인사</a>
+					<a href="#" class="item">시사회/무대인사</a>
+					<a href="#" class="item">시사회/무대인사</a>
+				</div>
+			</div>
+			<!--//카테고리 end -->
+
+			<div class="me_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide on">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="이미지" />
+						<p class="text">2024.07.13 ~ 2024.07.14</p>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--//진행 중인 이벤트 end -->
+
+		<!-- 메가박스의 모든 특별관 -->
+		<section class="specialTheater">
+			<div class="titleAreaBox">
+				<h4 class="title">더 다양하게 즐기는 영화</h4>
+				<a href="#" class="arrowLink">더보기</a>
+			</div>
+
+			<!-- 상단 아이콘 영역 -->
+			<div class="sts_swiperPagination"></div>
+			<!--//상단 아이콘 영역 end -->
+			<!-- specialTheaterSwiper -->
+			<div class="swiper-container specialTheaterSwiper">
+
+				<div class="swiper-wrapper">
+					<!-- Led CINEMA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>MEGA I LED</h4>
+							<p>무한대의 명암비, 완벽한 컬러 재현력</p>
+						</div>						
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_led.png"></div>
+					</div>
+					<!--//Led CINEMA end -->
+
+					<!-- Recliner CINEMA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>LE RECLINER by MEGA</h4>
+							<p>맞춤형 리클라이닝 시스템이 구현하는<br>극강의 편안함</p>
+						</div>						
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_recliner.png"></div>
+					</div>
+					<!--//Recliner CINEMA end -->
+
+					<!-- DOLBY VISION -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>DOLBY VISION+ATMOS</h4>
+							<p>돌비 시네마에 적용된 돌비 비전과 돌비 애트모스,<br/>리클라이너를 더한 프리미엄 클래스</p>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_dolby_vision.png"></div>
+					</div>
+					<!--//DOLBY VISION end -->
+
+					<!-- DOLBY CINEMA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>DOLBY CINEMA</h4>
+							<p>완벽한 영화 관람을 완성하는 <br>하이엔드 시네마</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_c.png"></div>
+							<div class="title">Dolby Cinema 전용 관람권</div>
+							<ul class="numberArea">
+								<li class="n2">18,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_dolby_cinema.png"></div>
+					</div>
+					<!--//DOLBY CINEMA end -->
+
+					<!-- DOLBY ATMOS -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>MEGA | DOLBY ATMOS</h4>
+							<p>차원이 다른 공간감과 디테일한 사운드</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_a.png"></div>
+							<div class="title">Dolby Atmos 전용 관람권</div>
+							<ul class="numberArea">
+								<li class="n1">6%</li>
+								<li class="n2">16,000원</li>
+								<li class="n3">17,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_mega_dolby_atmos.png"></div>
+					</div>
+					<!--//DOLBY ATMOS end -->
+
+					<!-- MEGA | MX4D -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>MEGA | MX4D</h4>
+							<p>다이내믹 이펙트가 선사하는<br>새로운 영화 체험</p>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_mega_mx4d.png"></div>
+					</div>
+					<!--//MEGA | MX4D end -->
+
+					<!-- BOUTIQUE PRIVATE by MEGA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>BOUTIQUE PRIVATE by MEGA</h4>
+							<p>오직 나와 소중한 사람들을 위한 <br>프라이빗한 극장 경험</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_bp.png"></div>
+							<div class="title">[코엑스] 더 부티크 프라이빗 1호 전용 관람권(주중)</div>
+							<ul class="numberArea">
+								<li class="n1">30%</li>
+								<li class="n2">350,000원</li>
+								<li class="n3">500,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_boutique_private.png"></div>
+					</div>
+					<!--//BOUTIQUE PRIVATE by MEGA end -->
+
+					<!-- BOUTIQUE PRIVATE by MEGA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>BOUTIQUE PRIVATE by MEGA</h4>
+							<p>오직 나와 소중한 사람들을 위한<br> 
+								프라이빗한 극장 경험</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_bs.png"></div>
+							<div class="title">더 부티크 스위트 전용관람권</div>
+							<ul class="numberArea">
+								<li class="n2">40,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_boutique_private.png"></div>
+					</div>
+					<!--//BOUTIQUE PRIVATE by MEGA end -->
+
+					<!-- BOUTIQUE SUITE by MEGA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>BOUTIQUE SUITE by MEGA</h4>
+							<p>웰컴 패키지가 더해진 <br>럭셔리한 공간 경험</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_bs.png"></div>
+							<div class="title">더 부티크 스위트 전용관람권</div>
+							<ul class="numberArea">
+								<li class="n2">40,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_boutique_suite.png"></div>
+					</div>
+					<!--//BOUTIQUE SUITE by MEGA end -->
+
+					<!-- BOUTIQUE by MEGA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>BOUTIQUE by MEGA</h4>
+							<p>섬세하게 디자인된 감각적인<br>극장 경험</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_b.png"></div>
+							<div class="title">더 부티크 전용관람권</div>
+							<ul class="numberArea">
+								<li class="n1">7%</li>
+								<li class="n2">15,000원</li>
+								<li class="n3">16,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_boutique.png"></div>
+					</div>
+					<!--//BOUTIQUE by MEGA end -->
+
+					<!-- COMFORT by MEGA -->
+					<div class="swiper-slide">
+						<div class="titleBox">
+							<h4>COMFORT by MEGA</h4>
+							<p>컴포트 체어로 누리는 <br>더 안락한 영화 경험</p>
+						</div>
+						<div class="item">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/product_c.png"></div>
+							<div class="title">일반관람권</div>
+							<ul class="numberArea">
+								<li class="n2">15,000원</li>
+							</ul>
+						</div>
+						<div class="bgImg"><img src="../../../static/mb/images/2024renewal/theater/bg_comfort.png"></div>
+					</div>
+					<!--//COMFORT by MEGA end -->
+
+				</div>
+			</div>
+			<!--//specialTheaterSwiper end -->
+
+
+		</section>
+		<!--//메가박스의 모든 특별관 end -->
+
+		<!-- 광고영역 타입2 -->
+		<section class="adAreaBox type2">
+			<div class="adType2_Swiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide"><img src="https://mlink-cdn.netinsight.co.kr/2024/08/08/3d2ea3e06999a768f1c1eacc5df9669b.jpg" /></a>
+					<a href="#" class="item swiper-slide"><img src="https://mlink-cdn.netinsight.co.kr/2024/08/08/3d2ea3e06999a768f1c1eacc5df9669b.jpg" /></a>
+					<a href="#" class="item swiper-slide"><img src="https://mlink-cdn.netinsight.co.kr/2024/08/08/3d2ea3e06999a768f1c1eacc5df9669b.jpg" /></a>
+					<a href="#" class="item swiper-slide"><img src="https://mlink-cdn.netinsight.co.kr/2024/08/08/3d2ea3e06999a768f1c1eacc5df9669b.jpg" /></a>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<!--//광고영역 타입2 end -->
+
+		<!-- 팝오버 광고 -->
+		<div class="layer-dimmed" id="banner_layer" style="display: none;"></div>
+		<div class="ad-popup2 z-index-10099" id="banner_content" style="display: none;">
+			<button type="button" class="btn-close-main-notice" onclick="fn_bannerClose('202412231104')">닫기</button>
+			<div class="layer-cont">
+				<!-- 모두의영화 배너 -->
+				<div class="adAreaBox type3">
+					<img src="../../../static/mb/images/2024renewal/@sample_AD.png">
+				</div>
+
+				<div class="pop-slide swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+					<div class="swiper-wrapper" id="swiper-wrapper-12c1610c101f29104e2" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+						<div class="item swiper-slide swiper-slide-active" role="group" aria-label="1 / 5" style="margin-right: 8px;">
+							<a href="https://www.megabox.co.kr/event/detail?eventNo=16710">
+								<img src="https://img.megabox.co.kr/SharedImg/frontBanner/2024/12/23/BrxS0vuByN1xvo66Nbuwouki4TtGr3Kp.jpg" alt="null" onerror="moNoImg(this)">
+							</a>
+						</div>
+						<div class="item swiper-slide swiper-slide-next" role="group" aria-label="2 / 5" style="margin-right: 8px;">
+							<a href="https://megabox.co.kr/event/detail?eventNo=16843">
+								<img src="https://img.megabox.co.kr/SharedImg/frontBanner/2024/12/23/C6B2wYPedaYerG1O1awpcQWZSUlRfzdO.jpg" alt="null" onerror="moNoImg(this)">
+							</a>
+						</div>
+						<div class="item swiper-slide" role="group" aria-label="3 / 5" style="margin-right: 8px;">
+							<a href="https://megabox.co.kr/event/detail?eventNo=16807">
+								<img src="https://img.megabox.co.kr/SharedImg/frontBanner/2024/12/24/LHdNNGD6ejwNLfUOuLRYoH8mTDKG1Las.jpg" alt="null" onerror="moNoImg(this)">
+							</a>
+						</div>
+						<div class="item swiper-slide" role="group" aria-label="4 / 5" style="margin-right: 8px;">
+							<a href="https://www.megabox.co.kr/event/detail?eventNo=16832">
+								<img src="https://img.megabox.co.kr/SharedImg/frontBanner/2024/12/23/50Qsx10sS6ZXTQte5wIxbx3yGR6crE0X.jpg" alt="null" onerror="moNoImg(this)">
+							</a>
+						</div>
+						<div class="item swiper-slide" role="group" aria-label="5 / 5" style="margin-right: 8px;">
+							<a href="https://www.megabox.co.kr/event/detail?eventNo=16856">
+								<img src="https://img.megabox.co.kr/SharedImg/frontBanner/2024/12/24/FHLZ8J0ziAjcAJWv5eM38EqGlS4b4pV4.jpg" alt="null" onerror="moNoImg(this)">
+							</a>
+						</div>
+					</div>
+					<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+				</div>
+				<div class="btn_pg swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+					<span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span>
+					<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+					<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span>
+					<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span>
+					<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>
+				</div>
+			</div>
+			<div class="btn-group col-2">
+				<input type="checkbox" id="no_see" class="bg-chk"><label for="no_see">하루동안 보지 않기</label>
+			</div>
+		</div>
+
+	</div>
+	<!--//mainSection end -->
+
+
+	<footer id="footer" class="r24_foot">
+		<div class="footerHide"> <!--act 토글 (상단 jquery있음) -->
+			<h5 class="logo"><a href="#">megabox</a><span class="arrow"></span></h5>
+			<ul class="hideList">
+				<li>대표이사 : 홍정인</li>
+				<li>주소 : 서울특별시성동구왕십리로50, 6층(성수동1가, 메가박스스퀘어)</li>
+				<li>ARS : 1544-0070 <a href="#">고객센터</a></li>
+				<li>대표이메일 : m.dreamcenter@partner.megabox.co.kr</li>
+				<li>사업자등록번호 : 211-86-59478</li>
+				<li>통신판매업신고번호 : 2023-서울성동-0177 <a href="#">사업자정보확인</a></li>
+				<li>개인정보보호책임자 : 강병철</li>
+				<li>호스팅사업자 : (주)콘텐트리중앙</li>
+			</ul>
+		</div>
+		<ul class="links">
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">위치기반서비스이용약관</a></li>
+			<li><a href="#">PC버전</a></li>
+		</ul>
+		<p class="copy">© MegaboxJoongAng, Inc.</p>
+	</footer>
+
+
+	<!-- 메인티켓배너 -->
+	<div class="fixTicketBanner" style="display: none;">
+		<a href="#" class="left">
+			<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_w72.png"></div>
+			<div class="conts"> 
+				<ul class="row">
+					<li class="day">D-1</li>
+					<li class="name">트랜스포머 ONE</li>
+					<li class="cinemae">상암월드컵경기장</li>
+				</ul>
+				<ul class="row2">
+					<li class="time">99:99</li>
+					<li class="room">99관[Laser]</li>
+					<li class="seat">A2-3, F16-17, F18-17</li>
+				</ul>
+			</div>
+		</a>
+		<a href="#" class="ticketLink"><em>티켓</em><span class="numb">5</span></a>
+	</div>
+	<!-- 메인티켓배너 -->
+
+
+	<!-- btnBottom bnb-main 클래스변경--> 
+	<div class="btnBottom bnbMain">
+		<button type="button" class="button-bot on">
+			<i class="icon2 btn_home_bl30"></i>
+			<span>홈</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_book_52">바로예매</i>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_mOrder_bl30"></i>
+			<span>모바일오더</span>
+		</button>
+	</div>
+	<!-- btnBottom bnbMain -->
+</body>
+</html>

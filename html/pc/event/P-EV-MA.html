@@ -1,0 +1,702 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>진행중이벤트 &gt; 이벤트 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function(){
+		if( $('.event-swiper').length > 0 ){
+			var event_swiper = new Swiper('.event-swiper', {
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: true,
+				},
+				loop : true,
+				slidesPerView: 2,
+				spaceBetween: 40,
+				pagination: {
+					el: '.event-pagination',
+					//type: 'fraction',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.event-prev',
+					nextEl : '.event-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+
+			// swiper 전체 count
+			all_count = $('.event-swiper .cell').length;
+			dupli_count = $('.event-swiper .swiper-slide-duplicate').length;
+			real_count = all_count - dupli_count;
+			$('.event-slider .event-count .total').text(real_count)
+
+			// 현재 활성화된 swiper
+			event_swiper.on('slideChange', function(){
+				$('.event-slider .event-count .active').text(event_swiper.realIndex + 1)
+			});
+
+			// 자동실행 정지
+			$('.event-util .pause').on('click', function(){
+				event_swiper.autoplay.stop();
+
+				$(this).removeClass('on');
+				$('.event-util .play').addClass('on').focus();
+			});
+
+			// 자동실행 시작
+			$('.event-util .play').on('click', function(){
+				event_swiper.autoplay.start();
+
+				$(this).removeClass('on');
+				$('.event-util .pause').addClass('on').focus();
+			});
+
+			// 좌우 이동시 자동실행 정지됨
+			$(document).on('click','.event-prev, .event-next', function(){
+				$('.event-util .pause').removeClass('on');
+				$('.event-util .play').addClass('on');
+			});
+
+			// 포커스 됐을때 정지
+			/* $('.event-swiper .cell a').on({
+				focus : function(){
+					event_swiper.autoplay.stop();
+				}
+			}); */
+
+			// 마우스 오버시 정지
+			/* $('.event-swiper').on({
+				mouseenter : function(){
+					event_swiper.autoplay.stop();
+					$('.event-util .pause').removeClass('on');
+					$('.event-util .play').addClass('on');
+				}
+			}); */
+
+			$(window).resize(function(){
+				event_swiper.update();
+			}).resize();
+		}
+	});
+
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">이벤트</a>
+						<a href="">진행중 이벤트</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<div id="contents">
+
+				<div class="inner-wrap">
+					<h2 class="tit">진행중인 이벤트</h2>
+
+					<div class="tab-list fixed">
+						<ul>
+							<li class="on"><a href="">전체</a></li>
+							<li><a href="" >메가박스</a></li>
+							<li><a href="">영화</a></li>
+							<li><a href="">극장</a></li>
+							<li><a href="">제휴/할인</a></li>
+							<li><a href="">무대인사/시사회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="event-slider">
+					<div class="inner-wrap">
+						<p class="name"><span>김메가</span>님, 참여하실 만한 이벤트를 모아봤어요</p>
+
+						<div class="event-pagination"></div>
+
+						<div class="event-count">
+							<span title="현재 페이지" class="active">1</span> /
+							<span title="전체 페이지" class="total">2</span>
+						</div>
+
+						<div class="event-util">
+							<button type="button" class="event-prev">이전 이벤트 보기</button>
+							<button type="button" class="event-next">다음 이벤트 보기</button>
+							<button type="button" class="pause on">일시정지</button>
+							<button type="button" class="play">자동재생</button>
+						</div>
+
+						<div class="event-control">
+							<button type="button" class="event-prev">이전 이벤트 보기</button>
+							<button type="button" class="event-next">다음 이벤트 보기</button>
+						</div>
+					</div>
+
+					<div class="event-swiper">
+						<div class="swiper-wrapper">
+							<!-- 반복 -->
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+							<!--// 반복 -->
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="inner-wrap">
+					<div class="tit-util mt70">
+						<!-- 가이드 수정 -->
+						<h3 class="tit">메가박스</h3>
+
+						<div class="right">
+							<a href="">더보기 <i class="iconset ico-arr-right-gray ml05"></i></a>
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="event-list mt15">
+						<ul>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70">
+						<!-- 가이드 수정 -->
+						<h3 class="tit">영화</h3>
+
+						<div class="right">
+							<a href="">더보기 <i class="iconset ico-arr-right-gray ml05"></i></a>
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="event-list mt15">
+						<ul>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70">
+						<!-- 가이드 수정 -->
+						<h3 class="tit">극장</h3>
+
+						<div class="right">
+							<a href="">더보기 <i class="iconset ico-arr-right-gray ml05"></i></a>
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="event-list mt15">
+						<ul>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70">
+						<!-- 가이드 수정 -->
+						<h3 class="tit">제휴할인</h3>
+
+						<div class="right">
+							<a href="">더보기 <i class="iconset ico-arr-right-gray ml05"></i></a>
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="event-list mt15">
+						<ul>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70">
+						<!-- 가이드 수정 -->
+						<h3 class="tit">무대인사/회원시사회</h3>
+
+						<div class="right">
+							<a href="">더보기 <i class="iconset ico-arr-right-gray ml05"></i></a>
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="event-list mt15">
+						<ul>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event-list-megabox.jpg" alt="" /></p>
+
+									<p class="tit">
+										세종문화회관 오페라 &lt;베르테르&gt; 클래식 소사이어티 회원 초대 이벤트
+									</p>
+
+									<p class="date">
+										2019.12.12 ~ 2019.12.13
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*
+	나눔바른고딕 경량화버젼
+*/
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-weight: 400;
+	src: url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicSubset.eot');
+	src: url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicSubset.eot?#iefix') format('embedded-opentype'),
+	     url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicSubset.woff') format('woff'),
+	     url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicSubset.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-weight: 700;
+	src: url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicBoldSubset.eot');
+	src: url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicBoldSubset.eot?#iefix') format('embedded-opentype'),
+	     url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicBoldSubset.woff') format('woff'),
+	     url('https://img.megabox.co.kr/static/pc/font/nanum/NanumBarunGothicBoldSubset.ttf') format('truetype');
+}

@@ -1,0 +1,530 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>포인트 이용내역 &gt; 멤버십 포인트 &gt; 나의메가박스 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">나의메가박스</a>
+						<a href="">멤버십 포인트</a>
+						<a href="">포인트 이용내역</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">나의 메가박스</a></p>
+						<ul>
+							<li><a href="">예매/구매내역</a></li>
+							<li><a href="">영화/스토어 관람권</a>
+								<ul class="depth3">
+									<li><a href="">영화관람권</a></li>
+									<li><a href="">스토어교환권</a></li>
+									<li><a href="">기프트카드</a></li>
+								</ul>
+							</li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">맴버십 포인트</a>
+								<ul class="depth3">
+									<li class="on"><a href="">포인트 이용내역</a></li>
+									<li><a href="">맴버십 카드관리</a></li>
+								</ul>
+							</li>
+							<li><a href="">나의 무비스토리</a></li>
+							<li><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a>
+								<ul class="depth3">
+									<li><a href="">개인정보 수정</a></li>
+									<li><a href="">선택정보 수정</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div id="contents">
+					<h2 class="tit">포인트 이용내역</h2>
+
+					<!-- point-present-condition -->
+					<div class="point-present-condition">
+						<div class="tit-area">
+
+							<!-- 2019-07-08 : 느낌표에 레이어 추가 -->
+							<p class="tit">나의 포인트 정보 <a href="#layer_my_point_info" class="btn-modal-open" w-data="500" h-data="350"><i class="iconset ico-exclamation-gray">툴팁</i></a></p>
+
+							<div class="right">
+								<a href="" class="button gray-line">포인트 비밀번호 설정</a>
+							</div>
+						</div>
+
+						<!-- cont-area -->
+						<div class="cont-area">
+							<!-- summary -->
+							<div class="summary">
+								<div class="usable">
+									<p class="tit">사용가능 포인트</p>
+
+									<p class="point">
+										51,000 P
+									</p>
+								</div>
+
+								<div class="section">
+									<div class="cell old">
+										<p class="tit">구 포인트</p>
+
+										<p class="point">
+											30,000 P
+										</p>
+									</div>
+
+									<div class="cell new">
+										<p class="tit">신 포인트</p>
+
+										<p class="point">
+											20,000 P
+										</p>
+									</div>
+								</div>
+
+								<p class="txt-info">
+									※ 매점이용은  신포인트만 사용 가능합니다.
+								</p>
+
+								<div class="oval">
+									<p class="tit">적립예정</p>
+
+									<p class="point">1,000 P</p>
+								</div>
+
+								<div class="oval">
+									<p class="tit">소멸예정 <a href="#layer_modal_point_del" class="btn-modal-open" w-data="600" h-data="670"><i class="iconset ico-circle-plus-small">소멸예정 툴팁</i></a></p>
+
+									<p class="point">0 P</p>
+								</div>
+							</div>
+							<!--// summary -->
+
+							<!-- this-year -->
+							<div class="this-year">
+								<!-- 2019-07-17 : 문구 수정 -->
+								<p class="tit-year">VIP 선정 포인트 현황</p>
+
+								<!-- section -->
+								<div class="section one">
+									<div class="cell old">
+										<p class="tit">구 포인트</p>
+
+										<div class="row row-2">
+											<p class="txt">매표</p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div>
+
+										<div class="row">
+											<p class="txt">이벤트<span>(VIP등급대상)</span></p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div>
+
+										<!-- 2019-07-17 : 삭제 -->
+										<!-- <div class="row">
+											<p class="txt">기타<span>(VIP등급대상 외)</span></p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div> -->
+
+										<div class="sum">
+											27,000 P
+										</div>
+									</div>
+
+									<div class="cell new">
+										<p class="tit">신 포인트</p>
+
+										<div class="row">
+											<p class="txt">매표</p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div>
+
+										<div class="row">
+											<p class="txt">매점</p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div>
+
+										<div class="row">
+											<p class="txt">이벤트<span>(VIP등급대상)</span></p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div>
+
+										<!-- 2019-07-17 : 삭제 -->
+										<!-- <div class="row">
+											<p class="txt">기타<span>(VIP등급대상 외)</span></p>
+
+											<p class="point">
+												30,000
+											</p>
+										</div> -->
+
+										<div class="sum">
+											27,000 P
+										</div>
+									</div>
+								</div>
+								<!--// section -->
+							</div>
+							<!--// this-year -->
+						</div>
+						<!--// cont-area -->
+					</div>
+					<!--// point-present-condition -->
+
+					<!-- 2019-07-08 : 레이어 추가 -->
+					<!-- 레이어 : 나의 포인트 정보 -->
+					<section id="layer_my_point_info" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">나의 포인트 정보</h3>
+							</header>
+
+							<div class="layer-con">
+
+								기획 : 내용 미정
+
+							</div>
+
+							<div class="btn-group-fixed">
+								<button type="button" class="button purple close-layer">닫기</button>
+							</div>
+
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					<!--// 레이어 : 나의 포인트 정보 -->
+
+					<!-- 레이어 : 소명예정 포인트 -->
+					<section id="layer_modal_point_del" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">소멸예정 포인트</h3>
+							</header>
+
+							<div class="layer-con">
+
+								<!-- layer-my-point-delete -->
+								<div class="layer-my-point-delete">
+									<div class="box-slash a-c">
+										회원님의 2019년 03월 31일(현재 시각 기준)<br />
+										소멸예정 포인트는 <em>9,999 point</em> 입니다.
+									</div>
+
+									<p class="reset mt20">소멸예정 포인트 (매월 말 극장영업 종료 시)</p>
+
+									<div class="table-wrap mt10">
+										<table class="data-table a-c">
+											<caption>년, 월, 일 기준 소멸예정 포인트 목록 표</caption>
+											<colgroup>
+												<col style="width:33.3%;" />
+												<col style="width:33.4%;" />
+												<col style="width:33.3%;" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">2019.12.12</th>
+													<th scope="col">2019.12.12</th>
+													<th scope="col">2019.12.12</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span class="font-roboto regular">2,000 P</span></td>
+													<td><span class="font-roboto regular">2,000 P</span></td>
+													<td><span class="font-roboto regular">2,000 P</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<div class="box-border v1 mt20">
+										<p class="tit-box">소멸예정 포인트란?</p>
+
+										<ul class="dash-list">
+											<li>메가박스 적립 포인트의 유효기간은 최초 적립시점에서 24개월이 지난 시점의 해당 월 말일이며, 해당 기간 안에 사용 하지 못한 잔여포인트가 매월 말일 영업 종료 후 소멸 됩니다.</li>
+											<li>예) 2013년 5월 1일~31일까지 적립하였으나 미사용한 포인트가 2015년 5월 31일 영업종료 후 소멸예정이며,</li>
+											<li>2013년 6월 1일~30일까지 적립하였으나 미사용한 포인트가 2015년 6월 30일 영업종료 후 소멸됩니다.</li>
+										</ul>
+
+										<p class="reset mt10 font-red">※ 포인트 자동소멸 제도 개선에 따라 월 단위로 멤버십 포인트가 소멸됩니다.</p>
+									</div>
+								</div>
+								<!--// layer-my-point-delete -->
+							</div>
+
+							<div class="btn-group-fixed">
+								<button type="button" class="button purple close-layer">닫기</button>
+							</div>
+
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					<!--// 레이어 : 소명예정 포인트 -->
+
+					<!-- 가이드 수정 -->
+					<h3 class="tit mt70">이용내역 조회</h3>
+
+					<ul class="dot-list">
+						<li>포인트 적립내역은 상영일 기준이며, 상영일 익일(+1일)에 사용가능 포인트로 자동 적립됩니다.</li>
+						<li>적립예정 포인트는 총 적립 포인트에 미포함 됩니다.</li>
+					</ul>
+
+					<div class="board-list-search mt20">
+						<table>
+							<colgroup>
+								<col style="width:75px;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">조회기간</th>
+									<td>
+										<div class="btn-period">
+											<button type="button" class="btn on">1주일</button>
+											<button type="button" class="btn">1개월</button>
+											<button type="button" class="btn">3개월</button>
+											<button type="button" class="btn">4개월</button>
+										</div>
+
+										<div class="date">
+											<input type="text" title="조회기간 시작 날짜 입력" placeholder="yyyy.mm.dd" class="date-calendar">
+											<span>~</span>
+											<input type="text" title="조회기간 마지막 날짜 입력" placeholder="yyyy.mm.dd" class="date-calendar">
+											<button type="button" class="button gray-line"><i class="iconset ico-search-gray"></i> 조회</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="board-list-util">
+						<p class="result-count"><strong>전체 <b>9376</b> 건</strong></p>
+
+						<!-- 2019-07-03  수정 -->
+						<div class="right">
+							<select title="포인트 구분 선택" class="selectpicker">
+								<option selected="selected">전체</option>
+								<option>적립</option>
+								<option>사용</option>
+								<option>이벤트</option>
+								<option>소멸</option>
+							</select>
+						</div>
+						<!--// 2019-07-03  수정 -->
+					</div>
+
+					<!-- 2019-07-17 : 테이블 수정 -->
+					<div class="table-wrap">
+						<table class="board-list">
+							<caption>적립일, 구분, 내용, 극장, 포인트 항목을 가진 포인트 이용내역 목록 표</caption>
+							<colgroup>
+								<col style="width:120px;" />
+								<col style="width:200px;" />
+								<col />
+								<col style="width:150px;" />
+								<col style="width:110px;" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">적립일</th>
+									<th scope="col">구분</th>
+									<th scope="col">내용</th>
+									<th scope="col">지점</th>
+									<th scope="col">포인트</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2017.12.25</td>
+									<td>영화예매 <span class="font-gray02">/</span> 적립예정</td>
+									<th scope="row">캡틴마블</th>
+									<td>코엑스</td>
+									<td><span class="font-gblue">+1200</span></td>
+								</tr>
+								<tr>
+									<td>2017.12.25</td>
+									<td>받은 포인트 <span class="font-gray02">/</span> 이벤트</td>
+									<th scope="row">선물보낸 분 : 홍*동</th>
+									<td>메가박스 온라인</td>
+									<td><span class="font-gblue">+1200</span></td>
+								</tr>
+								<tr>
+									<td>2017.12.25</td>
+									<td>보낸 포인트 <span class="font-gray02">/</span> 사용</td>
+									<th scope="row">선물받은 분 : 홍*동</th>
+									<td>메가박스 온라인</td>
+									<td><span class="font-red">-1200</span></td>
+								</tr>
+								<tr>
+									<td>2017.12.25</td>
+									<td>매점구입  <span class="font-gray02">/</span> 적립</td>
+									<th scope="row">러브콤보</th>
+									<td>상암월드컵경기장</td>
+									<td><span class="font-gblue">+1200</span></td>
+								</tr>
+								<tr>
+									<td>2017.12.25</td>
+									<td>VIP적립  <span class="font-gray02">/</span> 이벤트</td>
+									<th scope="row">주먹왕 랄프 2: 인터넷 속으로</th>
+									<td>대구신세계 (동대구)</td>
+									<td><span class="font-gblue">+1200</span></td>
+								</tr>
+								<tr>
+									<td colspan="5" class="a-c">
+										조회된 내역이 없습니다
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--// 2019-07-17 : 테이블 수정 -->
+
+					<nav class="pagination">
+						<a href="" class="control first">first</a>
+						<a href="" class="control prev">prev</a>
+						<a href="">1</a>
+						<strong class="active">2</strong>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+						<a href="" class="control next">next</a>
+						<a href="" class="control last">last</a>
+					</nav>
+
+				</div>
+			</div>
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

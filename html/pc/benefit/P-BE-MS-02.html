@@ -1,0 +1,1300 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>VIP 라운지 &gt; 메가박스 멤버십 &gt; 혜택 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function(){
+		if( $('.benefit-swiper').length > 0 ){
+			var benefit_swiper = new Swiper('.benefit-swiper', {
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: true,
+				},
+				loop : true,
+				slidesPerView: 2,
+				spaceBetween: 40,
+				pagination: {
+					el: '.benefit-pagination',
+					//type: 'fraction',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.benefit-prev',
+					nextEl : '.benefit-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+
+			// swiper 전체 count
+			all_count = $('.benefit-swiper .cell').length;
+			dupli_count = $('.benefit-swiper .swiper-slide-duplicate').length;
+			real_count = all_count - dupli_count;
+			$('.benefit-slider .benefit-count .total').text(real_count)
+
+			// 현재 활성화된 swiper
+			benefit_swiper.on('slideChange', function(){
+				$('.benefit-slider .benefit-count .active').text(benefit_swiper.realIndex + 1)
+			});
+
+			// 자동실행 정지
+			$('.benefit-util .pause').on('click', function(){
+				benefit_swiper.autoplay.stop();
+
+				$(this).removeClass('on');
+				$('.benefit-util .play').addClass('on').focus();
+			});
+
+			// 자동실행 시작
+			$('.benefit-util .play').on('click', function(){
+				benefit_swiper.autoplay.start();
+
+				$(this).removeClass('on');
+				$('.benefit-util .pause').addClass('on').focus();
+			});
+
+			// 좌우 이동시 자동실행 정지됨
+			$(document).on('click','.benefit-prev, .benefit-next', function(){
+				$('.benefit-util .pause').removeClass('on');
+				$('.benefit-util .play').addClass('on');
+			});
+
+			$(window).resize(function(){
+				benefit_swiper.update();
+			}).resize();
+		}
+	});
+</script>
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header : layout.html 참조
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">혜택</a>
+						<a href="">메가박스 멤버십</a>
+						<a href="">VIP LOUNGE</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="inner-wrap">
+					<h2 class="tit">메가박스 멤버십</h2>
+
+					<div class="tab-list">
+						<ul>
+							<li><a href="">멤버십 안내</a></li>
+							<li class="on"><a href="">VIP LOUNGE</a></li>
+						</ul>
+					</div>
+
+					<!-- benefit-vip-lounge -->
+					<!--
+
+						로그인 전, 일반 회원일때
+						<div class="benefit-vip-lounge common">
+
+						vip 회원일때
+						<div class="benefit-vip-lounge vip">
+
+						vip 프리미엄 회원일때
+						<div class="benefit-vip-lounge vip-p">
+
+						vvip 회원일때
+						<div class="benefit-vip-lounge vvip">
+					-->
+					<div class="benefit-vip-lounge vip">
+						<!-- 로그인 전, 일반 회원일때 -->
+						<div class="tit-area">
+							<p class="tit">MEGABOX VIP</p>
+
+							<p class="txt">
+								메가박스의 더 많은 혜택을 누릴 수 있는 방법!<br />
+								당신도 VIP가 될 수 있습니다.
+							</p>
+						</div>
+
+						<!-- vip 이상일때 -->
+						<!--
+						<div class="tit-area">
+							<p class="tit">VIP LOUNGE</p>
+
+							<p class="txt">
+								메가박스 VIP고객님을 위한 특뱔한 혜택
+							</p>
+						</div>
+						 -->
+
+						<!-- cont-area -->
+						<div class="cont-area">
+							<!-- 로그인 전 -->
+							<!--
+							<div class="login-before">
+
+								<i class="iconset ico-question-circle-big"></i>
+
+								<p class="txt">
+									로그인 후 메가박스 등급을 확인하세요.
+								</p>
+
+								<div>
+									<a href="#layer_login_common" class="button gray-line large btn-modal-open" w-data='850' h-data='484'>로그인</a>
+								</div>
+							</div>
+							 -->
+							<!--// 로그인 전 -->
+
+							<!-- 로그인 후 -->
+							<div class="login-after">
+								<!-- info -->
+								<div class="info">
+									<div class="this-year">
+										<span>2019년 등급</span>
+
+										<!--
+											일반
+											<em>일반</em>
+
+											vip
+											<em>VIP</em>
+
+											VIP 프리미엄
+											<em>VIP PREMIUM</em>
+
+											vvip
+											<em>VVIP</em>
+										-->
+										<em>일반</em>
+									</div>
+
+									<!-- 2년 연속해서 vip 일때만  출력 -->
+									<!--
+									<div class="continuity">
+										5년 연속 vip에 선정되셨네요!
+									</div>
+									 -->
+
+									<!-- vip 이상일때만 출력 -->
+									<div class="link">
+										<a href="">VIP 스탬프 미션 보기 <i class="iconset ico-arr-right-white-small"></i></a>
+										<a href="">VIP 쿠폰 5매 <i class="iconset ico-arr-right-white-small"></i></a>
+
+										<!-- 2019-07-08 : 툴팁 뜰때 -->
+										<button type="button" class="reset tooltip click">
+											<span>VIP 쿠폰 0매 <i class="iconset ico-arr-right-white-small"></i></span>
+
+											<div class="ir" data-width="250">
+												<div class="cont-area">
+													아직 발급된 쿠폰북이 없습니다.<br />
+													2019 VIP쿠폰북을 발급해보세요!<br />
+													<div class="mt05 a-c">
+														<a href="" class="a-link">쿠폰북발급하기 <i class="iconset ico-arr-right-green"></i></a>
+													</div>
+												</div>
+											</div>
+										</button>
+									</div>
+								</div>
+								<!--// info -->
+
+								<!-- activity -->
+								<div class="activity">
+									<p class="tit">
+										VIP 선정 활동 내역
+
+										<a href="#tooltip01_01" class="tooltip hover">
+											<span><i class="iconset ico-exclamation"></i></span>
+
+											<span id="tooltip01_01" class="ir" data-width="310">
+												현재 년도 기준 VIP 선정에 포함되는<br />
+												누적 포인트 및 서로 다른 영화 관람편수입니다.
+											</span>
+										</a>
+									</p>
+
+									<ul class="dot-list gray">
+										<li>
+											<div class="block">
+												<p class="left">서로 다른 영화 관람</p>
+
+												<p class="right">12편</p>
+											</div>
+										</li>
+										<li>
+											<div class="block">
+												<p class="left">구포인트</p>
+
+												<p class="right">74,300 P</p>
+											</div>
+										</li>
+										<li>
+											<div class="block">
+												<p class="left">신포인트</p>
+
+												<p class="right">6,300 P</p>
+											</div>
+
+											<ul class="detail">
+												<li>
+													<p class="left">티켓</p>
+
+													<p class="right">4,000 P</p>
+												</li>
+												<li>
+													<p class="left">매점</p>
+
+													<p class="right">1,000 P</p>
+												</li>
+												<li>
+													<p class="left">이벤트</p>
+
+													<p class="right">1,300 P</p>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<!--// activity -->
+							</div>
+							<!--// 로그인 후 : login-after -->
+						</div>
+						<!--// cont-area -->
+					</div>
+					<!--// benefit-vip-lounge -->
+				</div>
+
+
+				<!-- 로그인 레이어 : header 와 동일 , 실 개발 시 header 의 로그인 레이어와 꼬일때는 삭제 해야 함 -->
+				<section id="layer_login_common" class="modal-layer">
+					<div class="wrap">
+						<header class="layer-header">
+							<h3 class="tit">로그인</h3>
+						</header>
+
+						<div class="layer-con">
+
+							<div class="login-member col-2">
+								<!-- col-wrap -->
+								<div class="col-wrap">
+									<div class="col left">
+										<!-- login-input-area -->
+										<div class="login-input-area">
+											<input type="text" placeholder="아이디" title="아이디를 입력하세요" class="input-text">
+											<!--
+												경고 메시지 없을때는 태그 자체를 삭제
+											-->
+											<div class="alert">오류메시지 출력</div>
+
+											<input type="password" placeholder="비밀번호" title="비밀번호를 입력하세요" class="input-text mt15">
+											<!--
+												경고 메시지 없을때는 태그 자체를 삭제
+											-->
+											<div class="alert">오류메시지 출력</div>
+
+											<!-- chk-util -->
+											<div class="chk-util">
+												<div class="left">
+													<input type="checkbox" id="save_id_header" /> <label for="save_id_header">아이디 저장</label>
+												</div>
+
+												<div class="right">
+													<div class="hp-ad">
+														<a href="" target="_blank" title="새창 열림"><span>휴대폰 간편로그인</span> <em>광고</em></a>
+													</div>
+												</div>
+											</div>
+											<!--// chk-util -->
+
+											<button type="button" class="button purple large btn-login">로그인</button>
+
+											<div class="link">
+												<a href="">ID/PW 찾기</a>
+												<a href="">회원가입</a>
+												<a href="">비회원 예매확인</a>
+											</div>
+
+											<div class="sns-login">
+												<a href=""><img src="../../../static/pc/images/member/ico-facebook.png" alt="페이스북" /> 페이스북으로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-naver.png" alt="네이버로" /> 네이버로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-kakao.png" alt="카카오톡" /> 카카오톡으로 로그인</a>
+												<a href=""><img src="../../../static/pc/images/member/ico-payco.png" alt="페이코" /> 페이코로 로그인</a>
+											</div>
+										</div>
+										<!--// login-input-area -->
+									</div>
+
+									<div class="col right">
+										<div class="login-ad">
+											<a href="" target="_blank" title="새창 열림"><img src="../../../static/pc/images/member/img-ad.png" alt="광고 : 블루멤버스 포이트로 메가박스 4천원 할인 받으세요!" /></a>
+										</div>
+									</div>
+								</div>
+								<!--// col-wrap -->
+							</div>
+						</div>
+
+						<button type="button" class="btn-modal-close">레이어 닫기</button>
+					</div>
+				</section>
+				<!--// 로그인 레이어 : header 와 동일 -->
+
+				<div class="benefit-slider">
+					<div class="inner-wrap">
+						<p class="tit-slider">VIP 회원님을 위한 특별한 이벤트!!</p>
+
+						<div class="benefit-pagination"></div>
+
+						<div class="benefit-count">
+							<span title="현재 페이지" class="active">1</span> /
+							<span title="전체 페이지" class="total">2</span>
+						</div>
+
+						<div class="benefit-util">
+							<button type="button" class="benefit-prev">이전 이벤트 보기</button>
+							<button type="button" class="benefit-next">다음 이벤트 보기</button>
+							<button type="button" class="pause on">일시정지</button>
+							<button type="button" class="play">자동재생</button>
+						</div>
+
+						<div class="benefit-control">
+							<button type="button" class="benefit-prev">이전 이벤트 보기</button>
+							<button type="button" class="benefit-next">다음 이벤트 보기</button>
+						</div>
+					</div>
+
+					<div class="benefit-swiper">
+						<div class="swiper-wrapper">
+							<!-- 반복 -->
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+							<!--// 반복 -->
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event05.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="cell swiper-slide">
+								<a href="">
+									<p class="img"><img src="../../../static/pc/images/event/@img-event06.png" alt="" /></p>
+									<div class="cont">
+										<p class="tit">&lt;증인&gt; 메가토크 회원 초대 이벤트 내용이 길어지면  처리 해주세요</p>
+										<p class="date">2019.01.01 ~ 2019.01.30</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- inner-wrap -->
+				<div class="inner-wrap">
+					<!-- benefit-vip-selection -->
+					<div class="benefit-vip-selection">
+						<h3 class="tit">VIP 선정 기준</h3>
+
+						<h4 class="tit">2019년 VIP 선정 기준</h4>
+
+						<!-- block -->
+						<div class="block">
+							<div class="box vip">
+								<p class="tit">VIP</p>
+
+								<p class="txt">
+									18년 티켓<br />
+									누적 포인트 2.2만점 이상
+								</p>
+							</div>
+
+							<div class="box vip-p">
+								<p class="tit">VIP PREMIUM</p>
+
+								<p class="txt vip-p">
+									18년 티켓 누적포인트<br />
+									3.4만점 이상  또는<br />
+									18년 19년 연속 VIP
+								</p>
+							</div>
+
+							<div class="box vvip">
+								<p class="tit">VVIP</p>
+
+								<p class="txt vip-p">
+									18년 티켓 누적포인트<br />
+									5.4만점 이상<br />
+									또는 서로 다른 영화  50편 이상
+								</p>
+							</div>
+						</div>
+						<!--// block -->
+
+						<div class="period">
+							<p>선정기간 : 2018.01.01 ~ 2018.12.31(상영일 기준)</p>
+							<p>자격기간 : 2019.03.05 ~ 2020.02.29(상영일 기준)</p>
+						</div>
+
+						<ul class="dot-list mt15">
+							<li>VIP 등급 선정 기준 및 혜택은 매년 상이할 수 있습니다.</li>
+							<li>VIP회원 혜택은 매 선정 시마다 달라질 수 있습니다.</li>
+							<li>초대권, 멤버십 포인트, 더블적립, 이벤트 등을 이용한 티켓 및 포인트는 VIP 산정에서 제외됩니다.</li>
+							<li>서로 다른 영화 기준 : 선정 기간 내 유료 관람한 서로 다른 영화 편수 (동일 영화는 1편으로 산정)</li>
+						</ul>
+					</div>
+					<!--// benefit-vip-selection -->
+
+					<!-- benefit-vip-benefit -->
+					<div class="benefit-vip-benefit mt70">
+						<h3 class="tit">VIP 멤버십 혜택</h3>
+
+						<p class="txt-info">
+							<span>VIP 쿠폰북</span>
+							<span>회원님의 취향에 따라 원하시는 쿠폰을 선택하시고 다운 받으세요!</span>
+						</p>
+
+						<!-- bg-coupon-block -->
+						<div class="bg-coupon-block">
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-movie"></i>
+											</td>
+											<td class="a-l">
+												<p class="tit">영화</p>
+												<p class="txt">VIP 영화관람 쿠폰</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-cafeteria"></i>
+											</td>
+											<td class="a-l">
+												<p class="tit">매점</p>
+												<p class="txt">VIP 매점이용 쿠폰</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--// bg-coupon-block -->
+
+						<ul class="dot-list mt15">
+							<li>본 혜택은 VIP 등급 유지 기간 중 제공됩니다. 직접 쿠폰을 선택하신 후 다운받으셔야 쿠폰을 이용하실 수 있습니다.</li>
+							<li>등급 별 VIP 쿠폰 제공이 상이하오니 VIP 쿠폰북 안내를 통해 확인해주세요.</li>
+							<li>쿠폰마다 유효 기간이 상이합니다. 유효기간을 꼭 확인해 주세요!</li>
+						</ul>
+
+						<div class="btn-group">
+							<a href="" class="button purple large">VIP쿠폰 상세보기</a>
+						</div>
+
+						<p class="txt-info mt40">
+							<span>5년 연속 VIP 혜택</span>
+							<span>축하드립니다! <em class="font-gblue">5년 연속 VIP 회원</em>에게 추가 혜택을 드립니다.</span>
+						</p>
+
+						<!-- bg-coupon-block -->
+						<div class="bg-coupon-block">
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-ticket"></i>
+											</td>
+											<td class="a-l">
+												<p class="tit">매표</p>
+												<p class="txt">일반 2D/3D 무료 관람권 <em class="font-gblue">x3</em></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-cafeteria02"></i>
+											</td>
+											<td class="a-l">
+												<p class="tit">매점</p>
+												<p class="txt">콤보 무료 쿠폰 <em class="font-gblue">x1</em><br />(오리지널 팝콘 R + 탄산음료 R 2)
+												</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--// bg-coupon-block -->
+
+						<ul class="dot-list mt15">
+							<li>지난 VIP 등급 이력은 로그인 후 나의 메가박스 &gt; 지난등급조회에서 확인 가능합니다.</li>
+							<li>쿠폰은 로그인 후 나의 메가박스 &gt; 할인/제휴쿠폰에서 확인하실 수 있습니다.</li>
+						</ul>
+
+						<p class="txt-info mt40">
+							<span>VIP 미션 이벤트</span>
+							<span>매월 서로 다른 영화 5회 이상 관람 시 미션 성공 쿠폰 제공!</span>
+						</p>
+
+						<!-- benefit-mission -->
+						<div class="benefit-mission">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<i class="iconset ico-benefit-mission"></i>
+										</td>
+										<td>
+											<div>
+												<p class="tit">VIP, VIP PREMIUM</p>
+												<p class="txt">영화 3천원 할인권 4매</p>
+											</div>
+
+											<div class="mt05">
+												<p class="tit">VVIP</p>
+												<p class="txt">일반 2D 무료관람권 1매</p>
+											</div>
+										</td>
+										<td>
+											<i class="iconset ico-plus-circle">더하기</i>
+											콤보 4천원 할인권 1매
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// benefit-mission -->
+
+						<ul class="dot-list mt15">
+							<li>티켓 유료 구매 후 포인트 적립된 티켓 기준으로 서로 다른 영화 관람 편수가 책정됩니다.</li>
+							<li>미션 달성 시 제공되는 쿠폰은 매월 10일 제공되며 주말 및 공휴일일 경우 가장 가까운 평일 내 제공됩니다.</li>
+							<li>무료 관람권 및 쿠폰의 유효기간은 제공일로부터 익월 말 까지 입니다.</li>
+						</ul>
+
+						<div class="btn-group">
+							<!-- 로그인 전 -->
+							<button type="button" class="button purple large tooltip click">
+								<span>VIP 미션 이벤트 보기</span>
+								<span class="ir" data-width="235">
+									<span class="cont-area">
+										<span class="login-alert-tooltip">
+											로그인이 필요한 서비스 입니다.<br />
+											<a href="#layer_login_common" class="btn-modal-open"  w-data='850' h-data='484'>로그인 바로가기 <i class="iconset ico-arr-right-green"></i></a>
+										</span>
+									</span>
+								</span>
+							</button>
+
+							<!-- 로그인 후 -->
+							<a href="#layer_stamp_mission_history" class="button purple large btn-modal-open" w-data="600" h-data="800">VIP 미션 이벤트 보기</a>
+						</div>
+
+						<!-- 스탬프 미션 : 마이페이지와 동일 -->
+						<section id="layer_stamp_mission_history" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">VIP 미션 이벤트</h3>
+								</header>
+
+								<div class="layer-con">
+
+									<!-- layer-vip-stamp-mission -->
+									<div class="layer-vip-stamp-mission">
+										<div class="tit-area">
+											<p class="tit">2019년 VIP 스탬프 미션</p>
+
+											<p class="txt">서로 다른 영화 5편 관람하면 VIP 미션쿠폰 발급</p>
+										</div>
+
+										<!--
+											로딩 시 해당 달력에 class on 추가
+											클릭시 on이 이동됨
+										 -->
+										<div class="year-calendar">
+											<button type="button" class="btn">3월</button>
+											<button type="button" class="btn">4월</button>
+											<button type="button" class="btn on">5월</button>
+											<button type="button" class="btn">6월</button>
+											<button type="button" class="btn">7월</button>
+											<button type="button" class="btn">8월</button>
+											<button type="button" class="btn" disabled="disabled">9월</button>
+											<button type="button" class="btn" disabled="disabled">10월</button>
+											<button type="button" class="btn" disabled="disabled">11월</button>
+											<button type="button" class="btn" disabled="disabled">12월</button>
+											<button type="button" class="btn" disabled="disabled">1월</button>
+											<button type="button" class="btn" disabled="disabled">2월</button>
+										</div>
+
+										<div class="stamp-cont">
+											<p class="period">
+												기간 : 2018.7.01~2018.7.31
+											</p>
+
+											<div class="list-stamp">
+												<div class="cell">
+													<p class="bg">
+														<img src="../../../static/pc/images/@img-poster.jpg" alt="" />
+													</p>
+
+													<p class="txt">
+														<em>극한직업 극한직업 극한직업 극한직업 극한직업</em>
+														<span>2018.12.24</span>
+													</p>
+												</div>
+
+												<div class="cell">
+													<p class="bg">
+														<img src="../../../static/pc/images/@img-poster.jpg" alt="" />
+													</p>
+
+													<p class="txt">
+														<em>극한직업 극한직업 극한직업 극한직업 극한직업</em>
+														<span>2018.12.24</span>
+													</p>
+												</div>
+
+												<div class="cell">
+													<p class="bg">
+														<img src="../../../static/pc/images/@img-poster.jpg" alt="" />
+													</p>
+
+													<p class="txt">
+														<em>극한직업 극한직업 극한직업 극한직업 극한직업</em>
+														<span>2018.12.24</span>
+													</p>
+												</div>
+
+												<div class="cell">
+													<p class="bg"></p>
+												</div>
+
+												<div class="cell">
+													<p class="bg">
+														<!-- 미션 완료일 경우 이미지를 css 에서  안보이게 처리 했음 -->
+														<img src="../../../static/pc/images/@img-poster.jpg" alt="" />
+													</p>
+
+													<p class="txt">
+														<em>극한직업 극한직업 극한직업 극한직업 극한직업</em>
+														<span>2018.12.24</span>
+													</p>
+												</div>
+											</div>
+										</div>
+
+										<ul class="dash-list">
+											<li>유료로 구매 후 포인트 적립된 티켓 기준으로 서로 다른 영화 관람 편수가 책정됩니다.</li>
+											<li>
+												동일 영화일 경우 타입이 다르더라도 스탬프는 1개만 등록됩니다.<br />
+												ex) 어벤져스 2D, ATMOS 관람 시 스탬프는 1개만 등록
+											</li>
+											<li>미션 달성시 매월 1일 제공되며 '나의 메가박스 &gt; 할인/제휴쿠폰'에서 확인하실 수 있습니다.</li>
+											<li>VIP 스탬프 미션은 매월 초기화됩니다.</li>
+										</ul>
+
+									</div>
+									<!--// layer-vip-stamp-mission -->
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+						<!--// 스탬프 미션 : 마이페이지와 동일 -->
+
+						<p class="txt-info mt40">
+							<span>VIP DAY</span>
+							<span>매주 수요일 영화 관람 시 포인트 추가 적립!</span>
+						</p>
+
+						<div class="benefit-vip-day">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<i class="iconset ico-benefit-coin"></i>
+											<p>
+												기본적립 5&#37;
+											</p>
+										</td>
+										<td>
+											<i class="iconset ico-plus-gray-big">더하기</i>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-coin"></i>
+											<p>
+												VIP 추가적립 5&#37;
+											</p>
+										</td>
+										<td>
+											<i class="iconset ico-plus-gray-big">더하기</i>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-coin2"></i>
+											<p>
+												VIP DAY 추가 적립 10&#37;
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<ul class="dot-list mt15">
+							<li>VIP 추가 적립 5% 및 VIP DAY 추가 적립 10%는 VIP 선정 포인트에서 제외됩니다.</li>
+						</ul>
+						
+						<p class="txt-info mt40">
+							<span>VIP 생일 축하 쿠폰</span>
+							<span>생일 축하 콤보 무료 쿠폰 제공</span>
+						</p>
+
+						<ul class="dot-list mt15">
+							<li>생일을 맞으신 VIP 고객님께 콤보 무료(오리지널 팝콘 L + 탄산음료 R * 2) 쿠폰을 드립니다.</li>
+							<li>생일 쿠폰은 1년에 1번 지급되며, 한번 발급되면 추가 발급되지 않습니다.</li>
+							<li>생일 쿠폰은 회원정보에 등록된 생일을 기준으로 쿠폰이 발급됩니다.</li>
+							<li>생일 2주전 쿠폰이 발행되며, 유효기간은 발행일로부터 4주입니다. (예: 3월 16일이 생일이라면 3월 2일부터 3월 30일까지 이용 가능)</li>
+							<li>발행된 쿠폰은 로그인 후 ‘나의 메가박스 &gt; 쿠폰’에서 확인 가능합니다.</li>
+						</ul>
+
+						<p class="txt-info mt40">
+							<span>VIP 전용 스티커 및 카드</span>
+						</p>
+
+						<!-- benefit-membership-card -->
+						<div class="benefit-membership-card">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<i class="iconset ico-benefit-card-vip"></i>
+
+											<div>
+												<p class="tit">VIP 스티커</p>
+
+												<p class="txt">멤버십 카드에 VIP 스티커 부착!</p>
+											</div>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-card-vvip"></i>
+
+											<div>
+												<p class="tit">VVIP 멤버십 카드</p>
+
+												<p class="txt">VVIP 회원은 특별한 멤버십 카드 발급!</p>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// benefit-membership-card -->
+
+						<ul class="dot-list mt15">
+							<li>전국 메가박스에서 멤버십 카드에 VIP 스티커를 부착해드립니다.</li>
+							<li>ONLY VVIP 회원에게만 등급이 새겨진 전용 멤버십 카드를 드립니다.</li>
+						</ul>
+
+						<p class="txt-info mt40">
+							<span>중앙멤버십 혜택</span>
+							<span>리조트 할인, CU 모바일 상품권 등 다양한 혜택을 받을 수 있는 중앙멤버십 카드를 신청하세요!</span>
+						</p>
+
+						<!-- benefit-jm-benefit -->
+						<div class="benefit-jm-benefit">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<i class="iconset ico-benefit-jm-resort"></i>
+
+											<p>
+												리조트회원 우대
+											</p>
+										</td>
+										<td>
+											<i class="iconset ico-plus-gray-big">더하기</i>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-jm-sale"></i>
+
+											<p>
+												매가박스 최대 9,000원 할인
+											</p>
+										</td>
+										<td>
+											<i class="iconset ico-plus-gray-big">더하기</i>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-jm-health-chk"></i>
+
+											<p>
+												건강검진 우대
+											</p>
+										</td>
+										<td>
+											<i class="iconset ico-plus-gray-big">더하기</i>
+										</td>
+										<td>
+											<i class="iconset ico-benefit-jm-cu"></i>
+
+											<p>
+												CU 모바일 상품권 10% 할인
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// benefit-jm-benefit -->
+
+						<ul class="dot-list mt15">
+							<li>본 혜택은 아래 카드 신청하기에서 중앙멤버십을 별도 신청하신 고객에 한해 적용 됩니다.</li>
+							<li>중앙멤버십 카드는 VIP 기신청자의 경우 자동 연장되며 휴대폰 번호당 1개만 발급 가능합니다.</li>
+						</ul>
+
+						<div class="btn-group">
+							<a href="http://jmembership.joins.com" target="_blank" title="새창 열림" class="button large">중앙멤버십 상세 안내</a>
+
+							<!-- 로그인 전 -->
+							<button type="button" class="button purple large tooltip click">
+								<span>카드 신청하기</span>
+								<span class="ir" data-width="235">
+									<span class="cont-area">
+										<span class="login-alert-tooltip">
+											로그인이 필요한 서비스 입니다.<br />
+											<a href="#layer_login_common" class="btn-modal-open"  w-data='850' h-data='484'>로그인 바로가기 <i class="iconset ico-arr-right-green"></i></a>
+										</span>
+									</span>
+								</span>
+							</button>
+
+							<!-- 로그인 후 -->
+							<a href="#layer_card_request" class="button purple large btn-modal-open" w-data="850" h-data="800">카드 신청하기</a>
+						</div>
+
+						<section id="layer_card_request" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">중앙멤버십 신청하기</h3>
+								</header>
+
+								<div class="layer-con">
+									<!-- layer-joins-membership-request -->
+									<div class="layer-joins-membership-request">
+										<div class="tit-box">
+											<div class="tit">
+												<span class="font-purple">MEGABOX</span>
+												<i class="iconset ico-x-big"></i>
+												<span class="font-gblue">VIP 중앙멤버십</span>
+											</div>
+
+											<p class="txt">
+												항상 메가박스를 사랑해주시는 VIP 고객님들을 위하여  메가박스와 중앙멤버십이 만나 CIP 멤버십 혜택을 강화하였습니다.<br />
+												VIP 고객님들을 위한 더욱 풍요롭고 다양한 할인 혜택을 만나보세요.
+											</p>
+										</div>
+
+										<!-- box-chk -->
+										<div class="box-chk mt30">
+											<div class="tit">
+												<span class="bg-chk">
+													<input type="checkbox" id="membership_chk_1" />
+													<label for="membership_chk_1"><span>중앙멤버십 혜택 신청</span> <em class="font-red">[필수]</em></label>
+												</span>
+											</div>
+
+											<!-- cont -->
+											<div class="cont">
+												<p>
+													최대 6가지의 더 다양하고 풍성한 VIP 혜택을 받으실 수 있습니다.<br />
+													혜택 적용 기간 :  2019년 2월 28일까지
+												</p>
+
+												<p class="mt10 font-red font-size-14">
+													※ 2018 VIP중 중앙멤버십 기 신청자는 자동 연장됩니다.<br />
+													※ 중앙멤버십 카드는 휴대전화번호당 1개만 발급 가능합니다. 다계정 보유 시 동일한 휴대전화번호로 신청하실 경우 이용에 제한이 있을 수 있습니다.<br />
+													! 제휴사와의 사정에 따라 혜택이 변경 또는 종료될 수 있습니다
+												</p>
+												<div class="benefit-jm-benefit">
+													<table>
+														<tbody>
+															<tr>
+																<td>
+																	<i class="iconset ico-benefit-jm-resort"></i>
+
+																	<p>
+																		리조트회원<br />우대
+																	</p>
+																</td>
+																<td>
+																	<i class="iconset ico-plus-gray-big">더하기</i>
+																</td>
+																<td>
+																	<i class="iconset ico-benefit-jm-sale"></i>
+
+																	<p>
+																		매가박스 최대<br />9,000원 할인
+																	</p>
+																</td>
+																<td>
+																	<i class="iconset ico-plus-gray-big">더하기</i>
+																</td>
+																<td>
+																	<i class="iconset ico-benefit-jm-health-chk"></i>
+
+																	<p>
+																		건강검진<br />우대
+																	</p>
+																</td>
+																<td>
+																	<i class="iconset ico-plus-gray-big">더하기</i>
+																</td>
+																<td>
+																	<i class="iconset ico-benefit-jm-cu"></i>
+
+																	<p>
+																		CU 모바일<br />
+																		상품권 10% 할인
+																	</p>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<!--// cont -->
+										</div>
+										<!--// box-chk -->
+
+										<!-- box-chk -->
+										<div class="box-chk mt20">
+											<div class="tit">
+												<span class="bg-chk">
+													<input type="checkbox" id="membership_chk_2" />
+													<label for="membership_chk_2"><span>중앙일보 구독 신청</span> <em>[선택]</em></label>
+												</span>
+											</div>
+
+											<!-- cont -->
+											<div class="cont">
+												중앙일보 1년 무료 구독 기회! VIP 활동기간인 2019년 2월까지 신청 가능합니다.
+												신청 후 3일 내에 상담원이 전화해서 구독정보 화인 후 배달될 예정이며, 일부 배달불가 지역은 혜택이 제공되지 않습니다.
+												구독관련 문의 : 중앙멤버십 고객센터 02-2108-3456 (평일 9:00~18:00)
+											</div>
+											<!--// cont -->
+										</div>
+										<!--// box-chk -->
+
+										<p class="tit-sub">VIP멤버십 혜택을 받으시기 위해 아래 개인정보 제공에 동의를 해주세요.</p>
+
+										<!-- box-chk -->
+										<div class="box-chk">
+											<div class="tit">
+												<span class="bg-chk">
+													<input type="checkbox" id="membership_chk_3" />
+													<label for="membership_chk_3"><span>제 3자 정보제공에 동의합니다.</span> <em class="font-red">[필수]</em></label>
+												</span>
+											</div>
+
+											<!-- text-cont -->
+											<div class="text-cont">
+												<div class="scroll" tabindex="0">
+													약관내용 출력
+												</div>
+
+												<p class="mt20">※ .동의하지 않을 경우 중앙멤버십 혜택이 제공되지 않습니다.</p>
+											</div>
+											<!--// text-cont -->
+										</div>
+										<!--// box-chk -->
+									</div>
+									<!--// layer-joins-membership-request -->
+								</div>
+
+								<div class="btn-group-fixed">
+									<button type="button" class="button close-layer">닫기</button>
+									<button type="button" class="button purple">신청하기</button>
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+
+						<p class="txt-info mt40">
+							<span>VIP CURTURE EVENT</span>
+							<span>라이프시어터 메가박스에서 당신의 문화생활을 위해 준비했어요~</span>
+						</p>
+
+						<div class="bg-coupon-block">
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-kyobo"></i>
+											</td>
+											<td class="a-l pt10">
+												<p class="tit">교보문고</p>
+												<p class="txt">10&#37; 할인 쿠폰</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="box">
+								<table>
+									<colgroup>
+										<col style="width:180px;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<i class="iconset ico-benefit-hot-tracks"></i>
+											</td>
+											<td class="a-l pt10">
+												<p class="tit">핫트렉스</p>
+												<p class="txt">10&#37; 할인 쿠폰</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<ul class="dot-list mt15">
+							<li>VIP 대상으로 교보문고 &amp; 핫트랙스 10&#37; 할인 쿠폰을 드립니다.(만원 이상 결제 시 사용 가능)</li>
+							<li>할인쿠폰은 SMS 수신동의자 대상 매월 초 제공됩니다.</li>
+							<li>상세 쿠폰 내용은 매월 발송되는 문자를 참고해주세요.</li>
+						</ul>
+
+						<div class="btn-group">
+							<a href="" class="button purple large">이벤트 상세보기</a>
+						</div>
+					</div>
+					<!--// benefit-vip-benefit -->
+				</div>
+				<!--// inner-wrap -->
+			</div>
+			<!--// contents -->
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer : layout.html 참조
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

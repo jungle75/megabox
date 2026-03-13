@@ -1,0 +1,713 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>빠른예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body>
+
+
+	
+	<!-- mege-quick-reserve-inculde : 다른 페이지에서 iframe 으로 설정될 영역 -->
+	<!-- 
+		
+		외부에서 보여질때
+		<div class="mege-quick-reserve-inculde out">
+		
+		
+		이 태그 자체가 없어짐
+		<div class="theater-choice">
+		~
+		</div>
+	 -->
+	
+	<div class="mege-quick-reserve-inculde out">
+	
+		<!-- time-schedule -->
+		<div class="time-schedule quick">
+			<div class="wrap">
+			
+				<!-- 이전날짜 -->
+				<button type="button" title="이전 날짜 보기" class="btn-pre">
+					<i class="iconset ico-cld-pre"></i> <em>이전</em>
+				</button>
+				<!--// 이전날짜 -->
+				
+				<div class="date-list">
+					<!-- 년도, 월 표시 -->
+					<div class="year-area">
+						<div class="year" style="left:30px;">2018.12</div>
+						<div class="year" style="left:450px;">2019.01</div>
+					</div>
+					
+					
+					<div class="date-area">
+						<!-- 
+							날짜클릭시 class : on
+							
+							토요일 class : sat
+							공휴일 class : holi	
+															
+							클릭불가능 class : imposs
+						-->
+						
+						<button type="button" class="on sat" disabled="disabled"><span class="ir">2018년 12월</span><em>25<span class="ir">일</span></em> <span>오늘</span></button>
+						<button type="button" class="holi"><span class="ir">2018년 12월</span><em>25<span class="ir">일</span></em> <span>내일</span></button>									
+						<button type="button" class=""><span class="ir">2018년 12월</span><em>26<span class="ir">일</span></em> <span>월</span></button>
+						<button type="button" class=""><span class="ir">2018년 12월</span><em>27<span class="ir">일</span></em> <span>화</span></button>
+						<button type="button" class=""><span class="ir">2018년 12월</span><em>28<span class="ir">일</span></em> <span>수</span></button>
+						<button type="button" class=""><span class="ir">2018년 12월</span><em>29<span class="ir">일</span></em> <span>목</span></button>
+						<button type="button" class=""><span class="ir">2018년 12월</span><em>30<span class="ir">일</span></em>	<span>금</span></button>
+						<button type="button" class="sat"><span class="ir">2018년 12월</span><em>31<span class="ir">일</span></em>	<span>토</span></button>
+						<button type="button" class="holi"><span class="ir">2019년 1월</span><em>1<span class="ir">일</span></em>	<span>일</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>2<span class="ir">일</span></em>	<span>월</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>3<span class="ir">일</span></em>	<span>화</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>4<span class="ir">일</span></em>	<span>수</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>5<span class="ir">일</span></em>	<span>목</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>6<span class="ir">일</span></em>	<span>금</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>7<span class="ir">일</span></em>	<span>금</span></button>									
+						<button type="button" class="sat"><span class="ir">2019년 1월</span><em>8<span class="ir">일</span></em>	<span>토</span></button>									
+						<button type="button" class="holi"><span class="ir">2019년 1월</span><em>9<span class="ir">일</span></em>	<span>일</span></button>									
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>10<span class="ir">일</span></em>	<span>월</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>11<span class="ir">일</span></em>	<span>화</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>12<span class="ir">일</span></em>	<span>수</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>13<span class="ir">일</span></em>	<span>목</span></button>
+						<button type="button" class=""><span class="ir">2019년 1월</span><em>14<span class="ir">일</span></em>	<span>금</span></button>
+					</div>
+				</div>
+				
+				<!-- 다음날짜 -->
+				<button type="button"  title="다음 날짜 보기" class="btn-next">
+					<i class="iconset ico-cld-next"></i> <em>다음</em>
+				</button>
+				<!--// 다음날짜 -->
+				
+				<!-- 달력보기 -->
+				<div class="bg-line">
+					<button type="button" class="btn-calendar-large" title="달력보기"> 달력보기</button>
+				</div>
+				<!--// 달력보기 -->
+			</div>
+		</div>
+		<!--// time-schedule -->
+		
+		<!-- quick-reserve-area -->
+		<div class="quick-reserve-area">
+		
+			<!-- movie-choice : 영화 선택  -->
+			<div class="movie-choice">
+				<p class="tit">영화</p>
+				
+				<!-- list-area -->
+				<div class="list-area">
+					
+					<!-- all : 전체 -->
+					<div class="all-list">
+						<button type="button" class="btn-tab on">전체</button>
+						
+						<!--
+							관람 등급 표시
+							<span class="movie-grade small age-all">전체 관람가</span>
+							<span class="movie-grade small age-12">12세 이상 관람가</span>
+							<span class="movie-grade small age-15">15세 이상 관람가</span>
+							<span class="movie-grade small age-19">청소년 관람 불가</span>
+							<span class="movie-grade small age-no">미정</span>
+						-->
+						
+						<div class="list">
+							<div class="scroll m-scroll">
+								<ul>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-all">전체 관람가</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span class="txt">너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어 너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-12">12세 이상 관람가</span>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-15">15세 이상 관람가</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-19">청소년 관람 불가</span>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--// all : 전체 -->
+					
+					<!-- other-list  : 큐레이션 -->
+					<div class="other-list">
+						<button type="button" class="btn-tab">큐레이션</button>
+						
+						<!--
+							관람 등급 표시
+							<span class="movie-grade small age-all">전체 관람가</span>
+							<span class="movie-grade small age-12">12세 이상 관람가</span>
+							<span class="movie-grade small age-15">15세 이상 관람가</span>
+							<span class="movie-grade small age-19">청소년 관람 불가</span>
+							<span class="movie-grade small age-no">미정</span>
+						-->
+						
+						<div class="list">
+							<div class="scroll m-scroll">
+								<ul>
+									<li>
+										<button type="button" class="btn" title="큐레이션 영화 제목">
+											<span class="movie-grade small age-all">전체 관람가</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span class="txt">큐레이션 영화 제목</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-12">12세 이상 관람가</span>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-15">15세 이상 관람가</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-19">청소년 관람 불가</span>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									
+									
+									
+									
+									
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn">
+											<span class="movie-grade small age-no">미정</span>
+											<i class="iconset ico-heart-on-small"></i>
+											<span>너의 췌장을 먹고싶어</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--// other-list  : 큐레이션 -->
+				</div>
+				<!--// list-area -->
+				
+				<!-- view-area -->
+				<div class="view-area">
+					
+					<!-- 영화 선택 하지 않았을 때 -->
+					<!--
+					<div class="choice-all">
+						<strong>모든영화</strong>
+						<span>목록에서 영화를 선택하세요.</span>
+					</div>
+					-->
+					
+					<!-- 영화를 한개라도 선택했을 때 -->
+					<div class="choice-list">
+						<div class="bg">
+							<div class="wrap">
+								<div class="img"><img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="" /></div>
+								<button type="button" class="del">삭제</button>
+							</div>
+						</div>
+						
+						<div class="bg">
+							<div class="wrap">
+								<div class="img"><img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="" /></div>
+								<button type="button" class="del">삭제</button>
+							</div>
+						</div>
+						
+						<!-- 비어있는 영역 -->
+						<div class="bg">
+							<!-- epmty -->
+						</div>
+					</div>
+				</div>
+				<!--// view-area -->
+			</div>
+			<!--// movie-choice : 영화 선택  -->
+			
+			<!-- time-choice : 상영시간표 선택 -->
+			<div class="time-choice">
+				<p class="tit">시간</p>
+				
+				<!-- hour-schedule : 시간 선택  : 00~30 시-->
+				<div class="hour-schedule">
+					<button type="button" class="btn-prev-time">이전 시간 보기</button>
+					
+					<div class="wrap">
+						<div class="view">
+							<button type="button" class="hour">00</button>
+							<button type="button" class="hour">01</button>
+							<button type="button" class="hour on">02</button>
+							<button type="button" class="hour">03</button>
+							<button type="button" class="hour">04</button>
+							<button type="button" class="hour">05</button>
+							<button type="button" class="hour">06</button>
+							<button type="button" class="hour">07</button>
+							<button type="button" class="hour">08</button>
+							<button type="button" class="hour">09</button>
+							<button type="button" class="hour">10</button>
+							<button type="button" class="hour">11</button>
+							<button type="button" class="hour">12</button>
+							<button type="button" class="hour">13</button>
+							<button type="button" class="hour">14</button>
+							<button type="button" class="hour">15</button>
+							<button type="button" class="hour">16</button>
+							<button type="button" class="hour">17</button>
+							<button type="button" class="hour">18</button>
+							<button type="button" class="hour">19</button>
+							<button type="button" class="hour">20</button>
+							<button type="button" class="hour">21</button>
+							<button type="button" class="hour">22</button>
+							<button type="button" class="hour">23</button>
+							<button type="button" class="hour">24</button>
+							<button type="button" class="hour">25</button>
+							<button type="button" class="hour">26</button>
+							<button type="button" class="hour">27</button>
+							<button type="button" class="hour">28</button>
+							<button type="button" class="hour">29</button>
+							<button type="button" class="hour">30</button>
+						</div>
+					</div>
+					
+					<button type="button" class="btn-next-time">다음 시간 보기</button>
+				</div>
+				<!--// hour-schedule : 시간 선택  : 00~30 시-->
+				
+				<!-- movie-schedule-area : 시간표 출력 영역-->
+				<div class="movie-schedule-area">
+				
+					<!-- 영화, 영화관 선택 안했을때 -->
+					<!-- 
+					<div class="no-result">
+						<i class="iconset ico-movie-time"></i>
+						
+						<p class="txt">
+							영화와 영화관을 선택하시면<br />
+							상영시간표를 비교하여 볼 수 있습니다.
+						</p>
+					</div>
+					-->
+					
+					<!-- 영화, 영화관 선택 했을때 -->
+					<div class="result">
+						<div class="scroll m-scroll">
+							<ul>
+								<!-- 
+								기본
+								<li>
+								
+								조조
+								<li class="morning" title="조조">
+								
+								브런치
+								<li class="brunch" title="브런치">
+								
+								심야
+								<li class="night" title="심야">
+								 -->
+							
+								<li class="morning" title="조조">
+									<button type="button" class="btn on">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업 극한직업 극한 직업 극한직업 극 한직업 극한직업 극한직업 극한 직업 극한직업 극 한직업 극한직업 극한직업 극한 직업 극한직업 극 한직업 </strong>
+											<em>디지털(자막) &middot; 무대인사 &middot; 회원시사 &middot; 오픈시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li class="brunch" title="브런치">
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li class="night" title="심야">
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											대구신세계(동대구) 더부티크 103호 스위트룸
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="btn">
+										<span class="time">
+											<strong title="영화 시작 시간">15:05</strong>
+											<em title="영화 끝나는 시간">~ 17:05</em>
+										</span>
+									
+										<span class="title">
+											<strong title="영화 제목">극한직업</strong>
+											<em>디지털(자막) 회원시사</em>
+										</span>
+										
+										<span class="theater" title="영화관">
+											코엑스 1관
+										</span>
+										
+										<span class="seat">
+											<strong class="now" title="전여 좌석">555</strong>
+											<em class="all" title="전체 좌석">999</em>
+										</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+					
+					</div>
+				</div>
+				<!--// movie-schedule-area : 시간표 출력 영역-->
+				
+			</div>
+			<!--// time-choice : 상영시간표 선택 -->
+		</div>
+		<!--// quick-reserve-area -->
+		
+		<!-- 
+			광고영역 : 1100px * 80px
+		 -->
+		<div class="quick-reserve-ad-area">
+			<img src="../../../static/pc/images/reserve/@img-ad.jpg" alt="사건의 유일한 목격자 자폐 소녀를 만나다. 증인 : 2월 13일 대개봉. 12세 관람가" />
+		</div>
+		
+	</div>
+	<!--// mege-quick-reserve-inculde : 다른 페이지에서 iframe 으로 설정될 영역 -->
+</body>
+</html>

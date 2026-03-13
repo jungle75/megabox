@@ -1,0 +1,558 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+<title>무비포스트 &gt; 나의 무비스토리 &gt; 나의메가박스 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+	
+	$(function(){
+		/*!
+		* Masonry PACKAGED v4.2.2
+		* Cascading grid layout library
+		* https://masonry.desandro.com
+		* MIT License
+		* by David DeSandro
+		*/
+		
+		// 핀터레스트 선언
+		
+		//$moviePostList.layout();
+		
+		/*
+			2019-07-02
+			가이드 수정
+			window load 된 다음에 실행
+		*/
+		$(window).on('load', function(){
+			$moviePostList = $('.movie-post-list').masonry({
+				itemSelector : '.grid-item',
+				columnWidth : 195,
+				gutter : 20
+			});
+		});
+		
+		// masonry append (더보기 클릭시. 자세한건 사이트 참조)
+		$(document).on('click', '.btn-more-movie-list',function(){
+			
+			var $items = $(
+			'<div class="grid-item">'+
+			'<div class="wrap">'+
+			'<div class="img">'+
+			'<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>'+
+			'</div>'+
+			'<div class="cont">'+
+			'<div class="label">'+
+			'<p class="mania">Movie mania</p>'+
+			'<p class="pick">Editor’s Pick</p>'+
+			'</div>'+
+			'<div class="writer">'+
+			'<a href="">a1a2a3a4a5**</a>'+
+			'<p class="my">my</p>'+
+			'</div>'+
+			'<a href="" class="link">'+
+			'<div class="label">'+
+			'<p class="mania">Movie mania</p>'+
+			'<p class="pick">Editor’s Pick</p>'+
+			'</div>'+
+			'<p class="tit">'+
+			'영화 제목 2줄까지 영화 제목 2줄까지 영화 제목 2줄까지'+
+			'</p>'+
+			'<p class="txt">'+
+			'1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자'+ 
+			'</p>'+
+			'<p class="time">'+
+			'2019.12.12'+
+			'</p>'+
+			'</a>'+
+			'<div class="condition">'+
+			'<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>'+
+			'<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'</div>');
+			
+			// 더보기 추가, 추가후 높이값 다시 계산 됨
+			$moviePostList.append($items).masonry('appended', $items);
+			
+			// 클릭 후 스크롤 아래로 이동. 필요없으면 주석처리 하시면 됩니다.
+			$scroll = $(this).offset().top;
+			$('html, body').finish().animate({ scrollTop : $scroll}, 300);
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+			
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+		
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">나의 메가박스</a>
+						<a href="">나의 무비스토리</a>
+						<a href="">무비포스트</a>
+					</div>
+					
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+						
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+					
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">나의 메가박스</a></p>
+						
+						<ul>
+							<li><a href="">예매/구매내역</a></li>
+							<li><a href="">영화/스토어 관람권</a>
+								<ul class="depth3">
+									<li><a href="">영화관람권</a></li>
+									<li><a href="">스토어교환권</a></li>
+									<li><a href="">기프트카드</a></li>
+								</ul>
+							</li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">맴버십 포인트</a>
+								<ul class="depth3">
+									<li><a href="">포인트 이용내역</a></li>
+									<li><a href="">맴버십 카드관리</a></li>
+								</ul>
+							</li>
+							<li class="on"><a href="">나의 무비스토리</a></li>
+							<li><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a>
+								<ul class="depth3">
+									<li><a href="">개인정보 수정</a></li>
+									<li><a href="">선택정보 수정</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				
+				<div id="contents">
+					<h2 class="tit">나의 무비스토리</h2>
+					
+					<div class="tab-block mb30">
+						<ul>
+							<li><a href="" class="btn">무비타임라인</a></li>
+							<li class="on"><a href="" class="btn">무비포스트</a></li>
+							<li><a href="" class="btn">한줄평</a></li>
+							<li><a href="" class="btn">본영화</a></li>
+							<li><a href="" class="btn">보고싶어</a></li>
+						</ul>
+					</div>
+					
+					<!-- my-movie-post -->
+					<div class="my-movie-post">
+					
+						<div class="tab-sorting mb20">
+							<button type="button" class="on">나의 포스트</button>
+							<button type="button">구독중인포스트</button>
+						</div>
+					
+						<!-- movie-list-util -->
+						<div class="movie-list-util">
+							
+							<p class="result-count  line32">
+								<strong>총 <b class="font-gblue">125</b> 건</strong>
+							</p>
+							
+							<div class="float-r">
+								<div class="movie-sorting">
+									<!--
+										활성화 class="btn on"
+										비 활성호 class="btn"
+									 -->
+									<span><button type="button" class="btn on">최신순</button></span>
+									<span><button type="button" class="btn">공감순</button></span>
+								</div>
+		
+								<!-- 
+								<div class="onair-condition mb30">
+									<button type="button" title="실관람 보기" class="btn-onair">실관람</button>
+								</div>
+								-->
+		
+								<div class="movie-search">
+									<input type="text" title="제목, 장르, 감독, 주연배우를 입력하세요" placeholder="제목, 장르, 감독, 주연배우" class="input-text" />
+									<button type="button" class="btn-search-input">검색</button>
+								</div>
+							</div>
+						</div>
+						<!--// movie-list-util -->
+						
+						<!-- 무비포스트가 없을 때 -->
+						<div class="no-moviepost">
+							등록된 무비포스트가 없습니다.
+						</div>
+						<!--// 무비포스트가 없을 때 -->
+						
+						<!-- 무비포스트가 있을 때 -->
+						<div class="movie-post-list">
+							<div class="grid-item">
+								<div class="wrap">
+									<div class="img">
+										<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									</div>
+									
+									<div class="cont">
+										<div class="writer">
+											<a href="">a1a2a3a4a5**</a>
+											
+											<!--
+												내가 쓴 포스터 일때 나오는 부분 
+												디자인 미정. 디자인 나오면 css로 제어 예정
+											-->
+											<p class="my">my</p>
+										</div>
+										
+										<div class="label">
+											<p class="mania">Movie mania</p>
+											<p class="pick">Editor’s Pick</p>
+										</div>
+
+										<a href="">
+											<p class="tit">
+												영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄
+											</p>
+										</a>
+
+										<a href="#layer_post_detail" w-data="860" h-data="auto" class="link btn-modal-open2">
+											<p class="txt">
+												1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자
+											</p>
+
+											<p class="time">
+												2019.12.12
+											</p>
+										</a>
+										
+										<div class="condition">
+											<!-- 
+												보고싶어 한 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+												
+												보고싶어 하지 않은 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like">보고싶어 수</i> 125</button>
+											 -->
+											<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+											<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+							<div class="grid-item">
+								<div class="wrap">
+									<div class="img">
+										<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									</div>
+									
+									<div class="cont">
+										<div class="writer">
+											<a href="">a1a2a3a4a5**</a>
+											
+											<!--
+												내가 쓴 포스터 일때 나오는 부분 
+												디자인 미정. 디자인 나오면 css로 제어 예정
+											-->
+											<p class="my">my</p>
+										</div>
+										
+										<div class="label">
+											<p class="mania">Movie mania</p>
+											<p class="pick">Editor’s Pick</p>
+										</div>
+
+										<a href="">
+											<p class="tit">
+												영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄
+											</p>
+										</a>
+
+										<a href="#layer_post_detail" w-data="860" h-data="auto" class="link btn-modal-open2">
+											<p class="txt">
+												1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자
+											</p>
+
+											<p class="time">
+												2019.12.12
+											</p>
+										</a>
+										
+										<div class="condition">
+											<!-- 
+												보고싶어 한 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+												
+												보고싶어 하지 않은 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like">보고싶어 수</i> 125</button>
+											 -->
+											<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+											<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+							<div class="grid-item">
+								<div class="wrap">
+									<div class="img">
+										<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									</div>
+									
+									<div class="cont">
+										<div class="writer">
+											<a href="">a1a2a3a4a5**</a>
+											
+											<!--
+												내가 쓴 포스터 일때 나오는 부분 
+												디자인 미정. 디자인 나오면 css로 제어 예정
+											-->
+											<p class="my">my</p>
+										</div>
+										
+										<div class="label">
+											<p class="mania">Movie mania</p>
+											<p class="pick">Editor’s Pick</p>
+										</div>
+
+										<a href="">
+											<p class="tit">
+												영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄
+											</p>
+										</a>
+
+										<a href="#layer_post_detail" w-data="860" h-data="auto" class="link btn-modal-open2">
+											<p class="txt">
+												1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자
+											</p>
+
+											<p class="time">
+												2019.12.12
+											</p>
+										</a>
+										
+										<div class="condition">
+											<!-- 
+												보고싶어 한 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+												
+												보고싶어 하지 않은 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like">보고싶어 수</i> 125</button>
+											 -->
+											<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+											<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="grid-item">
+								<div class="wrap">
+									<div class="img">
+										<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									</div>
+									
+									<div class="cont">
+										<div class="writer">
+											<a href="">a1a2a3a4a5**</a>
+											
+											<!--
+												내가 쓴 포스터 일때 나오는 부분 
+												디자인 미정. 디자인 나오면 css로 제어 예정
+											-->
+											<p class="my">my</p>
+										</div>
+										
+										<div class="label">
+											<p class="mania">Movie mania</p>
+											<p class="pick">Editor’s Pick</p>
+										</div>
+
+										<a href="">
+											<p class="tit">
+												영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄
+											</p>
+										</a>
+
+										<a href="#layer_post_detail" w-data="860" h-data="auto" class="link btn-modal-open2">
+											<p class="txt">
+												1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자
+											</p>
+
+											<p class="time">
+												2019.12.12
+											</p>
+										</a>
+
+										<div class="condition">
+											<!-- 
+												보고싶어 한 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+												
+												보고싶어 하지 않은 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like">보고싶어 수</i> 125</button>
+											 -->
+											<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+											<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="grid-item">
+								<div class="wrap">
+									<div class="img">
+										<a href=""><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									</div>
+									
+									<div class="cont">
+										<div class="writer">
+											<a href="">a1a2a3a4a5**</a>
+											
+											<!--
+												내가 쓴 포스터 일때 나오는 부분 
+												디자인 미정. 디자인 나오면 css로 제어 예정
+											-->
+											<p class="my">my</p>
+										</div>
+										
+										<div class="label">
+											<p class="mania">Movie mania</p>
+											<p class="pick">Editor’s Pick</p>
+										</div>
+
+										<a href="">
+											<p class="tit">
+												영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄 영화 제목 2줄
+											</p>
+										</a>
+
+										<a href="#layer_post_detail" w-data="860" h-data="auto" class="link btn-modal-open2">
+											<p class="txt">
+												1  최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자 최대 50자
+											</p>
+
+											<p class="time">
+												2019.12.12
+											</p>
+										</a>
+
+										<div class="condition">
+											<!-- 
+												보고싶어 한 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+												
+												보고싶어 하지 않은 경우
+												<button type="button" class="btn-like"><i class="iconset ico-like">보고싶어 수</i> 125</button>
+											 -->
+											<button type="button" class="btn-like"><i class="iconset ico-like on">보고싶어 수</i> 125</button>
+											<a href=""><i class="iconset ico-reply">댓글 수</i> 125</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="more-movie-list">
+							<button type="button" class="button btn-more-movie-list">더보기 <i class="iconset ico-btn-more-arr"></i></button>
+						</div>
+						<!--// 무비포스트가 있을 때 -->
+					</div>
+					<!--// my-movie-post -->
+				</div>
+			</div>
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

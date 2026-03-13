@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>아이디 찾기 &gt; 로그인 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+	<div class="login-wrap">
+		<div class="a-c"><a href=""><img src="../../../static/pc/images/common/ci/logo.png" alt=""></a></div>
+
+		<div class="login-inner join">
+
+			<div class="login-tab">
+				<ul>
+					<li class="on"><a href="">아이디 찾기</a></li>
+					<li><a href="">비밀번호 찾기</a></li>
+				</ul>
+			</div>
+
+			<div class="title-area">
+				<strong class="tit">간편 찾기</strong>
+				<p class="txt">회원정보에 등록된 정보로 아이디를 찾습니다.</p>
+			</div>
+
+			<div class="form-line">
+				<label for="username">이름</label>	
+				<input type="text" placeholder="이름을 입력해 주세요" id="username" class="input-text" />
+			</div>
+
+			<div class="form-line">
+				<label for="birthday">생년월일</label>
+				<input type="text" placeholder="YYMMDD" id="birthday" class="input-text" />
+			</div>
+
+			<div class="form-line">
+				<label for="cellnumber">휴대폰번호</label>
+				<input type="tel" placeholder="'-'없이 입력해 주세요" id="cellnumber" class="input-text" />
+			</div>
+
+			<div class="btn-login">
+				<button type="button" class="button" >확인</button>
+				<!-- <button type="button" class="button">확인</button>  버튼타입 submit,button 둘중 하나 쓰시면됩니다.-->
+			</div>
+
+			<div class="title-area">
+				<strong class="tit">본인인증으로 찾기</strong>
+				<p class="txt">본인 명의의 휴대폰으로 아이디를 찾습니다.</p>
+			</div>
+
+			<div class="authen-cell">
+				<button type="submit" class="button"><i class="iconset ico-m-phone"></i>휴대폰 인증</button>
+				<!-- <button type="button" class="button">휴대폰 인증</button>  버튼타입 submit,button 둘중 하나 쓰시면됩니다.-->
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

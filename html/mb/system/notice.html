@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>시스템점검중 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="./css/import.css" media="all" />
+<script src="/static/pc/js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+    var status = "2222";    // 서비스 상태
+    var continue_yn = "";  // 앱 실행여부
+
+
+    $(function(){
+
+        if(status == "1111"){
+            continue_yn = "Y";
+            $("#errorArea").hide();
+            $("#noticeArea").show();
+        }else{
+            continue_yn = "N";
+            $("#noticeArea").hide();
+            $("#errorArea").show();
+
+        }
+
+        /*
+        getStatus();
+        getContinue();
+        */
+    });
+
+    /*
+    서비스 상태 가져오기
+    1111 : 긴급공지
+    2222 : 장애
+    */
+    function getStatus(){
+        console.log("status > " + status);
+        return status;
+    }
+
+    /*
+    앱 실행 여부 가져오기
+    Y : 공지노출 후 앱실행
+    N : 공지노출 후 앱종료
+    */
+    function getContinue(){
+        console.log("continue_yn > " + continue_yn);
+        return continue_yn;
+    }
+
+</script>
+
+</head>
+<body>
+    <!--긴급공지 영역 -->
+	<div id="noticeArea" style="display: none" class="system-chk">
+		<img src="./images/ico-error-edit.png" alt="" />
+		
+		<p class="tit">
+			긴급공지입니다.
+            긴급공지 후 앱은 정상적으로 실행됩니다.
+		</p>
+		
+		<p class="txt">
+			원활한 서비스 제공을 위하여 아래 기간동안<br /> 서비스 이용이 제한됩니다.<br />
+			서비스 이용에 불편을 드려 죄송합니다.
+		</p>
+		
+		<div class="cont">
+			<ul class="list">
+				<li>
+					<p class="left"><span>작업일시</span></p>
+					
+					<p class="right">
+						2019년 12월 01일 AM 01:00 ~ 03:00
+					</p>
+				</li>
+				<li>
+					<p class="left"><span>작업내용</span></p>
+					
+					<p class="right">
+						작업내용입니다. 작업내용입니다. 작업내용입니다.  
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+    <!-- // 긴급공지 영역 종료 -->
+
+
+
+    <!-- 장애공지 영역 -->
+    <div id="errorArea" style="display: none" class="system-chk">
+        <img src="./images/ico-error-edit.png" alt="" />
+
+        <p class="tit">
+            장애공지 입니다.
+            장애공지 후 앱은 종료됩니다.
+        </p>
+
+        <p class="txt">
+            원활한 서비스 제공을 위하여 아래 기간동안<br /> 서비스 이용이 제한됩니다.<br />
+            서비스 이용에 불편을 드려 죄송합니다.
+        </p>
+
+        <div class="cont">
+            <ul class="list">
+                <li>
+                    <p class="left"><span>작업일시</span></p>
+
+                    <p class="right">
+                        2019년 12월 01일 AM 01:00 ~ 03:00
+                    </p>
+                </li>
+                <li>
+                    <p class="left"><span>작업내용</span></p>
+
+                    <p class="right">
+                        작업내용입니다. 작업내용입니다. 작업내용입니다.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- // 장애공지 영역 종료 -->
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+	<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Content-Language" content="ko">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<meta name="keyword"
+		content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+	<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+	<meta property="og:site_name" content="메가박스" />
+	<meta property="og:url" content="http://megabox.co.kr" />
+	<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+	<title>영화상세</title>
+
+	<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+	<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+	<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+	<script src="../../../static/mb/js/swiper.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const tabs = document.querySelectorAll('.subHeadMenu li a');
+			const tabContents = document.querySelectorAll('.tabinfoBox');
+
+			tabs.forEach((tab, index) => {
+				tab.addEventListener('click', function (event) {
+					event.preventDefault();
+
+					// 모든 탭과 내용 초기화
+					tabs.forEach(t => t.parentElement.classList.remove('act'));
+					tabContents.forEach(content => content.classList.remove('act'));
+
+					// 클릭한 탭 활성화
+					tab.parentElement.classList.add('act');
+					tabContents[index].classList.add('act');
+				});
+			});
+		});
+		$(function () {
+			if ($('.customSwiper').length > 0) {
+				var list_swiper = new Swiper('.customSwiper', {
+					slidesPerView: 'auto',
+					freeMode: true,
+					spaceBetween: 0,
+					pagination: false,
+					centeredSlides: false,
+					disableTouchControl: true,
+					lazy: true,
+					navigation: false
+				});
+			}
+
+
+			// 이벤트 스와이프
+			if ($('.eventSw').length > 0) {
+				var eventSw = new Swiper('.eventSw', {
+					pagination: {
+						el: ".swiper-pagination",
+					},
+				});
+			}
+
+			// 오리지널 굿즈
+			if ($('.goods_Swiper').length > 0) {
+				var goods_Swiper = new Swiper('.goods_Swiper', {
+					slidesPerView: 'auto',
+					freeMode: true,
+					spaceBetween: 12,
+					slidesOffsetBefore: 18,
+					slidesOffsetAfter: 18,
+					pagination: false,
+					centeredSlides: false,
+					disableTouchControl: true,
+					lazy: true,
+					navigation: false
+				});
+			}
+
+			// 예고편
+			if ($('.trailer_Swiper').length > 0) {
+				var trailer_Swiper = new Swiper('.trailer_Swiper', {
+					slidesPerView: 'auto',
+					freeMode: true,
+					spaceBetween: 12,
+					slidesOffsetBefore: 18,
+					slidesOffsetAfter: 18,
+					pagination: false,
+					centeredSlides: false,
+					disableTouchControl: true,
+					lazy: true,
+					navigation: false
+				});
+			}
+
+			// 포스터
+			if ($('.poster_Swiper').length > 0) {
+				var poster_Swiper = new Swiper('.poster_Swiper', {
+					slidesPerView: 'auto',
+					freeMode: true,
+					spaceBetween: 12,
+					slidesOffsetBefore: 18,
+					slidesOffsetAfter: 18,
+					pagination: false,
+					centeredSlides: false,
+					disableTouchControl: true,
+					lazy: true,
+					navigation: false
+				});
+			}
+		});
+
+		window.addEventListener('scroll', function() {
+        const banner = document.querySelector('.floating');
+        if (window.scrollY > 0) {
+            banner.classList.add('fold'); // Y=0이 아닐 때 'fold' 클래스 추가
+        } else {
+            banner.classList.remove('fold'); // Y=0일 때 'fold' 클래스 삭제
+        }
+    });
+	</script>
+</head>
+
+<body>
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#" class="btn2"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+				<h2 class="headTite">인사이드 아웃 2</h2>
+			</div>
+			<div class="rtArea">
+				<a href="#" class="btn1"><i class="icon2 btn_love_bl30">좋아요</i></a> <!--a태그에 act 추가시 on-->
+				<a href="#" class="btn1"><i class="icon2 btn_share_bl30">공유하기</i></a>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="container">
+
+		<div class="movieDetail">
+			<!-- topMov -->
+			<div class="topMov">
+				<div class="btnFull">전체화면</div>
+				<div class="btnPlay">플레이</div>
+				<div class="videoBox">
+					<video>
+						<source src="" />
+					</video>
+					<img src="../../../static/mb/images/2024renewal/@sample_360x203.png" alt="sample" />
+				</div>
+			</div>
+			<!--//topMov end -->
+
+			<!-- movieInfo -->
+			<section class="movieInfo">
+				<h3 class="title">인사이드 아웃 2</h3>
+				<h4 class="title_en">Inside Out 2</h4>
+
+				<div class="movViewRooms">
+					<div class="item">
+						<img src="../../../static/mb/images/2024renewal/movie/logo_dolbyCinema.png" alt="dolbyCinema" />
+						<i class="icon2 i_A_right_g12"></i>
+					</div>
+					<div class="item">
+						<img src="../../../static/mb/images/2024renewal/movie/logo_dolbyAtmos.png" alt="dolbyAtmos" />
+						<i class="icon2 i_A_right_g12"></i>
+					</div>
+					<div class="item">
+						<img src="../../../static/mb/images/2024renewal/movie/logo_mx4d.png" alt="mx4d" />
+						<i class="icon2 i_A_right_g12"></i>
+					</div>
+				</div>
+
+				<div class="movieState">
+					<ul>
+						<li><em>예매</em><span>1위 (33.2%)</span></li>
+						<li><em>관람</em><span>837.1만</span></li>
+						<li><em>별점</em><span>9.4</span></li>
+					</ul>
+				</div>
+
+				<div class="textArea">
+					<div class="intext">디즈니·픽사의 대표작 <인사이드 아웃> 새로운 감정과 함께 돌아오다! 13살이 된 라일리의 행복을 위해 매일 바의 행복을 위해 매일 </div><a
+						href=""><span>...</span>더보기</a>
+				</div>
+
+			</section>
+			<!--//movieInfo end -->
+
+
+			<!-- 이벤트 배너 -->
+			<div class="eventSw">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide eventItem event">
+						<span class="label">이벤트</span>
+						<p class="title">
+							메가박스에서 <인사이드 아웃 2> 보고<br />
+								디즈니+ 혜택 받자!
+						</p>
+					</div>
+					<div class="swiper-slide eventItem feed">
+						<span class="label">무비피드</span>
+						<p class="title">
+							<인사이드 아웃 2> 개봉 5일만에 200만 돌파
+						</p>
+					</div>
+					<div class="swiper-slide eventItem greeting">
+						<span class="label">무대인사</span>
+						<p class="title">
+							<인사이드 아웃 2> 코스튬 무대인사
+						</p>
+					</div>
+					<div class="swiper-slide eventItem preview">
+						<span class="label">시사회</span>
+						<p class="title">
+							<인사이드 아웃 2> 개봉 전 유료시사회<br />
+								& 특별관 굿즈 증정 이벤트
+						</p>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<!--// 이벤트 배너 -->
+
+			<section class="detailInfoTabArea">
+
+				<!-- 탭메뉴 -->
+				<div class="subHeadMenu">
+					<ul class="col2">
+						<li class="act"><a href="#">상세정보</a></li>
+						<li><a href="#">실관람평 (50.5K)</a></li>
+					</ul>
+				</div>
+				<!--// 탭메뉴 -->
+
+				<!-- 상세정보 -->
+				<div class="tabinfoBox detailTab act">
+					<article class="detailInfo">
+						<div class="topInfo">
+							<div class="img"><img src="../../../static/mb/images/2024renewal/@sample_w72.png" alt="smaple" /></div>
+							<ul>
+								<li>전체관람가</li>
+								<li><span>2024.06.12 개봉</span><span>96분</span><span class="megaonly">MEGAONLY</span></li>
+							</ul>
+						</div>
+
+						<div class="botInfo">
+							<ul>
+								<li><span>장르</span>애니메이션</li>
+								<li><span>타입</span>2D ATMOS(자막), 2D Dolby(자막)</li>
+								<li><span>감독</span>마이크미첼</li>
+								<li><span>출연</span>잭블랙, 아콰피나, 비올라데이비스, 더스틴호프만, 제임스홍, 브라이언 크랜스톤</li>
+							</ul>
+						</div>
+					</article>
+
+					<!-- 배너 -->
+					<article class="adAreaBox type1">
+						<img src="../../../static/mb/images/2024renewal/@sample_AD.png">
+					</article>
+
+					<!-- 누적관람 -->
+					<article class="countingBox">
+						<div class="subTitleArea">
+							<h4>누적관람</h4>
+						</div>
+						<div class="accrueArea">
+							<div class="accrue">
+								<div class="title">누적 관객 수</div>
+								<div class="number">56.5만</div>
+								<div class="text">개봉 12일차</div>
+							</div>
+							<div class="accrue">
+								<div class="title">일별 관객 수</div>
+								<div class="number">10,573</div>
+								<div class="text">전일대비 -38.1% </div>
+							</div>
+						</div>
+					</article>
+
+					<!-- 오리지널 굿즈 -->
+					<article class="goodsArea">
+						<div class="subTitleArea">
+							<h4>오리지널 굿즈<span>5</span></h4>
+							<button class="btnH30">소진현황</button>
+						</div>
+						<div class="goods_Swiper customSwiper">
+							<div class="swiper-wrapper">
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_goods.png" alt="상품" />
+									<div class="text">
+										<인사이드 아웃2> 오리지널 티켓 No.113
+									</div>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_goods.png" alt="상품" />
+									<div class="text">
+										<인사이드 아웃2> 오리지널 티켓 No.113
+									</div>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_goods.png" alt="상품" />
+									<div class="text">
+										<인사이드 아웃2> 오리지널 티켓 No.113
+									</div>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_goods.png" alt="상품" />
+									<div class="text">
+										<인사이드 아웃2> 오리지널 티켓 No.113
+									</div>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 예고편 -->
+					<article class="trailerArea">
+						<div class="subTitleArea">
+							<h4>예고편 / 트레일러<span>13</span></h4>
+						</div>
+						<div class="trailer_Swiper customSwiper">
+							<div class="swiper-wrapper">
+								<a href="#" class="swiper-slide">
+									<div class="item">
+										<button type="button" class="btnPlay">플레이</button>
+										<img src="../../../static/mb/images/2024renewal/@sample_360x203.png" alt="상품" />
+									</div>
+									<div class="text">
+										1차 예고편
+									</div>
+								</a>
+								<a href="#" class="swiper-slide">
+									<div class="item">
+										<button type="button" class="btnPlay">플레이</button>
+										<img src="../../../static/mb/images/2024renewal/@sample_360x203.png" alt="상품" />
+									</div>
+									<div class="text">
+										1차 예고편
+									</div>
+								</a>
+								<a href="#" class="swiper-slide">
+									<div class="item">
+										<button type="button" class="btnPlay">플레이</button>
+										<img src="../../../static/mb/images/2024renewal/@sample_360x203.png" alt="상품" />
+									</div>
+									<div class="text">
+										1차 예고편
+									</div>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 포스터 -->
+					<article class="posterArea">
+						<div class="subTitleArea">
+							<h4>포스터 / 스틸컷<span>42</span></h4>
+						</div>
+						<div class="poster_Swiper customSwiper">
+							<div class="swiper-wrapper">
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_w72.png" alt="상품" />
+								</a>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="상품" />
+								</a>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_w72.png" alt="상품" />
+								</a>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="상품" />
+								</a>
+								</a>
+								<a href="#" class="item swiper-slide">
+									<img src="../../../static/mb/images/2024renewal/@sample_150x214.png" alt="상품" />
+								</a>
+								</a>
+							</div>
+					</article>
+				</div>
+				<!--// 상세정보 -->
+
+				<!-- 실관람평 -->
+				<div class="tabinfoBox reviewInfo">
+
+					<!-- 실관람 평점 영역 -->
+					<article class="scoreInfoArea">
+						<div class="score"><strong>9.4</strong> <span>/10</span></div>
+						<div class="starGroup">
+							<span class="on"></span>
+							<span class="on"></span>
+							<span class="half"></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="text">스토리, 영상미가 좋은 영화</div>
+					</article>
+
+					<article class="btnArea">
+						<a href="#" class="bigBtnGray">실관람평 작성하고 포인트 받기</a>
+					</article>
+
+					<article class="reviewArea">
+						<!-- 실관람평 타이틀 -->
+						<div class="subTitleArea">
+							<h4>실관람평<span>50,578</span></h4>
+							<div class="sorting">
+								<label>
+									<input type="radio" name="sort" checked>
+									<span>최신순</span>
+								</label>
+								<label>
+									<input type="radio" name="sort">
+									<span>추천순</span>
+								</label>
+							</div>
+						</div>
+
+						<!-- 관람평 목록 -->
+						<div class="reviewList">
+							<dl class="review">
+								<dt>
+									<div class="starGroup">
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="half"></span>
+										<span></span>
+									</div>
+									<div class="userTime">
+										<span class="my">MY</span>
+										<span class="name">thtjsal11**</span>
+										<span>1분전</span>
+									</div>
+								</dt>
+								<dd class="text-box">
+									<div class="cont">
+										입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다 입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다. 입력한 텍스트가 100자까지 노출됩니다.
+									</div>
+									<div class="likey-area">
+										<button type="button" class="btn-like act">20</button>
+										<button type="button" class="btn-txt-hide"><i class="iconset ico-txt-hide"></i></button>
+									</div>
+								</dd>
+							</dl>
+
+							<dl class="review">
+								<dt>
+									<div class="starGroup">
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="half"></span>
+										<span></span>
+									</div>
+									<div class="userTime">
+										<span class="name">thtjsal11**</span>
+										<span>1분전</span>
+									</div>
+								</dt>
+								<dd class="text-box">
+									<div class="cont">
+										입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다 입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다. 입력한 텍스트가 100자까지 노출됩니다.
+									</div>
+									<div class="likey-area">
+										<button type="button" class="btn-like">20</button>
+										<button type="button" class="btn-txt-hide"><i class="iconset ico-txt-hide"></i></button>
+									</div>
+								</dd>
+							</dl>
+
+							<dl class="review">
+								<dt>
+									<div class="starGroup">
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="half"></span>
+										<span></span>
+									</div>
+									<div class="userTime">
+										<span class="name">thtjsal11**</span>
+										<span>1분전</span>
+									</div>
+								</dt>
+								<dd class="text-box">
+									<div class="cont">
+										입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다 입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다. 입력한 텍스트가 100자까지 노출됩니다.
+									</div>
+									<div class="likey-area">
+										<button type="button" class="btn-like">20</button>
+										<button type="button" class="btn-txt-hide"><i class="iconset ico-txt-hide"></i></button>
+									</div>
+								</dd>
+							</dl>
+
+							<dl class="review">
+								<dt>
+									<div class="starGroup">
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="half"></span>
+										<span></span>
+									</div>
+									<div class="userTime">
+										<span class="name">thtjsal11**</span>
+										<span>1분전</span>
+									</div>
+								</dt>
+								<dd class="text-box">
+									<div class="cont">
+										입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다 입력한 텍스트가 노출됩니다.입력한 텍스트가 노출됩니다. 입력한 텍스트가 100자까지 노출됩니다.
+									</div>
+									<div class="likey-area">
+										<button type="button" class="btn-like">20</button>
+										<button type="button" class="btn-txt-hide"><i class="iconset ico-txt-hide"></i></button>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<!--// 관람평 목록 -->
+					</article>
+				</div>
+				<!--// 실관람평 -->
+
+			</section>
+
+
+			<!-- 하단버튼 -->
+			<div class="btn-bottom">
+				<button type="button" id="theaterChoiceBtn" class="button-bot purple">바로예매</button>
+			</div>
+			<!--// 하단버튼 -->
+
+			<!-- 플로팅배너 -->
+			<div class="floating">
+				<a href="#" class="inner disney"><p><span>디즈니 시네마</span>가입하고 혜택받기</p></a>
+			</div>
+			<!-- <div class="floating">
+				<a href="#" class="inner film"><p><span>필름 소사이어티</span>가입하고 혜택받기</p></a>
+			</div>
+			<div class="floating">
+				<a href="#" class="inner classic"><p><span>클래식 소사이어티</span>가입하고 혜택받기</p></a>
+			</div> -->
+			<!--// 플로팅배너 -->
+			
+
+		</div>
+	</div>
+</body>
+
+</html>

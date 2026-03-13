@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>요금제 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+  var raffleSwiper;
+
+  function initRaffleSwiper() {
+    if ($('.raffleSwriper').length > 0 && !raffleSwiper) {
+      raffleSwiper = new Swiper('.raffleSwriper', {
+        slidesPerView: 'auto',
+        freeMode: true,
+        spaceBetween: 12,
+        slidesOffsetBefore: 18,
+        slidesOffsetAfter: 18,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  }
+
+  $(function () {
+    // 탭 클릭
+    $('.tabBox li').click(function () {
+      $('.tabBox li').removeClass('act');
+      $(this).addClass('act');
+
+      $('.tabArea').removeClass('act');
+
+      var index = $(this).index();
+      $('.tabArea').eq(index).addClass('act');
+
+      // 탭이 바뀔 때 Swiper 업데이트 또는 초기화
+      if (index === 1) {
+        setTimeout(function () {
+          if (raffleSwiper) {
+            raffleSwiper.update();
+          } else {
+            initRaffleSwiper(); // 초기화가 아직 안된 경우
+          }
+        }, 100); // 애니메이션이 끝난 후 업데이트되도록 약간의 delay
+      }
+    });
+
+    // 나머지 이벤트 핸들러들
+    $('.mymega-topbox .type').click(function () {
+      $('.mymega-topbox .type').removeClass('act');
+      $(this).addClass('act');
+    });
+
+    $('.btnFilter').click(function () {
+      $('.layerpopup2').each(function () {
+        $(this).toggle(); // 간단하게 toggle 처리
+      });
+    });
+
+    $('.layerpopup2 .exit').click(function (e) {
+      e.preventDefault();
+      $('.layerpopup2').hide();
+    });
+  });
+</script>
+
+</head>
+<body>
+
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#" class="btn2"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+			</div>
+			<h2 class="headTite">메가 트렌디</h2>
+		</div>
+	</header>
+
+	<!-- container -->
+	<div class="container gray">
+    
+    <div class="megaManiaWrap">
+      <ul class="tabBox">
+        <li class="act">안내</li>
+        <li>메가 래플</li>
+        <li>선착순 쿠폰 이벤트</li>
+      </ul>
+      
+      <!-- 안내 -->
+      <div class="tabArea act">
+        
+        <div class="megaManiaGuide trandy">
+          <div class="titleBox">
+            <h1 class="title">메가 트렌디</h1>
+          </div>
+
+          <div class="imgArea">
+            <img src="../../../../webapp/static/mb/images/2024renewal/clubmember/trandy_simbol.png" alt="메가 트렌디">
+          </div>
+
+          <!-- 가입하기 -->
+          <div class="explain">
+            <p>전월 유료 1회 이상 관람시<br/>메가 드로우에 참여할 수 있어요.</p>
+          </div>
+
+          <!-- 미션 진행중 -->
+          <div class="mission_label">
+            미션 진행 중
+          </div>
+          <div class="explain">
+            전월 유료 1회 이상 관람 시<br />메가 드로우에 참여할 수 있어요.
+          </div>
+          <!--// 미션 진행중 -->
+
+          <!-- 미션 달성 -->
+          <div class="mission_label achieve">
+            미션 달성
+          </div>
+          <div class="explain">
+            <p class="user">
+              25년 3월 메가 트렌디 <span class="name">메*박</span>님
+            </p>
+            메가 트렌디 클럽 미션 달성을 축하해요!<br />다음달 미션도 잊지마세요!
+          </div>
+          <!--// 미션 달성 -->
+
+          <div class="infoBoxGroup">
+            <!-- 메가 트렌디 혜택 미션 -->
+            <dl>
+              <dt>
+                <span>메가 트렌디 혜택</span>
+                <a href="#"><i class="icon2 i_info_g20">유의사항</i></a>
+              </dt>
+              <dd>
+                <ul class="contentList">
+                  <li>선착순 쿠폰 이벤트</li>
+                  <li>메가 드로우 이벤트 참여가능</li>
+                </ul>
+              </dd>
+            </dl>
+            <!-- 메가 트렌디 혜택 미션 -->
+            <dl>
+              <dt>
+                <span>메가 트렌디 혜택 미션</span>
+                <a href="#"><i class="icon2 i_info_g20">유의사항</i></a>
+              </dt>
+              <dd>
+                <ul class="contentList">
+                  <li>대상자 : 20 ~ 35세</li>
+                  <li>미션 1 : 이벤트 참여 동의하기</li>
+                  <li>미션 2 : 유료 1회 이상 관람 시 응모권 지급</li>
+                </ul>
+              </dd>
+            </dl>
+
+            <!-- 메가 트렌디 미션 달성 이력 -->
+            <dl>
+              <dt>
+                <span>메가 트렌디 미션 달성 이력</span>
+              </dt>
+              <dd>
+                <ul class="historyList">
+                  <li class="on"> <!-- 달성이력에는 on 클래스 추가 -->
+                    <span class="title">25년 3월 메가 트렌디</span>
+                    <span class="date">25.01.25</span>
+                  </li>
+                  <li>
+                    <span class="title">25년 6월 메가 트렌디</span>
+                    <span class="date">25.06.03 <span>적립예정</span></span>
+                  </li>
+                  <li>
+                    <span class="title">25년 3월 메가 매니아</span>
+                    <span class="date">25.01.25</span>
+                  </li>
+                </ul>
+
+                <button type="button" class="btn-viewAll">이력 전체보기</button>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- 하단버튼 -->
+        <div class="btn-bottom">
+          <button type="button" class="button-bot purple">가입하기</button>
+        </div>
+
+      </div>
+      <!--// 안내 -->
+
+      <!-- 메가 래플 -->
+      <div class="tabArea">
+        <div class="megaRaffle">
+          <div class="titleBox">
+            <h3 class="title">메*박님의 남은 응모권 <span class="count">3</span></h3>
+            <a href="#">응모이력 확인</a>
+          </div>
+
+          <div class="customSwiper raffleSwriper">
+            <div class="swiper-wrapper">
+              <div class="raffleBox swiper-slide">
+                <div class="img"><img src="https://img.megabox.co.kr/SharedImg/mobileMain/2025/03/21/3Xz5Rrt9CJc9RHNmyWYL802Grfd3Fbp0.jpg" alt="이벤트 상품"></div>
+                <div class="eventInfo">
+                  <a href="#" class="name">
+                    <span>메가 래플 이벤트명</span>
+                    <i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                        <path d="M5 2.5L8.5 6L5 9.5" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <span class="time">1일 10 : 00 : 33 남음</span>
+                  <button type="button" class="submission">응모하기</button>
+  
+                  <ul class="detail">
+                    <li>당첨인원 : 10명</li>
+                    <li>당첨자 발표일 : 04.25 (수)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="raffleBox swiper-slide">
+                <div class="img"><img src="https://img.megabox.co.kr/SharedImg/mobileMain/2025/03/21/3Xz5Rrt9CJc9RHNmyWYL802Grfd3Fbp0.jpg" alt="이벤트 상품"></div>
+                <div class="eventInfo">
+                  <a href="#" class="name"><span>이벤트명 길어지면 말줄임표시하기</span></a>
+                  <span class="time">1일 10 : 00 : 33 남음</span>
+                  <button type="button" class="submission" disabled>오픈예정</button>
+  
+                  <ul class="detail">
+                    <li>당첨인원 : 10명</li>
+                    <li>당첨자 발표일 : 04.25 (수)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="raffleBox swiper-slide">
+                <div class="img end"><img src="https://img.megabox.co.kr/SharedImg/mobileMain/2025/03/21/3Xz5Rrt9CJc9RHNmyWYL802Grfd3Fbp0.jpg" alt="이벤트 상품"></div>
+                <div class="eventInfo">
+                  <a href="#" class="name"><span>이벤트명 길어지면 말줄임표시하기</span></a>
+                  <span class="time end">00 : 00 : 00 종료</span>
+                  <button type="button" class="submission" disabled>응모종료</button>
+  
+                  <ul class="detail">
+                    <li>
+                      당첨인원 : 10명
+                      <button type="button" class="btn">당첨자 보기</button>
+                    </li>
+                    <li>당첨자 발표일 : 04.25 (수)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          
+          <div class="caution-wrap">
+            <p class="tit">안내사항</p>
+            <ul class="circle-list renewal">
+              <li>응모하기를 클릭한 경우 당첨자 선정 및 경품 안내를 위한 개인정보 제공에 동의한 것으로 간주합니다.</li>
+              <li>수집항목 : 고객식별번호, 영화관람 내역, 휴대폰번호, 주소</li>
+              <li>수집항목 : 고객식별번호, 영화관람 내역, 휴대폰번호, 주소</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--// 메가 래플 -->
+
+      <!-- 선착순 쿠폰 이벤트 -->
+      <div class="tabArea">
+        <div class="eventArea">
+          
+          <!-- 이벤트 목록 -->
+          <div class="event-main-list">
+            <div class="event-list v100">            
+              <div class="item">
+                <a href="javascript:void(0)" onclick="javascript:fn_eventDetail('17633', 'Y', 'N');">
+                  <div class="img ended">
+                    <img class="lozad" data-src="https://img.megabox.co.kr/SharedImg/event/2025/04/08/4o1X7MSsgYUHONJo2S5OODpssgfivCHr.jpg" alt="<거룩한 밤: 데몬 헌터스> 개봉주 무대인사" onerror="moNoImg(this);" src="https://img.megabox.co.kr/SharedImg/event/2025/04/08/4o1X7MSsgYUHONJo2S5OODpssgfivCHr.jpg" data-loaded="true">
+                  </div>
+                  <div class="info">
+                    <p class="title">&lt;거룩한 밤: 데몬 헌터스&gt; 개봉주 무대인사</p>
+                    <p class="date">2025.05.03 ~ 2025.05.05</p>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+              <a href="javascript:void(0)" onclick="javascript:fn_eventDetail('17633', 'Y', 'N');">
+                <div class="img">
+                  <img class="lozad" data-src="https://img.megabox.co.kr/SharedImg/event/2025/04/08/4o1X7MSsgYUHONJo2S5OODpssgfivCHr.jpg" alt="<거룩한 밤: 데몬 헌터스> 개봉주 무대인사" onerror="moNoImg(this);" src="https://img.megabox.co.kr/SharedImg/event/2025/04/08/4o1X7MSsgYUHONJo2S5OODpssgfivCHr.jpg" data-loaded="true">
+                </div>
+                <div class="info">
+                  <p class="title">&lt;거룩한 밤: 데몬 헌터스&gt; 개봉주 무대인사</p>
+                  <p class="date">2025.05.03 ~ 2025.05.05</p>
+                </div>
+              </a>
+              </div>
+            </div>
+          </div>
+          <!--// 이벤트 목록 -->
+
+          <!-- 이벤트가 없을 경우 -->
+          <div class="noneRe">
+            <div class="text">현재 진행중인 이벤트가 없습니다.</div>
+            <a href="#" class="btnW158">메가박스 이벤트 보기</a>
+          </div>
+          <!--//이벤트가 없을 경우 -->
+
+        </div>
+      </div>
+      <!--// 선착순 쿠폰 이벤트 -->
+
+    </div>
+
+	</div>
+	<!--//container end -->
+
+  
+    
+		<!-- 필터 하단 팝업 -->
+		<div class="layerpopup2" style="display: none;">
+			<div class="dim"></div>
+			<div class="layer btPop">
+				<a href="#" class="exit"><span class="icon2 btn_close_bl24">닫기</span></a>
+				<div class="hd">
+					<div class="tit">미션 시작 연도 선택</div>
+				</div>
+				<div class="bd">
+					<div class="filterRadio">
+            <p>
+              <span class="radioTy">
+                <input type="radio" id="r01" name="year" checked>
+                <label for="r01">2026년</label>
+              </span>
+            </p>
+            <p>
+              <span class="radioTy">
+                <input type="radio" id="r02" name="year">
+                <label for="r02">2025년</label>
+              </span>
+            </p>
+          </div>
+          
+				</div>
+			</div>
+		</div>
+		<!--//필터 하단 팝업 -->
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>마이페이지</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+	
+	// 선호극장상단배너
+	if( $('.customSwiper').length > 0 ){
+		var customSwiper = new Swiper('.customSwiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:18,
+			slidesOffsetAfter:18,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+	
+});
+
+</script>
+</head>
+<body>
+	<header id="headerSub" class="r24_header bg01">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#" class="btn2"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+			</div>
+			<h2 class="headTite">MY</h2>
+			<div class="rtArea">
+				<a href="#" class="btn1"><i class="icon2 btn_home_bl30">홈으로이동</i></a>
+				<a href="#" class="btn1">
+					<span class="new"></span> <!--있을때 사용, 없을땐 span을 없애주세요-->
+					<i class="icon2 btn_menu_bl30">메뉴</i>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	
+	<div class="container">
+		<!-- mypageArea -->
+		<div class="mypageArea">
+
+			<!-- 마이페이지 정보창  -->
+			<section class="mypageInfoArea">
+				<div class="myInfoBox">
+					<div class="name"><i class="icon2 i_membership_welcome40">등급1</i><span>김*가님</span></div>
+					<a href="#" class="btn2 h30 bc03">마이 멤버십</a>
+				</div>
+
+				<article class="pointInfoBox">
+					<div class="pointArea">
+						<h4>212,500P</h4>
+						<p>1,000P 더 모으면 다음 등급을 달성할 수 있어요!</p>
+						<a href="#"><i class="icon2 i_A_right_g16">링크</i></a>
+					</div>
+					<div class="btnArea">
+						<button class="btnMy01">멤버십 혜택</button>
+						<button class="btnMy02">VIP 라운지</button>
+					</div>
+					<!--  <div class="spArea">
+						<h5>스페설 멤버십</h5>
+						<a href="#" class="link">가입하고 다양한 혜택 받기!<i class="icon2 i_A_right_g12">화살표</i></a>
+					</div> -->
+
+					<!-- 2025/02/27 수정 start -->
+					<div class="spArea">
+						<h5>클럽 멤버십</h5>
+						<div class="member_icons">
+							<span class="mania">메가 매니아</span>
+							<span class="family">메가 패밀리</span>
+							<span class="premium">메가 프리미엄</span>
+							<span class="disney">디즈니 시네마</span>
+							<span class="film">필름 소사이어티</span>
+							<span class="dolby">메가 돌비</span>
+							<span class="trandy">메가 트렌디</span>
+							<span class="classic">클래식 소사이어티</span>
+							<span class="more">+ 1</span>
+						</div>
+					</div>
+					<!-- 2025/02/27 수정 end -->
+				</article>
+
+				<article class="ticketInfoBox">
+					<dl>
+						<dt>쿠폰</dt>
+						<dd>99+</dd>
+					</dl>
+					<dl>
+						<dt>스토어교환권</dt>
+						<dd>1</dd>
+					</dl>
+					<dl>
+						<dt>모바일티켓</dt>
+						<dd>2</dd>
+					</dl>
+				</article>
+
+			</section>
+			<!--//마이페이지 정보창  end -->
+
+
+			<!-- infoLinkArea  -->
+			<section class="infoLinkArea">
+				<article class="linkItem">
+					<h4><span class="new">예매 / 구매내역</span></h4>
+					<i class="icon2 img01">예매 / 구매내역</i>
+				</article>
+
+				<article class="linkItem">
+					<h4><span class="">찜한 영화</span></h4>
+					<i class="icon2 img02">찜한 영화</i>
+				</article>
+
+				<article class="linkItem">
+					<h4><span class="">나의 티켓북</span></h4>
+					<p>지금까지 관람한 327편의 영화를 한눈에!</p>
+					<i class="icon2 img03">나의 티켓북</i>
+				</article>
+
+				<article class="adAreaBox type1" style="width: 100%;">
+					<img src="../../../static/mb/images/2024renewal/@sample_AD.png">
+				</article>
+			</section>
+			<!--//infoLinkArea end -->
+			
+
+			<!-- myFavoriteTheater  -->
+			<section class="myFavoriteTheater">
+				<div class="titleAreaBox" style="padding: 13px 0;">
+					<h3 class="title">선호 극장</h3>
+					<a href="" class="btnW60">극장선택</a>
+				</div>
+
+				<div class="theaterList">
+					<div class="item on">동대문</div>
+					<div class="item">상암월드컵경기장</div>
+					<div class="item">영통</div>
+					<div class="item">남양주현대아울렛 스페이스원</div>
+					<div class="item">상암월드컵경기장</div>
+					<div class="item">영통</div>
+				</div>
+
+			</section>
+			<!--//myFavoriteTheater  end -->
+
+
+			<!-- linkArea  -->
+			<section class="linkArea">
+				<div class="titleAreaBox">
+					<h4 class="title">결제</h4>
+				</div>
+				
+				<div class="linkBox col2">
+					<a href="#">중앙페이 관리</a>
+					<a href="#">기프트카드</a>
+					<a href="#">자주 쓰는 할인카드</a>
+					<a href="#">자주 쓰는 신용카드</a>
+				</div>
+			</section>
+			<!--//linkArea  end -->
+
+
+			<!-- linkArea  -->
+			<section class="linkArea">
+				<div class="titleAreaBox">
+					<h4 class="title">정보 및 문의</h4>
+				</div>
+				
+				<div class="linkBox col2 mb48">
+					<a href="#">내 정보</a>
+					<a href="#">문의 내역</a>
+					<a href="#">이벤트 응모 내역</a>
+				</div>
+			</section>
+			<!--//linkArea  end -->
+
+
+			<section class="specialTheaterArea">
+
+			<div class="st_Swiper customSwiper">
+				<div class="swiper-wrapper">
+					<a href="#" class="item swiper-slide swiper-slide-active">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide swiper-slide-next">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+					<a href="#" class="item swiper-slide">
+						<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품">
+					</a>
+				</div>
+		</section>
+
+
+
+
+
+		</div>
+		<!--//mypageArea end -->
+
+	</div>
+
+
+</body>	
+</html>

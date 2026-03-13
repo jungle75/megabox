@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>모바일티켓</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+
+<script>
+function scratch(_id, option = {}) {
+    const canvas = document.getElementById(_id);
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const size = option.size || 25;
+
+    let inSideArray = [];
+    let stopDrawing = false;
+    let isDrawing = false;
+
+    const image = new Image();
+    image.src = '../../../static/mb/images/2024renewal/sampleCoupon2.png';
+    image.onload = () => {
+        drawImageCover(ctx, image, width, height);
+    };
+
+    function drawImageCover(ctx, img, canvasWidth, canvasHeight) {
+        const imgWidth = img.width-182;
+        const imgHeight = img.height-40;
+        const imgAspectRatio = imgWidth / imgHeight;
+        const canvasAspectRatio = canvasWidth / canvasHeight;
+
+        let drawWidth, drawHeight, offsetX, offsetY;
+
+        if (imgAspectRatio > canvasAspectRatio) {
+            drawHeight = canvasHeight;
+            drawWidth = imgWidth * (canvasHeight / imgHeight);
+            offsetX = -(drawWidth - canvasWidth) / 2;
+            offsetY = 0;
+        } else {
+            drawWidth = canvasWidth;
+            drawHeight = imgHeight * (canvasWidth / imgWidth);
+            offsetX = 0;
+            offsetY = -(drawHeight - canvasHeight) / 2;
+        }
+
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+    }
+
+    function _isInside(x1, y1) {
+        const maxSize = (height / size / 1.65) * (width / size / 1.65);
+        if (inSideArray.length >= maxSize) {
+            stopDrawing = true;
+            const inter = setInterval(() => {
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalAlpha = 1;
+                inSideArray.forEach(item => {
+                    _drawCircle(item.x, item.y);
+                });
+                if (ctx.globalAlpha <= 0) clearInterval(inter);
+                ctx.globalAlpha -= 0.1;
+            }, 50);
+            return;
+        }
+
+        const check = inSideArray.some(arg => {
+            const x = arg.x - x1;
+            const y = arg.y - y1;
+            return Math.sqrt(x * x + y * y) < size;
+        });
+
+        if (!check) {
+            inSideArray.push({ x: x1, y: y1, target: true });
+        }
+    }
+
+    function _drawCircle(_x, _y) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.arc(_x, _y, size, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
+    }
+
+    function handleDrawing(event) {
+        if (!ctx || stopDrawing || !isDrawing) return;
+        
+        const rect = canvas.getBoundingClientRect(); // 캔버스의 위치와 크기 정보 가져오기
+        const x1 = (event.clientX || event.touches[0].clientX) - rect.left;
+        const y1 = (event.clientY || event.touches[0].clientY) - rect.top;
+
+        _isInside(x1, y1);
+        _drawCircle(x1, y1);
+    }
+
+    canvas.addEventListener('mousedown', (event) => {
+        isDrawing = true;
+        event.preventDefault(); // 스크롤 막기
+        handleDrawing(event);
+    });
+
+    canvas.addEventListener('mousemove', (event) => {
+        handleDrawing(event);
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        isDrawing = false;
+    });
+
+    canvas.addEventListener('touchstart', (event) => {
+        isDrawing = true;
+        event.preventDefault(); // 스크롤 막기
+        handleDrawing(event);
+    });
+
+    canvas.addEventListener('touchmove', (event) => {
+        event.preventDefault(); // 스크롤 막기
+        handleDrawing(event);
+    });
+
+    canvas.addEventListener('touchend', () => {
+        isDrawing = false;
+    });
+}
+
+$(function(){
+	
+	let sct = scratch('canvas');
+
+
+	if( $('.gs_Swiper').length > 0 ){
+		var gs_Swiper = new Swiper('.gs_Swiper', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 12,
+			slidesOffsetBefore:20,
+			slidesOffsetAfter:20,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+	
+});
+
+</script>
+</head>
+<body>
+	<header id="headerSub" class="r24_header bg02">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#" class="btn2"><i class="icon2 btn_share_wl30">공유</i></a>
+			</div>
+			<h2 class="headTite">모바일티켓</h2>
+			<div class="rtArea">
+				<a href="#" class="btn1"><i class="icon2 btn_close_w30">닫기</i></a>
+			</div>
+		</div>
+	</header> 
+
+	
+	<div class="container">
+		<!-- mobileTicket -->
+		<div class="mobileTicket">
+			<div class="allbgImg"><img src="../../../static/mb/images/2024renewal/@sample_324x166.png" alt=""></div>
+			<!-- ticketArea -->
+			<section class="ticketArea">
+				<!-- ticket -->
+				<article class="ticket">
+					<!-- ticketTopBotImg -->
+					<div class="ticketTopBotImg"><img src="../../../static/mb/images/2024renewal/ticket/ticket_bg_top.png" alt="" /></div>
+					<!--//ticketTopBotImg end -->
+
+					<!-- center -->
+					<div class="center">
+						<ul class="topUtil">
+							<li class="logo"><img src="../../../static/mb/images/2024renewal/ticket/color_roll.png" alt="" /></li>
+							<!-- <li class="number">9043-530-22874</li> -->
+							<li class="number ready">예매번호 상영 1시간 전 확인 가능</li>
+						</ul>
+
+						<!-- ticketInfoWrap -->
+						<div class="ticketInfoWrap">
+							<div class="top">
+								<div class="mvImg"><img src="../../../static/mb/images/2024renewal/@sample_324x166.png" alt=""></div>
+								<p class="mvTitle">인사이트 아웃 2</p>
+
+								<div class="colorInner age_12"><span>2D MX4D(자막)</span>전체 관람가</div>
+								<!--
+									age_12
+									age_15
+									age_19
+									age_all
+								-->
+							</div>
+
+							<div class="mvMoreInfo">
+
+								<div class="upPopup type01" style="display:none;">
+									<img src="../../../static/mb/images/2024renewal/icon/i_ticket_type01_80.png"  />
+									<!-- <img src="../../../static/mb/images/2024renewal/icon/i_ticket_type02_80.png"  /> -->
+									<div class="text">현장 발권된 티켓입니다.<br>발권된 티켓으로 입장해주세요.</div>
+								</div>
+
+
+								<div class="place">
+									<div class="txt">남양주현대아울렛 스페이스원<br>Dolby Cinema</div>
+									<span class="qrTxt">입장 QR</span>
+									<div class="qr"><img src="../../../static/mb/images/2024renewal/@sample_qr_48x48.png" alt="qr" /></div>
+									<button type="button" class="btnZoom">확대</button>
+
+									
+									<!--<div class="qr get"><img src="../../../static/mb/images/2024renewal/@sample_qr_48x48.png" alt="qr" /></div 추가시 나타남-->
+									<!-- <div class="qr ready">상영 시작<br/>1시간 전<br/>확인 가능</div> -->
+								</div>
+
+								<div class="col2">
+									<div class="box">
+										<div class="tit">상영일</div>
+										<div class="inBox">
+										<span class="txt1">00:00</span>
+										<span class="txt2">(월)</span>
+										</div>
+									</div>
+
+									<div class="box b2"> 
+										<div class="tit">상영시간</div>
+										<div class="inBox">
+											<span class="txt1">00.00</span>
+											<span class="txt2">~ 10:40</span>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="tit"><a href="#">좌석<i class="icon2 i_A_right_g16"></i></a></div>
+
+								<div class="seat"> <!--pri클래스 추가시 프라이빗-->
+									<span class="bg01">E 01</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+									<span>J 12</span>
+								</div>								
+
+								<div class="viewers">
+									<ul>
+										<li>일반 2</li>
+										<li>청소년 0</li>
+										<li>어린이 0</li>
+										<li>우대 0</li>
+										<li>우대 0</li>
+									</ul> 
+								</div>
+
+								<!-- 티켓 나누기한 친구 -->
+								<div class="friendArea">
+									<div class="title">티켓 나누기한 친구</div>
+									<ul class="friendList">
+										<li class="friend"><span>한*명</span></li>
+										<li class="friend"><span>최*영</span></li>
+										<li class="friend"><span>장*영</span></li>
+										<li class="friend"><span>주*진</span></li>
+										<li class="friend"><span>메**스</span></li>
+										<li class="friend"><span>콘****앙</span></li>
+										<li class="friend"><span>반*차</span></li>
+									</ul>
+								</div>
+								<!--// 티켓 나누기한 친구 -->
+
+								<a href="#" class="bigBtn type01">얼리버드 티켓</a>	
+								<!-- 프아이빗용 <a href="#" class="bigBtn type02">식음료 패키지 신청완료</a>	 -->
+
+								<div class="addText">모바일 티켓으로  현장 발권없이 입장 가능합니다.</div>
+								<div class="logoBox"><img src="../../../static/mb/images/2024renewal/ticket/color_roll2.png" alt="" /></div>
+
+
+							</div>
+						</div>
+						<!--//ticketInfoWrap end -->
+
+					</div>
+					<!--//center end -->
+
+					<!-- ticketTopBotImg -->
+					<div class="ticketTopBotImg"><img src="../../../static/mb/images/2024renewal/ticket/ticket_bg_bot.png" alt="" /></div>
+					<!--//ticketTopBotImg end -->
+				</article>
+				<!-- ticket -->
+				<!-- ticket -->
+				<article class="ticket">
+					<!-- ticketTopBotImg -->
+					<div class="ticketTopBotImg"><img src="../../../static/mb/images/2024renewal/ticket/ticket_bg_top2.png" alt="" /></div> <!--겹쳐졌을때 2 붙여서 이미지 변경-->
+					<!--//ticketTopBotImg end -->
+
+					<!-- center -->
+					<div class="center">
+						<div class="storeOrderTicket">
+							<div class="top">
+								<h3>러브콤보 패키지</h3>
+								<p>2D 일반관람권 2매 + <br>러브콤보 [팝콘(L) 1 + 탄산음료(R) 2]</p>
+							</div>
+
+							<div class="bot">
+								<dl>
+									<dt>사용 기간 ∙ 매점명</dt>
+									<dd>영화 상영 당일 사용 가능(08.24)</dd>
+									<dd>남양주현대아울렛 스페이스원 매점</dd>
+								</dl>
+								<div class="qr"><img src="../../../static/mb/images/2024renewal/@sample_qr_48x48.png" alt="qr" /></div>
+								<a href="#" class="bigBtn">모바일오더로 주문하기</a>	
+								<ul class="dottedList">
+									<li>본 교환권은 현금으로 교환, 반품되지 않습니다.</li>
+									<li>일부 콤보는 제외될 수 있습니다.(팝콘 맛 or 사이즈 변경시 추가 요금부과 가능)</li>
+									<li>타 쿠폰과 중복할인 불가능합니다.</li>
+								</ul>
+							</div>
+
+
+						</div>
+						<!-- 사용 완료,만료 안내 -->
+						<div class="disabled"><p>사용 완료되었습니다.</p></div>
+					</div>
+					<!--//center end -->
+
+					<!-- ticketTopBotImg -->
+					<div class="ticketTopBotImg"><img src="../../../static/mb/images/2024renewal/ticket/ticket_bg_bot.png" alt="" /></div>
+					<!--//ticketTopBotImg end -->
+				</article>
+				<!-- ticket -->
+
+
+				<!-- ticket -->
+				<article class="ticket">
+
+					<div class="coupon">						
+						<canvas id="canvas"></canvas>
+						<div class="box">
+							<div class="title">COUPON</div>
+							<div class="text">남양주현대아울렛 스페이스원<br>6월 영화 4천원 쿠폰</div>
+						</div>
+					</div>
+
+				</article>
+				<!-- ticket -->
+
+				<article class="anotherArea">
+					<div class="ticketTitle">
+						<h3>이 티켓으로 받을 수 있는 굿즈</h3>
+						<p>굿즈 상세 페이지에서 소진 현황을 확인 할 수 있습니다.</p>
+					</div>
+					<div class="gs_Swiper customSwiper">
+						<div class="swiper-wrapper">
+							<a href="#" class="item swiper-slide on">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+							<a href="#" class="item swiper-slide">
+								<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="상품" />
+								<p class="text"><인사이드 아웃 2> 오리지널 티켓</p>
+							</a>
+						</div>
+					</div>
+
+				</article>
+
+
+				<article class="anotherArea serviceNote">
+					<h3>서비스 알림<i class="icon2 i_info_g20"></i></h3>
+					<div class="onOffinputCheck">
+						<input type="checkbox" id="check" />
+						<label for="check"></label>
+					</div>
+					<p>상영 30분 전 입장시간을 알려드려요.</p>
+				</article>
+
+
+				<article class="anotherArea parkingDiscount">
+					<h3>영화관람 후 주차할인</h3>
+					<a href="#" class="btnH30">바코드 보기</a>
+
+					<ul class="dottedList">
+						<li>행복한 백화점 내 주차장 이용 : 영화 관람 시 3시간 무료</li>
+						<li>지하 2-3층 무인정산기 또는 출차 시 무인게이트에서 정산</li>
+					</ul>
+				</article>
+
+
+				<article class="anotherArea samsungWallet">
+					<div class="bigText"><img src="../../../static/mb/images/2024renewal/ticket/samsungwallet.png" /></div>
+				</article>
+
+
+			</section>
+			<!--// ticketArea  end -->
+
+
+			<div class="dottedList">
+				<dl>
+					<dt>안내드려요!</dt>
+					<dd>입장은 6층에서만 가능합니다.</dd>
+					<dd>목동지점은 행복한 백화점 6층에 위치하고 있습니다.</dd>
+					<dd>지연입장에 의한 관람불편을 최소화하고자 본 영화는 10분 후 시작됩니다.</dd>
+					<dd>상영시간 20분전까지 취소 가능하며, 캡쳐화면으로는 입장하실 수 없습니다.</dd>
+				</dl>
+			</div>
+
+
+		</div>
+		<!--//mobileTicket end -->
+
+	</div>
+
+
+	<!-- 모바일티켓용 하단 버튼 -->
+	<div class="btnBottom mobileTicketBot">
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_mOrder_bl30"></i>
+			<span>모바일오더</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_parking_bl30"></i>
+			<span>주차등록</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_ticketBook_bl30"></i>
+			<span>티켓북</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_potoCard_bl30"></i>
+			<span>포토카드</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_ticketX_bl30"></i>
+			<span>예매취소</span>
+		</button>
+	</div>
+
+	<!-- 쿠폰관련 toast 메세지 
+	<div class="toastMessage">🍀️ 예매한 티켓에 발급된 깜짝 쿠폰을 긁어보세요</div>
+	// 쿠폰관련 toast 메세지 -->
+	
+	<!-- 모바일오더 관련 툴팁
+	<div class="toolTip mbOrder">영화에 빠질 수 없는 단짠조합! 줄서지 말고 주문 🍿🥤</div>
+	// 모바일오더 관련 툴팁 -->	
+
+	<!-- 모바일오더 관련 툴팁 -->
+	<div class="toolTip parking">영화 관람 후 주차 바코드 인증 시 주차 할인!</div>
+	<!--// 모바일오더 관련 툴팁 -->	
+</body>	
+</html>

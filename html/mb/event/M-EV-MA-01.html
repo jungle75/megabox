@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>메인 &gt; 이벤트 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+    var _init = {
+        cache   : Date.now(),
+        path    : '../../../static/mb/js/'
+    };
+    document.write(
+        '<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+        '<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+    );
+</script>
+<script>
+$(function(){
+
+    //
+    if( $('.event-swiper').length > 0 ){
+        var list_swiper = new Swiper('.event-swiper', {
+        });
+		
+		// 현재 활성화된 swiper
+		list_swiper.on('slideChange', function(){
+			alert(list_swiper.activeIndex);
+		});
+    }
+	
+	if( $('.theater-news').length > 0 ){
+		var list_swiper = new Swiper('.theater-news', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 5,
+			pagination: false ,
+			centeredSlides: false ,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+});
+
+</script>
+</head>
+<body>
+    <header id="headerMain" class="event-main hd-bg-chg">
+        <h1 class="tit">이벤트</h1>
+		<div class="ticket-count">
+			<a href="" class="h-ticket"><i class="iconset ico-ticket-w"></i></a>
+			<div class="count">12</div>
+		</div>
+		<div class="r-util">
+			<button type="button" class="h-alarm"><i class="iconset ico-alarm"></i></button>
+			<button type="button" class="h-burger"><i class="iconset ico-burger-w"></i></button>
+		</div>
+
+    </header>
+    <div id="rnb">
+
+    </div>
+
+
+    <div class="container event-main-wrap">
+
+        <!-- 개발전달 : 마크업 수정 -->
+        <div class="recommend-event">
+            <!-- background:#색상값 을 admin 에서 등록시 백그라운드 인라인 스타일로 적용 -->
+            <div class="bg-img" style="background:#f5f5f5;"></div>
+            <p class="title"><span>유진</span>님께 추천하는 <br />필수 이벤트</p>
+            <div class="event-swiper">
+                <div class="swiper-wrapper">
+                    <div class="img swiper-slide"><img src="../../../static/mb/images/event/@img-recommend-1.png" alt=""></div>
+                    <div class="img swiper-slide"><img src="../../../static/mb/images/event/@img-recommend-2.png" alt=""></div>
+                    <div class="img swiper-slide"><img src="../../../static/mb/images/event/@img-recommend-1.png" alt=""></div>
+                    <div class="img swiper-slide"><img src="../../../static/mb/images/event/@img-recommend-2.png" alt=""></div>
+                </div>
+            </div>
+            <div class="badge"><span>영화관</span></div>
+            <div class="info">
+                <p class="title">1월 16일 단 하루, T Week T콤보 무료!</p>
+                <p class="date">2019. 01. 09  - 2019. 01. 16</p>
+            </div>
+
+            <div class="button-area">
+                <a href="#" class="membership">맴버십</a>
+                <a href="#" class="discountcard">할인카드</a>
+                <a href="#" class="event">참여 이벤트</a>
+            </div>
+        </div>
+        <!-- // 개발전달 : 마크업 수정 -->
+
+        <div class="inner-wrap">
+            <h2 class="tit">극장 소식</h2>
+        </div>
+
+        <!-- 높이 고정없이 이미지 사이즈로 나올때 -->
+        <div class="theater-news">
+            <div class="swiper-wrapper">
+                <!-- 반복 -->
+                <div class="item swiper-slide">
+                    <a href="#" class="new">
+                        <span class="badge">신규오픈</span>
+                        <div class="img"><img src="../../../static/mb/images/theater/bg-theater-new.jpg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- // 반복 -->
+
+                <div class="item swiper-slide">
+                    <a href="#" class="renewal">
+                        <span class="badge">리뉴얼</span>
+                        <div class="img"><img src="../../../static/mb/images/theater/bg-theater-etc.jpg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item swiper-slide">
+                    <a href="#" class="open">
+                        <span class="badge">오픈예정</span>
+                        <div class="img"><img src="../../../static/mb/images/theater/bg-theater-open.jpg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item swiper-slide">
+                    <a href="#" class="etc">
+                        <span class="badge">기타</span>
+                        <div class="img"><img src="../../../static/mb/images/theater/bg-theater-etc.jpg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 높이가 171로 고정된 이미지 사이즈로 나올때
+        <div class="theater-news mt30">
+            <div class="swiper-wrapper">
+                <div class="item swiper-slide">
+                    <a href="#">
+                        <span class="badge">신규오픈</span>
+                        <div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item swiper-slide">
+                    <a href="#">
+                        <span class="badge">신규오픈</span>
+                        <div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item swiper-slide">
+                    <a href="#">
+                        <span class="badge">신규오픈</span>
+                        <div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item swiper-slide">
+                    <a href="#">
+                        <span class="badge">신규오픈</span>
+                        <div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+                        <div class="info">
+                            <p class="title">용인 테크노밸리</p>
+                            <p class="date">2019. 01. 12</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="inner-wrap">
+            <div class="event-list-wrap">
+                <div class="btn-scroll-wrap">
+                    <div class="btn-scroll-hidden">
+                        <div class="list-btn">
+                            <button type="button" class="btn on"><span>메가박스</span></button>
+                            <button type="button" class="btn"><span>영화</span></button>
+                            <button type="button" class="btn"><span>극장</span></button>
+                            <button type="button" class="btn"><span>제휴/할인</span></button>
+                            <button type="button" class="btn"><span>무대인사/시사회</span></button>
+                            <button type="button" class="btn"><span>지난 이벤트</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-search">
+                    <input type="text" placeholder="검색어를 입력해주세요." />
+                    <input type="submit" class="btn-search" />
+                </div>
+
+                <div class="event-list v100">
+                    <!-- 반복 -->
+                    <div class="item swiper-slide">
+                        <a href="#">
+                            <div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+                            <div class="info">
+                                <p class="title">주먹왕랄프2 콤보</p>
+                                <p class="date">2019. 01. 03 - 2019. 01. 31 </p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- // 반복 -->
+
+                    <div class="item swiper-slide">
+                        <a href="#">
+                            <div class="img"><img src="../../../static/mb/images/event/@event-img02.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="title">1월 메가픽(MEGA Pick)</p>
+                                <p class="date">2019. 01. 03 - 2019. 01. 31 </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item swiper-slide">
+                        <a href="#">
+                            <div class="img"><img src="../../../static/mb/images/event/@event-img03.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="title">더 부티크 프라이빗</p>
+                                <p class="date">2019. 01. 03 - 2019. 01. 31 </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item swiper-slide">
+                        <a href="#">
+                            <div class="img"><img src="../../../static/mb/images/event/@event-img04.jpg" alt=""></div>
+                            <div class="info">
+                                <p class="title">다이어리 콤보 출시</p>
+                                <p class="date">2019. 01. 03 - 2019. 01. 31 </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-main-list">
+                    <ul>
+                        <li>
+                            <div class="event-info-area">
+                                <p class="tag"><span>메가박스</span></p>
+                                <p class="tit ellipsis">
+                                                                                        메리 포핀스 리턴즈
+                                </p>
+                                <p class="time">2019.01.03 ~ 2019.03.30</p>
+                                <div class="btn-view">
+                                    <a href="#" class="button">당첨자보기</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="event-info-area">
+                                <p class="tag"><span>메가박스</span></p>
+                                <p class="tit ellipsis">
+                                    메리 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈
+                                </p>
+                                <p class="time">2019.01.03 ~ 2019.03.30</p>
+                                <div class="btn-view">
+                                    <a href="#" class="button">당첨자보기</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+				
+                <div class="event-last-list">
+                    <ul>
+                        <li>
+							<div class="img"><img src="" alt=""></div>
+                            <div class="event-info-area">
+                                <p class="tag"><span>메가박스</span></p>
+                                <p class="tit ellipsis">
+                                                                                        메리 포핀스 리턴즈
+                                </p>
+                                <p class="time">2019.01.03 ~ 2019.03.30</p>
+                            </div>
+                        </li>
+                        <li>
+							<div class="img"><img src="" alt=""></div>
+                            <div class="event-info-area">
+                                <p class="tag"><span>메가박스</span></p>
+                                <p class="tit ellipsis">
+                                    메리 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈 포핀스 리턴즈
+                                </p>
+                                <p class="time">2019.01.03 ~ 2019.03.30</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		
+		<div class="btn-bottom bnb-main col-5">
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-movie"></i>
+				<span>영화</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-store"></i>
+				<span>스토어</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-reserve"></i>
+				<span>예매</span>
+			</button>
+			<button type="button" class="button-bot on">
+				<i class="iconset ico-bnb-event"></i>
+				<span>이벤트</span>
+			</button>
+			<button type="button" class="button-bot">
+				<i class="iconset ico-bnb-mymega"></i>
+				<span>마이</span>
+			</button>
+		</div>
+
+    </div>
+
+    <footer id="footer">
+        <ul class="link">
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">고객센터</a></li>
+            <li><a href="">PC버전</a></li>
+        </ul>
+
+        <address>서울특별시 강남구 도산대로 156, 2층(논현동, 중앙엠엔비사옥)</address>
+        <p class="txt">대표자 김진선 개인정보보호책임자 <span>경영지원실 실장 박영진</span></p>
+        <p class="txt">사업자등록번호 211-86-59478 <span>통신판매업신고번호 제 833호</span></p>
+        <p class="copyright">&#9400 MegaboxJoonAng. Inc.</p>
+    </footer>
+</body>
+</html>

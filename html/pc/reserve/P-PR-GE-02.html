@@ -1,0 +1,3608 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>관람권 및 할인적용 &gt; 빠른예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function() {
+		//mbLayer.toggle({id:'layer_ex', url:'/html/test/external.html', title:'레이어팝업 수동호출 테스트', minWidth:350 })
+
+
+		/* 레이어 활성화시 a 태그 on 이벤트 (레이어 활성화는 front.js 에 있음.)*/
+		// 체크 활성화
+		$(document).on('click', '.discout-setting .discout-list .item a', function(){
+			$(this).closest('.item').addClass('on');
+		});
+
+		// 체크 해제 == 취소
+		$(document).on('click', '.discout-setting .discout-list .item .btn-cancel', function(){
+			$(this).closest('.item').removeClass('on');
+		});
+
+		// 5분연장하기 레이어 불러오기
+		$(window).on('load', function(){
+			$modal('layer_time_delay');
+		});
+
+		// html 테스트용 2019-08-22
+		$(document).on('click', '.discout-setting .discout-list ul li .tit', function(e){
+			e.preventDefault();
+			$(this).closest('.discout-list').find('li').removeClass('on');
+			$(this).closest('li').addClass('on');
+	    });
+	})
+</script>
+</head>
+<body class="body-iframe">
+
+	<!-- loading  2019-08-13 프로그레스바 추가-->
+	<div class="bg-loading" style="display:none;">
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!--// loading -->
+
+<div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
+	<!-- quick-reserve -->
+	<div class="quick-reserve">
+
+		<h2 class="tit">빠른예매</h2>
+
+		<!-- cti 일때만 출력 -->
+		<div class="cti-area">
+			<p>이름</p>
+			<input type="text" title="이름 출력" class="input-text a-c w120px" value="홍길동" readonly="readonly" />
+
+			<p>생년월일</p>
+			<input type="text" title="생년월일 출력" class="input-text a-c w120px" value="881212" readonly="readonly" />
+
+			<p>휴대폰번호</p>
+			<input type="text" title="휴대폰번호 출력" class="input-text a-c w150px" value="01012341234" readonly="readonly" />
+
+			<p>회원</p>
+			<input type="text" title="회원여부 출력" class="input-text a-c w100px" value="비회원" readonly="readonly" />
+
+			<button type="button" class="button gray ml10">재인증</button>
+		</div>
+
+		<!-- seat-select-section -->
+		<div class="seat-select-section">
+			<!-- seat-section -->
+			<div class="seat-section h-auto">
+
+				<div class="tit-util">
+					<h3 class="tit small">관람권 및 할인적용</h3>
+
+					<div class="right">
+						<button type="button" class="button gray-line small"><i class="iconset ico-reset-small"></i>초기화</button>
+					</div>
+				</div>
+
+				<!-- discout-setting -->
+				<div class="discout-setting">
+					<div class="discout-list">
+						<ul>
+							<li class="on">
+								<a href="#mega_point" class="tit">
+									메가박스 포인트/관람권
+									<span class="text">멤버십 포인트는 월~금(주말 및 공휴일 제외) 평일에만 사용 가능합니다. </span><i class="iconset ico-btn-more-arr"></i>
+								</a>
+
+								<div id="mega_point" class="cont-down">
+									<div class="coupon-box">
+
+										<!-- 2019-07-30 수장  : class long 빠지고 2번째줄 매수, 포인트 삭제 -->
+										<div class="item col-1 on">
+											<a href="#layer_vip_coupon" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 VIP영화쿠폰</span>
+												<!-- <span class="result">2 매</span> -->
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<!--
+											disabled 일때
+										-->
+										<!-- 2019-07-30 수장  : class long 빠지고 2번째줄 매수, 포인트 삭제 -->
+										<div class="item col-1 on">
+											<a href="#layer_vip_coupon" w-data="600" h-data="550" class="btn-modal-open disabled">
+												<span class="txt">메가박스 VIP영화쿠폰</span>
+												<!-- <span class="result">2 매</span> -->
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<!-- 2019-07-30 수장  : class long 빠지고 2번째줄 매수, 포인트 삭제 -->
+										<div class="item col-1">
+											<a href="#layer_movie_megabox_coupon" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 관람권</span>
+												<!-- <span class="result">2 매</span> -->
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<!-- 2019-07-30 수장  : class long 빠지고 2번째줄 매수, 포인트 삭제 -->
+										<div class="item col-1">
+											<a href="#layer_membership_point" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 멤버십 포인트</span>
+												<!-- <span class="result">245,854,255 P</span> -->
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#mobile_coupon" class="tit">제휴 모바일 쿠폰 <i class="iconset ico-btn-more-arr"></i></a>
+								<div id="mobile_coupon" class="cont-down">
+									<div class="coupon-box">
+
+										<div class="item col-1">
+											<a href="#layer_store_change" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">스토어교환권</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_gifticon" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">기프티콘</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_giftishow" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">기프티쇼</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_gmarket" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">G마켓 예매권</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_inumber" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">아이넘버</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_donutbook" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">도넛북</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_smartcon" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">스마트콘</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_alliance" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">제휴예매권</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_friend" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">프렌즈 멤버십</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+
+										<div class="item col-1">
+											<a href="#layer_star_card" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 스타카드</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_honors_card" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 아너스카드</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#point_coupon" class="tit">포인트/할인쿠폰 <i class="iconset ico-btn-more-arr"></i></a>
+								<div id="point_coupon" class="cont-down">
+									<div class="coupon-box">
+
+										<div class="item col-1">
+											<a href="#layer_mega_sale" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 할인쿠폰</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_skt" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">SKT 멤버십</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_hyundai_m_point" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">현대 M 포인트 카드</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_mnuri" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">문화누리카드</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_gs_point" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">GS&amp;POINT</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_oilbank" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">현대오일뱅크</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_happypoint" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">해피포인트</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_bluemembers" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">블루멤버스 포인트</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_jmembership" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">중앙멤버십</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+										
+										<div class="item col-1">
+											<a href="#layer_okcashbag" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">OK 캐쉬백</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+										
+										<div class="item col-1">
+											<a href="#layer_megabox_giftcard" w-data="600" h-data="550" class="btn-modal-open">
+												<span class="txt">메가박스 기프트카드</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+
+										<div class="item col-1">
+											<a href="#layer_jfpoint" w-data="600" h-data="350" class="btn-modal-open">
+												<span class="txt">중앙 패밀리 포인트</span>
+											</a>
+
+											<button type="button" class="btn-cancel">취소</button>
+										</div>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<!--// discout-setting -->
+
+				<div class="tit-util mt40">
+					<h3 class="tit small">결제수단선택</h3>
+
+					<div class="right">
+						<input type="checkbox" id="use" />
+						<label for="use">다음에도 이 결제수단 사용</label>
+					</div>
+				</div>
+
+				<!-- 2019-07-30 : 마크업 수정 -->
+				<div class="select-payment">
+					<div class="radio-group">
+						<span class="bg-chk small">
+							<input type="radio" name="radio_payment" id="radio_001" /> <label for="radio_001">신용/체크카드</label>
+						</span>
+
+						<span class="bg-chk small">
+							<input type="radio" name="radio_payment" id="radio_002" disabled="disabled" /> <label for="radio_002">휴대폰 소액결제</label>
+						</span>
+
+						<span class="bg-chk small">
+							<input type="radio" name="radio_payment" id="radio_003" /> <label for="radio_003" class="kakaopay">카카오페이 결제</label>
+						</span>
+
+						<span class="bg-chk small">
+							<input type="radio" name="radio_payment" id="radio_004" /> <label for="radio_004" class="payco">페이코 결제</label>
+						</span>
+					</div>
+
+					<div class="select-payment-card">
+						<label for="card_select">카드사 선택</label>
+
+						<select id="card_select" title="카드사 선택" class="selectpicker small">
+							<option>카드사 출력</option>
+							<option>스탠다드차다트은행카드</option>
+							<option>카드사 출력</option>
+							<option>카드사 출력</option>
+							<option>카드사 출력</option>
+						</select>
+
+						<input type="radio" name="card_radio" id="card_radio01" class="ml20">
+						<label for="card_radio01">일반결제</label>
+
+						<input type="radio" name="card_radio" id="card_radio02">
+						<label for="card_radio02">삼성카드 포인트 사용</label>
+					</div>
+					
+					<div class="select-mobile-info">
+						<ul class="dash-list">
+							<li>결제하신 금액은 익월 휴대폰 요금에 합산되어 청구되며, 휴대폰 결제한도는 통산사별 월 누적 이용 제한에 따라 적용됩니다.</li>
+							<li>매월 말일 23시30분 ~ 익월 00시 10분까지(40분간)는 시스템 점검시간으로 이용이 어려울 수 있습니다.</li>
+							<li>휴대폰 결제와 관련된 추가 안내는 FAQ를 참조해주세요.</li>
+						</ul>
+					</div>
+					
+					<div class="select-kakao-info">
+						<ul class="dash-list">
+							<li>BC카드, 시티카드, 우리카드, 새마을카드 등은 카드사 사정으로 사용이 제한되오니 타 카드 사용 또는 신용/체크카드 결제 도구에서 사용해주시기 바랍니다.</li>
+						</ul>
+					</div>
+					
+					<div class="select-payco-info">
+						<ul class="dash-list">
+							<li>BC카드, 시티카드, 우리카드, 새마을카드 등은 카드사 사정으로 사용이 제한되오니 타 카드 사용 또는 신용/체크카드 결제 도구에서 사용해주시기 바랍니다.</li>
+						</ul>
+					</div>
+
+
+				</div>
+				<!--// 2019-07-30 : 마크업 수정 -->
+			</div>
+			<!--// seat-section -->
+
+			<!-- seat-result -->
+			<div class="seat-result">
+				<div class="wrap">
+
+					<div class="tit-area type2">
+						<!--
+							관람 등급 표시
+							<span class="movie-grade small age-all">전체 관람가</span>
+							<span class="movie-grade small age-12">12세 이상 관람가</span>
+							<span class="movie-grade small age-15">15세 이상 관람가</span>
+							<span class="movie-grade small age-19">청소년 관람 불가</span>
+							<span class="movie-grade small age-no">미정</span>
+						-->
+						<span class="movie-grade small age-15">15세 이상 관람가</span>
+
+						<p class="tit">영화 제목 출력 영화 제목 출력 영화 제목 출력 영화 제목 출력 영화 제목 출력</p>
+						<p class="cate">디지털(자막)/무대인사</p>
+						<p class="theater">대구신세계(동대구)</p>
+						<p class="date"><span>2018.11.25</span><em>(수)</em> <span class="time"><i class="iconset ico-clock-white"></i>18:00~20:00</span></p>
+					</div>
+
+					<div class="price-process m-scroll">
+						<div class="box">
+							<div class="data">
+								<span class="tit">일반 <em>1</em></span>
+								<span class="price">20,000</span>
+							</div>
+							<div class="data">
+								<span class="tit">일반 <em>1</em></span>
+								<span class="price">20,000</span>
+							</div>
+							<div class="data">
+								<span class="tit">일반 <em>1</em></span>
+								<span class="price">20,000</span>
+							</div>
+
+							<div class="data">
+								<span class="tit">어린이 <em>2</em></span>
+								<span class="price">6,000</span>
+							</div>
+
+							<div class="all">
+								<span class="tit">금액</span>
+								<span class="price"><em>26,000</em> <span>원</span></span>
+							</div>
+						</div>
+
+						<div class="box discout-box">
+							<div class="data">
+								<span class="tit">일반 <em>1</em></span>
+								<span class="price">20,000</span>
+							</div>
+							<div class="data">
+								<span class="tit">일반 <em>1</em></span>
+								<span class="price">20,000</span>
+							</div>
+							<div class="data">
+								<span class="tit">메가박스 멤버십 포인트</span>
+								<span class="price"><em>1</em> 매</span>
+								<button type="button" class="btn-delete">삭제</button>
+							</div>
+
+							<div class="data">
+								<span class="tit">기프티콘</span>
+								<span class="price"><em>4</em> 매</span>
+								<button type="button" class="btn-delete">삭제</button>
+							</div>
+
+							<div class="all">
+								<span class="tit">할인적용</span>
+								<span class="price"><em>-20,000</em> 원</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="pay-area">
+						<div class="add-thing">
+							<span class="tit">추가차액</span>
+							<span class="money">+4,000원</span>
+						</div>
+						<div class="pay">
+							<p class="tit">최종결제금액</p>
+							<div class="money">
+								<em>99,999,999</em>
+								<span>원</span>
+							</div>
+						</div>
+						<div class="payment-thing">
+							<span class="tit">결제수단</span>
+							<span class="thing">현대M포인트 카드</span>
+						</div>
+					</div>
+
+					<div class="btn-group">
+						<a href="" class="button">이전</a>
+						<!--
+							비활성화
+							<a href="" class="button disabled">결제</a>
+
+							활성
+							<a href="" class="button active">결제</a>
+
+
+
+							레이어 현금 영수증이 뜰때
+							<a href="#layer_cash_bill" w-data="600" h-data="550" class="button active btn-modal-open">결제</a>
+
+							현금영수증 없이 바로 넘어 갈때
+							<a href="" class="button active">결제</a>
+
+							즉시할인카드 일때
+							<a href="#layer_before_sale"  w-data="600" h-data="550" class="button active btn-modal-open">결제</a>
+	
+						<a href="#layer_cash_bill"  w-data="600" h-data="400" class="button active btn-modal-open">결제</a>
+
+						<a href="#layer_before_sale"  w-data="600" h-data="550" class="button active btn-modal-open">결제</a>
+											-->
+						<a href="#layer_ria"  w-data="600" h-data="500" class="button active btn-modal-open">리아결제</a>
+					</div>
+				</div>
+			</div>
+			<!--// seat-result -->
+
+		</div>
+		<!--// seat-select-section -->
+
+	</div>
+	<!--// quick-reserve -->
+</div>
+
+	<!-- 레이어 : 메가박스 VIP영화쿠폰 -->
+	<section id="layer_vip_coupon" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 VIP영화쿠폰</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset mb10">
+					사용할 쿠폰을 선택해주세요.
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>쿠폰, 유효기간, 사용여부 항목을 가진 메가박스 VIP영화쿠폰 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:200px;">
+							<col style="width:56px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">쿠폰</th>
+								<th scope="col">유효기간</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<!--
+						상황에 따라 스크롤 높이값이 달라지기 때문에 인라인으로 넣어줘야 함
+					 -->
+					<div class="scroll" style="min-height:340px; max-height:340px;">
+						<table class="board-list line">
+							<caption>쿠폰, 유효기간, 사용여부 항목을 가진 메가박스 VIP영화쿠폰 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:200px;">
+								<col style="width:56px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">
+										<strong>관람권명</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+
+
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td><input type="checkbox" title="쿠폰 사용" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 VIP영화쿠폰 -->
+
+	<!-- 레이어 : 메가박스 관람권 -->
+	<section id="layer_movie_megabox_coupon" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 관람권</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset mb10">
+					보유하신 관람권은 등록 후 사용하실 수 있으며 등록된 관람권은<br />
+					온라인에서만 사용 가능합니다. 사용할 관람권 또는 쿠폰을 선택해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">관람권번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" placeholder="관람권번호 12자리" title="메가박스 관람권 번호 입력" class="input-text w150px" />
+							<input type="text" placeholder="인증번호 4자리" title="메가박스 관람권 인증번호 입력" class="input-text w120px ml05" />
+						</div>
+
+						<div class="sh-btn gray">
+							<a href="#layer_movie_megabox_coupon_regi" w-data="600" h-data="320" class="button small gray btn-modal-open">관람권등록</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>관람권, 유효기간, 사용여부 항목을 가진 영화관람권 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:200px;">
+							<col style="width:56px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">관람권</th>
+								<th scope="col">유효기간</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<!--
+						상황에 따라 스크롤 높이값이 달라지기 때문에 인라인으로 넣어줘야 함
+					 -->
+					<div class="scroll" style="min-height:129px; max-height:129px;">
+						<table class="board-list line">
+							<caption>관람권, 유효기간, 사용여부 항목을 가진 영화관람권 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:200px;">
+								<col style="width:56px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">
+										<strong>관람권명</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td>
+										<input type="checkbox" title="사용" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td>
+										<input type="checkbox" title="사용" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td>
+										<input type="checkbox" title="사용" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td>
+										<input type="checkbox" title="사용" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										<strong>부티크프라이빗 관람권</strong><br />
+										1234-5678-1234-****
+									</td>
+									<td>2019-01-08~2019-01-31</td>
+									<td>
+										<input type="checkbox" title="사용" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list">
+						<li>등록된 관람권은 나의메가박스에서 확인 및 삭제하실 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 관람권 -->
+
+	<!-- 레이어 : 관람권등록 -->
+	<section id="layer_movie_megabox_coupon_regi" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">관람권등록</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="table-wrap">
+					<table class="board-list line">
+						<caption>관람권, 유효기간, 사용여부 항목을 가진 관람권등록 사용여부 목록 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:200px;">
+							<col style="width:80px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">관람권</th>
+								<th scope="col">유효기간</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="a-l">
+									<strong>관람권명</strong><br />
+									1234-5678-1234-****
+								</td>
+								<td>2019-01-08~2019-01-31</td>
+								<td>사용가능</td>
+							</tr>
+							<tr>
+								<td class="a-l">
+									<strong>관람권명</strong><br />
+									1234-5678-1234-****
+								</td>
+								<td>2019-01-08~2019-01-31</td>
+								<td><span class="font-red">사용불가</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p class="font-red mt10">
+					사용할 수 없는 관람권 입니다. 고객센터 (1544-0070)으로 문의주세요.
+				</p>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">등록</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 관람권등록 -->
+
+	<!-- 레이어 : 메가박스 멤버십 포인트 -->
+	<section id="layer_membership_point" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 멤버십 포인트</h3>
+			</header>
+
+			<div class="layer-con">
+				<!-- layer-membership-point -->
+				<div class="layer-membership-point">
+					<ul class="dot-list">
+						<li>회원님께서 보유하고 있는 포인트 중 사용 가능한 포인트입니다.</li>
+						<li>신포인트는 주말 및 공휴일 사용이 가능합니다.</li>
+						<li>포인트 적립 및 사용 내역 나의메가박스 &gt; 멤버십 포인트에서 확인하세요.</li>
+					</ul>
+
+					<div class="usable-point">
+						<i class="iconset ico-point"></i> 사용 가능한 멤버십 포인트 <span><em>9,999,000</em> P</span>
+					</div>
+
+					<!-- point-div -->
+					<div class="point-div">
+						<!--
+							비 활성화 처럼 보이게
+							<div class="block disabled">
+						 -->
+						<div class="block disabled">
+							<p class="txt">구 포인트</p>
+
+							<a href="#tooltip01_01" class="tooltip hover">
+								<span><i class="iconset ico-tooltip-gray-outline"></i></span>
+								<div class="ir" data-width="240">
+
+									<p class="reset">
+										<strong>구포인트 사용안내</strong>
+									</p>
+
+									<p class="reset mt05">
+										구포인트는 2019.00.00 이전에<br />
+										적립된 포인트를 대상으로 하며<br />
+										주말 및 공휴일을 제외한 평일에만<br />
+										사용이 가능합니다.
+									</p>
+								</div>
+							</a>
+
+							<p class="point">14,000 P</p>
+						</div>
+
+						<div class="block">
+							<p class="txt">신 포인트</p>
+
+							<a href="#tooltip01_02" class="tooltip hover">
+								<span><i class="iconset ico-tooltip-gray-outline"></i></span>
+								<div class="ir" data-width="240">
+
+									<p class="reset">
+										<strong>신포인트 사용안내</strong>
+									</p>
+
+									<p class="reset mt05">
+										신포인트는 2019.00.00 이후에<br />
+										적립된 포인트를 대상으로 합니다.
+									</p>
+								</div>
+							</a>
+
+							<p class="point">23,000 P (주말사용 가능)</p>
+						</div>
+					</div>
+					<!--// point-div -->
+
+					<!-- chk-point -->
+					<div class="chk-point">
+						<div class="chk-wrap">
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_1" /> <label for="chk_point_1">1 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_2" /> <label for="chk_point_2">2 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_3" /> <label for="chk_point_3">3 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_4" /> <label for="chk_point_4">4 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_5" /> <label for="chk_point_5">5 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_6" /> <label for="chk_point_6">6 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block">
+								<span class="bg">
+									<input type="checkbox" id="chk_point_7" disabled="disabled" /> <label for="chk_point_7">7 (8,000 P)</label>
+								</span>
+							</div>
+
+							<div class="block"></div>
+						</div>
+
+						<div class="total-point">
+							총 8000 P / 1 매
+						</div>
+					</div>
+					<!--// chk-point -->
+				</div>
+
+
+
+				<!--// layer-membership-point -->
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 멤버십 포인트 -->
+
+	<!-- 레이어 : 스토어교환권 -->
+	<section id="layer_store_change" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">스토어교환권</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray v1 mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset"><span class="label">교환권번호</span></p>
+
+						<div class="sh-input ml08"><input type="text" title="스토어교환권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide mt15">
+					<table class="board-list line">
+						<caption>교환권 정보, 사용내역/유효기간, 사용 항목을 가진 스토어교환권 제목표</caption>
+						<colgroup>
+							<col style="width:220px;">
+							<col />
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">교환권 정보</th>
+								<th scope="col">사용내역/유효기간</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<!--
+						상황에 따라 스크롤 높이값이 달라지기 때문에 인라인으로 넣어줘야 함
+					 -->
+					<div class="scroll" style="min-height:299px; max-height:299px;">
+						<table class="board-list line">
+							<caption>교환권 정보, 사용내역/유효기간, 사용 항목을 가진 스토어교환권 내용표</caption>
+							<colgroup>
+								<col style="width:220px;">
+								<col />
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">러브콤보패키지 러브콤보교환권</td>
+									<td class="a-c">
+										총(0/1) | 주간(0/1) | 월간(0/1)<br />
+										/ 2019.03.25~2021.03.24<br />
+										주말에만 사용 가능
+									</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 스토어교환권 -->
+
+
+	<!-- 레이어 : 기프티콘 -->
+	<section id="layer_gifticon" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">기프티콘</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="기프티콘 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 기프티콘 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<!--
+						상황에 따라 스크롤 높이값이 달라지기 때문에 인라인으로 넣어줘야 함
+					 -->
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 기프티콘 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 기프티콘 -->
+
+	<!-- 레이어 : 기프티쇼 -->
+	<section id="layer_giftishow" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">기프티쇼</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="기프티쇼 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 기프티쇼 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 기프티쇼 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 기프티쇼 -->
+
+	<!-- 레이어 : G마켓 -->
+	<section id="layer_gmarket" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">G마켓</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="G마켓 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 G마켓 예매권 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 G마켓 예매권 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : G마켓 -->
+
+	<!-- 레이어 : 아이넘버 -->
+	<section id="layer_inumber" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">아이넘버</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="아이넘버 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 아이넘버 예매권 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용여부 항목을 가진 아이넘버 예매권 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!-- // 레이어 : 아이넘버 -->
+
+	<!-- 레이어 : 도넛북 -->
+	<section id="layer_donutbook" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">도넛북</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="도넛북 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용 항목을 가진 도넛북 예매권 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용 항목을 가진 도넛북 예매권 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!-- // 레이어 : 도넛북 -->
+
+	<!-- 레이어 : 스마트콘 -->
+	<section id="layer_smartcon" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">스마트콘</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">예매권번호</span></p>
+
+						<div class="sh-input"><input type="text" title="스마트콘 예매권 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>예매권 명, 예매권번호, 사용 항목을 가진 스마트콘 예매권 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:150px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">예매권 명</th>
+								<th scope="col">예매권번호</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height: 281px;">
+						<table class="board-list line">
+							<caption>예매권 명, 예매권번호, 사용 항목을 가진 스마트콘 예매권 목록의 내용 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:150px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">아이넘버 1인권</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="아이넘버 1인권 사용여부 체크" /></td>
+								</tr>
+								<tr>
+									<td class="a-l">글자글자글자 글자글자글자</td>
+									<td>123456789012</td>
+									<td><input type="checkbox" title="글자글자글자 글자글자글자 사용여부 체크" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!-- // 레이어 : 스마트콘 -->
+
+	<!-- 레이어 : 제휴예매권 -->
+	<section id="layer_alliance" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">제휴예매권</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">쿠폰번호</span></p>
+
+						<div class="sh-input"><input type="text" title="제휴예매권 쿠폰 번호입력" class="input-text w200px"></div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>쿠폰정보, 시용내역/유효기간, 인원, 사용 항목을 가진 제휴예매권 목록의 제목 표</caption>
+						<colgroup>
+							<col style="width:200px;">
+							<col>
+							<col style="width:80px;">
+							<col style="width:80px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">쿠폰 정보</th>
+								<th scope="col">사용내역/유효기간</th>
+								<th scope="col">인원</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+					<div class="scroll" style="min-height:281px; max-height:281px;">
+						<table class="board-list line">
+							<caption>쿠폰정보, 시용내역/유효기간, 인원, 사용 항목을 가진 제휴예매권 목록의 내용 표</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col>
+								<col style="width:80px;">
+								<col style="width:80px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="a-l"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!-- // 레이어 : 제휴예매권 -->
+
+	<!-- 레이어 : 메가박스 프랜즈 -->
+	<section id="layer_friend" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">프랜즈 멤버십</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">카드번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" title="메가박스 프랜즈 카드번호 입력" onclick="hpFormatHiddenByRegx2();" class="input-text w200px" />
+						</div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap">
+					<table class="board-form">
+						<caption>메가박스 프랜즈 멤버십을 본인 관람가, 동반자 관람단가, 월 제한수, 일 제한수, 주말가능, 관람가능일 순서로 입력하는 표</caption>
+						<colgroup>
+							<col style="width:125px;">
+							<col>
+							<col style="width:125px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="select_sale">본인 관람가</label></th>
+								<td colspan="3">
+									<select id="select_sale" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="select_price">동반자 관람단가</label></th>
+								<td colspan="3">
+									<select id="select_price" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">월 제한수</th>
+								<td></td>
+								<th scope="row">일 제한수</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주말가능</th>
+								<td></td>
+								<th scope="row">관람가능일</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 프랜즈 -->
+
+	<!-- 스타카드 -->
+	<section id="layer_star_card" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 스타카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">카드번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" title="메가박스 스타카드 카드번호 입력" class="input-text w200px" />
+						</div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap">
+					<table class="board-form">
+						<caption>메가박스 스타카드를 본인 관람가, 동반자 관람단가, 월 제한수, 일 제한수, 주말가능, 관람가능일 순서로 입력하는 표</caption>
+						<colgroup>
+							<col style="width:125px;">
+							<col>
+							<col style="width:125px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="select_sale_star">본인 관람가</label></th>
+								<td colspan="3">
+									<select id="select_sale_star" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="select_price_star">동반자 관람단가</label></th>
+								<td colspan="3">
+									<select id="select_price_star" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">월 제한수</th>
+								<td></td>
+								<th scope="row">일 제한수</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주말가능</th>
+								<td></td>
+								<th scope="row">관람가능일</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 스타카드 -->
+
+	<!-- 스타카드 -->
+	<section id="layer_honors_card" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 아너스카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="popup-gray mid-info-box mt0">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">카드번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" title="메가박스 아너스카드 카드번호 입력" class="input-text w200px" />
+						</div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap">
+					<table class="board-form">
+						<caption>메가박스 아너스카드를 본인 관람가, 동반자 관람단가, 월 제한수, 일 제한수, 주말가능, 관람가능일, 잔여금액 순서로 입력하는 표</caption>
+						<colgroup>
+							<col style="width:125px;">
+							<col>
+							<col style="width:125px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="select_sale_honors">본인 관람가</label></th>
+								<td colspan="3">
+									<select id="select_sale_honors" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="select_price_honors">동반자 관람단가</label></th>
+								<td colspan="3">
+									<select id="select_price_honors" class="w150px x-small">
+										<option>매수할인선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">월 제한수</th>
+								<td></td>
+								<th scope="row">일 제한수</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주말가능</th>
+								<td></td>
+								<th scope="row">관람가능일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">잔여금액</th>
+								<td colspan="3"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 스타카드 -->
+
+
+	<!-- 레이어 : 메가박스 영화할인쿠폰 --> <!-- 2019-12-04 개선사항 쿠폰번호를 쿠폰명안에 p 태그를 이용하여 이동이됨 -->
+	<section id="layer_mega_sale" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 할인쿠폰</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-tit">사용할 쿠폰을 선택해주세요.</div>
+
+				<div class="popup-gray mid-info-box mb15">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">쿠폰번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" title="메가박스 영화할인쿠폰 16자리 입력" placeholder="쿠폰번호 16자리" class="input-text" style="width:250px;" />
+						</div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">쿠폰등록</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap divide">
+					<table class="board-list line">
+						<caption>쿠폰명, 쿠폰번호, 유효기간, 사용 항목을 가진 메가박스 영화할인쿠폰 목록의 제목 표</caption>
+						<colgroup>
+							<col>
+							<col style="width:115px;">
+							<col style="width:60px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">쿠폰명</th>
+								<th scope="col">유효기간</th>
+								<th scope="col">사용</th>
+							</tr>
+						</thead>
+					</table>
+
+
+					<div class="scroll" style="min-height:171px; max-height:171px;">
+						<table class="board-list line">
+							<caption>쿠폰명, 쿠폰번호, 유효기간, 사용 항목을 가진 메가박스 영화할인쿠폰 목록의 제목 표</caption>
+							<colgroup>
+								<col>
+								<col style="width:115px;">
+								<col style="width:60px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="a-l">
+										[강남지점] 온오프라인 영화 3천원 할인
+										<p class="inner-code">5281160390015394</p>
+									</td>
+									<td>2019.01.08<br />~ 2019.01.31</td>
+									<td>
+										<input type="checkbox" title="쿠폰 사용여부 체크" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										[강남지점] 온오프라인 영화 3천원 할인
+										<p class="inner-code">5281160390015394</p>
+									</td>
+									<td>2019.01.08<br />~ 2019.01.31</td>
+									<td>
+										<input type="checkbox" title="쿠폰 사용여부 체크" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										[강남지점] 온오프라인 영화 3천원 할인
+										<p class="inner-code">5281160390015394</p>
+									</td>
+									<td>2019.01.08<br />~ 2019.01.31</td>
+									<td>
+										<input type="checkbox" title="쿠폰 사용여부 체크" />
+									</td>
+								</tr>
+								<tr>
+									<td class="a-l">
+										[강남지점] 온오프라인 영화 3천원 할인
+										<p class="inner-code">5281160390015394</p>
+									</td>
+									<td>2019.01.08<br />~ 2019.01.31</td>
+									<td>
+										<input type="checkbox" title="쿠폰 사용여부 체크" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="box-border v1 use-guide mt15">
+						<p class="tit">이용안내</p>
+
+						<ul class="dot-list gray">
+							<li>보유하신 쿠폰은 등록 후 이용하실 수 있습니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 영화할인쿠폰 -->
+
+	<!-- 레이어 : skt -->
+	<section id="layer_skt" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">T멤버십</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset mb10">
+					T멤버십 카드 정보를 입력해주세요
+				</div>
+
+				<div class="popup-gray mid-info-box mb15">
+					<div class="pop-search-area">
+						<p class="sh-txt reset mr08"><span class="label">카드번호</span></p>
+
+						<div class="sh-input">
+							<input type="text" title="T멤버십 카드번호 입력" class="input-text w200px" />
+						</div>
+
+						<div class="sh-btn gray">
+							<button type="button" class="button small gray">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="table-wrap">
+					<table class="board-form">
+						<caption></caption>
+						<colgroup>
+							<col style="width:150px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="t_membership">T 멤버십</label></th>
+								<td>
+									<div class="td-relative">
+										<select id="t_membership" class="w150px mr10 x-small">
+											<option>선택</option>
+										</select>
+
+										당일 잔여 <span class="font-green">0</span>회
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 2,000원 할인(동반 4인 포함, 1일 최대 5매)</li>
+						<li>조조, 심야, 우대, 어린이요금, 문화의날 및 특별콘텐트 이용불가</li>
+						<li>타 제휴 및 쿠폰 할인 중복사용 불가</li>
+						<li>VIP무료 예매는 T멤버십 홈페이지에서 가능</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : skt -->
+
+	<!-- 레이어 : 현대 M포인트 카드 -->
+	<section id="layer_hyundai_m_point" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">현대카드 M포인트</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					 현대 M포인트 카드 정보를 입력해주세요
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="hyundai_m_point_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="hyundai_m_point_card_num" title="현대 M포인트 카드번호 첫번째자리 입력" class="input-text x-small w60px" /> -
+								<input type="text" title="현대 M포인트 카드번호 두번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="현대 M포인트 카드번호 세번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="현대 M포인트 카드번호 네번째자리 입력" class="input-text w60px x-small " />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="hyundai_m_point_card_date">카드유효기간</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="hyundai_m_point_card_date" title="현대 M포인트 카드 유효기간 월 입력" placeholder="MM" class="input-text w60px  x-small a-c" /> /
+								<input type="text" title="현대 M포인트 카드 유효기간 년 입력" placeholder="YY" class="input-text w60px x-small a-c" />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="hyundai_m_point_card_password">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="hyundai_m_point_card_password" title="현대 M포인트 카드 비밀번호 입력" class="input-text w60px x-small " />
+								<span class="font-size-13 font-gray ml05">앞 2자리</span>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset vt"><label for="hyundai_m_point_card_birthday">생년월일</label></p>
+							<div class="sh-input mr0">
+								<input type="text" id="hyundai_m_point_card_birthday" title="현대 M포인트 카드 생년월일 입력" class="input-text w80px x-small " />
+
+								<p class="reset inline-block font-size-13 ml05 font-gray">생년월일 6자리(카드소유자) / 사업자번호 10자리</p>
+
+								<button type="button" class="button gray x-small ml07">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset vt"><label for="hyundai_m_point_card_ticket_counting">적용매수</label></p>
+							<div class="sh-input mr0">
+
+								<select title="현대 M포인트 선택" class="w120px v1 x-small">
+									<option>선택</option>
+								</select>
+
+								<span class="ml05 font-size-13">사용 가능한 포인트는 <em class="font-gblue">0</em> Point 입니다.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>영화 2,000포인트 차감 할인(1일 최대 8매), 현대카드로만 결제 가능</li>
+						<li>우대, 문화의날 및 특별콘텐트 이용불가</li>
+						<li>타 제휴 및 쿠폰 할인 중복사용 불가</li>
+					</ul>
+				</div>
+
+				<div class="mt10">
+					<input type="checkbox" id="hyundai_m_point_card_agree">
+					<label for="hyundai_m_point_card_agree">결제대행서비스 약관에 모두 동의</label>
+
+					<div class="mt10">
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=1&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">전자금융거래 이용약관 <i class="iconset ico-arr-right-green"></i></a>
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=3&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">개인정보의 수집 및 이용안내 <i class="iconset ico-arr-right-green"></i></a>
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=4&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">개인정보 제공 및 위탁안내 <i class="iconset ico-arr-right-green"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 현대 M포인트 카드 -->
+
+
+	<!-- 레이어 : 문화누리 카드 -->
+	<section id="layer_mnuri" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">문화누리 카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					  문화누리 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="mnuri_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="mnuri_card_num" title="문화누리 카드번호 입력" class="input-text w180px x-small" />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="mnuri_card_num_card_date">카드유효기간</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="mnuri_card_num_card_date" title="문화누리 카드 유효기간 월 입력" placeholder="MM" class="input-text w60px x-small a-c" /> /
+								<input type="text" title="문화누리 유효기간 년 입력" placeholder="YY" class="input-text w60px x-small a-c" />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="hyundai_m_point_card_password">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="mnuri_card_password" title="문화누리 카드 비밀번호 입력" class="input-text w60px x-small" />
+								<span class="font-gray ml05 font-size-13">앞 2자리</span>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line gray">
+							<p class="sh-txt reset vt"><label for="mnuri_card_birthday">생년월일</label></p>
+							<div class="sh-input mr0">
+								<input type="text" id="mnuri_card_birthday" title="문화누리 카드 생년월일 입력" class="input-text w80px x-small" />
+
+								<p class="reset inline-block font-size-13 font-gray ml05">생년월일 6자리(카드소유자)</p>
+							</div>
+
+							<button type="button" class="button gray x-small ml07">조회</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="pop-util mb15">
+					<ul>
+						<li>
+							<p class="vm">적용매수</p>
+						</li>
+						<li class="a-r">
+							<select title="문화누리 적용매수 선택" class="w120px x-small">
+								<option>선택</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+
+				<div class="box-border v1 use-guide">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 2,500원 할인(동반 1인), 문화누리카드로만 결제 가능</li>
+						<li>일반관 2D/3D 성인, 청소년 정상가 선택 시 할인 적용 가능</li>
+						<li>문화누리카드 잔액 부족 시 결제 불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!-- // 레이어 : 문화누리 카드 -->
+
+	<!-- 레이어 : GS&POINT -->
+	<section id="layer_gs_point" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">GS&amp;POINT</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					GS&amp;POINT 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="gs_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="gs_card_num" title="GS&amp;POINT 카드번호 입력" class="input-text w180px x-small" />
+
+								<button type="button" class="button gray x-small ml05">포인트 조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능 포인트</p>
+
+							<div class="sh-input">
+								<em class="font-gblue">0</em> 점
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">적용 매수 선택</p>
+
+							<div class="sh-input">
+								<select title="GS 포인트 적용 매수 선택" class="w100px x-small">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="gs_card_pwd">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="gs_card_pwd" title="GS&amp;POINT 카드 비밀번호 입력" class="input-text w100px x-small" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 2,000포인트 차감 할인(1일 최대 8매)</li>
+						<li>우대, 문화의날 및 특별콘텐트 이용불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : GS&POINT -->
+
+	<!-- 레이어 : 현대오일뱅크 -->
+	<section id="layer_oilbank" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">현대오일뱅크</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					 현대오일뱅크 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="ho_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="ho_card_num" title="현대오일뱅크 카드번호 입력" class="input-text w180px x-small" />
+
+								<button type="button" class="button gray x-small ml05">포인트 조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능 포인트</p>
+
+							<div class="sh-input">
+								<em class="font-gblue">0</em> 점
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">적용 매수 선택</p>
+
+							<div class="sh-input">
+								<select title="현대오일뱅크 포인트 적용 매수 선택" class="w100px x-small">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="ho_card_pwd">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="ho_card_pwd" title="현대오일뱅크 카드 비밀번호 입력" class="input-text w100px x-small" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 2,000포인트 차감 할인(1일 최대 4매)</li>
+						<li>우대, 문화의날 및 특별콘텐트 이용불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 현대오일뱅크 -->
+
+	<!-- 레이어 : 해피포인트 -->
+	<section id="layer_happypoint" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">해피포인트</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					 해피포인트 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="happy_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="happy_card_num" title="해피포인트 카드번호 입력" class="input-text w180px x-small" />
+
+								<button type="button" class="button gray x-small ml05">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능 포인트</p>
+
+							<div class="sh-input">
+								<em class="font-gblue">0</em> 점
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">적용 매수 선택</p>
+
+							<div class="sh-input">
+								<select title="해피포인트 포인트 적용 매수 선택" class="w100px x-small">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 2,000포인트 차감 할인</li>
+						<li>우대, 문화의날 및 특별콘텐트 이용불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 현대오일뱅크 -->
+
+	<!-- 레이어 : 블루멤버스 포인트 -->
+	<section id="layer_bluemembers" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">블루멤버스 포인트</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					 블루멤버스 포인트 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="bluemembers_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="bluemembers_card_num" title="블루멤버스 포인트 카드번호 입력" class="input-text w180px x-small" />
+
+								<button type="button" class="button gray  x-small ml05">포인트 조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능 포인트</p>
+
+							<div class="sh-input">
+								<em class="font-gblue">0</em> 점
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">적용 매수 선택</p>
+
+							<div class="sh-input">
+								<select title="블루멤버스 적용 매수 선택" class="w100px x-small">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="bluemembers_card_pwd">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="bluemembers_card_pwd" title="블루멤버스 포인트 카드 비밀번호 입력" class="input-text w100px x-small" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 4,000포인트 차감 할인(1일 최대 8매)</li>
+						<li>우대, 문화의날 및 특별콘텐트 이용불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 블루멤버스 포인트 -->
+
+	<!-- 레이어 : 중앙멤버십 -->
+	<section id="layer_jmembership" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">중앙멤버십</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					멤버십카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box mb15">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="jmembership_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="jmembership_card_num" title="중앙멤버십 카드번호 입력" class="input-text w180px x-small" />
+							</div>
+
+							<div class="sh-btn gray">
+								<button type="button" class="button  x-small gray">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용여부</p>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능금액</p>
+
+							<span class="font-green">0</span>점
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_date">적용 매수 선택</label></p>
+
+							<div class="sh-input">
+								<select title="중앙 멤버십 선택" class="selectpicker x-small">
+									<option>선택</option>
+									<option>일반영화 1매 (신기준)(-10,000 P)</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="box-border v1">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>장당 1,000원 할인(연 24회)</li>
+						<li>조조, 심야, 우대, 어린이요금, 문화의날 및 특별콘텐트 이용불가</li>
+						<li>타 제휴 및 쿠폰 할인 중복사용 불가</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 중앙멤버십 -->
+
+
+	<!-- 레이어 : 중앙 패밀리 포인트 -->
+	<section id="layer_jfpoint" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">중앙 패밀리 포인트</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					회원님께서 보유하고 있는 포인트를 조회 및 적용하는 페이지입니다.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능한 포인트</p>
+
+							<div class="sh-input">
+								<button type="button" class="button gray x-small">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능한 포인트</p>
+
+							<div class="sh-input">
+								<em class="font-gblue">28,000</em> Point
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_date">적용 매수 선택</label></p>
+
+							<div class="sh-input">
+								<select title="중앙 패밀리 포인트 선택" class="selectpicker x-small">
+									<option>선택</option>
+									<option>일반영화 1매 (신기준)(-10,000 P)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+
+
+
+	<!-- 레이어 : ok 캐쉬백 -->
+	<section id="layer_okcashbag" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">OK 캐쉬백</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="reset">
+					OK 캐쉬백 카드 정보를 입력해주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box mb10">
+					<div class="pop-search-area line-wid">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="okcashbag_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="okcashbag_card_num" title="OK 캐쉬백 카드번호 입력" class="input-text w180px x-small" />
+							</div>
+
+							<div class="sh-btn">
+								<button type="button" class="button x-small gray">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">사용가능한 포인트</p>
+							<span class="font-green">0</span> Point
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="okcashbag_use_point">사용할 포인트</label></p>
+							<input type="text" id="okcashbag_use_point" title="사용할 ok 캐쉬백 포인트 입력" class="input-text w120px mr05 x-small" /> Point
+
+							<div class="sh-btn ml05">
+								<button type="button" class="button gray-line x-small">모두사용</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="okcashbag_use_pwd">비밀번호</label></p>
+							<input type="password" id="okcashbag_use_pwd" title="ok 캐쉬백 카드 비밀번호 입력" class="input-text w120px x-small" />
+						</div>
+
+					</div>
+				</div>
+
+				<div class="a-r">
+					<input type="checkbox" id="okcashbag_save_back" />
+					<label for="okcashbag_save_back">동일 카드로 적립</label>
+				</div>
+
+				<div class="box-border v1 use-guide mt10">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>OK캐쉬백 1,000점 이상 보유 시 100점 단위로 사용가능</li>
+						<li>OK캐쉬백 적립 : 최종 결제금액의 2% 적립</li>
+						<li>고객님의 안전한 포인트 사용을 위하여 온라인 비밀번호로 변경하셔야 합니다. <br />(숫자, 문자, 특수문자 조합 6~16자리)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : ok 캐쉬백 -->
+
+	<!-- 레이어 : 메가박스 기프트카드  -->
+	<section id="layer_megabox_giftcard" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 기프트카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-search-area v1 a-c">
+					<label for="select_megabox_gift_card">카드선택</label>
+
+					<select id="select_megabox_gift_card" class="v1 w220px x-small ml10">
+						<option>선택</option>
+					</select>
+				</div>
+
+				<div class="mt10 a-r">
+					<a href="#layer_gift_regi" class="font-gblue btn-modal-open x-small" w-data="600" h-data="430">기프트카드 등록 <i class="iconset ico-arr-right-green"></i></a>
+				</div>
+
+				<div class="table-wrap mt10">
+					<table class="board-form">
+						<caption>카드잔여금액, 결제필요금액, 사용금액 항목을 가진 메가박스 기프트카드 사용 표</caption>
+						<colgroup>
+							<col style="width:125px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">카드잔여금액</th>
+								<td><em class="font-gblue">12,000</em> 원</td>
+							</tr>
+							<tr>
+								<th scope="row">결제필요금액</th>
+								<td>12,000 원</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="use_money">사용금액</label></th>
+								<td>
+									<input type="text" id="use_money" class="input-text w100px x-small" />
+									<span class="font-size-13 font-gray ml05">원</span>
+
+									<button type="button" class="button gray-line x-small ml05">전액사용</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용안내</p>
+
+					<ul class="dot-list gray">
+						<li>보유하고 계신 실물카드는 등록 후 이용하실 수 있습니다.</li>
+						<li>보유하고 계신 기프트카드의 금액은 '나의 메가박스 > 기프트카드' 메뉴를 이용하여 합산 이용하실 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 메가박스 기프트카드  -->
+
+	<!-- 레이어 : 기프트카드 등록 레이어 -->
+	<section id="layer_gift_regi" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">기프트카드 등록</h3>
+			</header>
+
+			<div class="layer-con">
+				<p class="reset">기프트카드 정보를 입력해 주세요.</p>
+
+				<div class="pop-gray mt10 a-l">
+					<div>
+						<label for="num_card" class="mr10">카드등록</label>
+						<input type="text" id="num_card" class="input-text w350px x-small" title="카드번호 입력" />
+					</div>
+
+					<div class="mt05">
+						<label for="num_chk" class="mr10">인증번호</label>
+						<input type="text" id="num_chk" class="input-text w100px x-small" title="인증번호 입력" />
+					</div>
+				</div>
+
+				<div class="box-border v1 use-guide mt15">
+					<p class="tit">이용인네</p>
+
+					<ul class="dot-list gray">
+						<li>선물받은 기프트카드 또는 극장에서 구입하신 카드를 등록 하시면 온라인에서도 편리하게 이용하실 수 있습니다.</li>
+						<li>실물카드를 등록하실 경우 카드 뒷면의 스크래치 부분을 긁어 6자리  인증번호를 입력해 주세요.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button close-layer">취소</button>
+				<button type="button" class="button purple">등록</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 기프트카드 등록 레이어 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id="layer_megabox_giftcard2" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">메가박스 기프트카드</h3>
+			</header>
+
+			<div class="layer-con">
+
+				<!-- 카드 등록 되어 있을 때 -->
+				<div>
+					<div class="clearfix">
+						<p class="reset float-l line32">회원님이 보유하고 계신 메가박스 기프트카드로 결제하실 수 있습니다.</p>
+
+						<div class="float-r">
+							<a href="" class="button small gray-line">기프트카드등록</a>
+						</div>
+					</div>
+
+					<!-- megabox-giftcard -->
+					<div class="megabox-giftcard">
+
+						<div class="card-info">
+							<div class="bg">
+								<p class="num">1234-1234-****-1234</p>
+								<p class="money">120,000원</p>
+							</div>
+
+							<a href="#card_list" class="tooltip click">
+								<span>다른카드선택 <i class="iconset ico-arr-down-green"></i></span>
+
+								<div class="ir" data-width="380">
+									<div class="cont-area">
+										<div class="megabox-giftcard-small-list">
+											<ul>
+												<li>
+													<button type="button" class="btn">
+														<span class="img"><img src="../../../static/pc/images/reserve/img-card-sample.png" alt="" /></span>
+														<span class="num">8820-5626-****-2562</span>
+														<span class="money">0 원</span>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="btn">
+														<span class="img"><img src="../../../static/pc/images/reserve/img-card-sample.png" alt="" /></span>
+														<span class="num">8820-5626-****-2562</span>
+														<span class="money">2,000 원</span>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="btn">
+														<span class="img"><img src="../../../static/pc/images/reserve/img-card-sample.png" alt="" /></span>
+														<span class="num">8820-5626-****-2562</span>
+														<span class="money">0 원</span>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="btn">
+														<span class="img"><img src="../../../static/pc/images/reserve/img-card-sample.png" alt="" /></span>
+														<span class="num">8820-5626-****-2562</span>
+														<span class="money">2,000 원</span>
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="pay-info">
+							<div class="block">
+								<p class="txt">카드잔여금액</p>
+
+								<div class="money">
+									<em class="font-green">12,000</em>
+									<span>원</span>
+								</div>
+							</div>
+
+							<div class="block">
+								<p class="txt">결제필요금액</p>
+
+								<div class="money">
+									<em>12,000</em>
+									<span>원</span>
+								</div>
+							</div>
+
+							<div class="block">
+								<p class="txt">사용금액</p>
+
+								<div class="input-money">
+									<button type="button" class="button small gray-line">전액사용</button>
+									<input type="text" class="input-text w70px" title="사용금액 입력" />
+									<span class="line32">원</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// megabox-giftcard -->
+				</div>
+				<!--// 카드 등록 되어 있을 때 -->
+
+				<!-- 카등 등록 되어 있지 않을 때 -->
+				<div>
+					<p class="reset">
+						보유하신 카드를 등록 또는 구매 후 이용하실 수 있습니다.
+					</p>
+
+					<!-- megabox-giftcard -->
+					<div class="megabox-giftcard">
+
+						<div class="card-info">
+							<a href="" class="empty-card">
+								<i class="iconset ico-corss-black"></i>
+								기프트카드등록
+							</a>
+						</div>
+
+						<div class="pay-info">
+							<p class="reset pt05 mb10">등록된 카드가 없습니다.</p>
+
+							<p class="reset mb10">
+								스토어에서 기프트 카드를 구매하시거나<br />
+								보유하신 카드를 등록해주세요.
+							</p>
+
+							<a href="" class="font-green">기프트카드 구매하기 <i class="iconset ico-arr-right-green"></i></a>
+						</div>
+					</div>
+					<!--// megabox-giftcard -->
+				</div>
+				<!--// 카등 등록 되어 있지 않을 때 -->
+
+
+				<ul class="dash-list mt10">
+					<li>보유하고 계신 실물카드는 등록 후 이용하실 수 있습니다.</li>
+					<li>보유하고 계신 기프트카드의 금액은 '나의 메가박스 > 기프트카드' 메뉴를 이용하여 합산 이용하실 수 있습니다.</li>
+				</ul>
+
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">적용</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+
+	<!-- 레이어 : 현금영수증 -->
+	<section id="layer_cash_bill" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">현금영수증 발급</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-tit">
+					현금영수증 발행을 위해 아래 정보를 입력해 주세요.<br />
+					현금영수증 발급신청 하지 않고 창을 닫으시면 자진발급 처리 됩니다.
+				</div>
+
+				<div class="popup-gray mid-info-box mb15">
+					<div class="pop-search-area line-sht">
+						<div class="pop-search-area-line ">
+							<p class="sh-txt reset">금액</p>
+							<strong >12,000</strong>원
+						</div>
+
+						<div class="pop-search-area-line longline">
+							<p class="sh-txt reset">거래구분</p>
+
+							<div class="sh-input">
+								<div>
+									<span>
+										<input type="radio" id="radio_cash_bill01" checked="checked" />
+										<label for="radio_cash_bill01">개인소득공제용</label>
+									</span>
+
+									<span class="ml20">
+										<input type="radio" id="radio_cash_bill02" />
+										<label for="radio_cash_bill02">사업자증빙용</label>
+									</span>
+								</div>
+
+								<div class="mt5">
+
+									<!-- 개인소득공제용 선택되었을때 -->
+									<input type="text" title="휴대폰 번호 입력" class="input-text w200px">
+									<span class="ml10">휴대폰 번호를 입력해 주세요.</span>
+
+									<!--사업자증빙용 선택되었을때 -->
+									<!--
+									<input type="text" title="사업자 번호 입력" class="input-text w200px">
+									<span class="ml10">사업자 번호를 입력해 주세요.</span>
+									 -->
+									<!-- //사업자증빙용 선택되었을때 -->
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">즉시발급</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 현금영수증 -->
+
+	<!-- 레이어  : 선 할인카드 -->
+	<section id="layer_before_sale" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">즉시할인카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-tit">
+					카드정보 입력 후 [조회] 버튼을 눌러 최종 결제금액을 확인해 주세요.
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="before_sale_card_num" title="즉시할인카드 카드번호 첫번째자리 입력" class="input-text x-small w60px" /> -
+								<input type="text" title="즉시할인카드 카드번호 두번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="즉시할인카드 카드번호 세번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="즉시할인카드 카드번호 네번째자리 입력" class="input-text w60px x-small " />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_date">카드유효기간</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="before_sale_card_date" title="즉시할인카드 유효기간 월 입력" placeholder="MM" class="input-text w60px  x-small a-c" /> /
+								<input type="text" title="즉시할인카드 유효기간 년 입력" placeholder="YY" class="input-text w60px x-small a-c" />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_password">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="before_sale_card_password" title="즉시할인카드 비밀번호 앞 2자리 입력" class="input-text w60px x-small " />
+								<span class="font-size-13 font-gray ml05">앞 2자리</span>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line gray">
+							<p class="sh-txt reset vt"><label for="before_sale_card_birthday">생년월일</label></p>
+							<div class="sh-input mr0">
+								<input type="text" id="before_sale_card_birthday" title="현대 M포인트 카드 생년월일 입력" class="input-text w80px x-small " />
+
+								<p class="reset inline-block font-size-13 ml05 font-gray">생년월일 6자리(카드소유자) / 사업자번호 10자리</p>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">최종결제금액</p>
+
+							<div class="sh-input">
+								<button type="button" class="button gray x-small">조회</button>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset">최종결제금액</p>
+
+							<div class="sh-input">
+								20,000원 - <em class="font-gblue">3000월 할인</em> = 17,000원
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt10">
+					<input type="checkbox" id="before_sale_card_agree">
+					<label for="before_sale_card_agree">결제대행서비스 약관에 모두 동의</label>
+
+					<div class="mt10">
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=1&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">전자금융거래 이용약관 <i class="iconset ico-arr-right-green"></i></a>
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=3&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">개인정보의 수집 및 이용안내 <i class="iconset ico-arr-right-green"></i></a>
+						<a href="https://www.firstpay.co.kr/jsp/common/agreementPopup.jsp?type=4&langtype=HAN" title="새창 열림" target="_blank" class="a-link ml20">개인정보 제공 및 위탁안내 <i class="iconset ico-arr-right-green"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">닫기</button>
+				<button type="button" class="button small purple">결제</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	
+	<!-- 레이어  : 리아 결제 -->
+	<section id="layer_ria" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">신용/체크 카드</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-tit pb30">
+					<button type="button" class="button small right mr125"> <i class="iconset ico-reset-small"></i>새로입력</button>
+					<button type="button" class="button small right">카드정보 불러오기</button>
+				</div>
+
+				<div class="popup-gray mid-info-box">
+					<div class="pop-search-area">
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="ria_card_num">카드번호</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="ria_card_num" title="체크/신용카드 카드번호 첫번째자리 입력" class="input-text x-small w60px" /> -
+								<input type="text" title="체크/신용카드 카드번호 두번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="체크/신용카드 카드번호 세번째자리 입력" class="input-text w60px x-small " /> -
+								<input type="text" title="체크/신용카드 카드번호 네번째자리 입력" class="input-text w60px x-small " />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_date">유효기간</label></p>
+
+							<div class="sh-input">
+								<input type="text" id="before_sale_card_date" title="체크/신용카드 유효기간 월 입력" placeholder="MM" class="input-text w60px  x-small a-c" /> /
+								<input type="text" title="체크/신용카드 유효기간 년 입력" placeholder="YY" class="input-text w60px x-small a-c" />
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="before_sale_card_password">비밀번호</label></p>
+
+							<div class="sh-input">
+								<input type="password" id="before_sale_card_password" title="체크/신용카드 비밀번호 앞 2자리 입력" class="input-text w130px x-small " />
+								<span class="font-size-13 font-gray ml05">앞 2자리</span>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line gray">
+							<p class="sh-txt reset vt"><label for="before_sale_card_birthday">생년월일</label></p>
+							<div class="sh-input mr0">
+								<input type="text" id="before_sale_card_birthday" title="체크/신용카드 생년월일 입력" class="input-text w130px x-small " />
+
+								<p class="reset inline-block font-size-13 ml05 font-gray">생년월일 6자리(카드소유자) / 사업자번호 10자리</p>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="ria_select">할부</label></p>
+
+							<div class="sh-input">
+								<select name="" id="ria_select" class="small w130px">
+									<option value="">일시불</option>
+									<option value="">2개월</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="pop-search-area-line">
+							<p class="sh-txt reset"><label for="ria_select">수수료 적용</label></p>
+
+							<div class="sh-input">
+								<input type="checkbox" id="use2">
+								<label for="use2">수수료 함께 결제시 체크해주세요</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ria-finish-box">
+					<span class="left">최종 결제금액</span>
+					<span class="right"><b>10,000</b> <em>원</em></span>
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small close-layer">취소</button>
+				<button type="button" class="button small purple">결제</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+
+	<!-- 레이어 : 5분연장 -->
+	<section id="layer_time_delay" class="modal-layer">
+		<div class="wrap">
+			<header class="layer-header">
+				<h3 class="tit">알림</h3>
+			</header>
+
+			<div class="layer-con">
+				<div class="pop-tit">
+					예매가능시간이 1분 남았습니다.<br />
+					연장하시겠습니까? (1회만 가능)
+				</div>
+			</div>
+
+			<div class="btn-group-fixed">
+				<button type="button" class="button small purple">5분연장하기</button>
+				<button type="button" class="button small close-layer">취소</button>
+			</div>
+
+			<button type="button" class="btn-modal-close">레이어 닫기</button>
+		</div>
+	</section>
+	<!--// 레이어 : 5분연장 -->
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>홈 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+	// 상단배너
+	if( $('.topBanner').length > 0 ){
+		var topBannerSwiper = new Swiper('.topBanner', {
+			pagination: {
+		        el: ".swiper-pagination",
+		        type: "custom",
+		        renderCustom: function (swiper, current, total) {
+			        return '<div class="pgCurrent">'+current+'</div>' + '<div class="pgTotal">'+total+'</div>'; 
+			    }
+		      },
+		});
+	}
+
+	// footer 토글
+	$('#footer .arrow').click(function() {
+        $('.footerHide').toggleClass('act');
+    });
+
+});
+
+
+$(window).on('scroll', function() {
+	var r24_header = $('.r24_header');
+    if (r24_header.length > 0) {
+        var scrollTop = $(window).scrollTop();
+        
+        if (scrollTop > 0) {
+            r24_header.addClass('scrollon');
+        } else {
+            r24_header.removeClass('scrollon');
+        }
+    };
+
+    // 서브메뉴 상단 고정
+    var subNavTab = $('.subNavTab');
+    var sticky = subNavTab.offset().top - r24_header.outerHeight();
+
+    if ($(window).scrollTop() >= sticky) {
+        subNavTab.find('.navTabBox').addClass('sticky');
+    } else {
+        subNavTab.find('.navTabBox').removeClass('sticky');
+    }
+});
+</script>
+</head>
+<body>
+
+	<header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<h1 class="logo"><a href="">megabox</a></h1>
+			</div>
+			<div class="rtArea">
+				<a href="#" class="btn1"> 
+					<span class="numb">99+</span> <!--있을때 사용, 없을땐 span을 없애주세요-->
+					<i class="icon2 btn_ticket_bl30">티켓</i>
+				</a>
+				<a href="#" class="btn1">
+					<span class="new"></span> <!--있을때 사용, 없을땐 span을 없애주세요-->
+					<i class="icon2 btn_menu_bl30">메뉴</i>
+				</a>
+			</div>
+		</div>
+		<!-- headMenu -->
+		<div class="headMenu">
+			<ul>
+				<li><a href="#" class="menu">홈</a></li>
+				<li><a href="#" class="menu">이벤트</a></li>
+				<li class="act"><a href="#" class="menu">스토어</a></li>
+				<li><a href="#" class="menu">선호극장</a></li>
+			</ul>
+		</div>
+		<!--//headMenu end -->
+	</header>
+
+
+	<!-- mainSection -->
+	<div class="container mainSection"><!--mainSection 클래스 추가-->
+
+		<!-- 상단배너 -->
+		<section class="topBanner">
+			<div class="swiper-wrapper">
+				<a href="#" class="item swiper-slide on">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+				<a href="#" class="item swiper-slide">
+					<img src="../../../static/mb/images/2024renewal/@sample_360x150.png" alt="영화" />
+				</a>
+			</div>
+			<div class="swiper-pagination"></div>
+		</section>
+		<!--//상단배너 end -->
+
+		<!-- subNavTab -->
+		<section class="subNavTab">
+			<div class="navTabBox">
+				<a href="#" class="item on">전체</a>
+				<a href="#" class="item">기프트카드</a>
+				<a href="#" class="item new">메가티켓</a>
+				<a href="#" class="item">팝콘/음료/굿즈</a>
+				<a href="#" class="item">포인트</a>
+				<a href="#" class="item">필소</a>
+				<a href="#" class="item">클소</a>
+			</div>
+		</section>
+		<!--//subNavTab end -->
+
+		<div class="sortingBox">
+			<select name="" id="" class="sort">
+				<option value="">추천순</option>
+				<option value="">판매순</option>
+				<option value="">최신순</option>
+			</select>
+		</div>
+
+	</div>
+	<!--//mainSection end -->
+
+
+	<footer id="footer" class="r24_foot">
+		<div class="footerHide"> <!--act 토글 (상단 jquery있음) -->
+			<h5 class="logo"><a href="#">megabox</a><span class="arrow"></span></h5>
+			<ul class="hideList">
+				<li>대표이사 : 홍정인</li>
+				<li>주소 : 서울특별시성동구왕십리로50, 6층(성수동1가, 메가박스스퀘어)</li>
+				<li>ARS : 1544-0070 <a href="#">고객센터</a></li>
+				<li>대표이메일 : m.dreamcenter@partner.megabox.co.kr</li>
+				<li>사업자등록번호 : 211-86-59478</li>
+				<li>통신판매업신고번호 : 2023-서울성동-0177 <a href="#">사업자정보확인</a></li>
+				<li>개인정보보호책임자 : 강병철</li>
+				<li>호스팅사업자 : (주)콘텐트리중앙</li>
+			</ul>
+		</div>
+		<ul class="links">
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">위치기반서비스이용약관</a></li>
+			<li><a href="#">PC버전</a></li>
+		</ul>
+		<p class="copy">© MegaboxJoongAng, Inc.</p>
+	</footer>
+
+
+
+	<!-- btnBottom bnb-main 클래스변경--> 
+	<div class="btnBottom bnbMain">
+		<button type="button" class="button-bot on">
+			<i class="icon2 btn_home_bl30"></i>
+			<span>홈</span>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_book_52">바로예매</i>
+		</button>
+		<button type="button" class="button-bot">
+			<i class="icon2 btn_mOrder_bl30"></i>
+			<span>모바일오더</span>
+		</button>
+	</div>
+	<!-- btnBottom bnbMain -->
+</body>
+</html>

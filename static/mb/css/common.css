@@ -1,0 +1,1933 @@
+@charset 'utf-8';
+
+/* ==========================================================================
+
+    common Style
+
+========================================================================== */
+
+* {box-sizing:border-box;}
+
+html, body {width:100%; height:100%; margin:0; padding:0;}
+body {overflow:visible; letter-spacing:-0.5px; line-height:1.5; font-size:15px; color:#333; font-weight:400; font-family:'Spoqa Han Sans Neo', '-apple-system', 'NotoSansCJKkr-Light', 'Apple Gothic', 'Helvetica Neue', 'Apple SD Gothic Neo', 'Helvetica', 'Roboto', 'Malgun Gothic', sans-serif; -webkit-font-smoothing:antialiased; background-color:#fff;}
+body.no-scroll {overflow:hidden;}
+
+.display-none {display:none !important;}
+.over-flow {overflow:auto !important;}
+
+/* :lang(en), */
+.noto-en {font-family:'NotoSans', Dotum, '돋움', sans-serif !important; font-weight:700 !important;}
+.noto-en.light {font-weight:400 !important;}
+
+/* roboto */
+.roboto {font-family:'Roboto',  '-apple-system', 'NotoSansCJKkr-Light', 'Apple Gothic', 'Helvetica Neue', 'Apple SD Gothic Neo', 'Helvetica', 'Roboto', 'Malgun Gothic', sans-serif; -webkit-font-smoothing:antialiased, Dotum, '돋움' !important; font-weight:400 !important;}
+.roboto.light {font-weight:300 !important;}
+.roboto.bold {font-weight:700 !important;}
+
+/* scroll bar 웹에서 투명화 */
+
+@media (max-width: 700px){
+    ::-webkit-scrollbar {width:0px !important; height:0px;}
+}
+
+@media (min-width: 700px){
+    ::-webkit-scrollbar { background:#24202B;  width:4px; height:10px;}
+    ::-webkit-scrollbar-button {background:rgba(255,255,255,0.10); border-radius:25%;}
+    ::-webkit-scrollbar-button:start {}
+    ::-webkit-scrollbar-button:end {}
+    ::-webkit-scrollbar-button:vertical:increment {}
+    ::-webkit-scrollbar-button:vertical:decrement {}
+    ::-webkit-scrollbar-track {}
+    ::-webkit-scrollbar-track-piece {}
+    ::-webkit-scrollbar-thumb { background:#353044;}
+    ::-webkit-scrollbar-corner {}
+    ::-webkit-resizer {}
+    body{
+        scrollbar-face-color: #353044;
+        scrollbar-track-color: #24202B;
+        scrollbar-arrow-color: none;
+        scrollbar-highlight-color: #24202B;
+        scrollbar-3dlight-color: none;
+        scrollbar-shadow-color: #e0e0e0;
+        scrollbar-darkshadow-color: none;
+    }
+}
+
+
+
+a:link,
+a:hover,
+a:active,
+a:focus,
+a:visited {color:#333; text-decoration:none; border:0; outline:0; -webkit-tap-highlight-color:transparent;}
+button:hover,
+button:active,
+button:focus,
+button:visited {color:#333; text-decoration:none; outline:0; -webkit-tap-highlight-color:transparent;}
+a:hover,
+a:focus {text-decoration:none; outline:0;}
+
+a.disabled {pointer-events:none; color:#999 !important;}
+
+
+ul, ol {list-style-type:none; margin:0; padding:0;}
+dl, dt, dd {margin:0; padding:0;}
+
+p.reset {padding:0; margin:0;}
+
+.ir {text-indent:-9999px; position:fixed; top:-9999px; font-size:1px; width:1px; height:1px; opacity:0;}
+
+b, strong {font-weight:700;}
+em {font-style:normal;}
+
+h1, h2, h3, h4, h5, h6 {margin:0; padding:0; font-weight:500;}
+
+img {border:0;}
+
+select {height:36px; padding-left:10px; border-color:#999; font-weight:300; border-radius:4px; }
+select:hover,
+select:focus {border-color:none; outline:#4E2998;}
+option:hover {background-color:#ecf0f4;}
+option:checked {background-color:#ecf0f4;}
+input {-webkit-appearance:none; -webkit-border-radius:0;}
+input:focus {border-color:#4E2998;}
+
+select.bul2, input.bul2,
+.date input {-webkit-appearance:none; -moz-appearance:none; appearance:none; background:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-updown-off.png') no-repeat right 5px center; background-size:24px; padding-right:24px;}
+.date.nonBack input {-webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; background-size:24px; padding-right:24px;}
+
+
+select[disabled] {background-color:#f7f8f9; color:#afafaf;}
+button[disabled] {color:#fff !important; background-color:#ccc !important;}
+button.disabled {color:#fff !important; background-color:#ccc !important;}
+button.gray[disabled] {color:#fff !important;}
+
+[type='checkbox'],
+[type='radio'] {width:16px; height:16px; vertical-align:middle;}
+
+input[type='tel'].pwnew, input.pwnew {-webkit-text-security:disc;  font-family:'text-security-disc'; text-security:disc; -mox-text-securtiy:disc; }
+
+
+/*
+[type='checkbox'].bg-chk {display:inline-block; width:28px; height:28px; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-checkbox.png') no-repeat 0 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+[type='checkbox'].bg-chk::-ms-check {display:none;}
+
+[type='checkbox'].bg-chk:hover {background-position:-56px 0;}
+[type='checkbox'].bg-chk:checked {background-position:-28px 0;}
+[type='checkbox'].bg-chk:checked:hover {background-position:-28px 0;}
+[type='checkbox'].bg-chk[disabled] {background-position:-84px 0;}
+[type='checkbox'].bg-chk[disabled]:hover {background-position:-84px 0;}
+[type='checkbox'].bg-chk[disabled]:checked {background-position:right 0;}
+*/
+
+.bg-chk {display:inline-block; position:relative;}
+.bg-chk [type='checkbox'] {position:absolute; left:-99999px;}
+.bg-chk label {position:relative; padding:0 0 0 28px; line-height:20px;}
+.bg-chk label:before {content:''; display:block; position:absolute; left:0; top:30px; width:20px; height:20px; margin:-10px 0 0 0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-checkbox.png') no-repeat 0 0; background-size:100px 20px;}
+.bg-chk [type='checkbox']:hover + label:before {background-position:0 0;}
+.bg-chk [type='checkbox']:checked + label:before {background-position:-20px 0;}
+.bg-chk [type='checkbox']:checked:hover + label:before {background-position:-20px 0;}
+.bg-chk [type='checkbox'][disabled] + label:before {background-position:-60px 0;}
+.bg-chk [type='checkbox'][disabled]:hover + label:before {background-position:-60px 0;}
+.bg-chk [type='checkbox'][disabled]:checked + label:before {background-position:right 0;}
+
+.bg-chk2 {display:inline-block; position:relative;}
+.bg-chk2 [type='checkbox'] {position:absolute; left:-99999px;}
+.bg-chk2 label {position:relative; padding:0 0 0 34px; line-height:28px;}
+.bg-chk2 label:before {content:''; display:block; position:absolute; left:0; top:50%; width:28px; height:28px; margin:-14px 0 0 0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-checkbox.png') no-repeat 0 0; background-size:140px 28px;}
+.bg-chk2 [type='checkbox']:hover + label:before {background-position:-56px 0;}
+.bg-chk2 [type='checkbox']:checked + label:before {background-position:-28px 0;}
+.bg-chk2 [type='checkbox']:checked:hover + label:before {background-position:-28px 0;}
+.bg-chk2 [type='checkbox'][disabled] + label:before {background-position:-84px 0;}
+.bg-chk2 [type='checkbox'][disabled]:hover + label:before {background-position:-84px 0;}
+.bg-chk2 [type='checkbox'][disabled]:checked + label:before {background-position:right 0;}
+
+.bg-chk3 {display:inline-block; position:relative;}
+.bg-chk3 [type='checkbox'],
+.bg-chk3 [type='radio']{position:absolute; left:-99999px;}
+.bg-chk3 label {position:relative; padding:0 0 0 23px; line-height:22px;}
+.bg-chk3 label:before {content:''; display:block; position:absolute; left:0; top:22px; width:18px; height:18px; margin:0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-check-type3.png') no-repeat 0 0; background-size:36px 18px;}
+.bg-chk3 [type='checkbox']:checked + label:before {background-position:right 0;}
+.bg-chk3 [type='checkbox']:checked:hover + label:before {background-position:right 0;}
+
+.bg-chk3.small label {font-size:0.8667em; padding-left:18px;}
+.bg-chk3.small label:before {width:15px; height:15px; top:3px; background-size:30px 15px; }
+.bg-chk3.small [type='checkbox']:hover + label:before {background-position: 0;}
+.bg-chk3.small [type='checkbox']:checked + label:before {background-position:right 0;}
+.bg-chk3.small [type='checkbox']:checked:hover + label:before {background-position:right 0;}
+
+.bg-chk4 {display:inline-block; position:relative;}
+.bg-chk4 [type='checkbox'] {position:absolute; left:-99999px;}
+.bg-chk4 label {position:relative; padding:0 0 0 31px; line-height:24px; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg_chk4_off.png') no-repeat 0 0; background-size:24px 24px;}
+.bg-chk4 [type='checkbox']:checked + label:before {content:''; display:block; position:absolute; left:0; top:0px; width:24px; height:24px; margin:0 0 0 0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg_chk4_on.png') no-repeat 0 0; background-size:24px 24px;}
+
+.bg-chk.hide {}
+.bg-chk.hide label {width:28px; height:28px; padding:0 0 0 28px; font-size:0; line-height:0;}
+
+.bg-radio {display:inline-block; position:relative;}
+.bg-radio [type='radio'] {position:absolute; left:-99999px;}
+.bg-radio label {position:relative; padding:0 0 0 23px; line-height:18px; font-size: 0.933em;}
+.bg-radio label:before {content:''; display:block; position:absolute; left:0; top:50%; width:18px; height:18px; margin:-10px 0 0 0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-radio.png') no-repeat 0 0; background-size:36px 18px;}
+.bg-radio [type='radio']:checked + label:before {background-position:-18px 0;}
+.bg-radio [type='radio'][disabled] + label:before {background-position:-54px 0;}
+.bg-radio [type='radio'][disabled]:checked + label:before {background-position:right 0;}
+
+.bg-radio.hide {}
+.bg-radio.hide label {width:28px; height:28px; padding:0 0 0 28px; font-size:0; line-height:0;}
+
+.join-wrap .bg-chk3 label:before {top:2px;}
+
+/* jquery ui reset */
+.ui-icon,
+.ui-widget-content .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_444444_256x240.png');}
+.ui-widget-header .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_444444_256x240.png');}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_555555_256x240.png');}
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_ffffff_256x240.png');}
+.ui-state-highlight .ui-icon,
+.ui-button .ui-state-highlight.ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_777620_256x240.png');}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_cc0000_256x240.png');}
+.ui-button .ui-icon {background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ui-icons_777777_256x240.png');}
+
+/* datepicker */
+.datepicker {display:inline-block; width:90px; height:30px; padding:0 10px; line-height:30px; border-radius:0 !important; border:1px solid #d8d9db; border-width:1px 0 1px 1px; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.datepicker::-ms-clear {display: none;}
+.ui-datepicker-trigger {width:30px; height:30px; margin:0; padding:0; border:1px solid #d8d9db; border-width:1px 1px 1px 0; font-size:0; line-height:0; vertical-align:middle; background:#fff url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-calendar.png') no-repeat center;}
+.ui-datepicker {z-index:2001;}
+.datepicker-change {display:inline-block; width:90px; height:30px; padding:0 10px; line-height:30px; border-radius:0 !important; border:1px solid #d8d9db; border-width:1px 0 1px 1px; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.datepicker-change::-ms-clear {display: none;}
+.datepicker-year {display:inline-block; width:90px; height:30px; padding:0 10px; line-height:30px; border-radius:0 !important; border:1px solid #d8d9db; border-width:1px 0 1px 1px; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.datepicker-year::-ms-clear {display: none;}
+
+/* id 로 제어하는 datepicker */
+.date-picker {display:inline-block; width:90px; height:30px; padding:0 10px; line-height:30px; border-radius:0 !important; border:1px solid #d8d9db; border-width:1px 0 1px 1px; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.date-picker::-ms-clear {display: none;}
+/* 년도, 월 선택 */
+.ui-datepicker .ui-datepicker-title select {display:inline-block; width:40%; vertical-align: middle; margin:0 4px;}
+
+/* title (h1은 로고 전용) */
+h2.tit {padding:0 0 20px 0; font-size:1.4666em; font-weight:700; letter-spacing:-1px; line-height:1.1; color:#333;}
+h3.tit {margin:0; padding:0 0 20px 0; font-size:1.6em; font-weight:700;}
+h3.tit.small {font-size:1.3333em;}
+
+h4.tit {margin:0; padding:0 0 20px 0; font-size:1.3333em; font-weight:700;}
+h5.tit {padding:0 0 15px 0; font-size:1.1429em; font-weight:700;}
+h6.tit {padding:0 0 15px 0; font-size:1em; font-weight:700;}
+
+.tit.white {color:#fff;}
+.tit.purple {color:#503396;}
+.tit.gblue {color:#01738b;}
+.tit.purple strong,
+.tit.gblue strong {font-weight:700;}
+
+.tit-util {}
+.tit-util:before,
+.tit-util:after {content:''; display:table;}
+.tit-util:after {clear:both;}
+.tit-util .tit {float:left;}
+.tit-util .more {float:right; padding-top:5px;}
+.tit-util .more i {margin-left:5px;}
+
+p.info-alert {font-size:0.8667em; color: #14B9CB;}
+p.info-alert.gray {font-size:0.8667em; color: #999;}
+
+/* fieldset */
+fieldset {margin:0; padding:0; border:0;}
+legend {overflow:hidden; width:0; height:0; font-size:0; line-height:0; opacity:0;}
+
+/* button - reset */
+button {cursor:pointer; font-weight:400; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+
+/* button - system font */
+.button {display:inline-block; height:36px; margin:0; padding:0 20px; text-align:center; line-height:34px; color:#503396; font-weight:400; border-radius:4px; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif; text-decoration:none; border:1px solid #503396; vertical-align:middle; background-color:#fff; cursor:pointer;}
+.button.disable {opacity:0.5;}
+.button.disable:hover {color:#999 !important;}
+.button.disabled {opacity:0.5;}
+.button.disabled:hover {color:#999 !important;}
+.button:hover,
+.button:focus {text-decoration:none;}
+.button > i {margin-top:-2px; margin-left:2px;}
+.button > i:first-child {margin-left:0; margin-right:2px;}
+
+a.button:hover,
+a.button:focus,
+a.button:active,
+a.button:visited {color:#503396;}
+
+/* button height */
+.button.small {height:32px; padding:0 15px; line-height:30px;}
+.button.large {height:46px; padding:0 30px; line-height:44px;}
+
+/* button color */
+.button.purple {color:#fff; line-height:36px; border:0; background:#660ed8;}
+.button.purple.small {line-height:32px;}
+.button.purple.large {line-height:46px;}
+
+a.button.purple:hover,
+a.button.purple:focus,
+a.button.purple:active,
+a.button.purple:visited {color:#fff;}
+
+.button.gblue {color:#fff; line-height:36px; border:0; background:#037b94;}
+.button.gblue.small {line-height:32px;}
+.button.gblue.large {line-height:46px;}
+
+a.button.gblue:hover,
+a.button.gblue:focus,
+a.button.gblue:active,
+a.button.gblue:visited {color:#fff;}
+
+.button.gray {color:#fff; line-height:36px; border:0; background:#666;}
+.button.gray.small {line-height:32px;}
+.button.gray.large {line-height:46px;}
+a.button.gray:hover,
+a.button.gray:focus,
+a.button.gray:active,
+a.button.gray:visited {color:#fff;}
+
+/* 모바일하단 버튼 */
+
+.button-bot {display:inline-block; width:100%; height:55px; font-size:1.1333em; margin:0; padding:0 20px; text-align:center; line-height:55px; color:#503396; font-weight:700;  text-decoration:none; border:none; vertical-align:middle; background-color:#fff; cursor:pointer; }
+.button-bot.skyblue {background:#14B9CB; color:#fff;}
+.button-bot.purple {background:#660ed8; color:#fff;}
+.button-bot.gray {background:#ccc; color:#fff;}
+.button-bot.gray9 {background:#999; color:#fff;}
+.button-bot.dgray {background:#566270; color:#fff;}
+.button-bot.dblue {background:#6D9AB7; color:#fff;}
+.button-bot.git {background:#fff url('https://img.megabox.co.kr/static/mb/images/common/ico/icon_mo_gift.png') 50% 50% no-repeat; background-size:25px 25px;} /*20200819 모바일오더 선물하기*/
+.button-bot span.eve-count {font-size:13px; color:#e5e5e5;}
+.button-bot.bd-purple {border:1px solid #e0e0e0; color:#4E2998; }
+.button-bot button,
+.button-bot a,
+.btn-movie-reserve button,
+.btn-movie-reserve a {height:55px; }
+
+div:focus,
+div:hover {outline:0;}
+
+/* 이미지 버튼 */
+.btn-close-tooltip {display:inline-block; width:12px; height:12px; margin:0; padding:0; border:0; font-size:0; line-height:0; text-indent:-999px; background:url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-close-tooltip.png') no-repeat 0 0;}
+
+/* button group */
+.btn-group {padding:20px 0 30px 0; margin:0; text-align:center;}
+.btn-group:before,
+.btn-group:after {content:''; display:table;}
+.btn-group:after {clear:both;}
+.btn-group .left {float:left;}
+.btn-group .right {float:right;}
+.btn-group .button {}
+.btn-group .button + .button {margin-left:6px;}
+.btn-group.left {text-align:left;}
+.btn-group.right {text-align:right;}
+.btn-group.center {text-align:center;}
+
+.btn-group.col-2 a,
+.btn-group.col-2 button {float:left; display:block; width:50%;}
+.btn-group.col-3 a,
+.btn-group.col-3 button {float:left; display:block; width:33%;}
+.btn-group.col-3 a:first-child,
+.btn-group.col-3 button:first-child {width:34%;}
+.btn-group.col-4 a,
+.btn-group.col-4 button {float:left; display:block; width:25%;}
+/*20200819 모바일오더 선물하기*/
+.btn-group.col-3_2 a,
+.btn-group.col-3_2 button {float:left; display:block; width:calc(50% - 25px);}
+.btn-group.col-3_2 a:first-child,
+.btn-group.col-3_2 button:first-child {width:50px; border-top:1px solid #eee;}
+
+
+/* 하단 fix 되는 버튼 */
+.btn-bottom {width:100%; position:fixed; padding:0; bottom:0; left:0; z-index:999;}
+.btn-bottom:before,
+.btn-bottom:after {content:''; display:table;}
+.btn-bottom:after {clear:both;}
+.btn-bottom .left {float:left;}
+.btn-bottom .right {float:right;}
+
+.btn-bottom.col-2 a,
+.btn-bottom.col-2 button {float:left; display:block; width:50% !important;}
+.btn-bottom.col-3 a,
+.btn-bottom.col-3 button {float:left; display:block; width:33.3% !important;}
+.btn-bottom.col-3 a:first-child,
+.btn-bottom.col-3 button:first-child {width:33.4% !important;}
+.btn-bottom.col-4 a,
+.btn-bottom.col-4 button {float:left; display:block; width:25% !important;}
+.btn-bottom.col-5 a,
+.btn-bottom.col-5 button {float:left; display:block; width:20% !important;}
+
+/* bnb 버튼 */
+.btn-bottom.bnb {width:100%; height:calc(constant(safe-area-inset-bottom) + 56px); height:calc(env(safe-area-inset-bottom) + 56px); padding:0 18px; background-color:#1e1e1e; padding-bottom:constant(safe-area-inset-bottom); padding-bottom:env(safe-area-inset-bottom);}
+.btn-bottom.bnb button { line-height:1.5;  height:calc(constant(safe-area-inset-bottom) + 56px); height:calc(env(safe-area-inset-bottom) + 56px); font-size:0.7em; padding:0; color:#fff; background-color:#1e1e1e;}
+.btn-bottom.bnb button i { display:block; margin:0 auto; padding:0;}
+.btn-bottom.bnb button span { display:block; margin:0; padding:0;}
+.btn-bottom.bnb button[disabled] { color:#666 !important; background-color:#1e1e1e !important;}
+
+/* bnb main 버튼 */
+.btn-bottom.bnb-main {width:100%; height:56px; padding:0 8px; background-color:#333; padding-bottom:constant(safe-area-inset-bottom); padding-bottom:env(safe-area-inset-bottom);}
+.btn-bottom.bnb-main button { line-height:1.5;  height:56px; font-size:0.7em; padding:0; color:#999; background-color:#333;}
+.btn-bottom.bnb-main button i { display:block; margin:0 auto; padding:0; }
+.btn-bottom.bnb-main button span { display:block; margin:0; padding:0; }
+.btn-bottom.bnb-main button.on i,
+.btn-bottom.bnb-main button.on span {opacity:1; color:#00DAF2; }
+.btn-bottom.bnb-main button[disabled] { color:#666 !important; background-color:#333 !important;}
+.btn-bottom.bnb-main.bnb-off {transition:bottom 0.2s ease-in-out; bottom:0;}
+.btn-bottom.bnb-main.bnb-on {transition:bottom 0.2s ease-in-out; bottom:-56px;}
+.btn-bottom.bnb-main.fix-on {transition:bottom 0.2s ease-in-out; bottom:0px !important;}
+
+/* btn more */
+.btn-more {padding:40px 0 0 0; border-bottom:1px solid #eaeaea;}
+.btn-more .btn {display:block; width:100%; margin:0; padding:0; height:40px; border:0; background-color:transparent;}
+.btn-more.on .btn .ico-btn-more-arr {transform:rotate(180deg)}
+
+/* label */
+label {display: inline-block; vertical-align: middle; cursor: pointer;}
+
+/* placeholder */
+::placeholder {color:#aaa; opacity: 1; font-size:13px; letter-spacing:-1px;}
+:-ms-input-placeholder {color:#aaa;}
+::-ms-input-placeholder {color:#aaa;}
+
+/* input text */
+.input-text {display:inline-block; width:100%; height:32px; padding:0; line-height:30px; font-size:0.9333em; color:#030303; border:1px solid #d8d9db; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.input-text::-ms-clear {display: none;}
+.input-text:hover,
+.input-text:focus {border-color:#660ed8 !important;  outline:0;/*  box-shadow:none; */}
+.input-text.error:hover,
+.input-text.error:focus {border-color:#D13B41 !important; outline:0;/*  box-shadow:none; */}
+.input-text + .button {height:30px; line-height:29px;}
+.input-text[readonly],
+.input-text[disabled] {color:#030303; }
+.input-text[readonly]::placeholder,
+.input-text[disabled]::placeholder {color:#aaa; opacity: 1;}
+.input-text[readonly]:-ms-input-placeholder,
+.input-text[disabled]:-ms-input-placeholder {color:#aaa;}
+.input-text[readonly]::-ms-input-placeholder,
+.input-text[disabled]::-ms-input-placeholder {color:#aaa;}
+
+.input-text.medium {height:36px; line-height:34px;}
+.input-text.large {height:46px; line-height:44px;}
+
+[type='search'].input-text {border-radius:0 !important;}
+[type='file'].input-text {}
+
+.input-text.error {color:#e81002; border-color:#e81002;}
+.input-text.error::placeholder {color:#e81002; opacity: 1;}
+.input-text.error:-ms-input-placeholder {color:#e81002;}
+.input-text.error::-ms-input-placeholder {color:#e81002;}
+/* select */
+.select-wrap select {position:relative; margin:0 0 5px 0; width:100%; height:44px; background-color:#fff; padding:0 10px; font-size:0.9333em; color:#030303; border:1px solid #e0e0e0; border-radius:0;}
+
+/* textarea */
+.input-textarea {display:inline-block; width:100%; height:200px; padding:10px; line-height:16px;font-size:0.9333em; color:#333; border-radius:0 !important; border:1px solid #d8d9db; vertical-align: middle; font-family:'Spoqa Han Sans Neo','NotoSansKR', Dotum, '돋움', sans-serif;}
+.input-textarea:hover,
+.input-textarea:focus {border-color:#666; /* outline:0; box-shadow:none; */}
+.input-textarea.h100 {height:100px;}
+.input-textarea.h200 {height:200px;}
+.input-textarea.h200 {height:300px;}
+
+.input-textarea[readonly],
+.input-textarea[disabled] {color:#aaa; background-color:#f7f8f9;}
+
+.input-textarea.error {color:#e81002; border-color:#e81002;}
+.input-textarea.error::placeholder {color:#e81002; opacity: 1;}
+.input-textarea.error:-ms-input-placeholder {color:#e81002;}
+.input-textarea.error::-ms-input-placeholder {color:#e81002;}
+
+/* input file */
+.add-file {position:relative; height:36px; margin:0; padding:0 102px 0 0;}
+.add-file .input-file {display:block; position:absolute; left:0; top:0; z-index:2; cursor:pointer; width:100%; height:100%; padding:0; opacity:0;}
+.add-file .text {display:block; width:100%; height:100%; padding:0 10px; line-height:34px; color:#333; border:1px solid #d8d9db;}
+.add-file .button {display:block; position:absolute; right:0; top:0; z-index:1; height:100%; border-color:#d8d9db; color:#666;}
+.add-file .input-file:hover + .text,
+.add-file .input-file:focus + .text {border-color:#666;}
+
+/* 검색버튼 돋보기 */
+.btn-search-input {overflow:hidden; width:30px; height:32px; margin:0; padding:0; font-size:0; line-height:0; border:0; text-indent:-9999px; background:url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-search-input.png') no-repeat center;}
+
+/* 검색 영역 공통 ? */
+.input-search-area {margin:0; padding:30px; background-color:#f2f4f5; border-radius:10px;}
+.input-search-area:before,
+.input-search-area:after {content:''; display:table;}
+.input-search-area:after {clear:both;}
+.input-search-area .label {display:block; float:left; padding:0 20px 0 0; line-height:36px; font-weight:700;}
+.input-search-area .input-area {overflow:hidden; display:block; float:left; vertical-align:middle;}
+.input-search-area .input-area select {float:left; width:140px; height:36px; border-radius:4px 0 0 4px;}
+.input-search-area .input-area .search-wrap {position:relative; float:left; width:390px; height:36px; padding:0 35px 0 0; border:1px solid #d8d9db; border-left:0; border-radius:0 4px 4px 0; background-color:#fff;}
+.input-search-area .input-area .search-wrap.v1 {border:1px solid #d8d9db; border-radius:4px;}
+.input-search-area .input-area .search-wrap.v1 .input-text {border-radius:4px 0 0 4px;}
+.input-search-area .input-area .search-wrap .input-text {display:block; height:34px; line-height:34px; border:0;}
+.input-search-area .input-area .search-wrap .btn-search-input {display:block; position:absolute; right:3px; top:1px; border-radius:0 4px 4px 0;}
+.input-search-area .btn-area {float:left; padding:0 0 0 10px;}
+.input-search-area .btn-area .btn {display:block; position:relative; float:left; height:36px; margin:0 8px; padding:0; border:0; background-color:transparent;}
+.input-search-area .btn-area .btn:after {content:''; display:block; position:absolute; left:-8px; top:50%; width:1px; height:12px; margin:-6px 0 0 0; background-color:#d8d9db;}
+.input-search-area .btn-area .btn:first-child:after {display:none;}
+
+/* table */
+table {width:100%; margin:0; border:0; table-layout:fixed; border-collapse:collapse; empty-cells:show;}
+table caption {overflow:hidden; width:0; height:0; font-size:0; line-height:0; opacity:0;}
+table th,
+table td {padding:0;}
+table.left th,
+table.left td {text-align:left;}
+table.center th,
+table.center td {text-align:center;}
+
+table a.button,
+table .button {min-width:0; height:27px; padding:0 5px !important; text-decoration:none !important; font-size:0.9231em; font-weight:normal; line-height:26px; border-radius:2px; border:1px solid #8f97a3; background-color:#e1e4ea;}
+table a.button.ing,
+table .button.ing {color:#a2a4a8;}
+table .button.more {height:auto; padding:0 !important; line-height:inherit; border:0; color:#005eb5; font-weight:bold; text-decoration:underline; background-color:#fff;}
+table a.button[disabled],
+table .button[disabled] {opacity:0.5;}
+
+.table-wrap {position:relative; border-top:1px solid #53565b;}
+.table-wrap table.va-m tr td,
+.table-wrap table.va-m tr th {vertical-align:middle;}
+.table-wrap table.va-m tr td select,
+.table-wrap table.va-m tr th select {height:32px; }
+
+.data-table {}
+.data-table .mem-point-info {text-align:left; box-sizing:border-box;}
+.data-table tr,
+.data-table th,
+.data-table td {padding:10px; text-align: left; font-size:0.933em;}
+.data-table.a-c tr,
+.data-table.a-c th,
+.data-table.a-c td {text-align: center;}
+.data-table thead th {border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; }
+.data-table thead th:last-child {border-right:0;}
+.data-table tbody th {padding:0; margin:0; vertical-align:middle; border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;}
+.data-table tbody td {border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;}
+.data-table tbody td:last-child {border-right:0;}
+
+.vip-table tbody > tr > td {text-align:left; padding:15px; vertical-align:top;}
+.vip-table tbody > tr > td > ul > li {font-size:0.9333em; padding:0 0 0 10px; margin:0;}
+.vip-table span {color:#037b94;}
+
+/* 게시판 목록 등등 검색 영역 */
+.board-search {position:relative; display:inline-block; vertical-align: middle; width:230px; height:36px; margin:0; padding:0 31px 0 0; border:1px solid #d8d9db; border-radius:3px;}
+.board-search .input-text {display:block; width:100%; height:34px; border:0;}
+.board-search .btn-search-input {position:absolute; right:1px; top:1px;}
+.board-search.v1 {width:360px; padding:0 31px 0 120px;}
+.board-search.v1 select {position:absolute; left:0; top:0; width:120px; height:100%; border:0;}
+.board-search.v1:after {content:''; display:block; position:absolute; left:120px; top:9px; z-index:2; width:1px; height:16px; background-color:#d8d9db;}
+
+/* 게시판 목록 상단 유틸 영역 */
+.board-list-util {margin:30px 0 10px 0; text-align: right;}
+.board-list-util:after {display:block; clear:both; content:''; }
+.board-list-util .result-count {position:relative; float:left; line-height:36px; margin:0; }
+.board-list-util select {display:inline-block; vertical-align: middle; width:150px; height:36px; border:1px solid #d8d9db; border-radius:3px; padding:0 5px; margin-right:7px;}
+
+/* 게시판 목록 */
+.board-list {}
+.board-list > thead > tr > th {height:45px; padding:7px 10px; background:#f2f4f5; border:1px solid #eaeaea; border-width:0 1px 1px 0;}
+.board-list > tbody > tr > th,
+.board-list > tbody > tr > td {height:45px; padding:4px 10px 3px 10px; border:1px solid #eaeaea; border-width:0 1px 1px 0; text-align:center;}
+.board-list > thead > tr > th:last-child,
+.board-list > tbody > tr > th:last-child,
+.board-list > tbody > tr > td:last-child {border-right:0;}
+.board-list > tbody > tr > th {text-align: left; font-weight:normal;}
+.board-list > tbody > tr > th > a,
+.board-list > tbody > tr > td > a {display:inline-block; margin:0; padding:0; vertical-align:middle; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.board-list p {margin:0; padding:0;}
+.board-list > tbody > tr.tr-toggle-hidden {display:none;}
+.board-list > tbody > tr.tr-toggle-hidden > td {padding:10px;}
+.board-list > tbody > tr.tr-toggle-hidden.on {display: table-row;}
+
+/* 게시판 상세 */
+.board-view {word-break:break-all}
+.board-view .tit-area {display:table; width:100%; padding:15px 0;}
+.board-view .tit-area .tit {display:table-cell; margin:0; padding:0; font-size:1.1429em; color:#444; font-weight:700;}
+.board-view .tit-area .date {display:table-cell; width:110px; margin:0; padding:0; text-align:center; vertical-align:middle;}
+.board-view .info { padding-bottom:20px;}
+.board-view .info p {position:relative; display: inline-block; vertical-align:top; margin:0 0 0 8px; padding:0 0 0 11px;}
+.board-view .info p:before {content:''; position:absolute; top:6px; left:0; width:1px; height:12px; background-color:#d9d9db; }
+.board-view .info p:first-child {margin-left:0; padding-left:0;}
+.board-view .info p:first-child:before {display:none;}
+.board-view .info p .tit {position:relative; margin-right:3px; color:#222; font-weight:700;}
+.board-view .info p strong.txt {color:#01738b;}
+.board-view .info.count p{padding:10px 0 0 0;border-bottom:1px solid #fff;text-align:right}
+.board-view .info.count + .cont{border-top:0}
+.board-view .info.count p .tit{display:inline-block;margin-right:10px;color:#444}
+.board-view .info.count p .txt{display:inline-block;padding-right:20px;text-align:left}
+.board-view .info .add-file {}
+.board-view .info .add-file a {display:inline-block; color:#236daa; text-decoration:underline;}
+.board-view .cont {overflow:hidden; width:100%; padding:20px 0; border-top:1px solid #eaeaea;}
+.board-view .cont.review {padding:20px 30px; border-bottom:1px solid #eaeaea; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-review.png') no-repeat left 30px; }
+.board-view .cont img {max-width:100% !important;}
+.board-view .movie-area {position:relative; overflow:hidden; width:100%; margin:40px 0 0 0; padding:0;}
+.board-view .movie-area iframe {width:480px !important; height:300px !important; border:0;}
+.board-view .movie-area .caption {position:absolute; right:0; top:0; overflow:hidden; overflow-y:scroll; width:calc( 100% - 510px ); height:300px !important; padding:20px; border:1px solid #e4ebf1;}
+
+/* 이전글 다음글 */
+.prev-next {border:1px solid #eaeaea; border-width:1px 0;}
+.prev-next .line {position:relative; padding:0 0 0 170px;word-break:break-all}
+.prev-next .line + .line {border-top:1px solid #eaeaea;}
+.prev-next .line p {margin:0; padding:0;}
+.prev-next .line .tit {position:absolute; left:0; top:0; width:150px; padding:0 20px; text-align:left; line-height:45px; color:#222; font-weight:700; background-color:#f7f8f9; background-repeat:no-repeat; background-position:right 20px center;}
+.prev-next .line.prev .tit {background-image:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-arr-prev-list.png');}
+.prev-next .line.next .tit {background-image:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-arr-next-list.png');}
+.prev-next .line .link {display:block; line-height:45px;}
+.prev-next .line a.link {overflow:hidden; white-space:nowrap; text-overflow:ellipsis; width:100%; padding:0 20px 0 0; color:#444; font-weight:700; }
+
+/* 게시판 등록 */
+.board-form {}
+.board-form tbody th,
+.board-form tbody td {position:relative; height:38px; font-size:0.9333em; padding:7px 10px; text-align:left; border-bottom:1px solid #e0e0e0;}
+.board-form tbody tr:last-child th,
+.board-form tbody tr:last-child td {border-bottom:1px solid #e0e0e0; }
+.board-form tbody th {/* padding-top:14px; */ background:#f5f5f5;}
+.board-form .req {}
+.board-form .req .label {position:relative;}
+.board-form .req .label:after {content:'*'; display:inline-block; margin:0 0 0 3px; padding:0; color:#21a8e7;}
+
+/* pagination */
+.pagination {clear: both; position: relative; margin: 0 auto; padding:30px 0 0 0; text-align: center;}
+.pagination a,
+.pagination strong,
+.pagination .control {display: inline-block; position: relative; min-width:32px; height:32px; margin:0; padding:0 8px; border:1px solid #ebebeb; text-decoration:none; line-height:30px; color:#333; font-weight:400; vertical-align: middle; border-radius:4px;}
+.pagination .active {color:#fff; background-color:#01738b; border-color:#01738b;}
+.pagination a:hover {border:1px solid #01738b;}
+.pagination .control { overflow: hidden; width:32px; height:32px; min-width:0; padding:0; border:0; font-size:0; line-height:0; text-indent: -9999px; background:url('https://img.megabox.co.kr/static/mb/images/common/btn/btn_paging.png') no-repeat 0 0;}
+.pagination .control:hover {border:0;}
+.pagination .control.first {background-position:0 0;}
+.pagination .control.first:hover {background-position:0 -32px;}
+.pagination .control.prev {margin-right:5px; background-position:-32px 0;}
+.pagination .control.prev:hover {background-position:-32px -32px;}
+.pagination .control.next {margin-left:5px; background-position:-64px 0;}
+.pagination .control.next:hover {background-position:-64px -32px;}
+.pagination .control.last {background-position:right 0;}
+.pagination .control.last:hover {background-position:right -32px;}
+
+/* ellipsis */
+.ellipsis {overflow:hidden; display:inline-block; max-width:100%; white-space:nowrap; text-overflow:ellipsis;}
+.ellipsis-line2 {display:inline-block;max-height:40px;line-height:1.5;white-space:normal;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ellipsis-line3 {display:inline-block;max-height:60px;line-height:1.5;white-space:normal;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ellipsis-line4 {display:inline-block;max-height:80px;line-height:1.5;white-space:normal;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+/* dot bullet */
+.dot-bul {padding-left:10px; background:url('https://img.megabox.co.kr/static/mb/images/benefit/li-dot.png') 0 10px no-repeat;}
+
+/* basic list */
+.basic-list {}
+.basic-list > li {position:relative; padding:0;}
+.basic-list > li + li {margin-top:5px;}
+.basic-list > li > ul {padding-top:5px;}
+
+/* dot list */
+.dot-list {}
+.dot-list > li {position:relative; padding:0 0 0 8px;}
+.dot-list > li:before {content:''; display:block; position:absolute; top:9px; left:0; background-color:#503396; width:3px; height:3px;}
+.dot-list > li + li {margin-top:5px;}
+.dot-list.gray {}
+.dot-list.gray > li:before {background-color:#aaaaaa !important;}
+.dot-list > li > ul {padding-top:5px;}
+
+/* circle list */
+.circle-list {}
+.circle-list > li {position:relative; padding:0 0 0 8px; font-size:0.9333em;}
+.circle-list > li:before {content:''; display:block; position:absolute; top:7px; left:0; background-color:#57A5AE; width:4px; height:4px; border-radius:50%;}
+.circle-list > li.noline:before{display:none;}
+.circle-list > li.list-tit {padding:0 0 0 0;}
+.circle-list > li.list-tit:before {display:none;}
+.circle-list > li + li {margin-top:5px;}
+.circle-list > li > ul {padding-top:5px;}
+
+.circle-list > ul > li {position:relative; padding:0 0 0 8px; font-size:0.9333em;}
+.circle-list > ul > li:before {content:''; display:block; position:absolute; top:7px; left:0; background-color:#57A5AE; width:4px; height:4px; border-radius:50%;}
+.circle-list > ul > li.noline:before{display:none;}
+.circle-list > ul > li.list-tit:before {display:none;}
+.circle-list > ul > li + li {margin-top:5px;}
+.circle-list > ul > li > ul {padding-top:5px;}
+
+.circle-list > div,
+.circle-list > p {position:relative; padding:0 0 0 8px; font-size:0.9333em;}
+.circle-list > div:before,
+.circle-list > p:before  {content:''; display:block; position:absolute; top:7px; left:0; background-color:#57A5AE; width:4px; height:4px; border-radius:50%;}
+
+
+/* star list */
+.star-list {}
+.star-list > li {position:relative; padding:0 0 0 11px; font-size:0.8667em;}
+.star-list > li:before {content:'*'; display:block; position: absolute; left:0; top:0; margin:0; padding:0; }
+.star-list > li + li {margin-top:5px;}
+.star-list > li > ul {padding-top:5px;}
+
+/* dash list */
+.dash-list {}
+.dash-list > li {position:relative; padding:0 0 0 11px;}
+.dash-list > li:before {content:''; display:block; position: absolute; left:0; top:8px; width:4px; height:1px; margin:0; padding:0; background-color:#333;}
+.dash-list > li + li {margin-top:5px;}
+.dash-list > li > ul {padding-top:5px;}
+.dash-list.gray > li {color:#999;}
+.dash-list.gray > li:before { background-color:#999;}
+
+/* deciaml list */
+.decimal-list > li {list-style-type:decimal; list-style-position:outside; margin:0 0 0 24px; padding:0;}
+.decimal-list > li + li {margin-top:5px;}
+.decimal-list > li.no-order {list-style-type:none;}
+.decimal-list > li > ul {padding-top:5px;}
+
+/* title list */
+.title-list {}
+.title-list > li {position:relative; padding:0 0 0 110px; line-height:24px; color:#030303; font-size:0.8777em; }
+.title-list > li span {position:absolute; left:0; font-weight:bold;}
+
+/* font weight */
+/* 한글
+    400 = light
+    700 = medium
+    900 = bold
+
+    영문
+    400 = light
+    900 = bold
+ */
+.font-en {letter-spacing:0;}
+
+/* font weight */
+.font-300 {font-weight:300 !important; letter-spacing:0 !important;}
+.font-400 {font-weight:400 !important;}
+.font-700 {font-weight:700 !important;}
+.font-900 {font-weight:700 !important;}
+
+/* font color */
+.font-gray {color:#999 !important;}
+.font-blue {color:#037b94 !important;}
+.font-gblue {color:#329eb1 !important;}
+.font-red {color:#ff4444 !important;}
+.font-red02 {color:#e60012 !important;}
+.font-red03 {color:#d13b41 !important;}
+.font-yellow {color:#fed143 !important;}
+.font-green {color:#037b94 !important;}
+.font-lgreen {color:#14B9CB !important;}
+.font-white {color:#fff !important;}
+.font-orange {color:#e63e30 !important;}
+.font-purple {color:#503396 !important;}
+
+/* font size */
+/*
+    px em 참고
+    11px = 0.8667em
+    12px = 0.8667em
+    13px = 0.9333em
+    14px = 0.9333em
+
+    16px = 1.0667em
+    17px = 1.1333
+    18px = 1.2em
+    19px = 1.2667em
+    20px = 1.3333em
+    24px = 1.6em
+    28px = 1.8666em
+    32px = 2.1333em
+    36px = 2.4em
+    40px = 2.6666em
+    46px = 3.0666em
+*/
+.font-size-10 {font-size:10px !important;}
+.font-size-11 {font-size:11px !important;}
+.font-size-12 {font-size:12px !important;}
+.font-size-13 {font-size:13px !important;}
+
+/* etc */
+iframe {display:inline-block; border:0;}
+figure, figcaption {margin:0; padding:0;}
+address {margin:0; padding:0; font-style:normal;}
+
+/* box */
+.box-gray {margin:20px 0 10px 0; padding:20px 10px; background-color:#f5f5f5;}
+.box-gray.v1 {padding:20px 18px;}
+.box-gray p {margin:0; padding:0; line-height:19px; font-size:0.866em; color:#030303; font-weight:600;}
+.box-gray p.gray {color:#999; font-weight:300;}
+.box-gray .tit { font-size:1.0667em; color:#030303;}
+
+/* hidden */
+.hidden {overflow:hidden; width:0; height:0; font-size:0; line-height:0; opacity:0;}
+
+/* float clear */
+.clearfix:before,
+.clearfix:after {content:''; display:table;}
+.clearfix:after {clear:both;}
+
+/* float */
+.float-l {float:left !important;}
+.float-r {float:right !important;}
+.float-n {float:none !important;}
+
+/* text-align */
+.a-l {text-align:left !important;}
+.a-r {text-align:right !important;}
+.a-c {text-align:center !important;}
+.a-j {text-align:justify !important;}
+
+/* vertical-align */
+.va-t {vertical-align:top !important;}
+.va-m {vertical-align:middle !important;}
+.va-b {vertical-align:bottom !important;}
+.va-sub {vertical-align:sub !important;}
+.va-txtb {vertical-align:text-bottom !important}
+
+/* ellipsis */
+.ellipsis {overflow:hidden; display:inline-block; max-width:100%; white-space:nowrap; text-overflow:ellipsis;}
+
+/* width */
+.w20p {width:20% !important;}
+.w25p {width:25% !important;}
+.w50p {width:50% !important;}
+.w100p {width:100% !important;}
+.w50px {width:50px !important;}
+.w60px {width:60px !important;}
+.w70px {width:70px !important;}
+.w150px {width:150px !important;}
+.w350px {width:350px !important;}
+.w460px {width:460px !important;}
+.w530px {width:530px !important;}
+
+/* margin */
+.ml0 {margin-left:0px !important;}
+.ml10 {margin-left:10px !important;}
+.ml20 {margin-left:20px !important;}
+.ml30 {margin-left:30px !important;}
+.ml40 {margin-left:40px !important;}
+.ml50 {margin-left:50px !important;}
+.ml60 {margin-left:60px !important;}
+.ml70 {margin-left:70px !important;}
+.ml80 {margin-left:80px !important;}
+.ml90 {margin-left:90px !important;}
+.ml100 {margin-left:100px !important;}
+
+.mr10 {margin-right:10px !important;}
+.mr20 {margin-right:20px !important;}
+.mr30 {margin-right:30px !important;}
+.mr40 {margin-right:40px !important;}
+.mr50 {margin-right:50px !important;}
+.mr60 {margin-right:60px !important;}
+.mr70 {margin-right:70px !important;}
+.mr80 {margin-right:80px !important;}
+.mr90 {margin-right:90px !important;}
+.mr100 {margin-right:100px !important;}
+
+.mt0 {margin-top:0px !important;}
+.mt8 {margin-top:8px !important;}
+.mt10 {margin-top:10px !important;}
+.mt20 {margin-top:20px !important;}
+.mt30 {margin-top:30px !important;}
+.mt40 {margin-top:40px !important;}
+.mt50 {margin-top:50px !important;}
+.mt60 {margin-top:60px !important;}
+.mt70 {margin-top:70px !important;}
+.mt80 {margin-top:80px !important;}
+.mt90 {margin-top:90px !important;}
+.mt100 {margin-top:100px !important;}
+
+.mb0 {margin-bottom:0 !important;}
+.mb5 {margin-bottom:5px !important;} /*240409 추가*/
+.mb10 {margin-bottom:10px !important;}
+.mb20 {margin-bottom:20px !important;}
+.mb24 {margin-bottom:24px !important;}
+.mb28 {margin-bottom:28px !important;}
+.mb30 {margin-bottom:30px !important;}
+.mb40 {margin-bottom:40px !important;}
+.mb48 {margin-bottom:48px !important;}
+.mb50 {margin-bottom:50px !important;}
+.mb60 {margin-bottom:60px !important;}
+.mb70 {margin-bottom:70px !important;}
+.mb80 {margin-bottom:80px !important;}
+.mb90 {margin-bottom:90px !important;}
+.mb100 {margin-bottom:100px !important;}
+
+.mg00 {margin:0 !important;}
+.mg05 {margin:0 5px !important;}
+
+/* padding */
+.pd0 {padding:0px !important}
+.pd20 {padding:20px !important}
+
+.pl0 {padding-left:0px !important;}
+.pl10 {padding-left:10px !important;}
+.pl20 {padding-left:20px !important;}
+.pl30 {padding-left:30px !important;}
+.pl40 {padding-left:40px !important;}
+.pl50 {padding-left:50px !important;}
+.pl60 {padding-left:60px !important;}
+.pl70 {padding-left:70px !important;}
+.pl80 {padding-left:80px !important;}
+.pl90 {padding-left:90px !important;}
+.pl100 {padding-left:100px !important;}
+
+.pr10 {padding-right:10px !important;}
+.pr20 {padding-right:20px !important;}
+.pr30 {padding-right:30px !important;}
+.pr40 {padding-right:40px !important;}
+.pr50 {padding-right:50px !important;}
+.pr60 {padding-right:60px !important;}
+.pr70 {padding-right:70px !important;}
+.pr80 {padding-right:80px !important;}
+.pr90 {padding-right:90px !important;}
+.pr100 {padding-right:100px !important;}
+
+.pt0 {padding-top:0px !important;}
+.pt10 {padding-top:10px !important;}
+.pt12 {padding-top:12px !important;}
+.pt20 {padding-top:20px !important;}
+.pt30 {padding-top:30px !important;}
+.pt40 {padding-top:40px !important;}
+.pt50 {padding-top:50px !important;}
+.pt55 {padding-top:55px !important;}
+.pt60 {padding-top:60px !important;}
+.pt70 {padding-top:70px !important;}
+.pt80 {padding-top:80px !important;}
+.pt90 {padding-top:90px !important;}
+.pt100 {padding-top:100px !important;}
+
+.pb0 {padding-bottom:0px !important;}
+.pb10 {padding-bottom:10px !important;}
+.pb20 {padding-bottom:20px !important;}
+.pb30 {padding-bottom:30px !important;}
+.pb40 {padding-bottom:40px !important;}
+.pb50 {padding-bottom:50px !important;}
+.pb55 {padding-bottom:55px !important;}
+.pb60 {padding-bottom:60px !important;}
+.pb70 {padding-bottom:70px !important;}
+.pb80 {padding-bottom:80px !important;}
+.pb90 {padding-bottom:90px !important;}
+.pb100 {padding-bottom:100px !important;}
+.pb120 {padding-bottom:120px !important;}
+.pb200 {padding-bottom:200px !important;}
+
+/* tab-list */
+.tab-list {width:100%; background-color:#fff; border-bottom:1px solid #e0e0e0;}
+.tab-list > ul {width:100%; overflow:hidden;}
+.tab-list > ul > li {float:left; text-align:center;}
+.tab-list > ul > li:first-child:nth-last-child(1),
+.tab-list > ul > li:first-child:nth-last-child(1) ~ li {width:100%;}
+.tab-list > ul > li:first-child:nth-last-child(2),
+.tab-list > ul > li:first-child:nth-last-child(2) ~ li {width:50%;}
+.tab-list > ul > li:first-child:nth-last-child(3),
+.tab-list > ul > li:first-child:nth-last-child(3) ~ li {width:33.333%;}
+.tab-list > ul > li:first-child:nth-last-child(4),
+.tab-list > ul > li:first-child:nth-last-child(4) ~ li {width:25%;}
+.tab-list > ul > li:first-child:nth-last-child(5),
+.tab-list > ul > li:first-child:nth-last-child(5) ~ li {width:20%;}
+.tab-list > ul > li:first-child:nth-last-child(6),
+.tab-list > ul > li:first-child:nth-last-child(6) ~ li {width:16.666%;}
+.tab-list > ul > li > a {display:block; width:100%; padding:10px 0; border-bottom:2px solid #fff; color:#333; font-size:0.9333em; font-weight:normal; text-decoration:none;}
+.tab-list > ul > li > a:hover,
+.tab-list > ul > li > a.on {color:#030303; border-bottom:2px solid #030303; font-weight:600;}
+
+/* tab-list small */
+.tab-list-small > ul {text-align:center;}
+.tab-list-small > ul > li:first-child {margin-left:15px;}
+.tab-list-small > ul > li {display:inline-block; text-decoration:none; text-align:center;}
+.tab-list-small > ul > li:after {content:'|'; color:#d8d9db; padding:0 15px; vertical-align:top; display:inline-block; box-sizing:border-box;}
+.tab-list-small > ul > li:last-child:after {content:'';}
+.tab-list-small > ul > li > a {font-size:1.0667em; text-decoration:none; color:#555555; border-bottom:2px solid #fff; padding-bottom:5px;}
+.tab-list-small > ul > li > a.on,
+.tab-list-small > ul > li > a:hover {color:#351f66; border-bottom:2px solid #503396; font-weight:700;}
+
+/* tab-sorting */
+.tab-sorting {margin-top:-10px; text-align:center;}
+.tab-sorting button {position:relative; display:inline-block; margin:10px 12px 0 12px; padding:0 0 5px 0; border:0; color:#555; font-size:1.0667em; font-weight:700; border-bottom:2px solid #fff; background-color:#fff;}
+.tab-sorting button.on {color:#351f66; border-bottom:2px solid #503396; font-weight:700;}
+.tab-sorting button:hover {color:#351f66; border-bottom:2px solid #503396;}
+.tab-sorting button:after {content:''; display:block; position:absolute; right:-14px; top:2px; width:1px; height:14px; background-color:#d8d9db;}
+.tab-sorting button:last-child:after {display:none;}
+
+/* tab-block */
+/*
+.tab-block {width:100%; border-top:1px solid #d8d9db; border-left:1px solid #d8d9db; overflow:hidden;}
+.tab-block button {border:0;}
+.tab-block button {float:left; width:20%; height:36px; border-right:1px solid #d8d9db; border-bottom:1px solid #d8d9db; text-align:center; background-color:#fff;}
+.tab-block button:hover,
+.tab-block button.on {background-color:#555; color:#fff; font-weight:700;}
+ */
+
+.tab-block {position:relative;}
+.tab-block:before {content:''; position:absolute; left:0; top:35px; width:100%; height:1px; background-color:#d8d9db;}
+.tab-block ul {}
+.tab-block ul:before,
+.tab-block ul:after {content:''; display:table;}
+.tab-block ul:after {clear:both;}
+.tab-block ul li {position:relative; float:left; width:20%; border:1px solid #d8d9db; border-left:0;}
+.tab-block ul li:first-child,
+.tab-block ul li:nth-child(6) {border-left:1px solid #d8d9db;}
+.tab-block ul li:nth-child(5) ~ li {margin-top:-1px;}
+.tab-block ul li:last-child {border-right:1px solid #d8d9db;}
+.tab-block ul li .btn {display:block; width:100%; height:34px; margin:0; padding:0; border:0; line-height:34px; text-align:center; background-color:transparent; text-decoration:none;}
+.tab-block ul li.on,
+.tab-block ul li.hover {border-color:#555;}
+.tab-block ul li.on .btn,
+.tab-block ul li.hover .btn {color:#fff; background-color:#555;}
+.tab-block ul li.on + li,
+.tab-block ul li.hover + li {border-left-color:#555;}
+.tab-block ul li.on:first-child,
+.tab-block ul li.hover:first-child {border-color:#555;}
+.tab-block ul li.on:last-child
+.tab-block ul li.hover:last-child {border-color:#555;}
+.tab-block ul:after {content:''; }
+
+/* icon */
+.iconset {overflow:hidden; display:inline-block; margin:0 0 0 0; padding:0; font-size:0; line-height:0; vertical-align: middle; background-position:0 0; background-repeat:no-repeat; background-size:100% auto;}
+.ico-input-del {width:21px; height:21px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-input-del.png');} /*200514 추가*/
+.ico-ticket {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket.png');}
+.ico-ticket-s {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-s.png');}
+.ico-ticket-nobg {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-nobg.png'); background-position:center;}
+.ico-ticket-mini {width:18px; height:18px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-mini.png');}
+.ico-ticket-cancel {width:64px; height:64px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-cancel.png');}
+.ico-viewer {width:18px; height:18px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-viewer.png');}
+.ico-expect {width:18px; height:18px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-expect.png');}
+.ico-paper {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-paper.png');}
+.ico-burger {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-burger.png');}
+.ico-pencil {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-pencil.png');}
+.ico-search {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-search.png');}
+.ico-ticket-w {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-w.png');}
+.ico-barcode-w {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-barcode-w.png');}
+.ico-burger-w {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-burger-w.png');}
+.ico-back {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-back.png');}
+.ico-back-w {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-back-w.png');}
+.ico-share {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share.png');}
+.ico-alarm {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-alarm.png');}
+.ico-list-block {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-list-block.png');}
+.ico-list-block-w {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-list-block-w.png');}
+.ico-list-line {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-list-line.png');}
+.ico-share-b {width:17px; height:18px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-b.png');}
+.ico-share-bk {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-bk.png');}
+.ico-txt-hide {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-txt-hide.png');}
+.ico-more-down {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-down.png');}
+.ico-more {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more.png');}
+.ico-more-wh {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-wh.png');}
+.ico-more-gray {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-gray.png');}
+.ico-more-gray2 {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-gray2.png');}
+.ico-more-gray-bt {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-gray-bt.png');}
+.ico-more-black {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-black.png');}
+.on .ico-more-gray-bt {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-black-bt.png');}
+.ico-more-black-bt {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-black-bt.png');}
+.ico-more-gray-b {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-gray2.png');}
+.ico-location {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-location.png');}
+.ico-theater {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-theater.png');}
+.ico-theater-black {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-theater-black.png');}
+.ico-movie {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-movie.png');}
+.ico-hotdeal {width:28px; height:28px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-hotdeal.png');}
+.ico-hotdeal2 {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-hotdeal2.png');}
+.ico-mxlogo {width:28px; height:28px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mxlogo.png');}
+.ico-film {width:30px; height:28px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-film.png');}
+.ico-classic {width:30px; height:28px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-classic.png');}
+.ico-p-close  {width:24px; height:24px; border-radius:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-p-close.png');}
+.ico-close {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-close.png');}
+.ico-close-white {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-close-white.png');}
+.ico-close-sm {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-close-sm.png');}
+.ico-close-gray {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-close-gray.png');}
+.ico-close-w {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-layer-close.png');}
+.ico-end-st {width:80px; height:80px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-end-st.png');}
+.ico-membership {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-membership.png');}
+.ico-discountcard {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-discountcard.png');}
+.ico-new {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-new.png');}
+.ico-alert-big {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-alert-big.png');}
+.ico-alert-type2 {width:13px; height:13px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-alert-type2.png');}
+.ico-refresh2 {width:28px; height:28px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-refresh2.png');}
+.ico-refresh-wh {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-refresh-wh.png');}
+.ico-calendar {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-calendar.png');}
+.ico-toggle {width:36px; height:36px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-toggle.png');}
+.on .ico-toggle,
+.ico-toggle.on {width:36px; height:36px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-toggle-on.png');}
+.ico-star {width:36px; height:36px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-star.png');}
+.ico-star-on {width:36px; height:36px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-star-on.png');}
+.ico-place {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-place.png');}
+.ico-alert-16 {width:16px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-alert-16.png');}
+.ico-info-16 {width:16px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-info-16.png');}
+.ico-time {width:23px; height:23px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-time.png');}
+.ico-time-bk {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-time-bk.png');}
+.ico-info {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-info.png');}
+.ico-ask {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ask.png');}
+.ico-like {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-like.png');}
+.ico-review-ripple {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-ripple.png');}
+.ico-review-ripple-gray {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-ripple-gray.png');}
+.ico-review-like-bk {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-like-bk.png');}
+.ico-review-like {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-like.png');}
+.ico-review-like-gray {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-like-gray.png');}
+.ico-review-like.on,
+.ico-review-like-bk.on,
+.on .ico-review-like-bk,
+.on .ico-review-like,
+.on .ico-review-like-gray {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-review-like-on.png');}
+.ico-arr-down {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-arr-down.png');}
+.ico-lock {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-lock.png');}
+.ico-unlock {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-unlock.png');}
+.ico-lock-wh {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-lock-wh.png');}
+.ico-giftcard-star {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-giftcard-star.png');}
+.ico-giftcard-star2 {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-giftcard-star2.png');}
+.ico-giftcard-star2.on {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-giftcard-star2-on.png');}
+.ico-del {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-del.png');}
+.ico-delete-wh {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-delete-wh.png');}
+.ico-add-dot {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-add-dot.png');}
+.ico-photo {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-photo.png');}
+.ico-camera {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-camera.png');}
+.ico-plus {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-plus.png');}
+.ico-plus24 {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-plus24.png');}
+.ico-mem-phone {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mem-phone.png');}
+.ico-ipin {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ipin.png');}
+.ico-cam {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-cam.png');}
+.ico-mem-film {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mem-film.png');}
+.ico-mem-classic {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mem-classic.png');}
+.ico-cart {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-cart.png');}
+.ico-join-complete {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-join-complete.png');}
+.ico-download {width:18px; height:18px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-download.png');}
+.ico-top-arrow {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-top-arrow.png');}
+
+.ico-mx {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mx.png');}
+.ico-updown-on {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-updown-on.png');}
+.ico-updown-off {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-updown-off.png');}
+
+.ico-bnb-cancle {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-cancle.png');}
+.ico-bnb-cancle-off {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-cancle-off.png');}
+.ico-bnb-combo {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-combo.png');}
+.ico-bnb-combo-off {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-combo-off.png');}
+.ico-bnb-share {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-share.png');}
+.ico-bnb-share-off {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-share-off.png');}
+.ico-bnb-photo {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-photo.png');}
+.ico-bnb-photo-off {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-photo-off.png');}
+
+.ico-photocard {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-photocard.png');}
+.ico-add-movie {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-add-movie.png');}
+.ico-notice {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-notice.png');}
+.ico-clock {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-clock.png');}
+
+/*20201012 이벤트 추가*/
+.ico-add_event {width:34px; height:34px; background-image: url('https://img.megabox.co.kr/static/mb/images/main/add_event.png');}
+
+/* rnb */
+.ico-rnb-home {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-home.png');}
+.ico-rnb-close {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-close.png');}
+.ico-rnb-notice {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-notice.png');}
+.ico-rnb-alarm {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-alarm.png');}
+.ico-rnb-join {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-join.png');}
+.ico-rnb-logout {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-logout.png');}
+.ico-rnb-setup {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-setup.png');}
+.ico-rnb-ticketing {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-ticketing.png');}
+.ico-rnb-combo {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-combo.png');}
+.ico-rnb-event {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-event.png');}
+.ico-rnb-hotdeal {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-hotdeal.png');}
+.ico-rnb-movie {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-movie.png');}
+.ico-rnb-mymega {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-mymega.png');}
+.ico-rnb-photo {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-photo.png');}
+.ico-rnb-post {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-post.png');}
+.ico-rnb-store {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-store.png');}
+.ico-rnb-theater {width:40px; height:40px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-rnb-theater.png');}
+
+/* 예매 */
+.ico-up-btn {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-up-btn.png');}
+.ico-ticket-sun {width:16px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-sun.png');}
+.ico-ticket-moon {width:16px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-moon.png');}
+.ico-ticket-brunch {width:16px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket-brunch.png');}
+.ico-tag-stage {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-stage.png');}
+.ico-tag-user {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-user.png');}
+/*.ico-tag-open {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-open.png');}*/
+.ico-tag-open {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-open.png');} /* 오픈시사 */
+.ico-tag-goods {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-option04.png');} /* 굿즈패키지 */
+.ico-tag-singalong {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-option05.png');} /* 싱어롱 */
+.ico-tag-gv {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tag-option06.png');} /* gv */
+
+
+/* 결제수단 */
+.ico-card {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-card-off.png');}
+.on .ico-card {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-card-on.png');}
+.ico-pay-phone {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-phone-off.png');}
+.on .ico-pay-phone {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-phone-on.png');}
+.ico-kakaopay {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-kakaopay-off.png');}
+.on .ico-kakaopay {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-kakaopay-on.png');}
+.ico-payco {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-payco-off.png');}
+.on .ico-payco {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-payco-on.png');}
+.ico-pay-boutique {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-pay-boutique.png');}
+.on .ico-pay-boutique {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-pay-boutique-on.png');}
+/*20210712 차이페이*/
+.ico-payon {width:48px; height:48px; background-image: url('/static/mb/images/common/btn/btn_pay_off.png');}
+.on .ico-payon {width:48px; height:48px; background-image: url('/static/mb/images/common/btn/btn_pay_on.png');}
+.ico-pay-settlebank {width:48px; height:48px; background-image: url('/static/mb/images/common/btn/btn_pay_off.png');}
+.on .ico-pay-settlebank {width:48px; height:48px; background-image: url('/static/mb/images/common/btn/btn_pay_on.png');}
+
+/* 할인수단 */
+.ico-bluemembers {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bluemembers.png');}
+.ico-gs {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-gs.png');}
+.ico-happypoint {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-happypoint.png');}
+.ico-hyundaioil {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-hyundaioil.png');}
+.ico-joongang {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-joongang.png');}
+.ico-ok {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ok.png');}
+.ico-tworld {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-tworld.png');}
+.ico-lpoint {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-lpoint.png');}
+.ico-uplus {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_uplus.png');}
+.ico-friends {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_friends.png');}
+.ico-honors {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_honors.png');}
+.ico-platinum {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_platinum.png');}
+.ico-star {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_star.png');}
+.ico-kia {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_kia.png');}
+
+/* 신용카드 */
+.ico-bc {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_bc.png');}
+.ico-hd {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_hd.png');}
+.ico-hn {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_hn.png');}
+.ico-kb {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_kb.png');}
+.ico-ld {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_ld.png');}
+.ico-sh {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_sh.png');}
+.ico-ss {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_ss.png');}
+.ico-su {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_su.png');}
+.ico-nh {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_nh.png');}
+.ico-citi {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_citi.png');}
+.ico-woori {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_woori.png');}
+.ico-sin {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_sin.png');}
+.ico-jeju {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_jeju.png');}
+.ico-kj {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_kj.png');}
+.ico-jb {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_jb.png');}
+.ico-kakao {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_kakao.png');}
+.ico-kbank {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_kbank.png');}
+.ico-post {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_post.png');}
+.ico-toss {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_toss.png');}
+.ico-sc {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_sc.png');}
+.ico-ibk {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_ibk.png');}
+.ico-none {width:22px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_card_none.png');}
+
+
+/* 영화 관람 등급 */
+.ico-pg-none {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/none_40x40.png'); background-size:20px 20px;}
+.ico-pg-12 {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/12_40x40.png'); background-size:20px 20px;}
+.ico-pg-15 {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/15_40x40.png'); background-size:20px 20px;}
+.ico-pg-20 {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/18_40x40.png'); background-size:20px 20px;}
+.ico-pg-19 {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/19_40x40.png'); background-size:20px 20px;}
+.ico-pg-all {width:20px; height:20px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ALL_40x40.png'); background-size:20px 20px;}
+.ico-pg-medium-12 {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/12_48x48.png'); background-size:24px 24px;}
+.ico-pg-medium-15 {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/15_48x48.png'); background-size:24px 24px;}
+.ico-pg-medium-20 {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/18_48x48.png'); background-size:24px 24px;}
+.ico-pg-medium-19 {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/19_48x48.png'); background-size:24px 24px;}
+.ico-pg-medium-all {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ALL_48x48.png'); background-size:24px 24px;}
+.ico-pg-big-12 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/12_112x112.png'); background-size:56px 56px;}
+.ico-pg-big-15 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/15_112x112.png'); background-size:56px 56px;}
+.ico-pg-big-20 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/18_112x112.png'); background-size:56px 56px;}
+.ico-pg-big-19 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/19_112x112.png'); background-size:56px 56px;}
+.ico-pg-big-all {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ALL_112x112.png'); background-size:56px 56px;}
+
+/* my megabox */
+.ico-myticket {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-myticket.png');}
+.ico-coupon {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-coupon.png');}
+.ico-storecoupon {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-storecoupon.png');}
+.ico-honorcard {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-honorcard.png');}
+.ico-gift {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-gift.png');}
+.ico-discount-coupon {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-discount-coupon.png');}
+.ico-bene-coupon {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bene-coupon.png');}
+
+/* 메가 큐브 */
+.mega-cube {overflow:hidden; display:inline-block; width:32px; height:34px; margin:0; padding:0; text-indent:-9999px; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-megacube.png') no-repeat 0 0;}
+
+/* 나의메가박스 툴팁 */
+.ico-tooltip-share {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-share.png');}
+.ico-tooltip-point {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-point.png');}
+.ico-tooltip-gift {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-gift.png');}
+.ico-tooltip-time {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-time.png');}
+.ico-tooltip-vip {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-vip.png');}
+.ico-tooltip-customer {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-customer.png');}
+.ico-tooltip-store {width:12px; height:12px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/tooltip/ico-tooltip-store.png');}
+
+/* SNS */
+.ico-my-naver {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-my-naver.png');}
+.ico-my-facebook {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-my-facebook.png');}
+.ico-my-kakao {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-my-kakao.png');}
+.ico-my-payco {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-my-payco.png');}
+.ico-my-apple {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-my-apple.png');}
+
+.ico-theater-gray {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-theater-gray.png');}
+.ico-comfort {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-comfort.png');}
+.ico-mx-gray {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-mx-gray.png');}
+.ico-atmos-gray {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-atmos.png');}
+.ico-boutique {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-boutique.png');}
+.ico-boutique2 {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-boutique2.png');}
+.ico-sofa2 {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-sofa2.png');}
+.ico-sofa4 {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-sofa4.png');}
+.ico-table {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-table.png');}
+.ico-sweet {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-sweet.png');}
+.ico-balcony {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-balcony.png');}
+.ico-firstclub {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-firstclub.png');}
+.ico-kids {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-kids.png');}
+.ico-disabled {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-disabled.png');}
+.ico-royal {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-royal.png');}
+.ico-special-seat {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-special-seat.png');}
+.ico-couple {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-couple.png');}
+.ico-dolby {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_dolby.png');}
+.ico-mx4d {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_mx4d.png');}
+
+/* 회원등급 */
+.ico-level-default {width:32px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level-default.png');}
+.ico-level-disable {width:32px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level-disable.png');}
+.ico-level-vip {width:32px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level-vip.png');}
+.ico-level-vipp {width:32px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level-vipp.png');}
+.ico-level-vvip {width:32px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level-vvip.png');}
+
+.ico-hp {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-hp.png');}
+.ico-ipin {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ipin.png');}
+
+/* 혜택 */
+.ico-use {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-use.png');}
+.ico-birthday {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-birthday.png');}
+.ico-level {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-level.png');}
+.ico-popcorn {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-popcorn.png');}
+.ico-present {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-present.png');}
+.ico-saving {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-saving.png');}
+.ico-special {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-special.png');}
+.ico-ticket2 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ticket2.png');}
+
+.ico-couponbook {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-couponbook.png');}
+.ico-curture {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-curture.png');}
+.ico-jcard {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-jcard.png');}
+.ico-stamp {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-stamp.png');}
+.ico-vip5 {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-vip5.png');}
+.ico-vipsticker {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-vipsticker.png');}
+.ico-vvipcard {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-vvipcard.png');}
+.ico-wednesday {width:56px; height:56px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-wednesday.png');}
+
+.ico-discount {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-discount.png');}
+.ico-giftticket {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-giftticket.png');}
+.ico-medical {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-medical.png');}
+.ico-resort {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-resort.png');}
+
+/* 에러 , 앱접근권한, 공유하기*/
+
+.ico-error-call {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-error-call.png');}
+.ico-error-not {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-error-not.png');}
+.ico-error-wait {width:72px; height:72px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-error-wait.png');}
+
+.ico-app-photo {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-app-photo.png');}
+.ico-app-phone {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-app-phone.png');}
+.ico-app-storage {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-app-storage.png');}
+.ico-app-location {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-app-location.png');}
+.ico-app-address {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-app-address.png');}
+
+.ico-share-url {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-url.png');}
+.ico-share-band {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-band.png');}
+.ico-share-kakao {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-kakao.png');}
+.ico-share-twitter {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-twitter.png');}
+.ico-share-facebook {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-share-facebook.png');}
+
+.ico-ping-triangle {width:49px; height:49px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ping-triangle.png');}
+.ico-ping-circle {width:31px; height:32px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-ping-circle.png');}
+
+/* bnb */
+.ico-bnb-movie {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-movie.png');}
+.ico-bnb-home {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-home.png');}
+.ico-bnb-store {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-store.png');}
+.ico-bnb-reserve {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-reserve.png');}
+.ico-bnb-event {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-event.png');}
+.ico-bnb-mymega {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-mymega.png');}
+
+.on .ico-bnb-movie {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-movie-on.png');}
+.on .ico-bnb-home {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-home-on.png');}
+.on .ico-bnb-store {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-store-on.png');}
+.on .ico-bnb-reserve {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-reserve-on.png');}
+.on .ico-bnb-event {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-event-on.png');}
+.on .ico-bnb-mymega {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-bnb-mymega-on.png');}
+
+/* 좌석출입구 */
+.ico-exit-left {width:16px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-left.png');}
+.ico-exit-right {width:16px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-left.png'); transform: rotate(-180deg);}
+.ico-exit-top {width:22px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-bot.png'); transform: rotate(-180deg);}
+.ico-exit-bot {width:22px; height:16px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-bot.png');}
+.ico-exit-horizontal {width:31px; height:22px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-horizontal.png');}
+.ico-exit-vertical {width:22px; height:31px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-exit-vertical.png');}
+
+/* 고객센터 */
+.ico-appq {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-appq.png');}
+.ico-missing {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-missing.png');}
+.ico-inquiry {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-inquiry.png');}
+.ico-inquiry2 {width:48px; height:48px; background: url('https://img.megabox.co.kr/static/mb/images/common/ico/icon_ask.png') 50% 50% no-repeat; background-size:36px 36px;}
+.ico-appointment {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-appointment.png');}
+
+/*즐겨찾기 아이콘 20-04-27*/
+.ico-schedule_star {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/schedule_star_off.png'); background-size:24px 24px;}
+.on .ico-schedule_star {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/schedule_star_on.png'); background-size:24px 24px;}
+
+/*모바일오더 나만의메뉴 아이콘 200601*/
+.ico-combo-star {width:48px; height:48px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-combo-star.png'); background-size:48px 48px;}
+.ico_layer_close {width:24px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico_layer_close.png'); background-size:24px 24px;}
+/* ==========================================================================
+
+    layout
+
+========================================================================== */
+
+/* header */
+#headerMain {position:relative; z-index:500; width:100%; height:55px; background:#fff;}
+#headerMain.on {position:fixed; top:0; left:0; width:100%;}
+#headerMain .ci {position:relative; width:120px; height:55px; margin:0 auto; text-align:center; font-size:0; }
+#headerMain .ci a {display:block; width:120px; height:55px; margin:0 auto; background:url('https://img.megabox.co.kr/static/mb/images/common/ci/logo.png') center center no-repeat; background-size:110px 24px;}
+#headerMain .h-ticket {position:absolute; left:15px; bottom:12px;}
+#headerMain .h-back {position:absolute; left:15px; bottom:12px;}
+#headerMain .h-burger {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerMain .h-alarm {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerMain .r-util {position:absolute; right:15px; bottom:12px; }
+#headerSub .h-star, .headerSub .h-star {position:absolute; left:15px; bottom:15px; padding:0;background:none; border:none;}
+#headerMain .r-util button,
+#headerMain .r-util a {display:inline-block;padding:0;background:none; border:none; position:static;}
+#headerSub .mch{position:absolute; bottom:12px; right:18px; width:68px; height:28px; line-height:26px; border:1px solid #504670; display:block; border-radius:13px; font-size:12px; text-align:center; color:#fff;} /*20200728 극장변경 추가*/
+#headerMain.bd-no {border:none;}
+#headerMain .lnb {position:fixed; top:0; right:-80%; display:block; background:#e12; width:80%; height:100%;}
+
+#headerMain.mymega-main {background:none; position:fixed; top:0; left:0;}
+#headerMain.mymega-main.bg-on {background:#160F2B;}
+#headerMain.mymega-main.on {position:fixed; top:0; left:0; width:100%;}
+#headerMain.mymega-main .tit {text-align:center; font-size:1.2em; color:#fff; line-height:54px; font-weight:400;}
+
+#headerMain.store-main, #headerMain.event-main { position:fixed; top:0; left:0; background:none; color:#fff;}
+#headerMain.store-main.bg-on, #headerMain.event-main.bg-on, #headerSub.vip-lounge.bg-on, .headerSub.bg-on {background:#160F2B;}
+
+.headerSub.bg-on .tit {color:#fff;}
+
+#headerMain.movie-main { position:fixed; top:0; left:0; background:none;}
+#headerMain.movie-main.bg-on {background:#120D3C;}
+#headerMain.movie-main.on {position:fixed; top:0; left:0; width:100%;}
+#headerMain.movie-main .ci {position:relative; width:120px; height:55px; margin:0 auto; text-align:center; font-size:0; }
+#headerMain.movie-main .ci a {display:block; width:120px; height:55px; margin:0 auto; background:url('https://img.megabox.co.kr/static/mb/images/common/ci/logo-white_new.png') center center no-repeat; background-size:110px 48px;}
+#headerMain .tit {text-align:center; font-size:1.2em; line-height:54px; font-weight:400;}
+
+#headerMain.reserve-main { position:fixed; top:0; left:0; color:#fff; background:none;}
+#headerMain.reserve-main.bg-on {background:#160F2B;}
+#headerMain.reserve-main.on {position:fixed; top:0; left:0; width:100%;}
+#headerMain.reserve-main .ci {position:relative; width:120px; height:55px; margin:0 auto; text-align:center; font-size:0; }
+#headerMain.reserve-main .ci a {display:block; width:120px; height:55px; margin:0 auto; background:url('https://img.megabox.co.kr/static/mb/images/common/ci/logo-white_new.png') center center no-repeat; background-size:110px 48px;}
+
+#headerMain.ticket-header {color:#fff; background:rgba(0, 0, 0, 0.9);}
+
+#headerSub, .headerSub  {position:fixed; top:0; left:0; z-index:1001; width:100%; height:56px; background:#fff;}/*20200520 height값 55에서 변경*/
+.headerSub.no-fix {position:absolute;}
+#headerSub .tit, .headerSub .tit {text-align:center; font-size:1.2em; line-height:54px;}
+#headerSub .ci {position:relative; width:120px; height:55px; margin:0 auto; text-align:center; font-size:0;}
+#headerSub .ci a {display:block; width:120px; height:55px; margin:0 auto; background:url('https://img.megabox.co.kr/static/mb/images/common/ci/logo.png') center center no-repeat; background-size:110px 24px;}
+#headerSub .h-back, .headerSub .h-back {position:absolute; left:15px; bottom:12px;}
+#headerSub .h-movielist {position:absolute; left:15px; bottom:12px;}
+#headerSub .h-burger {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerSub .h-close, .headerSub .h-close {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerSub .h-nshare, .headerSub .h-nshare {position:absolute; left:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerSub .h-share, .headerSub .h-share {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerSub .r-util, .headerSub .r-util {position:absolute; right:15px; bottom:12px; }
+#headerSub .h-star, .headerSub .h-star {position:absolute; left:15px; bottom:15px; padding:0;background:none; border:none;}
+#headerSub .r-util button,
+#headerSub .r-util a {display:inline-block;padding:0;background:none; border:none; position:static;}
+#headerSub.bd-no {border:none;}
+#headerSub .btn-arr-down {border:none; background:none; padding:0;}
+#headerSub.gray {background-color:#f5f5f5;}
+.bg-gray {background-color:#f5f5f5 !important;}
+
+#headerSub.reserve {background:#201D3E; position:fixed; top:0; left:0; border:none;}
+#headerSub.reserve.on {position:fixed; top:0; left:0; width:100%; background:rgba(0, 0, 0, 0.9)}
+#headerSub.reserve .tit {color:#fff;}
+
+#headerSub .cart-info {position:relative;}
+#headerSub .cart-info .cart-count {display:block; position:absolute; right:-5px; top:0; width:18px; height:18px; line-height:20px; border-radius:50%;  text-align:center; font-size:0.8667em; color:#fff; letter-spacing:-1px; background-color:#14B9CB;}
+
+#headerSub.vip-lounge {background:none; position:fixed; top:0; left:0; color:#fff;}
+#headerSub.vip-lounge .tit {text-align:center; font-size:1.2em; line-height:54px; font-weight:400; display:none;}
+#headerSub.vip-lounge.bg-on .tit {display:block;}
+#headerSub.vip-lounge .ci {display:none; line-height:55px;}
+#headerSub.vip-lounge .ci img {width:100%; margin-top:17px;}
+#headerSub.vip-lounge.bg-on .ci {display:block;}
+
+.top-btn {position:fixed; right:18px; bottom:60px; width:40px; height:40px; z-index:999;bottom:calc(constant(safe-area-inset-bottom) + 60px); bottom:calc(env(safe-area-inset-bottom) + 60px);}
+.top-btn a {display:block; width:40px; height:40px; text-align:center; border-radius:50%; line-height:38px; border:1px solid #e0e0e0; background-color:rgba(255, 255, 255, 0.95);}
+.top-btn.dark a { background-color:#333;}
+
+#pageBanner {position:relative; width:100%; min-height:60px; height:fit-content; display:block; overflow:hidden; }
+#pageBanner img {margin:0 auto; width:auto; min-height:80px; }
+#pageBanner.reserve-ad {width:100%; padding:0 18px; border-radius:10px;}
+#loginView #pageBanner {padding:0 18px;}
+.reserve-main-con #pageBanner { width:calc(100% - 36px); margin:0 auto;}
+
+#mobileTicket  {position:fixed; top:0; left:0; z-index:500; width:100%; height:55px; color:#fff; background:none;}
+#mobileTicket.bg-on {background:rgba(0, 0, 0, 0.5);}
+#mobileTicket .tit {text-align:center; font-size:1.2em; line-height:54px;}
+#mobileTicket .h-back {position:absolute; left:15px; bottom:12px;}
+#mobileTicket .h-close {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+
+/* detail header */
+.head-title { position:relative; padding:7px 20px 7px 20px; width:100%; min-height:60px; background:#fff; border:1px solid #e7e7e7; border-width:1px 0 1px 0;}
+.head-title .tit { margin:0; padding:0; font-size:16px; line-height:24px; color:#333; word-break:break-all;}
+.head-title .date {margin:0; padding:0; font-size:13px; line-height:18px; color:#999;}
+.head-title .sharing { position:absolute; right:10px; top:10px;  padding:10px;}
+
+/* header layer */
+.gnb-layer {min-width:1280px;}
+.gnb-layer .header-util-l {position:absolute; top:45px; left:84px;}
+.gnb-layer .header-util-r {position:absolute; text-align:right; top:45px; right:84px;}
+.gnb-layer .header-util-l a {float:left; margin-right:20px; vertical-align:middle;}
+.gnb-layer .header-util-r a {float:left; margin-left:20px; vertical-align:middle;}
+
+.layer-end-btn {position:absolute; top:37px;}
+.layer-end-btn.sitemap-end { left:74px;}
+.layer-end-btn.search-end { left:117px;}
+.layer-end-btn.mymega-end { right:72px;}
+
+/* container */
+.container {width:100%; min-height:100%; padding:56px 0 0 0; position:relative; }
+.container.type2 {padding-bottom:120px;}
+.container.gray {background-color:#f5f5f5;}
+.inner-wrap {width:100%; margin:0 auto;}
+.inner-wrap:before,
+.inner-wrap:after {content:''; display:table;}
+.inner-wrap:after {clear:both;}
+
+/* footer */
+#footer {display:block; width:100%; height:231px; margin:0; padding:25px 18px 80px 18px; color:#666; background-color:#222; text-align:center;}
+#footer ul{width:340px; margin:auto;}
+#footer ul {display:block; table-layout:fixed;}
+#footer ul li {position:relative; display:inline-block; text-align:center;}
+#footer ul li:after {position:absolute; display:block; content:''; right:0; top:7px; width:1px; height:9px; background-color:#333;}
+#footer ul li:last-child:after {display:none;}
+#footer ul li a {display:block; padding:5px 8px; font-size:0.8em; color:#ccc; letter-spacing:-1px;}
+#footer ul li:nth-child(3):after{display:none;}
+#footer ul li:nth-child(3) a {color:#14B9CB;}
+#footer address {margin:15px 0 0 0; padding:0; font-size:0.8em; text-align:center;}
+#footer p {margin:0; padding:0; font-size:0.8em; text-align:center;}
+#footer p.copyright {margin-top:7px; letter-spacing:0;}
+#footer p span {margin-left:5px;}
+@media screen and (max-width:356px) {
+    #footer { height:270px; margin:0; padding:25px 18px 80px 18px; color:#666; background-color:#222; text-align:center;}
+}
+/* rnb */
+#rnb {display:block; position:fixed; top:0; right:-100%; width:100%; height:100%; z-index:10001;}
+#rnb.act {right:0;}
+#rnb.act .rnb-dimd {display:block;}
+#rnb .rnb-dimd {display:none;position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.7);}
+#rnb .rnb-cont {position:absolute; right:0; top:0; width:320px; height:100%; background-color:#fff; box-shadow:0 5px 5px 5px rgba(0,0,0,0.20);}
+
+#rnb .rnb-top {display:block; position:relative; width:100%; height:74px; color:#fff; background-color:#160F2B;}
+#rnb .rnb-top p.tit {margin:0; padding:17px 0 0 20px; line-height:1.2; font-size:1.0667em;}
+#rnb .rnb-top p.tit a {display:inline-block; color:#fff; text-decoration:underline;}
+#rnb .rnb-top p.tit a.user-login {font-size:0.933em; padding-left:5px;}
+#rnb .rnb-top p.tit span.grade {display:inline-block; width:34px; height:18px; font-size:11px; vertical-align:top; text-align:center; line-height:18px;}
+#rnb .rnb-top p.tit span.grade.vip {background-color:#14B9CB;}
+#rnb .rnb-top p.tit span.grade.vvip {background-color:#660ed8;}
+#rnb .rnb-top p.tit span.grade.vipp {background-color:#E3AB2B;}
+#rnb .rnb-top p.tit em {display:block; margin:5px 0 0 0; color:#999; font-size:14px;}
+#rnb .rnb-top p.tit em a {display:block; margin:5px 0 0 0;}
+#rnb .rnb-top .util-btn {position:absolute; top:13px; right:15px;}
+#rnb .rnb-top .util-btn a,
+#rnb .rnb-top .util-btn button {display:inline-block; padding:0; width:30px; height:30px; border:none; background:none; text-align:center;}
+#rnb .rnb-mid {display:block; width:100%; height:calc(100% - 174px); }
+#rnb .rnb-mid .user-btn {display:table; padding:0 20px; width:100%; height:50px; border-top:1px solid rgba(151, 151, 151, 0.24); background-color:#160F2B; }
+#rnb .rnb-mid .user-btn .item {display:table-cell; text-align:center; vertical-align:middle;}
+#rnb .rnb-mid .user-btn .item a {color:#fff; font-size:0.9333em; font-weight:300; opacity:0.6;}
+#rnb .rnb-mid .rnb-cont-scroll {overflow-y:scroll; width:100%;  height:calc(100% - 50px); }
+#rnb .rnb-mid .circle-link {margin:40px 0 15px 0;}
+#rnb .rnb-mid .circle-link:after {display:block; content:''; clear:both;}
+#rnb .rnb-mid .circle-link a { display:block; margin-bottom:25px; width:33.3%; float:left; text-align:center; color:#030303; font-size:0.9333em; letter-spacing:-1px;}
+#rnb .rnb-mid .circle-link a i {display:block; margin:0 auto 6px; width:60px; height:60px; border-radius:50%; border:1px solid #e0e0e0; background-size:40px; background-position:center;}
+#rnb .rnb-mid .list-link {border-top:1px solid #f5f5f5;}
+#rnb .rnb-mid .list-link ul li { display:block; width:100%; line-height:49px; border-bottom:1px solid #f5f5f5;}
+#rnb .rnb-mid .list-link ul li a {display:block; padding:0 20px;  color:#333; font-size:0.9333em;}
+#rnb .rnb-mid .list-link ul li a.depth {position:relative;}
+#rnb .rnb-mid .list-link ul li a.depth:after {content:''; width:20px; height:20px; position:absolute; right:18px; top:15px; background:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-updown-off.png') right center no-repeat; background-size:24px; background-position: 0 right 20px;}
+#rnb .rnb-mid .list-link ul li.on a.depth:after { background:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-updown-on.png') right center no-repeat; background-size:24px; background-position: 0 right 20px; }
+#rnb .rnb-mid .list-link ul li ul.depth2 {display:none; padding:0 20px;  width:100%; min-height:100%; background-color:#f5f5f5; padding:20px 0;}
+#rnb .rnb-mid .list-link ul li.on ul.depth2 {display:block;}
+#rnb .rnb-mid .list-link ul li ul.depth2 li {width:100%; height:20px; line-height:19px; border:none; color:#030303;}
+#rnb .rnb-mid .list-link ul li ul.depth2 li:before {left:20px; width:2px; height:2px; background-color:#999;}
+#rnb .rnb-mid .alert-notice {margin:0; padding:0 20px; width:100%; height:48px; line-height:48px; color:#14B9CB; font-size:0.9333em;}
+
+#rnb .rnb-banner {position:fixed; z-index: 1; bottom: 0; width:100%; height:100px; background-color:#fff;}
+#rnb .rnb-banner img {width:100%;}
+
+/* header barcode */
+.ticket-count {position:absolute; width:30px; height:30px;  left:15px; bottom:12px;}
+.ticket-count .h-ticket {position:relative; left:0 !important; bottom:0 !important;}
+.ticket-count .count {display:block; position:absolute; right:-5px; top:0; width:18px; height:18px; line-height:18px; border-radius:50%;  text-align:center; font-size:0.7333em; color:#fff; letter-spacing:-1px; background-color:#14B9CB;}
+
+.h-barcode {display:block;  overflow:hidden; height:100%; padding:75px 18px 0 18px; text-align: center; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-origin.png') repeat center top; background-size:100% 100%; padding-bottom:constant(safe-area-inset-bottom) !important; padding-bottom:env(safe-area-inset-bottom) !important;}
+.h-barcode-wrap {display:block; overflow-y:auto; max-height:100%; margin:0;  padding-bottom:110px; padding-top:calc(constant(safe-area-inset-top) + 20px) !important; padding-top:calc(env(safe-area-inset-top) + 20px) !important;}
+.h-barcode-wrap .item {display:block; padding:20px 10px 20px 20px; width:100%; height:105px; margin:0 0 10px 0; border-radius:5px; background-color:#fff;}
+.h-barcode-wrap .item a {display:block; position:relative;}
+.h-barcode-wrap .item a:after {display:block; position:absolute; content:''; width:24px; height:24px; right:0px; top:50%; margin-top:-12px; background:url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-more-gray.png') center center no-repeat; background-size:24px;}
+.h-barcode-wrap .item p {margin:0; padding:0; text-align:left;}
+.h-barcode-wrap .item p.badge {font-size:0.7333em; margin-bottom:7px;}
+.h-barcode-wrap .item p.badge span.badge {display:inline-block; padding:0 5px; min-width:50px; height:18px; line-height:17px; border:1px solid #14B9CB; color:#14B9CB; text-align:center; margin-right: 5px;}
+.h-barcode-wrap .item p.badge span.badge.combo {color:#660ed8; border:1px solid #660ed8;}
+.h-barcode-wrap .item p.badge span.badge.hotdeal {color:#D13B41; border:1px solid #D13B41;}
+.h-barcode-wrap .item p.tit {font-size:0.9333em; font-weight:300; color:#030303; margin-bottom:5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.h-barcode-wrap .item p.info {width:100%; font-size:0.8667em; color:#999;}
+.h-barcode-wrap .item p.info span {float:left;}
+.h-barcode-wrap .item p.info span.roboto {width:157px;}
+.h-barcode-wrap .item p.info span.store {margin-left:5px; padding-left:8px; position:relative;   max-width:calc(100% - 177px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.h-barcode-wrap .item p.info span.store:before {display:block; position:absolute; content:''; left:0; top:4px; width:1px; height:10px; background-color:#e0e0e0;}
+.h-banner{bottom:40px;}
+.h-banner.app{bottom:5px;}
+.h-banner img {height:80px !important; margin:auto;}
+
+
+/* 멤버십카드 */
+.h-membership-wrap {display:block; margin:0; padding-top:calc(constant(safe-area-inset-top) + 55px) !important; padding-top:calc(env(safe-area-inset-top) + 55px) !important;}
+.h-membership-wrap .item {display:block; padding:35px 30px; width:100%; height:auto; margin:0 0 10px 0; border-radius:5px; background-color:#fff;}
+.h-membership-wrap .item p {margin:0; padding:0; text-align:center;}
+.h-membership-wrap .item p.tit {font-size:1.0667em; color:#030303; font-weight:bold; }
+.h-membership-wrap .item p.card {position:relative; display:block; max-width:200px; max-height:122px; margin:15px auto 0; border-radius:5px; background:#f5f5f5 url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-card-none.png') center top 20px no-repeat;}
+.h-membership-wrap .item p.card a.add-memcard { display:block; width:100%; height:130px; padding-top:80px; color:#999; font-size:0.8667em; text-decoration:underline; text-align:center; }
+.h-membership-wrap .item p.card img {display:block; width:100%; border-radius:10px; box-shadow: 0 5px 5px 0 rgba(0,0,0,0.20);}
+.h-membership-wrap .item p.point {margin:15px 0 30px 0; color:#14B9CB; font-size:1.4666em;}
+.h-membership-wrap .item p.barcode {display:block; width:100%;}
+.h-membership-wrap .item p.barcode img,
+.h-membership-wrap .item p.barcode canvas {display:block; width:100%; margin-bottom:10px; }
+.h-membership-wrap .item p.barcode span {font-size:0.9333em; padding:0 7px;}
+
+
+/* ==========================================================================
+
+    contents 공통
+
+========================================================================== */
+
+.container {background-color:#fff; padding-top:calc(constant(safe-area-inset-top) + 56px); padding-top:calc(env(safe-area-inset-top) + 56px); padding-bottom:calc(constant(safe-area-inset-bottom) + 60px); padding-bottom:calc(env(safe-area-inset-bottom) + 60px);}
+
+.tooltip-over {/* overflow:hidden; display:inline-block; width:16px; height:16px; font-size:0; line-height:0; vertical-align:middle; */}
+.tooltip-cont {display:none; position:absolute; left:0; top:-100px; width:300px; padding:20px; color:#222; font-size:0.9333em; text-align:center; line-height:1.5; border:1px solid #d8d9db; border-radius:5px; background-color:#fff;}
+.tooltip-cont.on {display:block;}
+.tooltip-cont:after {content:''; position:absolute; left:50%; bottom:-12px; display:block; width:22px; height:12px; margin:0 0 0 -11px; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-tooltip-arr.png') no-repeat 0 0;}
+.tooltip-cont .wrap {position:relative;}
+.tooltip-cont .wrap .btn-close-tooltip {position:relative;}
+
+/* 에러페이지 */
+.errer-wrap {display:block; width:100%; min-height:100%; padding:0 18px;}
+.errer-wrap p {margin:0; padding:0; text-align:center;}
+.errer-wrap p.icon {margin:80px 0 0 20px; }
+.errer-wrap p.tit {margin:20px 0 0 0; font-size:1.3333em; color:#030303;}
+.errer-wrap p.txt {margin:10px 0 50px 0; font-size:0.9333em; color:#666; font-weight:300; letter-spacing:-1px;}
+.errer-wrap p.custo-center {font-size:1.0667em; color:#4E2998;}
+.errer-wrap p.custo-center a {font-size:1.1333; color:#4E2998;}
+
+/* 접속대기안내 */
+.delay {background-color:#fff; position:absolute; top:50%; left:18px;  margin-top:-155px; bottom:inherit; width:calc(100% - 36px) !important; height:310px; z-index:10001;}
+.delay .title-area {margin-top:0; padding:15px 17px; border-bottom:1px solid #e0e0e0; text-align: left;}
+.delay .title-area .tit {font-size:1.066em; color:#333; font-weight:600; line-height:24px;}
+.delay .title-area .tit .txt {color:#999; font-weight:normal;}
+.delay .title-area .btn-close {position:absolute; top:15px; right:17px; background:none; border:none; padding:0;}
+.delay .btn-close {position:absolute; top:15px; right:17px; background:none; border:none; padding:0;}
+.delay .layer-cont {padding:30px 20px; }
+.delay .layer-cont .delay-wrap p {margin:0; padding:0; text-align:center;}
+.delay .layer-cont .delay-wrap p.tit {font-size:0.9333em; color:#666;}
+.delay .layer-cont .delay-wrap p.peaple {line-height:40px; color:#14B9CB; font-weight:bold;}
+.delay .layer-cont .delay-wrap p.peaple span {display:inline-block;  padding-top:5px; vertical-align:middle; font-size:2.4em;}
+.delay .layer-cont .delay-wrap p.peaple em {display:inline-block;  font-size:2em; vertical-align:middle; }
+.delay .layer-cont .delay-wrap .delay-bar {display:block; margin:20px 0; width:100%; height:10px; border-radius:5px; background-color:#f5f5f5; text-align:left;}
+.delay .layer-cont .delay-wrap .delay-bar span {display:block; height:10px; border-radius:5px; background-color:#14B9CB;}
+.delay .layer-cont ul.star-list li {color:#999;}
+
+
+/* 광고팝업 */
+.ad-popup {background-color:#fff; position:fixed; top:70px; left:18px; margin:20px auto; width:calc(100% - 36px) !important;  max-width:400px; height:auto; z-index:10001;
+    left:calc(18px + constant(safe-area-inset-left));
+    left:calc(18px + env(safe-area-inset-left));
+    top:calc(70px + constant(safe-area-inset-left));
+    top:calc(70px + env(safe-area-inset-left));
+}
+.ad-popup .layer-cont {position:relative; display:block; width:100%; padding:0 0 40px 0;  overflow:hidden;}
+.ad-popup .layer-cont a {display:block;}
+.ad-popup .layer-cont a img {width:100%; background:#24202B;}
+.ad-popup .btn-group {position:absolute; bottom:0; left:0; width:100%; overflow:hidden; height:40px; line-height:40px; padding:0 10px; text-align:left;}
+.ad-popup .btn-group .btn-close-main-notice {position:absolute; right:15px; top:13px; overflow:hidden; width:12px; height:12px; display:inline-block; margin:0 0 0 10px; padding:0; text-indent:-9999px; border:0; vertical-align:middle; background:url('https://img.megabox.co.kr/static/pc/images/main/btn-close-main-notice.png') no-repeat 0 0;}
+
+.ad-popup [type='checkbox'] {position:absolute; left:-99999px;}
+.ad-popup label {position:relative; padding:0 0 0 28px; line-height:20px; color:#333;}
+.ad-popup label:before {content:''; display:block; position:absolute; left:0; top:10px; width:20px; height:20px; margin:-10px 0 0 0; cursor:pointer; background:url('https://img.megabox.co.kr/static/mb/images/common/bg/bg-m-checkbox.png') no-repeat 0 0; background-size:100px 20px;}
+.ad-popup [type='checkbox']:checked + label:before {background-position:-20px 0;}
+
+/* 앱접근권한 */
+.layer-popup-bt.authority {background-color:#fff; position:absolute; top:73px; left:18px;  margin-top:0; bottom:inherit; width:calc(100% - 36px); height:auto; z-index:10001;}
+.layer-popup-bt.authority .layer-cont {padding:0; }
+.layer-popup-bt.authority .layer-cont .authority-wrap {padding:0;}
+.layer-popup-bt.authority .layer-cont .authority-wrap p {margin:0; padding:0; text-align:center;}
+.layer-popup-bt.authority .layer-cont .authority-wrap p.title {width:100%; height:54px; line-height:53px; font-size:1.0667em; color:#030303; font-weight:bold; border-bottom:1px solid #e0e0e0;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list {margin:25px 18px;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list li {position:relative; display:block; width:100%; height:60px; padding:2px 0 2px 52px;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list li span {position:absolute; left:0; top:0; width:40px; height:40px;  line-height:38px; text-align:center; border-radius:50%; border:1px solid #e0e0e0;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list li p.tit {text-align:left; font-size:0.9333em; color:#030303; font-weight:bold;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list li p.txt {text-align:left; font-size:0.8667em; color:#666; font-weight:300;}
+.layer-popup-bt.authority .layer-cont .authority-wrap .authority-list li:last-child {height:44px;}
+.layer-popup-bt.authority .layer-cont ul.star-list {padding:20px 18px; background-color:#f5f5f5;}
+.layer-popup-bt.authority .layer-cont ul.star-list li {color:#999;}
+.layer-popup-bt.authority .layer-cont .btn-group {padding:0;}
+
+/* 공유하기 */
+.share-list li {display:block; width:100%; height:36px; line-height:36px; margin-bottom:15px; }
+.share-list li:last-child {margin:0;}
+.share-list li button {display:block; width:100%; text-align:left; padding:0; margin:0 ;font-size:1.0667em; font-weight:500; color:#666; border:none; background:none; }
+.share-list li button i {margin-right:10px; vertical-align:middle; }
+
+/* 댓글 팝업 */
+.comment-popup li {display:block; width:100%; height:42px; line-height:41px; background:#fff; border-bottom:1px solid #f5f5f5;}
+.comment-popup li:last-child {border-bottom:0;}
+.comment-popup li button {display:block; width:100%; height:42px; text-align:center; background:none; border:none; font-size:0.9333em;}
+.comment-popup li button.cancle {color:#999;}
+
+/* full size 레이어 팝업 */
+.full-layer {display:none; position:fixed; top:0; left:0; z-index:10001; width:100%; height:100%; padding:0; background:#ccc;}
+.full-layer.on {display:block;}
+.full-layer .wrap {position:relative; width:100%; height:100%; padding:56px 0 36px 0;}
+.full-layer.no-bottom-btn .wrap {padding:56px 0 0 0;}
+.full-layer .layer-header {position:absolute; top:0; left:0; width:100%; height:56px; margin:0; padding:0 0 0 20px; line-height:56px; background-color:#fff; font-weight:700; font-size:1.2em; letter-spacing:-0.5px;}
+.full-layer .layer-header .tit {text-align:center; font-size:1.2em; line-height:54px; font-weight:600;}
+.full-layer .layer-header .left {position:absolute; left:0; top:0;}
+.full-layer .layer-header .right {position:absolute; right:15px; bottom:12px; }
+.full-layer .layer-header .right button {display:block; margin:0; padding:0; border:0; text-indent:-9999px; background-color:transparent; background-position:center; background-repeat:0 0; background-size:100% auto;}
+.full-layer .layer-header .right .btn-x {width:30px; height:30px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/ico-close.png');}
+.full-layer .layer-header .h-back {position:absolute; left:0; bottom:0;}
+.full-layer .layer-header .h-burger {position:absolute; right:0; bottom:0; padding:0;background:none; border:none;}
+.full-layer .layer-header .h-close {position:absolute; right:0; bottom:0; padding:0;background:none; border:none;}
+.full-layer .layer-cont {overflow-y:auto; height:100%; background-color:#fff; padding:30px;}
+
+.full-layer .btn-fixed {position:absolute; left:0; bottom:0; width:100%;}
+.full-layer .btn-fixed:before,
+.full-layer .btn-fixed:after {content:''; display:table;}
+.full-layer .btn-fixed:after {clear:both;}
+.full-layer .btn-fixed .left {float:left;}
+.full-layer .btn-fixed .right {float:right;}
+.full-layer .btn-fixed .button {border-radius:0;}
+.full-layer .btn-fixed.col-2 a,
+.full-layer .btn-fixed.col-2 button {float:left; display:block; width:50% !important;}
+.full-layer .btn-fixed.col-3 a,
+.full-layer .btn-fixed.col-3 button {float:left; display:block; width:33.3% !important;}
+.full-layer .btn-fixed.col-3 a:first-child,
+.full-layer .btn-fixed.col-3 button:first-child {width:33.4% !important;}
+.full-layer .btn-fixed.col-4 a,
+.full-layer .btn-fixed.col-4 button {float:left; display:block; width:25% !important;}
+
+/* 공통 - 툴팁 */
+.tooltip-box {position:absolute; left:0; width:100%; padding:0 15px; background-color:#14B9CB; z-index:3; border-radius:5px;}
+.tooltip-box:before {content:''; position:absolute; top:-5px; left:50%; margin-left:-6px; width:12px; height:12px; transform: rotate(-315deg); background: #14B9CB; z-index:5;}
+.tooltip-box .btn-close-tip {position:absolute; top:10px; right:15px; background:none; border:none; padding:0;}
+.tooltip-box .btn-close-tip .iconset {width:10px; height:10px;}
+.tooltip-box .text {font-size:0.9333em; color:#fff; font-weight:600;text-align: center; padding:10px 0; border-bottom:1px solid #30c1d1; }
+.tooltip-box .text:first-child {border-bottom:none;}
+.tooltip-box .text .iconset {margin-right:3px;}
+.tooltip-box .text a.a-link {font-size:0.8667em; color:#fff; text-decoration:underline;}
+.tooltip-box2 {position:absolute; left:0; width:100%; padding:0 15px; background-color:#14B9CB; z-index:3; border-radius:5px;}
+.tooltip-box2.hide {display:none;}
+.tooltip-box2:before {content:''; position:absolute; top:-5px; left:76%; margin-left:-6px; width:12px; height:12px; transform: rotate(-315deg); background: #14B9CB; z-index:5;}
+.tooltip-box2 .btn-close-tip {position:absolute; top:10px; right:15px; background:none; border:none; padding:0;}
+.tooltip-box2 .btn-close-tip .iconset {width:10px; height:10px;}
+.tooltip-box2 .text {font-size:0.9333em; color:#fff; font-weight:600;text-align: center; padding:10px 0; border-bottom:1px solid #30c1d1; }
+.tooltip-box2 .text:first-child {border-bottom:none;}
+.tooltip-box2 .text .iconset {margin-right:3px;}
+.tooltip-box2 .text a.a-link {font-size:0.8667em; color:#fff; text-decoration:underline;}
+
+.tooltip-box.mvpost {padding:0 30px 0 10px; top:65px; z-index:101; left:18px; width:calc(100% - 36px);}
+.tooltip-box.mvpost:before {top:-5px; right:40px;}
+.tooltip-box.mvpost .link {display:block; margin:0; padding:0; text-align: center;}
+.tooltip-box.mvpost .link a {display:inline-block; margin:0; padding:0; text-align: center; color:#fff; font-size:0.8667em; text-decoration:underline;}
+
+/* 공통 - 댓글창입력 */
+.txt-write-area {border-bottom:1px solid #e0e0e0; }
+.txt-write-area textarea {width:100%; padding:5px 0; min-height:24px; overflow-y:auto; color:#999; font-size:0.9333em; border:none; background-color:#fff; resize:none;}
+.txt-write-area .num {padding:0; margin:0; text-align: right; font-size:0.8em; color:#3F3F3F; line-height:19px;}
+.txt-write-area .num span {color:#14B9CB;}
+
+.txt-edit-area .txt-write-area {border:1px solid #e0e0e0; padding:15px;}
+.txt-edit-area .write-btn-area .btn-upload {width:60px; height:26px; padding:0; margin-left:8px; color:#ccc; font-size:0.8667em; border-radius:13px; line-height:24px; border:1px solid #ccc; background:none;}
+
+/* 공통 - 댓글창 버튼 */
+.write-btn-area {margin-top:10px; margin-bottom:20px;}
+.write-btn-area:after {clear:both; content:''; display:block;}
+.write-btn-area .profile-img {float:left; overflow:hidden; width:30px; height:30px; border-radius:15px;}
+.write-btn-area .profile-img img {width:100%; height:100%;}
+.write-btn-area .btn-upload {float:right; height:36px; padding:0 40px; color:#fff; border:none; background-color:#ccc; border-radius:3px;}
+.write-btn-area .btn-upload.on {background-color:#14B9CB;}
+
+/* pc - 레이어 팝업 - 임시. 디자인 변경 해야함  2019-03-07 */
+.layer-popup {position:fixed; top:50%; left:50%; width:600px; z-index:101; display:none; padding-top:60px; background:#fff;}
+.layer-popup .layer-tit {width:100%; height:56px; line-height:56px; background-color:#2c5b91; position:absolute; top:0; left:0; margin:0; color:#fff; font-weight:700; font-size:1.4286em; letter-spacing:-0.5px; padding:0 0 0 20px;}
+.layer-popup .layer-con {overflow-y:auto; background-color:#fff; padding:30px;}
+.layer-popup .btn-layer-close {width:21px; height:20px; margin:0; padding:0; border:0; display:block; position:absolute; top:20px; right:30px; text-indent:-9999px; background:url('https://img.megabox.co.kr/static/mb/images/common/btn/btn-layer-close.png') no-repeat center}
+.layer-popup .txt-common {margin:0; padding:0 0 30px 0;}
+
+.layer-popup.layer-drag .layer-tit {cursor:move;}
+.layer-header {position:absolute; top:0; left:0; width:100%; height:60px; background:#513397;}
+.layer-header h3.tit {color:#fff; line-height:58px; padding:0 0 0 30px;}
+.layer-dimed {position:fixed; top:0; left:0; background:#000; opacity:0.7; width:100%; height:100%; display:block; z-index:100;}
+
+/* ==========================================================================
+
+    as is
+
+========================================================================== */
+
+/*이용약관*/
+.terms-list {width:100%;}
+
+/*이용약관 기존 CSS*/
+.terms_bx01 ul,
+.terms_bx ul {width:100%; line-height:1; overflow-y:scroll; max-height:200px; margin:0 0 20px 0;}
+.terms_bx ul li a {color:#14B9CB; font-size:0.9333em;}
+.term_text * {font-weight:normal;font-size:12px; line-height:21px; color:#666}
+.terms_text {overflow:auto; overflow-y:scroll; position:relative; max-height:300px;  font-size:13px;}
+.terms_text > div {top:0;width:100%; padding:15px; background-color:#f5f5f5;}
+.terms_text dt {font-weight:700 !important}
+.term_text dt {margin-top:20px; margin-bottom:0;}
+.term_text dd > ol{padding-left:25px}
+.term_text ol {list-style-type:decimal;}
+.terms-history {width:100%;}
+.terms-history select {float:left; width:93%; border-radius:5px;}
+.terms-history a {border:1px solid #000; border-radius:5px; color:#fff; background-color:#351f67; padding:0 10px; text-decoration:none; margin-left:10px; height:36px; line-height:36px; display:inline-block;}
+.pull-left {float:left !important;}
+.pull-left a {text-decoration:none;}
+.pull-left a:hover {color:#01738b;}
+.pull-left li {min-height:24px;}
+.terms-content table {border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.terms-content table td,
+.terms-content table th {border-bottom:1px solid #ccc; border-right:1px solid #ccc;}
+.terms-content .tit {font-size:0.9333em; color:#030303; font-weight:700;}
+.terms-content .txt-gray {font-size:0.8667em; color:#999;}
+
+/*이용약관 기존 CSS*/
+.layer-header .sub-tit {vertical-align:bace-line; font-size:15px; font-weight:300; padding-left:15px;}
+
+/* ==========================================================================
+    print
+========================================================================== */
+@page {size: A4;}
+@media print {
+    #header {display:none;}
+    #footer {display:none;}
+    #container {min-height:0; margin:0; padding:0;}
+}
+
+/* 로딩 바 */
+.bg-loading {position:fixed; left:0; top:0; right:0; bottom:0; z-index:9998; background-color:rgba(255,255,255,0.6);}
+
+@-webkit-keyframes spinner-border {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner-border {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-border {
+    display:block; position:absolute; left:50%; top:50%; z-index:2; width: 18px; height: 18px; margin:-9px 0 0 -9px; vertical-align: text-bottom; border:2px solid #3c2a77; border-right-color:transparent; border-radius:50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+}
+
+
+/*20210226 아이콘추가*/
+#headerMain .h-mfeed {position:absolute; right:15px; bottom:12px; padding:0;background:none; border:none;}
+#headerMain .h-mfeed>div{position:relative;}
+.ico-mfeed {width:51px; height:24px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/btn_m_feed.png'); background-size:51px 24px;}
+.ico-mfeed-new {position:absolute; top:-2px; right:-6px; width:13px; height:134px; background-image: url('https://img.megabox.co.kr/static/mb/images/common/ico/menu_flag_new.png'); background-size:13px 13px;}
+
+
+
+
+
+
+
+/*-----------------------------------------------
+
+2024.07.24 mobile UI/UX renewal
+
+-----------------------------------------------*/
+.induceBanner+#headerSub.r24_header{top:54px;}
+#headerSub.r24_header{height:auto; min-height:56px;}
+#headerSub.r24_header.bg01{background-color:#F5F5F5;} /*마이페이지 bg*/
+#headerSub.r24_header.bg02{background-color:transparent;} /*티켓 bg*/
+#headerSub.r24_header.bg03{background-color:transparent;} /*티켓 bg*/
+#headerSub.r24_header.bg02 .ltArea+h2.headTite{color:#fff !important;}
+#headerSub.r24_header.scrollon{border-bottom:1px solid #E7E7E7;}
+#headerSub.r24_header .headCont{position:relative; display:flex; height:56px; padding:13px 18px; align-items:center;}
+#headerSub.r24_header .headCont .logo{padding-top:3px;}
+#headerSub.r24_header .headCont .logo a{display:block; width:114.5px; height:24px; overflow:hidden; text-indent:-9999px; background:url('../images/2024renewal/common/logo_megabox.png') 0 0/114.5px 24px no-repeat;}
+#headerSub.r24_header .rtArea{position:absolute; top:13px; right:15px; display:flex; align-items:center;}
+#headerSub.r24_header .rtArea .btn1{display:block; width:30px; position:relative;}
+#headerSub.r24_header .rtArea .btn1 span{position:absolute; top:0; right:0; z-index:5; background-color:#14B9CB; color:#fff; font-size:10px; font-weight:700; letter-spacing:0;}
+#headerSub.r24_header .rtArea .btn1 .numb{min-width:16px; height:16px; line-height:16px; padding:0 2px; display:block; text-align:center; border-radius:8px;}
+#headerSub.r24_header .rtArea .btn1 .new{width:4px; height:4px; border-radius:4px;}
+#headerSub.r24_header .rtArea .btn1+.btn1{margin-left:12px;}
+#headerSub.r24_header .ltArea{position:absolute; top:13px; left:15px; display:flex; align-items:center;}
+#headerSub.r24_header h2.headTite{width:100%; text-align:center; font-size:18px; font-weight:400; line-height:27px; color:#030303; white-space:pre;}
+#headerSub.r24_header .ltArea+h2.headTite{padding:0 42px;}
+#headerSub.r24_header .ltArea h2.headTite{margin-left:12px;}
+#headerSub.r24_header .ltArea .tab{display:flex; align-items:center;}
+#headerSub.r24_header .ltArea .tab a{font-size:16px; line-height:24px; color:rgba(255, 255, 255, 0.70); font-weight:700;}
+#headerSub.r24_header .ltArea .tab a+a{margin-left:20px;}
+#headerSub.r24_header .ltArea .tab a.act{color:#fff;}
+
+/*header sub menu*/
+.headMenu{background-color:#fff;}
+.headMenu ul{padding:0 18px; display:flex; column-gap:20px;}
+.headMenu ul li a{display:block; line-height:44px; font-size:16px; font-weight:700; color:#999;}
+.headMenu ul li.act a{color:#030303;}
+
+/*sub page sub menu*/
+.subHeadMenu{background-color:#fff;}
+.subHeadMenu{background-color:#fff; position:relative; z-index:10;}
+.subHeadMenu.sticky{position:fixed; top:56px; left:0; width:100%;}
+.subHeadMenu.stickyApp{position:fixed; top:0px; left:0; width:100%;}
+.subHeadMenu ul{padding:0 18px; display:flex; column-gap:20px; border-bottom:1px solid #E7E7E7;}
+.subHeadMenu ul li a{display:block; line-height:42px; font-size:14px; font-weight:400; color:#999; margin-bottom:-1px; padding-bottom:2px;}
+.subHeadMenu ul li.act a{color:#030303; font-weight:700; border-bottom:2px solid #030303; padding-bottom:0;}
+.subHeadMenu+.specialArea{padding-top:44px;}
+.subHeadMenu ul.col2{display:grid; padding:0; grid-template-columns:repeat(2, 1fr); text-align:center;}
+
+/*예매 상단*/
+#headerSub.r24_header.reserve2 .headCont{background-color:#660ED8; justify-content:space-between; align-items:center;}
+#headerSub.r24_header.reserve2.scrollon{border-bottom:1px solid #660ED8;}
+
+/* bnb main 버튼 */
+.btnBottom{width:100%; position:fixed; padding:0; bottom:0; left:0; z-index:999;}
+.btnBottom.bnbMain{display:flex; justify-content:space-between; width:100%; height:60px; padding:0 8px; background-color:#fff; padding-bottom:constant(safe-area-inset-bottom); padding-bottom:env(safe-area-inset-bottom); border-top:1px solid #E7E7E7;}
+.btnBottom.bnbMain button{line-height:12px; height:60px; font-size:12px; font-weight: 400; padding:3px 0 4px; color:#333; background-color:#fff;}
+.btnBottom.bnbMain button i{display:block; margin:0 auto; padding:0;}
+.btnBottom.bnbMain button span{display:block; margin:0; padding:2px 0 0;}
+
+.btnBottom.mobileTicketBot{display:flex; justify-content:space-between; width:100%; min-height:60px; padding:0 8px; column-gap:8px; background-color:#fff; padding-bottom:constant(safe-area-inset-bottom); padding-bottom:env(safe-area-inset-bottom); border-top:1px solid #E7E7E7;}
+.btnBottom.mobileTicketBot button{line-height:12px; height:60px; font-size:12px; padding:3px 0 4px; color:#333; background-color:#fff;}
+.btnBottom.mobileTicketBot button i{display:block; margin:0 auto 2px; padding:0;}
+.btnBottom.mobileTicketBot button span{display:block; margin:0; padding:2px 0 0; color:#333; font-size:12px; font-weight:400;}
+.btnBottom.mobileTicketBot .disable i {opacity: 0.2;}
+.btnBottom.mobileTicketBot .disable span {color: #ccc;}
+
+.container.mainSection{padding:100px 0 48px; background-color:#fff; padding-top:calc(constant(safe-area-inset-top) + 100px); padding-top:calc(env(safe-area-inset-top) + 100px); padding-bottom:calc(constant(safe-area-inset-bottom) + 60px); padding-bottom:calc(env(safe-area-inset-bottom) + 60px);}
+
+/*footer*/
+#footer.r24_foot{height:auto; padding:40px 18px 110px; background-color:#F5F5F5; text-align:left;}
+#footer.r24_foot ul{width:auto;}
+#footer.r24_foot ul li:after{display:none;}
+#footer.r24_foot ul li a{padding:0; font-size:inherit; letter-spacing:-0.5px; display:inline-block;}
+#footer.r24_foot .footerHide{position:relative;}
+#footer.r24_foot .footerHide h5.logo{position:relative; width:118.5px; height:19px;}
+#footer.r24_foot .footerHide h5.logo a{display:block; width:90.5px; height:19px; background:url('../images/2024renewal/common/logo_megabox_g.png') 0/90.5px 19px no-repeat; overflow:hidden; text-indent:-99999px;}
+#footer.r24_foot .footerHide h5 span{position:absolute; top:50%; right:0; width:16px; height:16px; margin-top:-8px; background:url('../images/2024renewal/icon/icon_arrow_up_g16.png') 0/16px no-repeat; content:""; transform:rotate(180deg);}
+#footer.r24_foot .footerHide.act h5 span{transform:rotate(0deg);}
+#footer.r24_foot .footerHide .hideList{display:none; padding-top:28px;}
+#footer.r24_foot .footerHide.act .hideList{display:block;}
+#footer.r24_foot .footerHide .hideList li{display: block; font-size:12px; color:#999; line-height:18px; text-align: left;}
+#footer.r24_foot .footerHide .hideList li+li{margin-top:4px;}
+#footer.r24_foot .footerHide .hideList li a{color:#666; text-decoration:underline;}
+#footer.r24_foot .links{margin-top:28px; display:flex; align-items:center; justify-content:flex-start;}
+#footer.r24_foot .links li{line-height:12px;}
+#footer.r24_foot .links li+li{position:relative; padding-left:6px; margin-left:4px;}
+#footer.r24_foot .links li+li:after{display:block; position:absolute; top:50%; left:0; width:2px; height:2px; background-color:#999; margin-top:-1px; content:"";}
+#footer.r24_foot .links li:nth-child(2) a{font-weight:700;}
+#footer.r24_foot .links li:nth-child(3) a{font-weight:700;}
+#footer.r24_foot .links li a{font-size:12px; line-height:12px; color:#999;}
+#footer.r24_foot .copy{margin:8px 0 0 0; padding:0; font-size:12px; color:#999; line-height:18px; text-align:left;}
+
+
+
+

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*
+	apple 고딕
+*/
+
+@font-face {
+	font-family: 'Apple Gothic';
+	font-style: normal;
+	font-weight: 300; /* bold */
+	src:url('../font/apple/AppleSDGothicNeoL.ttf'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('../font/apple/AppleSDGothicNeoL.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Apple Gothic';
+	font-style: normal;
+	font-weight: 400; /* bold */
+	src:url('../font/apple/AppleSDGothicNeoM.ttf'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('../font/apple/AppleSDGothicNeoM.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Apple Gothic';
+	font-style: bold;
+	font-weight: 700; /* bold */
+	src:url('../font/apple/AppleSDGothicNeoM.ttf'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('../font/apple/AppleSDGothicNeoM.ttf') format('truetype');
+}
+

@@ -1,0 +1,790 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>기프트카드 &gt; 관람권/상품권 &gt; 나의메가박스 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+
+<!-- 2019-04-08 lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+
+	$(function(){
+		if( $('.gift-swiper').length > 0 ){
+			var gift_swiper = new Swiper('.gift-swiper', {
+				loop : true,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				pagination: {
+					el: '.gift-pagination',
+					type: 'fraction',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.gift-prev',
+					nextEl : '.gift-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+
+			$(window).resize(function(){
+				gift_swiper.update();
+			}).resize();
+		}
+	});
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">나의 메가박스</a>
+						<a href="">영화/스토어 관람권</a>
+						<a href="">기프트카드</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">나의 메가박스</a></p>
+
+						<ul>
+							<li><a href="">예매/구매내역</a></li>
+							<li><a href="">영화/스토어 관람권</a>
+								<ul class="depth3">
+									<li><a href="">영화관람권</a></li>
+									<li><a href="">스토어교환권</a></li>
+									<li class="on"><a href="">기프트카드</a></li>
+								</ul>
+							</li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">맴버십 포인트</a>
+								<ul class="depth3">
+									<li><a href="">포인트 이용내역</a></li>
+									<li><a href="">맴버십 카드관리</a></li>
+								</ul>
+							</li>
+							<li><a href="">나의 무비스토리</a></li>
+							<li class="on"><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a>
+								<ul class="depth3">
+									<li><a href="">개인정보 수정</a></li>
+									<li><a href="">선택정보 수정</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div id="contents">
+					<h2 class="tit">기프트카드</h2>
+
+					<!-- gift-card -->
+					<div class="gift-card">
+						<div class="gift-util">
+							<p class="count">보유 기프트카드 <strong class="font-gblue">15</strong>장</p>
+
+							<div class="btn">
+								<a href="#layer_gift_regi" class="button purple btn-modal-open" w-data="600" h-data="430"><i class="iconset ico-corss white"></i> 기프트카드 등록</a>
+							</div>
+						</div>
+
+						<!-- 기프트카드 등록 레이어 -->
+						<section id="layer_gift_regi" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">기프트카드 등록</h3>
+								</header>
+
+								<div class="layer-con">
+									<p class="reset">기프트카드 정보를 입력해 주세요.</p>
+
+									<div class="pop-gray mt10 mb30 a-l">
+										<div>
+											<label for="num_card" class="mr10">카드등록</label>
+											<input type="text" id="num_card" class="input-text w350px" title="카드번호 입력" />
+										</div>
+
+										<div class="mt05">
+											<label for="num_chk" class="mr10">인증번호</label>
+											<input type="text" id="num_chk" class="input-text w100px" title="인증번호 입력" />
+										</div>
+									</div>
+
+									<ul class="dash-list">
+										<li>선물받은 기프트카드 또는 극장에서 구입하신 카드를 등록 하시면 온라인에서도 편리하게 이용하실 수 있습니다.</li>
+										<li>실물카드를 등록하실 경우 카드 뒷면의 스크래치 부분을 긁어 6자리  인증번호를 입력해 주세요.</li>
+									</ul>
+								</div>
+
+								<div class="btn-group-fixed">
+									<button type="button" class="button close-layer">취소</button>
+									<button type="button" class="button purple">등록</button>
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+						<!--// 기프트카드 등록 레이어 -->
+
+
+						<!-- gift-swiper -->
+						<div class="gift-swiper">
+							<div class="swiper-wrapper">
+
+								<!-- 등록된 카드가 없을 때 -->
+								<div class="cell swiper-slide">
+									<div class="tit-area">
+										<p class="name">등록된 카드가 없습니다!</p>
+										<p class="sub">보유하신 카드를 등록해 주세요</p>
+									</div>
+
+									<div class="cont-area">
+
+										<div class="card-img">
+											<p class="no-img">등록된 카드 없음</p>
+										</div>
+
+										<!-- class 주의 : 다중 클래스  -->
+										<div class="info no-card">
+
+											<div class="btn-util">
+												<a href="#layer_gift_regi" class="button small gray-line btn-modal-open" w-data='600' h-data='430'>카드등록</a>
+												<a href="" class="button small gray-line">카드구매</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--// 등록된 카드가 없을 때 -->
+
+								<!-- 등록된 카드가 있을 때 -->
+								<div class="cell swiper-slide">
+									<div class="tit-area">
+										<!--
+											<button type="button" class="btn-represent">대표카드 설정 하지 않음</button>
+											<button type="button" class="btn-represent on">대표카드 설정 했음</button>
+										 -->
+										<button type="button" class="btn-represent on">대표카드 설정 했음</button>
+										<p class="name">메가박스 기프트카드</p>
+										<p class="sub">온라인전용 (충전용)</p>
+									</div>
+
+									<div class="cont-area">
+										<div class="card-img">
+											<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+										</div>
+
+										<div class="info">
+											<div class="money">
+												<em>99,999,999</em>
+												<span>원</span>
+
+												<a href="#layer_charge" class="button small gray-line btn-modal-open" w-data='600' h-data='660'>충전하기</a>
+											</div>
+
+											<div class="card-num">
+												<p>카드번호</p>
+												<em>0000-0000-****-0000</em>
+											</div>
+
+											<div class="valid">
+												<p>유효기간</p>
+												<em>2018.12.12</em>
+											</div>
+
+											<div class="btn-util">
+												<a href="" class="button small gray-line"><i class="iconset ico-lock"></i> 분실신고</a>
+												<a href="" target="_blank" title="새창열림" class="button small gray-line">환불신청</a>
+												<a href="" class="button small gray-line">등록해지</a>
+												<a href="#layer_transfer" class="button small gray-line btn-modal-open" w-data='600' h-data='650'>잔액이전</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="cell swiper-slide">
+									<div class="tit-area">
+										<!--
+											<button type="button" class="btn-represent">대표카드 설정 하지 않음</button>
+											<button type="button" class="btn-represent on">대표카드 설정 했음</button>
+										 -->
+										<button type="button" class="btn-represent">대표카드 설정 하지 않음</button>
+										<p class="name">메가박스 기프트카드</p>
+										<p class="sub">온라인전용 (충전용)</p>
+									</div>
+
+									<div class="cont-area">
+										<div class="card-img">
+											<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+										</div>
+
+										<div class="info">
+											<div class="money">
+												<em>99,999,999</em>
+												<span>원</span>
+
+												<a href="#layer_charge" class="button small gray-line btn-modal-open" w-data='600' h-data='660'>충전하기</a>
+											</div>
+
+											<div class="card-num">
+												<p>카드번호</p>
+												<em>0000-0000-****-0000</em>
+											</div>
+
+											<div class="valid">
+												<p>유효기간</p>
+												<em>2018.12.12</em>
+											</div>
+
+											<div class="btn-util">
+												<a href="" class="button small gray-line"><i class="iconset ico-lock"></i> 분실신고</a>
+												<a href="" target="_blank" title="새창열림" class="button small gray-line">환불신청</a>
+												<a href="" class="button small gray-line">등록해지</a>
+												<a href="#layer_transfer" class="button small gray-line btn-modal-open" w-data='600' h-data='650'>잔액이전</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--// 등록된 카드가 있을 때 -->
+
+								<!-- 분실된 카드 일때 -->
+								<div class="cell swiper-slide">
+									<div class="tit-area">
+										<p class="name">메가박스 기프트카드</p>
+										<p class="sub">온라인전용</p>
+									</div>
+
+									<div class="cont-area">
+										<div class="card-img">
+											<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+											<p class="txt">분실신고된 카드입니다.</p>
+										</div>
+
+										<div class="info">
+											<div class="money">
+												<em>99,999,999</em>
+												<span>원</span>
+											</div>
+
+											<div class="card-num">
+												<p>카드번호</p>
+												<em>0000-0000-****-0000</em>
+											</div>
+
+											<div class="valid">
+												<p>유효기간</p>
+												<em>2018.12.12</em>
+											</div>
+
+											<div class="btn-util">
+												<a href="" class="button small gray-line"><i class="iconset ico-unlock"></i> 분실해지</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--// 분실된 카드 일때 -->
+
+								<!-- 폐기된 카드 일때 -->
+								<div class="cell swiper-slide">
+									<div class="tit-area">
+										<p class="name">메가박스 기프트카드</p>
+										<p class="sub">온라인전용</p>
+									</div>
+
+									<div class="cont-area">
+										<div class="card-img">
+											<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+											<p class="txt">폐기된 카드입니다.</p>
+										</div>
+
+										<div class="info">
+											<div class="money">
+												<em>0</em>
+												<span>원</span>
+											</div>
+
+											<div class="card-num">
+												<p>카드번호</p>
+												<em>0000-0000-****-0000</em>
+											</div>
+
+											<div class="valid">
+												<p>유효기간</p>
+												<em>2018.12.12</em>
+											</div>
+
+											<div class="btn-util">
+												<a href="" class="button small gray-line">카드삭제</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--// 폐기된 카드 일때 -->
+							</div>
+
+							<div class="gift-pagination"></div>
+
+							<div class="gift-control">
+								<button type="button" class="btn gift-prev">이전 기프트카드 보기</button>
+								<button type="button" class="btn gift-next">다음 기프트카드 보기</button>
+							</div>
+						</div>
+						<!--// gift-swiper -->
+					</div>
+					<!--// gift-card -->
+
+					<h3 class="tit mt70">이용내역</h3>
+
+					<div class="board-list-search">
+						<table>
+							<colgroup>
+								<col style="width:75px;"/>
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">조회기간</th>
+									<td>
+										<div class="btn-period">
+											<button type="button" class="btn on">1주일</button>
+											<button type="button" class="btn">1개월</button>
+											<button type="button" class="btn">3개월</button>
+											<button type="button" class="btn">4개월</button>
+										</div>
+										<div class="date">
+											<input type="text" title="조회기간 시작 날짜 입력" placeholder="yyyy.mm.dd" class="date-calendar v2" />
+											<span>~</span>
+											<input type="text" title="조회기간 마지막 날짜 입력" placeholder="yyyy.mm.dd" class="date-calendar v2" />
+											<button type="button" class="button gray-line"><i class="iconset ico-search-gray"></i> 조회</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="board-list-util mb10">
+						<p class="result-count">
+							<strong>
+								<b class="font-gblue">12</b> 건 / 전체 <b class="font-gblue">125</b>건
+							</strong>
+						</p>
+
+						<select title="상태값 선택">
+							<option>전체</option>
+							<option>사용가능</option>
+							<option>사용완료</option>
+							<option>기간만료</option>
+							<option>취소환불</option>
+						</select>
+					</div>
+
+					<div class="table-wrap">
+						<table class="board-list">
+							<caption>일자, 구분, 내역, 금액, 상태 항목을 가진 기프트카드 이용내역 목록 표</caption>
+							<colgroup>
+								<col style="width:120px;" />
+								<col style="width:80px;" />
+								<col />
+								<col style="width:130px;" />
+								<col style="width:150px;" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">일자</th>
+									<th scope="col">구분</th>
+									<th scope="col">내역</th>
+									<th scope="col">금액</th>
+									<th scope="col">상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2019.12.12</td>
+									<td>카드충전</td>
+									<th scope="row">기프트카드 충전</th>
+									<td class="a-r">
+										<strong class="font-gblue">+100,000,000원</strong>
+									</td>
+									<td>
+										<button type="button" class="button x-small">충전취소</button>
+									</td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>카드충전</td>
+									<th scope="row">코엑스점 기프트카드 충전</th>
+									<td class="a-r">
+										<strong class="font-gblue">+50,000원</strong>
+									</td>
+									<td>지점충전</td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>구매취소</td>
+									<th scope="row">스토어 구매 취소</th>
+									<td class="a-r">
+										<strong class="font-gblue">+50,000원</strong>
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>사용</td>
+									<th scope="row">온라인 예매</th>
+									<td class="a-r">
+										<strong class="font-red">-100,000원</strong>
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>사용</td>
+									<th scope="row">콤보미리주문</th>
+									<td class="a-r">
+										<strong class="font-red">-100,000원</strong>
+									</td>
+									<td>취소불가<br />(현장구매)</td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>카드충전</td>
+									<th scope="row">잔액이전</th>
+									<td class="a-r">
+										<strong class="font-gblue">+50,000원</strong>
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2019.12.12</td>
+									<td>사용</td>
+									<th scope="row">스토어 구매</th>
+									<td class="a-r">
+										<strong class="font-red">-100,000원</strong>
+									</td>
+									<td>
+										<button type="button" class="button x-small">구매취소</button>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="5" class="a-c">이용내역이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!-- pagination -->
+					<nav class="pagination">
+						<a href="" class="control first">first</a>
+						<a href="" class="control prev">prev</a>
+						<a href="">1</a>
+						<strong class="active">2</strong>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+						<a href="" class="control next">next</a>
+						<a href="" class="control last">last</a>
+					</nav>
+					<!--// pagination -->
+
+					<div class="box-pulldown mt30">
+						<div class="tit">
+							<button type="button" class="btn-toggle">이용안내 <i class="iconset ico-arr-toggle-down"></i></button>
+						</div>
+
+						<div class="cont">
+							<ul class="dot-list">
+								<li>이용안내 내용</li>
+								<li>이용안내 내용</li>
+								<li>이용안내 내용</li>
+								<li>이용안내 내용</li>
+							</ul>
+						</div>
+					</div>
+
+
+					<!-- 잔액이전 레이어 -->
+					<section id="layer_transfer" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">잔액이전</h3>
+							</header>
+
+							<div class="layer-con">
+
+								<!-- money-move -->
+								<div class="money-move">
+									<p class="reset">잔액을 이전할 카드</p>
+
+									<div class="card-area mt10">
+										<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+
+										<div class="cont">
+											<p class="tit">메가박스 기프트카드</p>
+											<p class="num">5555-5555-****-5555</p>
+											<p class="money">
+												<span>잔액</span>
+												<em class="font-purple">16,000</em>
+												<span class="font-purple">원</span>
+											</p>
+
+											<p class="txt">※ 잔액 이전 후 본 카드는 이용이 불가합니다.</p>
+										</div>
+									</div>
+
+									<p class="reset mt20">잔액을 이전 받을 카드</p>
+
+									<div class="get-area mt10">
+
+										<!-- 카드 목록 없을 때 -->
+										<!--
+										<div class="no-list">
+											잔액을  이전 받을 카드가 없습니다.<br />
+											보유하신 카드를 확인해 주세요.
+										</div>
+										 -->
+										<!--// 카드 목록 없을 때 -->
+
+										<!-- 카드 목록 있을 때 -->
+										<div class="list">
+											<ul>
+												<li>
+													<button type="button" class="card-choice on" title="선택한 카드">
+														<span><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></span>
+													</button>
+
+													<div class="cont">
+														<p class="tit">메가박스 기프트카드</p>
+														<p class="num">5555-5555-****-5555</p>
+														<p class="money">
+															<em class="font-purple">16,000</em>
+															<span class="font-purple">원</span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="card-choice" title="선택하지 않은 카드">
+														<span><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></span>
+													</button>
+
+													<div class="cont">
+														<p class="tit">메가박스 기프트카드</p>
+														<p class="num">5555-5555-****-5555</p>
+														<p class="money">
+															<em class="font-purple">16,000</em>
+															<span class="font-purple">원</span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="card-choice" title="선택하지 않은 카드">
+														<span><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></span>
+													</button>
+
+													<div class="cont">
+														<p class="tit">메가박스 기프트카드</p>
+														<p class="num">5555-5555-****-5555</p>
+														<p class="money">
+															<em class="font-purple">16,000</em>
+															<span class="font-purple">원</span>
+														</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!--// 카드 목록 있을 때 -->
+									</div>
+								</div>
+								<!--// money-move -->
+							</div>
+
+							<!-- 카드 잔액 없을 때 -->
+							<div class="btn-group-fixed">
+								<a href="#layer_gift_regi" class="button gray-line btn-modal-open" w-data='600' h-data='430'>카드등록</a>
+								<a href="" class="button purple"><i class="iconset ico-cart-white"></i> 카드구매</a>
+							</div>
+
+							<!-- 카드 잔액 있을 때 -->
+							<!--
+							<div class="btn-group-fixed">
+								<button type="button" class="button close-layer">취소</button>
+								<button type="button" class="button purple">잔액이전</button>
+							</div>
+							 -->
+
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					<!--// 잔액이전 레이어 -->
+
+					<!-- 충전하기 레이어 -->
+					<section id="layer_charge" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">기프트카드 충전</h3>
+							</header>
+
+							<div class="layer-con">
+
+								<!-- gift-card-charge -->
+								<div class="gift-card-charge">
+									<p class="reset">기프트카드 정보</p>
+
+									<div class="card-area mt10">
+										<p class="img"><img src="../../../static/pc/images/mypage/img-gift-card.png" alt="메가박스 기프트카드" /></p>
+
+										<div class="cont">
+											<p class="tit">메가박스 기프트카드</p>
+											<p class="num">5555-5555-****-5555</p>
+											<p class="money">
+												잔액
+												<em class="font-purple">16,000</em><span class="font-purple">원</span>
+											</p>
+										</div>
+									</div>
+
+									<p class="reset mt20">충전금액</p>
+
+									<div class="money-area mt10">
+										<label for="charge_money" class="label">금액입력</label>
+
+										<div class="input">
+											<input type="text" id="charge_money" title="금액입력" class="input-text w150px small" /> 원
+											<span>※ 최소 1만원 이상 충전 가능합니다</span>
+										</div>
+
+										<div class="btn">
+											<button type="button" class="button small gray-line">+1만원</button>
+											<button type="button" class="button small gray-line">+5만원</button>
+											<button type="button" class="button small gray-line">+7만원</button>
+											<button type="button" class="button small gray-line">+10만원</button>
+										</div>
+									</div>
+								</div>
+								<!--// gift-card-charge -->
+
+								<div class="box-border v1 mt20">
+									<p class="tit-box">충전안내</p>
+
+									<ul class="dash-list">
+										<li>내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요</li>
+										<li>내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요 내용필요</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="btn-group-fixed">
+								<button type="button" class="button close-layer">취소</button>
+								<button type="button" class="button purple">충전</button>
+							</div>
+
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					<!--// 충전하기 레이어 -->
+
+				</div>
+			</div>
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

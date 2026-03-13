@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>관람료 &gt; 극장 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+	<header id="headerSub">
+		<h1 class="tit">관람료</h1>
+		<a href="" class="h-close"><i class="iconset ico-close"></i></a>
+
+	</header>
+	<div id="rnb">
+		
+	</div>
+	
+	<div class="container">
+		<div class="fee-select">
+			<div class="box">
+				<select class="bul2">
+					<option>지역</option>
+				</select>
+			</div>
+			<div class="box">
+				<select class="bul2">
+					<option>극장</option>
+				</select>
+			</div>
+		</div>
+
+		<!-- 2019-07-08 TBD 텍스트 영역 추가 (추후에 디자인이나오면 변경될수있음) -->
+		<div class="box-gray mt30">
+			<p class="theater-top-info">
+				<!-- 특별관의 경우는 가격안내 앞에 MX 등 특별관 네이밍이 추가됨 -->
+				<strong>코엑스</strong>  가격 안내<br />
+				<span class="info">
+					<em class="economy">Economy Zone</em> : Standard Zone 가격 + 1,000원<br />
+					<em class="prime">Prime Zone</em> : Standard Zone 가격 + 2,000원
+				</span><br />
+				<span class="text-alert">(단, 조조 시간대는 Zone별 관람가격이 동일합니다.)</span>
+			</p>
+		</div>
+
+		<!-- price list 1 -->
+		<div class="fee-table-box">
+			<div class="fee-option">
+				<div>
+					<p>
+						<strong>조조</strong><br />
+						10시 전
+					</p>
+				</div>
+				<div>
+					<p>
+						<strong>브런치</strong><br />
+						10시~12시 전
+					</p>
+				</div>
+				<div>
+					<p>
+						<strong>일반</strong><br />
+						13시~23시 전
+					</p>
+				</div>
+				<div>
+					<p>
+						<strong>심야</strong><br />
+						23시 후
+					</p>
+				</div>
+			</div>
+			<!-- 일반 2D 가격표 -->
+			<div class="fee-table">
+				<p class="fee-table-tit">일반 2D</p>
+			
+				<div class="table-wrap" >
+					<table class="data-table a-c">
+						<caption>일반 2D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />								
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>																	
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>7,000</td>
+								<td>6,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>8,000</td>
+								<td>8,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>10,000</td>
+								<td>8,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>9,000</td>
+								<td>7,000</td>									
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>8,000</td>
+								<td>6,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>10,000</td>
+								<td>8,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>11,000</td>
+								<td>8,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>10,000</td>
+								<td>7,000</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+		
+				<p class="fee-table-tit">일반 3D</p>
+			
+				<div class="table-wrap">															
+					<table class="data-table a-c">
+						<caption>일반 3D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />								
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>																		
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>9,000</td>
+								<td>8,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>10,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>13,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>11,000</td>
+								<td>9,000</td>
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>11,000</td>
+								<td>10,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>13,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>14,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>13,000</td>
+								<td>11,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">컴포트 2D</p>
+			
+				<div class="table-wrap">														
+					<table class="data-table a-c">
+						<caption>컴포트 2D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>																	
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>8,000</td>
+								<td>7,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>9,000</td>
+								<td>9,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>11,000</td>
+								<td>9,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>10,000</td>
+								<td>8,000</td>
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>8,000</td>
+								<td>7,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>11,000</td>
+								<td>9,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>12,000</td>
+								<td>9,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>11,000</td>
+								<td>8,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">컴포트 3D</p>
+			
+				<div class="table-wrap">							
+					<table class="data-table a-c">
+						<caption>컴포트 3D 가격표를 요일, 상영시간, 일반 우대 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>															
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>10,000</td>
+								<td>9,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>11,000</td>
+								<td>11,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>14,000</td>
+								<td>11,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>12,000</td>
+								<td>10,000</td>
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>11,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>13,000</td>
+								<td>12,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>14,000</td>
+								<td>12,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>13,000</td>
+								<td>11,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+			
+				<p class="fee-table-tit">컴포트 Table Zone 2D</p>
+			
+				<div class="table-wrap">							 								
+					<table class="data-table a-c">
+						<caption>컴포트 Table Zone 2D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>											
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>9,000</td>
+								<td>8,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>10,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>12,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>11,000</td>
+								<td>9,000</td>
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>9,000</td>
+								<td>8,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>12,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>13,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>12,000</td>
+								<td>9,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">컴포트 Table Zone 3D</p>
+			
+				<div class="table-wrap">							
+					<table class="data-table a-c">
+						<caption>컴포트 Table Zone 3D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>												
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>11,000</td>
+								<td>10,000</td>
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>12,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>15,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>13,000</td>
+								<td>11,000</td>									
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>11,000</td>
+								<td>10,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>15,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>16,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>14,000</td>
+								<td>11,000</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">MX 3D</p>
+			
+				<div class="table-wrap">							
+					<table class="data-table a-c">
+						<caption>MX 3D 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>												
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="4">월~목</th>
+								<td>조조</td>
+								<td>12,000</td>
+								<td>11,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>13,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>15,000</td>
+								<td>12,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>14,000</td>
+								<td>11,000</td>									
+							</tr>
+							
+							<tr>
+								<th scope="rowgroup" rowspan="4">금~일<br />공휴일</th>
+								<td>조조</td>
+								<td>12,000</td>
+								<td>11,000</td>									
+							</tr>
+							<tr>										
+								<td>브런치</td>
+								<td>15,000</td>
+								<td>13,000</td>									
+							</tr>
+							<tr>										
+								<td>일반</td>
+								<td>16,000</td>
+								<td>13,000</td>									
+							</tr>
+							<tr>										
+								<td>심야</td>
+								<td>15,000</td>
+								<td>12,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">THE BOUTIQUE</p>
+			
+				<div class="table-wrap">							
+					<table class="data-table a-c">
+						<caption>THE BOUTIQUE 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>												
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="row">월~목</th>
+								<td>전체</td>
+								<td>12,000</td>
+								<td>11,000</td>									
+							</tr>										
+							
+							<tr>
+								<th scope="row">금~일<br />공휴일</th>
+								<td>전체</td>
+								<td>13,000</td>
+								<td>11,000</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			
+				<p class="fee-table-tit">THE BOUTIQUE 스위트룸</p>
+			
+				<div class="table-wrap">							
+					<table class="data-table a-c">
+						<caption>THE BOUTIQUE 스위트룸 가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
+						<colgroup>
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />
+							<col style="width:25%;" />			
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">요일</th>
+								<th scope="col">상영시간</th>
+								<th scope="col">일반</th>
+								<th scope="col">청소년</th>											
+							</tr>
+						</thead>		
+						<tbody>
+							<tr>
+								<th scope="row">월~목</th>
+								<td>전체</td>
+								<td>30,000</td>
+								<td>-</td>									
+							</tr>										
+							
+							<tr>
+								<th scope="row">금~일<br />공휴일</th>
+								<td>전체</td>
+								<td>35,000</td>
+								<td>-</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>														
+		</div>
+		<div class="fee-use-info" style="width:100%;">
+			<div class="fee-rule">
+				<h2 class="tit">요금제 기준</h2>
+				<ul class="circle-list">
+					<li><strong>어린이 할인</strong>
+						<ul>
+							<li>만7세 ~ 만12세 : 초등학생 (의료보험증, 주민등록 등, 초본 확인)</li>
+						</ul>
+					</li>
+					
+					<li><strong>청소년 할인</strong>
+						<ul>
+							<li>만13세 ~ 만18세 : 중학생~고등학생 (학생증, 교복, 청소년증 등 확인)</li>
+						</ul>
+					</li>
+					
+					<li><strong>마티네 요금</strong>
+						<ul>
+							<li>메가박스 멤버십 카드를 소지한 회원</li>
+							<li class="font-aqua-green">
+								* 48개월 미만의 경우 증빙원(예:의료보험증,주민등록 초/등본 등) 지참 시에만 무료관람<br />
+								* 마티네 요금 : 메가박스 멤버십 회원대상, 매주 화요일 첫 회 ~ 14시 전 상영작까지 6,000원에 관람이 가능한 요금제 (일부 특별관의 경우 추가요금이 발생)							
+							</li>
+						</ul>
+					</li>
+				</ul>			
+			</div>	
+			
+			<div class="fee-rule">
+				<h2 class="tit">우대적용</h2>
+				<ul class="circle-list">
+					<li><strong>우대적용</strong>
+						<ul>
+							<li>현장에서 국가유공자증을 소지한 본인 외 동반 1인까지 적용</li>
+						</ul>
+					</li>
+					
+					<li><strong>장애인</strong>
+						<ul>
+							<li>현장에서 복지카드를 소지한 장애인(1급 ~3급까지 동반 1인까지 적용 / 4급 ~6급은 본인에 한함)</li>
+						</ul>
+					</li>
+					
+					<li><strong>경로</strong>
+						<ul>
+							<li>만 65세 이상 본인에 한함 (신분증 확인)</li>
+						</ul>
+					</li>
+					
+					<li><strong>미취학아동</strong>
+						<ul>
+							<li>부모 동반한 만4세~만6세 까지 본인 (의료보험증, 주민등록 등, 초본 확인)</li>
+						</ul>
+					</li>
+					
+					<li><strong>경찰, 소방종사자</strong>
+						<ul>
+							<li>공무원증을 소지하거나 정복을 입은 경찰,소방관 본인</li>
+						</ul>
+					</li>
+				</ul>			
+			</div>			
+					
+		</div>		
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>더 부티크 프라이빗 대관예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function(){
+
+		// 식음료 선택
+		$(document).on('click', '.food-tit .btn button', function(e){
+			e.preventDefault();
+			$(this).toggleClass('on');
+			$(this).closest('.food-add').find('.food-wrap').toggleClass('on');
+		});
+
+		// 날짜 선택
+		$(document).on('click', '.date-box ul li button', function(e){
+			e.preventDefault();
+			$(this).closest('.date-box').find('li').removeClass('on');
+			$(this).parent().addClass('on');
+		});
+
+		// 대관예매 영화 선택
+		$(document).on('click', '.choice-movie .cell a', function(e){
+			e.preventDefault();
+			$(this).closest('.cell').addClass('on').siblings('.cell').removeClass('on');
+		});
+
+		// 대관예매 영화 선택
+		if( $('.choice-movie').length > 0 ){
+			$cell_leng = $('.choice-movie').find('.cell').length;
+
+			// 대관예매 영화 선택
+			if( $cell_leng >= 5 ){
+				var plan_store_swiper = new Swiper('.choice-movie', {
+					init : false,
+					loop : false,
+					speed : 300,
+					spaceBetween: 30,
+					slidesPerView: 4,
+					centeredSlides : false,
+					navigation : {
+						prevEl : '.btn-plan-prev',
+						nextEl : '.btn-plan-next',
+					},
+					ally : {
+						enabled : true
+					}
+				});
+			}
+
+			else if( $cell_leng < 4 ){
+				$('.plan-slider-control').hide();
+				var plan_store_swiper = new Swiper('.choice-movie', {
+					init : false,
+					loop : false,
+					speed : 300,
+					spaceBetween: 30,
+					slidesPerView: 4,
+					centeredSlides : false,
+					navigation : false,
+					ally : {
+						enabled : false
+					}
+				});
+			}
+
+			plan_store_swiper.init();
+		}
+	});
+</script>
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<!-- 페이지 타이틀 마크업 완전 변경 class 주의 -->
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">예매</a>
+						<a href="">더 부티크 프라이빗 대관예매</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents" class="pt00">
+
+				<!-- boutique-reserve-top  -->
+				<div class="b-reserve-top">
+					<div class="inner-wrap">
+
+						<h2 class="tit">코엑스 더 부티크 프라이빗 대관예매</h2>
+
+						<div class="b-reserve-box">
+							<div class="box-item date">
+								<p class="tit">날짜</p>
+								<div class="date-box m-scroll">
+									<ul>
+										<li><button type="button">2019-05-31(금)</button></li>
+										<li><button type="button">2019-06-01(토)</button></li>
+										<li><button type="button">2019-06-02(일)</button></li>
+										<li><button type="button">2019-06-03(월)</button></li>
+										<li><button type="button">2019-06-04(화)</button></li>
+										<li><button type="button">2019-06-05(수)</button></li>
+										<li><button type="button">2019-06-06(목)</button></li>
+										<li><button type="button">2019-06-07(금)</button></li>
+										<li><button type="button">2019-06-08(토)</button></li>
+										<li><button type="button">2019-06-09(일)</button></li>
+										<li><button type="button">2019-06-10(월)</button></li>
+										<li><button type="button">2019-06-11(화)</button></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="box-item time">
+								<p class="tit">시간</p>
+								<!-- 매진일때만 label 안에  <span>매진</span>  추가 -->
+								<div class="boutique-time">
+									<span class="time-sel soldout">
+										<input type="radio" id="t1" name="time" disabled="">
+										<label for="t1"><em class="font-roboto regular">10:00</em> <span>판매완료</span></label>
+									</span>
+									<span class="time-sel">
+										<input type="radio" id="t2" name="time" checked="">
+										<label for="t2"><em class="font-roboto regular">14:00</em></label>
+									</span>
+									<span class="time-sel">
+										<input type="radio" id="t3" name="time">
+										<label for="t3"><em class="font-roboto regular">18:00</em></label>
+									</span>
+									<span class="time-sel">
+										<input type="radio" id="t4" name="time">
+										<label for="t4"><em class="font-roboto regular">22:00</em></label>
+									</span>
+								</div>
+							</div>
+
+							<div class="box-item movie">
+								<p class="tit">영화</p>
+								<!-- chice-movie -->
+								<div class="choice-movie-wrap">
+									<div class="choice-movie">
+										<div class="swiper-wrapper">
+											<!-- 반복 -->
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post01.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-all">전체 관람가</span>스윙키즈</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<!--// 반복 -->
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post02.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-15">15세 이상 관람가</span>아쿠아맨</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post03.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-19">19세 이상 관람가</span>마약왕</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post04.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-12">12세 이상 관람가</span>보헤미안랩소디</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post01.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-all">전체 관람가</span>스윙키즈</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post02.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-15">15세 이상 관람가</span>아쿠아맨</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post03.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-19">19세 이상 관람가</span>마약왕</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+											<div class="cell swiper-slide">
+												<a href="">
+													<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post04.png" alt="" /></p>
+													<p class="tit"><span class="movie-grade age-12">12세 이상 관람가</span>보헤미안랩소디</p>
+													<div class="btn">선택</div>
+												</a>
+											</div>
+
+										</div>
+									</div>
+
+									<div class="plan-slider-control">
+										<button type="button" class="btn-plan-prev">이전 배너 보기</button>
+										<button type="button" class="btn-plan-next">다음 배너 보기</button>
+									</div>
+								</div>
+								<!--// chice-movie -->
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+				<!--// boutique-reserve-top -->
+
+				<!-- 가이드 수정 -->
+				<div class="b-reserve-bot mt70">
+
+					<!--  가이드 수정-->
+					<div class="inner-wrap">
+						<h3 class="tit">식음료 추가</h3>
+
+						<div class="food-add">
+							<div class="food-tit">
+								<div class="block chk"><input type="checkbox" id="chk01" title="식음료 추가 신청하기"/> <label for="chk01">신청하기</label></div>
+								<div class="block txt"><p>더 부티크 프라이빗에서는 영화 관람과 함께 다양한 식음료를 즐길 수 있습니다.<br />식음료 상품을 원하시면 신청하기를 체크해 주세요!</p></div>
+								<div class="block btn"><button type="button" class="">상품상세</button></div>
+							</div>
+
+							<div class="food-wrap">
+								<div class="item">
+									<div class="img"><img src="../../../static/pc/images/reserve/img-addfood01.png" alt="" /></div>
+									<div class="food-info">
+										<div class="name-area">
+											<p class="name">크래프트비어 세트</p>
+
+											<p class="price">
+												<em>200,000</em>
+												<span>원</span>
+											</p>
+										</div>
+
+										<ul class="dot-list gray">
+											<li>크레프트 비어 8잔</li>
+											<li>카프레제 샐러드 2개</li>
+											<li>반반팝콘 4개</li>
+											<li>치킨 앤 칩스 2개</li>
+											<li>치즈플레이트 2개</li>
+											<li>프렌치프라이 2개</li>
+											<li>올리브 앤 크래커 2개</li>
+											<li>치즈살사 나쵸 2개</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="img"><img src="../../../static/pc/images/reserve/img-addfood02.png" alt="" /></div>
+									<div class="food-info">
+										<div class="name-area">
+											<p class="name">풀보틀와인 세트</p>
+
+											<p class="price">
+												<em>200,000</em>
+												<span>원</span>
+											</p>
+										</div>
+
+										<ul class="dot-list gray">
+											<li>풀보틀와인 2병</li>
+											<li>카프레제 샐러드 2개</li>
+											<li>반반팝콘 4개</li>
+											<li>치킨 앤 칩스 2개</li>
+											<li>치즈플레이트 2개</li>
+											<li>프렌치프라이 2개</li>
+											<li>올리브 앤 크래커 2개</li>
+											<li>치즈살사 나쵸 2개</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="item">
+									<div class="img"><img src="../../../static/pc/images/reserve/img-addfood03.png" alt="" /></div>
+									<div class="food-info">
+										<div class="name-area">
+											<p class="name">플레이팅 세트</p>
+
+											<p class="price">
+												<em>100,000</em>
+												<span>원</span>
+											</p>
+										</div>
+
+										<ul class="dot-list gray">
+											<li>카프레제 샐러드 2개</li>
+											<li>반반팝콘 4개</li>
+											<li>치킨 앤 칩스 2개</li>
+											<li>치즈플레이트 2개</li>
+											<li>프렌치프라이 2개</li>
+											<li>올리브 앤 크래커 2개</li>
+											<li>치즈살사 나쵸 2개</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 가이드 수정 -->
+						<h3 class="tit mt70">결제</h3>
+
+						<div class="payment-box">
+							<div class="payment-con">
+								<div class="inner-con">
+									<p class="img"><img src="../../../static/pc/images/reserve/img-b-reserv-post01.png" alt="" /></p>
+
+									<!-- 2019-08-01 class 추가 및 영화정보 추가 -->
+									<ul class="dot-list gray">
+										<li><span>극장</span> 코엑스 더 부티크 프라이빗관</li>
+										<li><span>일시</span> 2018년 12월 19일 14:00~16:50</li>
+										<li class="tit"><span>영화</span> 마약왕마약왕마약왕마약왕</li>
+										<li class="movie-mode">2D 디지털더빙</li>
+									</ul>
+								</div>
+
+								<div class="righten">
+									<div class="top">
+										<p class="tit">결제수단</p>
+
+										<input type="radio" id="radio01" name="radio" /> <label for="radio01">신용/체크카드</label>
+										<input type="radio" id="radio02" name="radio" /> <label for="radio02">프라이빗 관람권</label>
+										<input type="radio" id="radio03" name="radio" /> <label for="radio03">스토어 교환권</label>
+									</div>
+
+									<div class="bottom">
+										<p class="tit">최종 결제금액</p>
+
+										<p class="price">
+											<em>400,000</em>
+											<span>원</span>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="payment-agree">
+								<input type="checkbox" id="agree"> <label for="agree">선택하신 영화는 12세 이상 관람가입니다.</label> 만 12세 미만의 고객님은 (영,유아포함) 반드시 부모님 또는 성인 보호자의 동반 하에 관람이 가능합니다.
+							</div>
+						</div>
+
+						<!-- 가이드 수정 -->
+						<div class="btn-group pt40">
+							<button type="button" class="button purple large">결제하기</button>
+
+							<!-- 프라이빗 관람권 일때 -->
+							<a href="#layer_private" w-data="600" h-data="550" class="button purple large btn-modal-open">결제하기</a>
+						</div>
+
+
+						<!-- 레이어 : 프라이빗 관람권 -->
+						<section id="layer_private" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">프라이빗 관람권</h3>
+								</header>
+
+								<div class="layer-con">
+									<div class="reset mb10">
+										보유하신 관람권은 등록 후 사용하실 수 있으며 등록된 관람권은<br />
+										온라인에서만 사용 가능합니다. 사용할 관람권 또는 쿠폰을 선택해주세요.
+									</div>
+
+									<div class="popup-gray mid-info-box">
+										<div class="pop-search-area">
+											<p class="sh-txt reset mr08"><span class="label">관람권번호</span></p>
+
+											<div class="sh-input">
+												<input type="text" placeholder="관람권번호 12자리" title="메가박스 관람권 번호 입력" class="input-text w150px" />
+												<input type="text" placeholder="인증번호 4자리" title="메가박스 관람권 인증번호 입력" class="input-text w120px ml05" />
+											</div>
+
+											<div class="sh-btn gray">
+												<a href="#layer_movie_megabox_coupon_regi" w-data="600" h-data="320" class="button small gray btn-modal-open">관람권등록</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="table-wrap divide">
+										<table class="board-list line">
+											<caption>관람권, 유효기간, 사용여부 항목을 가진 영화관람권 목록의 제목 표</caption>
+											<colgroup>
+												<col>
+												<col style="width:200px;">
+												<col style="width:56px;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">관람권</th>
+													<th scope="col">유효기간</th>
+													<th scope="col">사용</th>
+												</tr>
+											</thead>
+										</table>
+
+										<!--
+											상황에 따라 스크롤 높이값이 달라지기 때문에 인라인으로 넣어줘야 함
+										 -->
+										<div class="scroll" style="max-height:129px;">
+											<table class="board-list line">
+												<caption>관람권, 유효기간, 사용여부 항목을 가진 영화관람권 목록의 내용 표</caption>
+												<colgroup>
+													<col>
+													<col style="width:200px;">
+													<col style="width:56px;">
+												</colgroup>
+												<tbody>
+													<tr>
+														<td class="a-l">
+															<strong>관람권명</strong><br />
+															1234-5678-1234-****
+														</td>
+														<td>2019-01-08~2019-01-31</td>
+														<td>
+															<input type="checkbox" title="사용" />
+														</td>
+													</tr>
+													<tr>
+														<td class="a-l">
+															<strong>부티크프라이빗 관람권</strong><br />
+															1234-5678-1234-****
+														</td>
+														<td>2019-01-08~2019-01-31</td>
+														<td>
+															<input type="checkbox" title="사용" />
+														</td>
+													</tr>
+													<tr>
+														<td class="a-l">
+															<strong>부티크프라이빗 관람권</strong><br />
+															1234-5678-1234-****
+														</td>
+														<td>2019-01-08~2019-01-31</td>
+														<td>
+															<input type="checkbox" title="사용" />
+														</td>
+													</tr>
+													<tr>
+														<td class="a-l">
+															<strong>부티크프라이빗 관람권</strong><br />
+															1234-5678-1234-****
+														</td>
+														<td>2019-01-08~2019-01-31</td>
+														<td>
+															<input type="checkbox" title="사용" />
+														</td>
+													</tr>
+													<tr>
+														<td class="a-l">
+															<strong>부티크프라이빗 관람권</strong><br />
+															1234-5678-1234-****
+														</td>
+														<td>2019-01-08~2019-01-31</td>
+														<td>
+															<input type="checkbox" title="사용" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div class="box-border v1 use-guide mt15">
+										<p class="tit">이용안내</p>
+
+										<ul class="dot-list">
+											<li>등록된 관람권은 나의메가박스에서 확인 및 삭제하실 수 있습니다.</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="btn-group-fixed">
+									<button type="button" class="button small close-layer">닫기</button>
+									<button type="button" class="button small purple">적용</button>
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+
+
+						<!-- 레이어 : 관람권등록 -->
+						<section id="layer_movie_megabox_coupon_regi" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">관람권등록</h3>
+								</header>
+
+								<div class="layer-con">
+									<div class="table-wrap">
+										<table class="board-list line">
+											<caption>관람권, 유효기간, 사용여부 항목을 가진 관람권등록 사용여부 목록 표</caption>
+											<colgroup>
+												<col>
+												<col style="width:200px;">
+												<col style="width:80px;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">관람권</th>
+													<th scope="col">유효기간</th>
+													<th scope="col">사용</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="a-l">
+														<strong>관람권명</strong><br />
+														1234-5678-1234-****
+													</td>
+													<td>2019-01-08~2019-01-31</td>
+													<td>사용가능</td>
+												</tr>
+												<tr>
+													<td class="a-l">
+														<strong>관람권명</strong><br />
+														1234-5678-1234-****
+													</td>
+													<td>2019-01-08~2019-01-31</td>
+													<td><span class="font-red">사용불가</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<p class="font-red mt10">
+										사용할 수 없는 관람권 입니다. 고객센터 (1544-0070)으로 문의주세요.
+									</p>
+								</div>
+
+								<div class="btn-group-fixed">
+									<button type="button" class="button small close-layer">닫기</button>
+									<button type="button" class="button small purple">등록</button>
+								</div>
+
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+						<!--// 레이어 : 관람권등록 -->
+
+						<!-- 가이드 수정 -->
+						<div class="box-border v1">
+							<p class="tit">유의사항</p>
+
+							<!-- 가이드 수정 -->
+							<ul class="dot-list">
+								<li>최대 8명까지 이용할 수 있으며, 선택한 시간에 정시 입장 가능합니다.</li>
+								<li>더 부티크 프라이빗 전용 라운지는 영화시간을 포함하여 최대 3시간 동안 이용할 수 있습니다.</li>
+								<li>선택한 영화의 러닝타임이 120분 이상일 경우 라운지 이용시간이 조정될 수 있습니다.</li>
+								<li>영화시작 시간은 입장 후 1시간 이내에 자유롭게 선택할 수 있습니다.</li>
+								<li>더 부티크 프라이빗은 대관 형식의 특별관으로 멤버십 포인트 적립 및 사용이 불가합니다.</li>
+								<li>초대할 분들이 지연 입장하지 않도록 유의하시기 바랍니다.</li>
+								<li>당일 예매 및 환불은 불가합니다. (상영일 하루 전까지 환불 가능)</li>
+								<li>예매 문의: 070-8996-0224 (월~ 금│AM 10:00~PM 7:00, 공휴일 제외)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--content:End -->
+			</div>
+			<!--// contents -->
+		</div>
+		<!--// container -->
+
+		<footer id="footer">footer</footer>
+	</div>
+<!--// body-wrap -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>로그인 &gt; 로그인 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+	<div class="login-wrap">
+		<div class="a-c"><a href=""><img src="../../../static/pc/images/common/ci/logo.png" alt=""></a></div>
+
+		<div class="login-inner">
+			
+			<div class="a-c">
+				<p><b>비밀번호와 자동입력 방지문자를 입력해주세요.</b></p>
+				<p>
+					비밀번호를 5회 이상 잘못 입력할 경우,<br />
+					정보보호를 위해 자동입력 방지문자를 함께 입력해야 합니다.
+				</p>
+			</div>
+			<div class="form-line">
+				<input type="text" placeholder="아이디를 입력해주세요" id="user_id" class="input-text" />
+			</div>
+
+			<div class="form-line">
+				<input type="password" placeholder="비밀번호를 입력해주세요" id="user_pw" class="input-text" />
+			</div>
+
+			<div class="anti-auto">
+				<p>자동입력 방지문자</p>
+				<div class="anti-auto-img">
+					<div class="img-area"><img src="../../../static/mb/images/login/img-auto01.png" alt=""></div>
+					<div class="anti-btn">
+						<a href="" class="button"><i class="iconset ico-refresh"></i> 새로고침</a>
+					</div>
+				</div>
+
+				<div class="form-line">
+					<input type="text" placeholder="자동입력 방지문자 입력" id="antiAuto" class="input-text" />
+				</div>
+			</div>
+
+			<div class="login-chk">
+				<div class="login-auto">
+					<span class="bg-chk">
+					<input type="checkbox" id="chk_1"> <label for="chk_1">자동 로그인</label>
+				</span>
+				</div>
+				<div class="login-easy">
+					<a href=""><i class="iconset ico-phone"></i>휴대폰 간편 로그인</a>  <a href="" class="button advertis">광고<i class="iconset ico-alert"></i></a>
+				</div>
+			</div>
+
+			<div class="btn-login">
+				<button type="submit" class="button">로그인</button>
+				<!-- <button type="button" class="button">로그인</button>  버튼타입 submit,button 둘중 하나 쓰시면됩니다.-->
+			</div>
+
+			<div class="login-link-list">
+				<ul>
+					<li><a href="">ID/PW찾기</a></li>
+					<li><a href="">회원가입</a></li>
+				</ul>
+			</div>
+
+			<div class="another-login">
+				<a href="" class="login-facebook"><div><i class="iconset ico-m-facebook"></i></div>페이스북</a>
+				<a href="" class="login-naver"><div><i class="iconset ico-m-naver"></i></div>네이버</a>
+				<a href="" class="login-kakao"><div><i class="iconset ico-m-kakao"></i></div>카카오톡</a>
+				<a href="" class="login-payco"><div><i class="iconset ico-m-payco"></i></div>페이코</a>
+			</div>
+
+			<div class="login-banner">
+				<img src="../../../static/mb/images/contents/img-login-banner.png" alt="">
+				AD<br>648x316
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

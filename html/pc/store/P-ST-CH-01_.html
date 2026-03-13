@@ -1,0 +1,512 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>결제 &gt; 스토어 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">스토어</a>
+						<a href="">결제</a>
+					</div>
+					
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+						
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents">
+				<div class="inner-wrap">
+					<!-- store-payment -->
+					<div class="store-payment">
+						<h2 class="tit">결제</h2>
+					
+						<h3 class="tit">주문상품정보</h3>
+					
+						<div class="table-wrap">
+							<table class="board-list">
+								<caption>주문상품정보 목록 표</caption>
+								<colgroup>
+									<col style="width:120px;" />
+									<col />
+									<col style="width:150px;" />
+									<col style="width:80px;" />
+									<col style="width:200px;" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="colgroup" colspan="2">주문상품</th>
+										<th scope="col">사용가능처</th>
+										<th scope="col">구매수량</th>
+										<th scope="col">상품금액</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="a-c">
+											<div class="goods-info">
+												<p class="img"><img src="../../../static/pc/images/store/@img-store-view.jpg" alt="더 부티크 스위트 2인 패키지 더 부티크스위트 2인 패키지"></p>
+											</div>
+										</td>
+										<th scope="row">
+											<div class="goods-info">
+												<p class="name">메가패밀리패키지</p>
+												<p class="bundle">2D 일반관람권 4매 + 팝콘(R)2 + 음료(R)2 + 나쵸1 + 팩오징어 1</p>
+											</div>
+											
+											<div class="mt10">
+												<span class="font-gblue">수령처</span> : 상암월드컵경기장
+											</div>
+										</th>
+										<td>
+											<a href="#layer_chk_theater" class="a-link btn-modal-open" w-data='600' h-data='530'>사용가능 극장 확인</a>
+										</td>
+										<td>2매</td>
+										<td>
+											<div class="goods-info">
+												<em class="price">100,000</em>원
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<!-- 레이어 : 사용가능 극장 -->
+						<section id="layer_chk_theater" class="modal-layer">
+							<div class="wrap">
+								<header class="layer-header">
+									<h3 class="tit">사용가능 극장 </h3>
+								</header>
+								<!-- layer-con -->
+								<div class="layer-con">
+									<!-- layer-goods-theater -->
+									<div class="layer-goods-theater">
+										<p class="txt">해당 스토어 상품을 사용할 수 있는 극장입니다.</p>
+										
+										<div class="area">
+											<ul>
+												<li class="on">
+													<button type="button" class="btn">서울 (18)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>강남</li>
+															<li>강남대로(씨티)</li>
+															<li>강동</li>
+															<li>군자</li>
+															<li>동대문</li>
+															<li>마곡</li>
+															<li>목동</li>
+															<li>상봉</li>
+															<li>상암월드컵경기장</li>
+														</ul>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">경기 (5)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+															<li>경기1</li>
+															<li>경기2</li>
+															<li>경기3</li>
+															<li>경기4</li>
+															<li>경기5</li>
+														</ul>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">인천 (0)</button>
+													
+													<div class="cont">
+														<p class="empty">사용가능 극장이 없습니다.</p>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">대전/충청/세종 (2)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>대전1</li>
+															<li>충청1</li>
+															<li>충청2</li>
+															<li>세종1</li>
+														</ul>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">부산/대구/경산 (0)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>대전1</li>
+															<li>충청1</li>
+															<li>충청2</li>
+															<li>세종1</li>
+														</ul>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">광주/전라 (2)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>광주1</li>
+															<li>전라1</li>
+														</ul>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">강원 (0)</button>
+													
+													<div class="cont">
+														<p class="empty">사용가능 극장이 없습니다.</p>
+													</div>
+												</li>
+												<li>
+													<button type="button" class="btn">제주(2)</button>
+													
+													<div class="cont">
+														<ul class="dot-list">
+															<li>제주1</li>
+															<li>제주2</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										
+										<p class="mt20 a-c">* 사용가능 극장은 당사의 사정에 의해 변경될 수 있습니다.</p>
+									</div>
+									<!--// layer-goods-theater -->
+								</div>
+								
+								<button type="button" class="btn-modal-close">레이어 닫기</button>
+							</div>
+						</section>
+						<!--// 레이어 : 사용가능 극장 -->
+						
+						<!-- 가이드 수정 -->
+						<h3 class="tit mt70">선물 메세지</h3>
+						
+						<div class="table-wrap">
+							<table class="board-form">
+								<caption>선물 메세지 입력 표</caption>
+								<colgroup>
+									<col style="width:145px;">
+									<col>
+									<col style="width:145px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><label for="get_user">받는 분</label></th>
+										<td>
+											<input type="text" id="get_user" class="input-text" />
+										</td>
+										<th scope="rowgroup" rowspan="2"><label for="present_message">선물메세지<br />(0자/<em class="font-gblue">70자</em>)</label></th>
+										<td rowspan="2">
+											<textarea rows="5" cols="30" id="present_message" title="선물메세지 입력" placeholder="전달하고자 하는 메세지를 남겨보세요(최대 70자)" class="input-textarea" style="height:76px;"></textarea>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="phone">휴대폰번호</label></th>
+										<td>
+											<input type="text" id="phone" placeholder="‘-’없이 입력" class="input-text" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<!-- 가이드 수정 -->
+						<div class="tit-util mt70 mb15">
+							<h3 class="tit">할인수단</h3>
+							<div class="right font-red">
+								* 필수할인 미적용시 해당 상품은 구매하실 수 없습니다.
+							</div>
+						</div>
+						
+						<div class="table-wrap">
+							<table class="board-form">
+								<caption>할인수단 필수 표</caption>
+								<colgroup>
+									<col style="width:145px;">
+									<col>
+									<col style="width:145px;">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="colgroup" colspan="4" class="a-l"><span class="font-red">[필수]</span> SKT 멤버십</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="no-bg"><label for="skt_card_num_search">카드번호 조회</label></th>
+										<td>
+											<div class="input-button">
+												<input type="text" id="skt_card_num_search" placeholder="카드번호 ‘-’없이 입력" class="input-text" />
+												<button type="button" class="button gray small">조회</button>
+											</div>
+										</td>
+										<th scope="row" class="no-bg">보유포인트</th>
+										<td>
+											<span class="font-gblue">129,900 P</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="no-bg"><label for="skt_card_count">적용매수</label></th>
+										<td>
+											<select id="skt_card_count" class="w100p">
+												<option>적용할 매수를 선택해 주세요</option>
+											</select>
+										</td>
+										<th scope="row" class="no-bg">적용포인트</th>
+										<td>
+											<span class="font-gblue">-2,000 P 사용</span>
+											/
+											<span class="font-gblue">-4000원 할인</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="table-wrap mt20">
+							<table class="board-form">
+								<caption>할인수단 선택 표</caption>
+								<colgroup>
+									<col style="width:145px;">
+									<col>
+									<col style="width:145px;">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="colgroup" colspan="4" class="a-l">[선택] 메가박스 멤버십(구멤버십 적용)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="no-bg">보유포인트</th>
+										<td colspan="3">
+											<span class="font-gblue">0 P</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="no-bg"><label for="mega_card_count">적용매수</label></th>
+										<td>
+											<select id="mega_card_count" class="w100p">
+												<option>적용할 매수를 선택해 주세요</option>
+											</select>
+										</td>
+										<th scope="row" class="no-bg">적용포인트</th>
+										<td>
+											<span class="font-gblue">0 P 사용</span>
+											/
+											<span class="font-gblue">0원 할인</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<!-- 가이드 수정 -->
+						<h3 class="tit mt70">최종결제</h3>
+						
+						<!-- payment-final -->
+						<div class="payment-final">
+							<div class="calc">
+								<div class="cell all">
+									<p class="txt">총 상품금액</p>
+									<p class="price">
+										<em>100,000</em>
+										<span>원</span>
+									</p>
+								</div>
+								
+								<i class="iconset ico-circle-minus">빼기</i>
+								
+								<div class="cell sale">
+									<p class="txt">할인금액</p>
+									<p class="price">
+										<em>2,000</em>
+										<span>원</span>
+									</p>
+								</div>
+								
+								<i class="iconset ico-circle-equal">등호</i>
+								
+								<div class="cell real">
+									<p class="txt">최종 결제금액</p>
+									<p class="price">
+										<em>98,000</em>
+										<span>원</span>
+									</p>
+								</div>
+							</div>
+							
+							<div class="choice">
+								<p class="txt">결제수단 선택</p>
+								
+								<div class="cell">
+									<input type="radio" id="radio_choice01" name="radio_choice">
+									<label for="radio_choice01">신용/체크카드</label>
+								</div>
+								
+								<div class="cell">
+									<input type="radio" id="radio_choice02" name="radio_choice">
+									<label for="radio_choice02">휴대폰결제</label>
+								</div>
+								
+								
+								<div class="cell">
+									<input type="radio" id="radio_choice03" name="radio_choice">
+									<label for="radio_choice03">카카오페이</label>
+								</div>
+							</div>
+						</div>
+						<!--// payment-final -->
+						
+						<div class="btn-group pt40">
+							<a href="" class="button large w170px">취소</a>
+							<a href="" class="button purple large w170px">결제</a>
+						</div>
+					</div>
+					<!--// store-payment -->
+				</div>
+			</div>
+			<!--// contents -->
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

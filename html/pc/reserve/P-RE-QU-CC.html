@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>빠른예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body class="body-iframe">
+	<div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
+
+		<div class="member-wrap pd00">
+			<!-- col-wrap -->
+			<div class="col-wrap">
+				<!-- col -->
+				<div class="col">
+					
+					<p class="tit-member">비회원 예매</p>
+					
+					<div class="table-wrap">
+						<table class="board-form">
+							<caption>이름, 생년월일, 휴대폰 번호, 비밀번호 항목을 가진 비회원 예매 확인 등록 표</caption>
+							<colgroup>
+								<col style="width:130px;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">이름</th>
+									<td>김미나</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="user_birthday">생년월일 <em class="font-orange">*</em></label></th>
+									<td>880627</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="user_hp">휴대폰 번호 <em class="font-orange">*</em></label></th>
+									<td>
+										<input type="text" id="user_hp" placeholder="'-' 없이 입력" class="input-text w300px">
+										<!--
+											오류메시지가 업을때는 tag 자체가 나오지 않아야 합니다.
+										 -->
+										<div class="alert">오류 메시지</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="user_pwd">비밀번호 <em class="font-orange">*</em></label></th>
+									<td>
+										<input type="password" id="user_pwd" placeholder="숫자 4자리" class="input-text w300px">
+										<!--
+											오류메시지가 업을때는 tag 자체가 나오지 않아야 합니다.
+										 -->
+										<div class="alert">개발 : 경고 메시지 출력</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="box-gray mt40 mb40">
+						<p><b>[비회원예매 개인정보 처리방침]</b></p><br />
+						<p>
+							<strong>	[수집 항목]</strong><br>
+							이름, 생년월일(앞6자리), 휴대폰번호, 비밀번호
+						</p><br>
+						<p>
+							<strong>	[이용 목적]</strong><br>
+							비회원예매 서비스 제공 / 이용자 식별 / 구매 및 요금 결제
+						</p><br>
+						<p>
+							<strong>	[보유 기간]</strong><br>
+							개인정보 수집목적 달성후 즉시 파기<br />
+							<em>단 '상법'및 '전자상거래 등에서의 소비자 보호에 관련 법률'등 관련 법령에 따라 대금결제 및 재화 등의 공급에 관한 기록은 5년간 보유</em>
+						</p>
+					</div>
+
+					<div class="chk-box">
+						<strong class="label">개인정보 처리방침에 동의하십니까?</strong> <br /><br />
+						<input type="radio" id="chk3" name="radio2">
+						<label for="chk3" class="w100px">동의함</label>
+						
+						<input type="radio" id="chk4" name="radio2">
+						<label for="chk4" class="w100px">동의하지 않음</label>						
+					</div>
+
+					<p class="mt20">
+						* 정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우 비회원 예매서비스를 이용하실 수 없습니다.
+					</p>
+					
+					<div class="btn-bottom a-c pt30">
+						<button type="button" class="button purple large w200px">예매</button>
+						<button type="button" class="button large w200px">예매내역확인 / 취소</button>
+					</div>
+
+					<div class="box-gray mt40">
+						<ul class="dot-list">
+							<li>중앙패밀리포인트 임직원 메가박스 예매시, JoinsNet에 등록된 개인정보가 최신 정보인지 꼭 확인하시기 바랍니다.</li>
+							<li>모바일 또는 키오스크에서 비회원 로그인을 통해 예매내역 조회가 가능합니다.</li>
+							<li>
+								JoinsNet에 개인정보가 최신 정보가 아닐 경우, 'JoinsNet'에서 개인정보를 수정하시기 바랍니다.<br /><br />
+								메가박스 예매시 개인정보를 수정할 경우, 수정하신 개인정보로 예매 됩니다. <a href="" class="a-link">[joins.net 개인정보 수정하기]</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--// col -->
+			</div>
+			<!--// col-wrap -->
+		</div>
+
+	</div>
+</body>
+</html>

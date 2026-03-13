@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>2depth 메뉴명 &gt; 메뉴명 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+<body>
+	<div class="body-wrap">
+		<header id="header">
+			<h1 class="ci"><a href="">MEGABOX Life Theater</a></h1>
+
+			<div class="top-link-l">
+				<a href="">VIP</a>
+				<a href="">멤버십</a>
+				<a href="">고객센터</a>
+			</div>	
+			<div class="top-link-r">
+				<!-- 로그인전 -->
+				<div>
+					<a href="">로그인</a>
+					<a href="">회원가입</a>
+				</div>
+
+				<!-- 로그인후 
+				<div>
+					 <a href="" class="" >로그아웃</a> 
+					<a href="" class="">나의 메가박스</a> 
+				</div> -->
+				<a href="">English ticket</a>
+			</div>	
+			
+			<div class="header-util-l">
+				<a href="#layerSitemap" class="layer-sitemap" ><i class="iconset ico-sitemap">사이트맵</i></a>
+				<a href="#movieSearch" class="layer-search" ><i class="iconset ico-search">검색</i></a>
+			</div>	
+			
+			<nav id="gnb">
+				<ul>
+					<li><a href="#">영화</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">전체영화</a></li>
+								<li><a href="#">큐레이션</a></li>
+								<li><a href="#">기획전</a></li>
+								<li><a href="#">무비포스트</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">예매</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">빠른예매</a></li>
+								<li><a href="#">상영시간표</a></li>
+								<li><a href="#">예매안내</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">영화관</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">극장메인(극장선택)</a></li>
+								<li><a href="#">극장메인(개별극장)</a></li>
+								<li><a href="#">특별관메인</a></li>
+								<li><a href="#">개별특별관</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">이벤트</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">이벤트메인</a></li>
+								<li><a href="#">진행중인 이벤트</a></li>
+								<li><a href="#">종료된 이벤트</a></li>
+								<li><a href="#">당첨자발표</a></li>
+								<li><a href="#">나의응모내역</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">스토어</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">스토어메인</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">혜택</a>
+						<div class="gnb-depth2">
+							<ul>
+								<li><a href="#">VIP안내</a></li>
+								<li><a href="#">멤버십</a></li>
+								<li><a href="#">할인카드</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header-util-r">
+				<a href="" class="link-ticket" ><i class="iconset ico-ticket">티켓</i></a>
+				<a href="#mymega" class="layer-mymega" ><i class="iconset ico-mymega">마이페이지</i></a>
+			</div>	
+
+			<!-- S : 사이트맵 -->
+			<div id="layerSitemap" class="gnb-layer">
+				<h2 class="ci"><a href="">로고</a></h2>
+				
+				<div class="header-util-l">
+					<a href="#movieSearch" class="layer-search" ><i class="iconset ico-search-w">영화검색</i></a>
+				</div>	
+
+				<div class="header-util-r">
+					<a href="" class="link-ticket" ><i class="iconset ico-ticket-w">티켓</i></a>
+					<a href="#mymega" class="layer-mymega" ><i class="iconset ico-mymega-w">마이페이지</i></a>
+				</div>	
+
+				<div class="site-list">
+					<ul>
+						<li>
+							<h3 class="tit">영화</h3>
+
+							<ul>
+								<li><a href="">박스오피스</a></li>
+								<li><a href="">기획전</a></li>
+								<li><a href="">무대인사</a></li>
+								<li><a href="">무비포스트</a></li>
+								<li><a href="">메가서치</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">예매</h3>
+							<ul>
+								<li><a href="">빠른예매</a></li>
+								<li><a href="">상영시간표</a></li>
+								<li><a href="">예매안내</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">영화관</h3>
+							<ul>
+								<li><a href="">전체상영관</a></li>
+								<li><a href="">특별관</a></li>
+								<li><a href="">특별석</a></li>
+								<li><a href="">부가시설</a></li>
+								<li><a href="">대관문의</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">이벤트</h3>
+							<ul>
+								<li><a href="">진행중인이벤트</a></li>
+								<li><a href="">종료된이벤트</a></li>
+								<li><a href="">당첨자발표</a></li>
+								<li><a href="">나의응모내역</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">스토어</h3>
+							<ul>
+								<li><a href="">메가찬스</a></li>
+								<li><a href="">팝콘/굿즈/음료</a></li>
+								<li><a href="">메가티켓</a></li>
+								<li><a href="">기프트카드</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">혜택</h3>
+							<ul>
+								<li><a href="">VIP</a></li>
+								<li><a href="">멤버십</a></li>
+								<li><a href="">할인카드</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="sub-list">
+					<ul>
+						<li>
+							<h3 class="tit">고객센터</h3>
+							<ul>
+								<li><a href="">자주묻는질문</a></li>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">1:1문의</a></li>
+								<li><a href="">단체관람/대관문의</a></li>
+								<li><a href="">분실물문의/접수</a></li>
+								<li><a href="">메가박스</a></li>
+								<li><a href="">온라인소개</a></li>
+								<li><a href="">스크수배정에 관한 기준</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">마이페이지</h3>
+							<ul>
+								<li><a href="">멤버십정보</a></li>
+								<li><a href="">나의쿠폰/관람권</a></li>
+								<li><a href="">나의예매내역</a></li>
+								<li><a href="">나의스토어내역</a></li>
+								<li><a href="">나의무비스토리</a></li>
+								<li><a href="">나의 극장/결제/할인카드</a></li>
+								<li><a href="">나의문의내역</a></li>
+								<li><a href="">개인정보설정</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="tit">회사소개</h3>
+							<ul>
+								<li><a href="">회사소개</a></li>
+								<li><a href="">홍보자료</a></li>
+								<li><a href="">윤리경영</a></li>
+								<li><a href="">인재채용</a></li>
+								<li><a href="">IR자료</a></li>
+								<li><a href="">시네마천국 제휴/광고/부대사업 문의</a></li>
+								<li><a href="">온라인제보센터</a></li>
+								<li><a href="">이용약관</a></li>
+								<li><a href="">개인정보 처리방침</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="site-bot">
+					<div class="bot-wrap">
+						<div class="footer-ci"></div>
+
+						<div class="addr-wrap">
+							<address>서울특별시 강남구 도산대로 156, 2층 메가박스중앙(주) (논현동, 중앙엠앤비사옥)</address>
+							<span> &middot; ARS 1544-0070</span><br />
+							<p>대표자명 김진선 &middot; 개인정보보호 책임자 경영지원실 실장 박영진 &middot; 사업자등록번호 211-86-59478 &middot; 통신판매업신고번호 제 833호</p>
+							<p>COPYRIGHT &copy; 2018 by MegaboxJoongAng, Inc. All rights reserved</p>
+						</div>
+
+						<div class="link-list">
+							<button type="button" class="button round"><i class="iconset ico-search-opacity"></i> 영화관찾기</a></button>
+							<ul>
+								<li><a href=""><i class="iconset ico-twitter">트위터</i></a></li>
+								<li><a href=""><i class="iconset ico-facebook">페이스북</i></a></li>
+								<li><a href=""><i class="iconset ico-instagram">인스타그램</i></a></li>
+								<li><a href=""><i class="iconset ico-googleplay">구글플레이</i></a></li>
+								<li><a href=""><i class="iconset ico-appstore">앱스토어</i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layer-end-btn sitemap-end">
+					<a href="" class="layer-close"><i class="iconset ico-layer-close">레이어닫기</i></a>
+				</div>
+			</div>
+			<!-- E : 사이트맵 -->
+
+			<!-- S : 검색 -->
+			<div id="movieSearch" class="gnb-layer">
+				<h2 class="ci"><a href="">MEGABOX Life Theater</a></h2>
+
+				<div class="header-util-l">
+					<a href="#layerSitemap" class="layer-sitemap"><i class="iconset ico-sitemap-w">사이트맵</i></a>
+				</div>	
+
+				<div class="header-util-r">
+					<a href="" class="link-ticket"><i class="iconset ico-ticket-w">티켓</i></a>
+					<a href="#mymega" class="layer-mymega" ><i class="iconset ico-mymega-w">마이페이지</i></a>
+				</div>	
+
+				<div class="search-area">
+
+					<div class="rank-box">
+
+						<ul class="rank-tab">
+							<li class="on"><a href="">예매율 순</a></li>
+							<li><a href="">누적관객순</a></li>
+							<li><a href="">메가스코어순</a></li>
+						</ul>
+
+						<div class="rank-bot">
+							<div class="poster-area"><img src="../../../static/pc/images/contents/header-movie.png" alt="후드"></div>
+							<div class="rank-area">
+								<ol class="">
+									<li><span>1</span> <a href="">암수살인</a></li>
+									<li class="on"><span>2</span> <a href="">후드</a></li>
+									<li><span>3</span> <a href="">은혼2: 규칙은 깨라고 있는 것</a></li>
+									<li><span>4</span> <a href="">미쓰백</a></li>
+									<li><span>5</span> <a href="">곰돌이푸</a></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div class="search-box">
+						<div class="search-wrap">
+							<input type="text" placeholder="영화를 검색하세요"/> <button type="button"><i class="iconset ico-search-w">검색버튼</i></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="layer-end-btn search-end">
+					<a href="" class="layer-close"><i class="iconset ico-layer-close-p">레이어닫기</i></a>
+				</div>
+			</div>
+			<!-- E : 검색 -->
+
+			<!-- S : 마이페이지 -->
+			<div id="mymega" class="gnb-layer">
+				<h2 class="ci"><a href="">MEGABOX Life The</a></h2>
+				
+				<div class="header-util-l">
+					<a href="" class="layer-sitemap"><i class="iconset ico-sitemap-w">사이트맵</i></a>
+					<a href="" class="layer-search"><i class="iconset ico-search-w">검색버튼</i></a>
+				</div>	
+
+				<div class="header-util-r">
+					<a href="" class="link-ticket"><i class="iconset ico-ticket-w"></i></a>
+				</div>	
+
+				<div class="mymega-con">
+					<!-- 로그인 전
+					<div class="need-login">
+						<h3 class="txt">
+							로그인 하시면 나의 메가박스를 만날 수 있어요.<br>
+							영화를 사랑하는 당신을 위한 꼭 맞는 혜택까지 확인해 보세요!
+						</h3>
+						<button type="button" class="button gblue">로그인</button><br />
+					
+						<button type="button" class="">혹시 아직 회원이 아니신가요?</button>
+					</div> -->
+
+					<!-- 로그인 후 -->
+					<div class="mymega-wrap">
+						<div class="mymega-user">
+							<p>안녕하세요!</p>
+							<p class="user-name"><span class="font-yellow">VIP</span> <span>김메가</span> 회원님</p>
+							<p class="login-log mb10">마지막 접속일 : 2018,10,25 25:12</p>
+							
+							<div class="icon-wrap">
+								<i class="iconset ico-vip">VIP</i>
+								<i class="iconset ico-film">필름소사이어티</i>
+								<i class="iconset ico-classic">클래식소사이어티</i>
+							</div>
+
+							<div class="btn-group a-l">
+								<a href="" class="button gblue"><i class="iconset ico-userinfo">회원정보</i> 회원정보</a>
+								<button type="button" class="button gblue"><i class="iconset ico-logout">로그아웃</i> 로그아웃</button>
+							</div>
+						</div>
+
+						<div class="mymega-point">
+							<p>Point</p>
+							<div class="mymega-result"><a href=""><span class="font-eng">20,345</span></a></div>
+							<a href="" class="button gblue">포인트현황</a>
+						</div>
+
+						<div class="mymega-coupon">
+							<p>쿠폰관람권 <i class="iconset ico-new"></i></p>
+							<div class="mymega-result"><a href=""><span class="font-eng">5</span>장</a></div>
+							<a href="" class="button gblue">쿠폰/관람권</a>
+						</div>
+
+						<div class="mymega-dday">
+							<p>D-3 <i class="iconset ico-new"></i></p>
+							<div class="mymega-result"><a href=""><span class="">암수살인</span></a></div>
+							<a href="" class="button gblue">예매내역</a>
+						</div>
+
+						<div class="mymega-notice">
+							<p>알림 <i class="iconset ico-new"></i></p>
+							<div class="mymega-result"><a href=""><span class="font-eng">7</span>건</a></div>
+							<a href="" class="button gblue">알림함</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layer-end-btn mymega-end">
+					<a href="" class="layer-close"><i class="iconset ico-layer-close-b"></i></a>
+				</div>
+			</div>
+			<!-- E : 마이페이지 -->
+		</header>
+		
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+			
+			lnb 없을 때
+			<div class="container">
+		-->
+		<!-- container -->
+		<div class="container has-lnb">
+			
+			<!-- 
+				page-tit-area 는 없는 페이지도 있음
+			 -->
+			<!-- page-tit-area -->
+			<div class="page-tit-area">
+				<div class="inner-wrap">
+					<h2 class="tit"><img src="../../../static/pc/images/benefit/h2-discount-card.png" alt="할인카드" /></h2>
+
+					<div class="location">
+						<span>Home</span>
+						<span>혜택</span>
+						<span>할인카드</span>
+					</div>
+
+					<div class="sns-share">
+						<button type="button" class="btn-sns-share">sns 공유하기</button>
+					</div>
+				</div>
+			</div>
+			<!--// page-tit-area -->
+		
+			<!-- inner-wrap -->
+			<div class="inner-wrap">
+				<!-- lnb-area -->
+				<div class="lnb-area">
+					<nav id="lnb">
+						<ul>
+							<li class="on"><a href="#">2뎁스</a>
+								<ul class="depth3">
+									<li><a href="#">3뎁스</a></li>
+									<li><a href="#">3뎁스</a></li>
+									<li><a href="#">3뎁스</a></li>
+								</ul>
+							</li>
+							<li><a href="#">2뎁스</a></li>
+							<li><a href="#">2뎁스</a>
+								<ul class="depth3">
+									<li><a href="#">3뎁스</a></li>
+									<li class="on"><a href="#">3뎁스</a></li>
+									<li><a href="#">3뎁스</a></li>
+								</ul>
+							</li>
+							<li><a href="#">2뎁스</a></li>
+						</ul>
+					</nav>
+					
+					<div class="left-customer-info">
+						<p class="tit">
+							메가박스 고객센터
+							<span>Dream center</span>
+						</p>
+						<p class="tel">1544-0070</p>
+						<p class="time"><i class="iconset ico-clock-white"></i> 09:00~21:00</p>
+					</div>
+				</div>
+				<!--// lnb-area -->
+				
+				<!-- contents -->
+				<div id="contents">
+				
+					lnb 가 있을 때는 contents 안쪽에 inner-wrap 을 삭제 해야 함.<br />
+					
+					contents
+					<h3 class="tit">h3 타이틀</h3>
+				</div>
+				<!--// contents -->
+			</div>
+			<!--// inner-wrap -->
+		</div>
+		<!--// container -->
+		
+		<footer id="footer">
+			<div class="footer-top">
+				<div class="inner-wrap">
+				
+					<ul class="fnb">
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">인재채용</a></li>
+						<li><a href="#">사회공헌</a></li>
+						<li><a href="#">제휴/광고/부대사업문의</a></li>
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">메가박스 온라인소개</a></li>
+					</ul>
+					
+					<a href="#" class="btn-looking-theater"><i class="iconset ico-footer-search"></i> 영화관찾기</a>
+				</div>
+			</div>
+			
+			<div class="footer-bottom">
+				<div class="inner-wrap">
+					<div class="ci">메가박스 : Life Theater</div>
+					
+					<div class="footer-info">
+						<div>
+							<address>서울특별시 강남구 도산대로 156, 2층 메가박스중앙(주) (논현동, 중앙엠앤비사옥)</address>
+							<p>ARS 1544-0070</p>
+						</div>
+						<p>대표자명 김진선</p>
+						<p>&middot; 개인정보보호 책임자 경영지원실 실장 박영진</p>
+						<p>&middot; 사업자등록번호 211-86-59478</p>
+						<p>&middot; 통신판매업신고번호 제 833호</p>
+						
+						<p class="copy">COPYRIGHT &copy; 2018 by MegaboxJoongAng, Inc. All rights reserved</p>
+					</div>
+					
+					<div class="footer-sns">
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-twitter">트위터</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-facebook">페이스북</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-instagram">인스타그램</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-googleplay">구글플레이</i></a>
+						<a href="" target="_blank" title="새창 열림"><i class="iconset ico-appstore">앱스토어</i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

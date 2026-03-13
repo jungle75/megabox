@@ -1,0 +1,1126 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>예매내역 &gt; 예매/구매내역 &gt; 나의메가박스 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<!--
+			lnb 있을 때
+			<div class="container has-lnb">
+			
+			lnb 없을 때
+			<div class="container">
+		-->
+		<div class="container has-lnb">
+		
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">나의 메가박스</a>
+						<a href="">예매/구매내역</a>
+						<a href="">예매내역</a>
+					</div>
+					
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+						
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+					
+			<div class="inner-wrap">
+				<div class="lnb-area">
+					<nav id="lnb">
+						<p class="tit"><a href="">나의 메가박스</a></p>
+						
+						<ul>
+							<li class="on"><a href="">예매/구매내역</a></li>
+							<li><a href="">영화/스토어 관람권</a>
+								<ul class="depth3">
+									<li><a href="">영화관람권</a></li>
+									<li><a href="">스토어 교환권</a></li>
+								</ul>
+							</li>
+							<li><a href="">할인/제휴쿠폰</a></li>
+							<li><a href="">메가박스 기프트카드</a></li>
+							<li><a href="">맴버십 포인트</a>
+								<ul class="depth3">
+									<li><a href="">포인트 이용내역</a></li>
+									<li><a href="">맴버십 카드관리</a></li>
+								</ul>
+							</li>
+							<li><a href="">나의 무비스토리</a></li>
+							<li><a href="">나의 이벤트 응모내역</a></li>
+							<li><a href="">나의 문의내역</a></li>
+							<li><a href="">자주쓰는 할인수단</a></li>
+							<li><a href="">회원정보</a>
+								<ul class="depth3">
+									<li><a href="">개인정보 수정</a></li>
+									<li><a href="">선택정보 수정</a></li>
+									<li><a href="">간편로그인 설정</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				
+				<div id="contents">
+					<h2 class="tit">예매/구매 내역</h2>
+					
+					<div class="tab-block">
+						<ul>
+							<li class="on"><a href="" class="btn">예매</a></li>
+							<li><a href="" class="btn">구매</a></li>
+						</ul>
+					</div>
+					
+					<div class="board-list-search mt20">
+						<table>
+							<colgroup>
+								<col style="width:75px;"/>
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">구분</th>
+									<td>
+										<input type="radio" name="board_radio01" id="radio01" />
+										<label for="radio01">예매내역</label>
+										<input type="radio" name="board_radio01" id="radio02" />
+										<label for="radio02">지난내역</label>
+										
+										<select title="년 월 선택" class="small">
+											<option>2019년 5월</option>
+										</select>
+										
+										<button type="button" class="button gray-line small ml05"><i class="iconset ico-search-gray"></i> 조회</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="board-list-util">
+						<!-- 가이드 수정 : class 추가, 괄호 삭제 -->
+						<p class="result-count pt00">
+							<strong>총 <b class="font-gblue">125</b>건</strong>
+						</p>
+					</div>
+					
+					<!-- history-reservation -->
+					<div class="history-reservation">
+						<ul>
+							<li>
+								<div class="round">
+									<a href="" class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									
+									<table class="table">
+										<colgroup>
+											<col style="width:75px;" />
+											<col style="width:230px;" />
+											<col style="width:80px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="a-r">예매번호</th>
+												<td colspan="3">
+													<em class="num">T00000-000-0000</em>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">영화명</th>
+												<td colspan="3">
+													<p class="tit-movie">
+														<span>보헤미안랩소디 보헤미안랩소디 보헤미안랩소디 보헤미안랩소디</span>
+														<span>2D(자막)</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">극장/상영관</th>
+												<td>코엑스/더 부티크 프라이빗</td>
+												<th scope="row">관람인원</th>
+												<td>일반 4명</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">관람일시</th>
+												<td>2019.02.01(금) 14시 00분(2회차)</td>
+												<th scope="row">관람좌석</th>
+												<td>IA열 4~6 / B열 1 / C열 2 / C열 3~6</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="bg-round">
+										<table class="table">
+											<colgroup>
+												<col style="width:75px;" />
+												<col style="width:230px;" />
+												<col style="width:100px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row" class="a-r">결제일</th>
+													<td>
+														2019.01.31
+														<!-- 가이드 수정 -->
+														<a href="#layer_payment_history" class="button gray-line x-small btn-modal-open" w-data='850' h-data='600'>결제정보</a>
+													</td>
+													<th scope="row">적립예정 포인트</th>
+													<td>999,999 P</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="btn-group">
+										<a href="#layer_okcash_after" class="button btn-modal-open" w-data='600' h-data='380'>OK캐쉬백 포인트 적립</a>
+										<a href="" title="새창 열림" target="_blank" class="button purple">교환권출력</a>
+										<a href="#layer_payment_cancel" class="button gray btn-modal-open" w-data='600' h-data='380'>예매취소</a>
+									</div>
+								</div>
+							</li>
+							
+							<!-- 프라이빗 대관 예매 일 경우 -->
+							<li>
+								<div class="round">
+									<a href="" class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									
+									<table class="table">
+										<colgroup>
+											<col style="width:75px;" />
+											<col style="width:230px;" />
+											<col style="width:80px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="a-r">예매번호</th>
+												<td colspan="3">
+													<em class="num">T00000-000-0000</em>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">영화명</th>
+												<td colspan="3">
+													<p class="tit-movie">
+														<span>보헤미안랩소디 보헤미안랩소디 보헤미안랩소디 보헤미안랩소디</span>
+														<span>2D(자막)</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">극장/상영관</th>
+												<td>코엑스/더 부티크 프라이빗</td>
+												<th scope="row">관람인원</th>
+												<td>일반 4명</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">관람일시</th>
+												<td>2019.02.01(금) 14시 00분(2회차)</td>
+												<th scope="row">식음료서비스</th>
+												<td>미신청</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="bg-round">
+										<table class="table">
+											<colgroup>
+												<col style="width:75px;" />
+												<col style="width:230px;" />
+												<col style="width:100px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row" class="a-r">결제일</th>
+													<td>
+														2019.01.31
+														<!-- 가이드 수정 -->
+														<a href="#layer_payment_history" class="button gray-line x-small btn-modal-open" w-data='850' h-data='600'>결제정보</a>
+													</td>
+													<th scope="row">적립예정 포인트</th>
+													<td>999,999 P</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="btn-group">
+										<a href="" title="새창 열림" target="_blank" class="button purple">교환권출력</a>
+										<a href="#layer_payment_cancel" class="button gray btn-modal-open" w-data='600' h-data='380'>예매취소</a>
+									</div>
+								</div>
+							</li>
+							<!--// 프라이빗 대관 예매 일 경우 -->
+							
+							<li>
+								<div class="round">
+									<a href="" class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									
+									<table class="table">
+										<colgroup>
+											<col style="width:75px;" />
+											<col style="width:230px;" />
+											<col style="width:80px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="a-r">예매번호</th>
+												<td colspan="3">
+													<em class="num">T00000-000-0000</em>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">영화명</th>
+												<td colspan="3">
+													<p class="tit-movie">
+														<span>보헤미안랩소디 보헤미안랩소디 보헤미안랩소디 보헤미안랩소디</span>
+														<span>2D(자막)</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">극장/상영관</th>
+												<td>코엑스/더 부티크 프라이빗</td>
+												<th scope="row">관람인원</th>
+												<td>일반 4명</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">관람일시</th>
+												<td>2019.02.01(금) 14시 00분(2회차)</td>
+												<th scope="row">관람좌석</th>
+												<td>IA열 4~6 / B열 1 / C열 2 / C열 3~6</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="bg-round">
+										<table class="table">
+											<colgroup>
+												<col style="width:75px;" />
+												<col style="width:230px;" />
+												<col style="width:100px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row" class="a-r">결제일</th>
+													<td>
+														2019.01.31
+														<!-- 가이드 수정 -->
+														<a href="#layer_payment_history" class="button gray-line x-small btn-modal-open" w-data='850' h-data='600'>결제정보</a>
+													</td>
+													<th scope="row">적립예정 포인트</th>
+													<td>999,999 P</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="btn-group">
+										<a href="#layer_payment_cancel" class="button gray btn-modal-open" w-data='600' h-data='380'>예매취소</a>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="round">
+									<a href="" class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									
+									<table class="table">
+										<colgroup>
+											<col style="width:75px;" />
+											<col style="width:230px;" />
+											<col style="width:80px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="a-r">예매번호</th>
+												<td colspan="3">
+													<em class="num">T00000-000-0000</em>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">영화명</th>
+												<td colspan="3">
+													<p class="tit-movie">
+														<span>보헤미안랩소디 보헤미안랩소디 보헤미안랩소디 보헤미안랩소디</span>
+														<span>2D(자막)</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">극장/상영관</th>
+												<td>코엑스/더 부티크 프라이빗</td>
+												<th scope="row">관람인원</th>
+												<td>일반 4명</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">관람일시</th>
+												<td>2019.02.01(금) 14시 00분(2회차)</td>
+												<th scope="row">관람좌석</th>
+												<td>IA열 4~6 / B열 1 / C열 2 / C열 3~6</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="bg-round">
+										<table class="table">
+											<colgroup>
+												<col style="width:75px;" />
+												<col style="width:230px;" />
+												<col style="width:100px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row" class="a-r">결제일</th>
+													<td>
+														2019.01.31
+														<!-- 가이드 수정 -->
+														<a href="#layer_payment_history" class="button gray-line x-small btn-modal-open" w-data='850' h-data='600'>결제정보</a>
+													</td>
+													<th scope="row">적립예정 포인트</th>
+													<td>999,999 P</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="btn-group">
+										<a href="" title="새창 열림" target="_blank" class="button purple">교환권출력</a>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="round">
+									<a href="" class="img"><img src="../../../static/pc/images/@img-poster.jpg" alt="" /></a>
+									
+									<table class="table">
+										<colgroup>
+											<col style="width:75px;" />
+											<col style="width:230px;" />
+											<col style="width:80px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="a-r">예매번호</th>
+												<td colspan="3">
+													<em class="num">T00000-000-0000</em>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">영화명</th>
+												<td colspan="3">
+													<p class="tit-movie">
+														<span>보헤미안랩소디 보헤미안랩소디 보헤미안랩소디 보헤미안랩소디</span>
+														<span>2D(자막)</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">극장/상영관</th>
+												<td>코엑스/더 부티크 프라이빗</td>
+												<th scope="row">관람인원</th>
+												<td>일반 4명</td>
+											</tr>
+											<tr>
+												<th scope="row" class="a-r">관람일시</th>
+												<td>2019.02.01(금) 14시 00분(2회차)</td>
+												<th scope="row">관람좌석</th>
+												<td>IA열 4~6 / B열 1 / C열 2 / C열 3~6</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<div class="bg-round">
+										<table class="table">
+											<colgroup>
+												<col style="width:75px;" />
+												<col style="width:230px;" />
+												<col style="width:100px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row" class="a-r">결제일</th>
+													<td>
+														2019.01.31
+														<!-- 가이드 수정 -->
+														<a href="#layer_payment_history" class="button gray-line x-small btn-modal-open" w-data='850' h-data='600'>결제정보</a>
+													</td>
+													<th scope="row">적립예정 포인트</th>
+													<td>999,999 P</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--// history-reservation -->
+					
+					<!-- 예매내역 없을 때 -->
+					<div class="no-history-reservation mt20">
+						예매 내역이 없습니다.
+					</div>
+					<!--// 예매내역 없을 때 -->
+					
+					<!-- 가이드 수정 -->
+					<h3 class="tit mt70">예매취소내역</h3>
+					
+					<ul class="dot-list">
+						<li>상영일 기준 7일간 취소내역을 확인하실 수 있습니다.</li>
+					</ul>
+					
+					<div class="table-wrap mt10">
+						<table class="board-list">
+							<caption>취소일, 영화명, 극장, 상영일시, 취소금액 항목을 가진 취소내역 목록 표</caption>
+							<colgroup>
+								<col style="width:130px;" />
+								<col />
+								<col style="width:130px;" />
+								<col style="width:170px;" />
+								<col style="width:100px;" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">취소일</th>
+									<th scope="col">영화명</th>
+									<th scope="col">극장</th>
+									<th scope="col">상영일시</th>
+									<th scope="col">취소금액</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2019.12.12 (수)</td>
+									<th scope="row">
+										<a href="#layer_payment_history" class="btn-modal-open" w-data='850' h-data='600'>어벤져스 : 엔드게임</a>
+									</th>
+									<td>하남스타필드</td>
+									<td>2019.05.18(수) 13:50</td>
+									<td class="a-r"><span class="font-red">42,000원</span></td>
+								</tr>
+								<tr>
+									<td>2019.12.12 (수)</td>
+									<th scope="row">
+										<a href="#layer_payment_history" class="btn-modal-open" w-data='850' h-data='600'>어벤져스 : 엔드게임</a>
+									</th>
+									<td>하남스타필드</td>
+									<td>2019.05.18(수) 13:50</td>
+									<td class="a-r"><span class="font-red">42,000원</span></td>
+								</tr>
+								<tr>
+									<td>2019.12.12 (수)</td>
+									<th scope="row">
+										<a href="#layer_payment_history" class="btn-modal-open" w-data='850' h-data='600'>어벤져스 : 엔드게임</a>
+									</th>
+									<td>하남스타필드</td>
+									<td>2019.05.18(수) 13:50</td>
+									<td class="a-r"><span class="font-red">42,000원</span></td>
+								</tr>
+								<tr>
+									<td>2019.12.12 (수)</td>
+									<th scope="row">
+										<a href="#layer_payment_history" class="btn-modal-open" w-data='850' h-data='600'>어벤져스 : 엔드게임</a>
+									</th>
+									<td>하남스타필드</td>
+									<td>2019.05.18(수) 13:50</td>
+									<td class="a-r"><span class="font-red">42,000원</span></td>
+								</tr>
+								<tr>
+									<td>2019.12.12 (수)</td>
+									<th scope="row">
+										<a href="#layer_payment_history" class="btn-modal-open" w-data='850' h-data='600'>어벤져스 : 엔드게임</a>
+									</th>
+									<td>하남스타필드</td>
+									<td>2019.05.18(수) 13:50</td>
+									<td class="a-r"><span class="font-red">42,000원</span></td>
+								</tr>
+								<tr>
+									<td colspan="5" class="a-c">취소내역이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<!-- pagination -->
+					<nav class="pagination">
+						<a href="" class="control first">first</a>
+						<a href="" class="control prev">prev</a>
+						<a href="">1</a>
+						<strong class="active">2</strong>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+						<a href="" class="control next">next</a>
+						<a href="" class="control last">last</a>
+					</nav>
+					<!--// pagination -->
+					
+					<div class="box-pulldown mt30">
+						<div class="tit">
+							<button type="button" class="btn-toggle">예매 및 결제 <i class="iconset ico-arr-toggle-down"></i></button>
+						</div>
+						
+						<div class="cont">
+							<strong>[제목]</strong>
+							<ul class="dot-list mb30">
+								<li>관람 등급을 반드시 확인해주시기 바랍니다.</li>
+								<li>만 4세(48개월) 이상부터는 영화티켓을 반드시 구매하셔야 입장 가능합니다.</li>
+								<li>홈페이지 예매 현황이 매진인 경우에도 영화관 현장에 잔여석이 남아있는 경우, 현장에서 구매 가능합니다.</li>
+								<li>할인 카드로 결제 시, 할인 내역은 청구서에서 확인 가능합니다.</li>
+								<li>예매 변경은 불가능하며, 취소 후 재 예매를 하셔야만 합니다.</li>
+								<li>영수증은 상영일 기준 약 3개월까지 '나의 메가박스&gt;결제내역'에서 출력하실 수 있습니다. 단, 신용카드로 예매하신 경우에 한합니다.</li>
+								<li>상영시간 이후 관람하신 영화의 영수증 출력을 원하실 경우, 관람하신 영화관에서 출력 가능합니다.</li>
+								<li>취소하신 내역이 나타나지 않거나 궁금하신 사항이 있으시면, 고객센터 > 1:1문의 또는 ARS(1544-0070 09:00~21:00)로 문의해 주시기 바랍니다.</li>
+							</ul>
+							
+							<strong class="">[제목]</strong>
+							<ul class="dot-list">
+								<li>관람 등급을 반드시 확인해주시기 바랍니다.</li>
+								<li>만 4세(48개월) 이상부터는 영화티켓을 반드시 구매하셔야 입장 가능합니다.</li>
+								<li>홈페이지 예매 현황이 매진인 경우에도 영화관 현장에 잔여석이 남아있는 경우, 현장에서 구매 가능합니다.</li>
+								<li>할인 카드로 결제 시, 할인 내역은 청구서에서 확인 가능합니다.</li>
+								<li>예매 변경은 불가능하며, 취소 후 재 예매를 하셔야만 합니다.</li>
+								<li>영수증은 상영일 기준 약 3개월까지 '나의 메가박스&gt;결제내역'에서 출력하실 수 있습니다. 단, 신용카드로 예매하신 경우에 한합니다.</li>
+								<li>상영시간 이후 관람하신 영화의 영수증 출력을 원하실 경우, 관람하신 영화관에서 출력 가능합니다.</li>
+								<li>취소하신 내역이 나타나지 않거나 궁금하신 사항이 있으시면, 고객센터 > 1:1문의 또는 ARS(1544-0070 09:00~21:00)로 문의해 주시기 바랍니다.</li>
+							</ul>
+							
+							<strong>[제목]</strong>
+							<ul class="dot-list">
+								<li>관람 등급을 반드시 확인해주시기 바랍니다.</li>
+								<li>만 4세(48개월) 이상부터는 영화티켓을 반드시 구매하셔야 입장 가능합니다.</li>
+								<li>홈페이지 예매 현황이 매진인 경우에도 영화관 현장에 잔여석이 남아있는 경우, 현장에서 구매 가능합니다.</li>
+								<li>할인 카드로 결제 시, 할인 내역은 청구서에서 확인 가능합니다.</li>
+								<li>예매 변경은 불가능하며, 취소 후 재 예매를 하셔야만 합니다.</li>
+								<li>영수증은 상영일 기준 약 3개월까지 '나의 메가박스&gt;결제내역'에서 출력하실 수 있습니다. 단, 신용카드로 예매하신 경우에 한합니다.</li>
+								<li>상영시간 이후 관람하신 영화의 영수증 출력을 원하실 경우, 관람하신 영화관에서 출력 가능합니다.</li>
+								<li>취소하신 내역이 나타나지 않거나 궁금하신 사항이 있으시면, 고객센터 > 1:1문의 또는 ARS(1544-0070 09:00~21:00)로 문의해 주시기 바랍니다.</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="box-pulldown">
+						<div class="tit">
+							<button type="button" class="btn-toggle">취소 및 환불규정 <i class="iconset ico-arr-toggle-down"></i></button>
+						</div>
+						
+						<div class="cont">
+							<ul class="dot-list">
+								<li>현장 취소를 하는 경우 상영시간 이전까지만 가능하며, 상영시간 이후 취소나 환불은 되지 않습니다.</li>
+								<li>홈페이지 또는 모바일에서 예매한 내역을 취소 할 경우 부분 취소는 불가능합니다.</li>
+								<li>온라인(홈페이지/모바일) 예매 취소는 상영시간 20분전까지 입니다.</li>
+								<li>위탁 예매 사이트 이용 시 취소 및 환불 규정은 해당 사이트 규정을 따릅니다.</li>
+								<li>LIVE 공연 콘텐트는 취소 기준은 아래와 같습니다.
+									<ul class="dash-list">
+										<li>관람 4일전 : 취소 가능</li>
+										<li>관람 3일 ~ 1일전 : 취소 수수료 부담 후 취소 가능</li>
+										<li>관람 당일 : 취소 및 환불 불가</li>
+									</ul>
+								</li>
+								<li>공연 관람시 시작 시간 이후에는 입장이 제한 됩니다.</li>
+								<li>발권된 티켓은 상영시간 전까지 현장 방문 시에만 취소가 가능합니다.</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 결제 상세 레이어 -->
+					<section id="layer_payment_history" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">결제내역상세</h3>
+							</header>
+			
+							<div class="layer-con">
+								<h4 class="tit">구매정보</h4>
+								
+								<!-- 예매내역인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>예매정보, 상품명, 극장, 구매수량 항목을 가진 구매정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">예매정보</th>
+												<td>
+													<strong class="font-gblue">18121551521234567890</strong>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품명</th>
+												<td>스토어 | 메가페밀리패키지</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">극장</th>
+												<td>코엑스</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">구매수량</th>
+												<td>2개</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 예매내역인 경우 -->
+								
+								<!-- 핫딜진행중인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>거래번호, 상품명, 극장, 구매수량 항목을 가진 구매정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">거래번호</th>
+												<td>
+													<strong class="font-gblue">18121551521234567890</strong>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품명</th>
+												<td>스토어 | 메가페밀리패키지</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">극장</th>
+												<td>코엑스</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">구매수량</th>
+												<td>2개</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 핫딜진행중인 경우 -->
+								
+								<!-- 프라이빗 예매인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>예매번호, 상품명, 극장, 식음료 신청 항목을 가진 구매정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">예매번호</th>
+												<td>
+													<strong class="font-gblue">18121551521234567890</strong>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품명</th>
+												<td>스토어 | 메가페밀리패키지</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">극장</th>
+												<td>코엑스</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">식음료 신청</th>
+												<td>미신청</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 프라이빗 예매인 경우 -->
+								
+								<!-- 콤보미리주문 내역인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>거래번호, 상품명, 극장, 식음료 신청 항목을 가진 구매정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">거래번호</th>
+												<td>
+													<strong class="font-gblue">T81211-002-0956</strong>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품명</th>
+												<td>스토어 | 메가페밀리패키지</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">주문극장</th>
+												<td>코엑스에서 수령</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 콤보미리주문 내역인 경우 -->
+								
+								<!-- 스토어구매 내역인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>거래번호, 상품명, 상품구성, 구매수량, 구매 후 취소 항목을 가진 구매정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">거래번호</th>
+												<td>
+													<strong class="font-gblue">18121551521234567890</strong>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품명</th>
+												<td>스토어구매 | 메가패밀리패키지</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">상품구성</th>
+												<td>2D 일반관람권 3매 + 팝콘(R)2 + 탄산음료(R)2</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">구매수량</th>
+												<td>1개</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">구매 후 취소</th>
+												<td>구매일로부터 7일 이내</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 스토어구매 내역인 경우 -->
+								
+								<h4 class="tit mt30">선물정보</h4>
+								
+								<!-- 스토어 선물 내역인 경우 -->
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>받는분, 휴대폰번호, 메시지 항목을 가진 선물정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">받는분</th>
+												<td>홍*동</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">휴대폰번호</th>
+												<td>
+													<div class="clearfix">
+														<div class="float-l">
+															<span class="mr10">010-****-0000</span>
+															<button type="button" class="button small gray">재전송 (<span>0</span>/1)</button>
+														</div>
+														
+														<div class="float-r">
+															<strong class="font-gblue">* 사용 완료된 선물입니다.</strong>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">메시지</th>
+												<td>영화보자</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--// 스토어 선물 내역인 경우 -->
+								
+								<h4 class="tit mt30">결제정보</h4>
+								
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>상품금액, 할인금액, 결제금액, 결제일 항목을 가진 결제정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">상품금액</th>
+												<td>100,000원</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">할인금액</th>
+												<td>
+													20,000원<br />
+													(기프트카드 12,000원     할인쿠폰 예매권 3,000원     SKT일반 2,000원     OK캐쉬백 2,600원     관람권 1매)
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">최종 결제금액</th>
+												<td>
+													<span class="font-gblue">100,000원(신용카드)</span><br />
+													OO카드(1234-5678-****-0000) / 일시불
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">결제일시</th>
+												<td>2018.11.11 09:52:52</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								
+								<h4 class="tit mt30">취소정보</h4>
+								
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>취소금액, 취소일 항목을 가진 취소정보 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">취소금액</th>
+												<td>
+													<span class="font-red">100,000원(신용카드)</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">취소일</th>
+												<td>2018.11.11 09:52:52</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								
+								<h4 class="tit mt30">현금영수증</h4>
+								
+								<div class="table-wrap">
+									<table class="data-table">
+										<caption>발급구분, 승인번호, 승인금액 항목을 가진 현금영수증 표</caption>
+										<colgroup>
+											<col style="width:140px;">
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg">발급구분</th>
+												<td>
+													즉시발급
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">승인번호</th>
+												<td>
+													00000000
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg">승인금액</th>
+												<td>
+													10,000원
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								
+								<p>자진발급은 홈텍스(<a href="https://www.hometax.go.kr/" title="새창 열림" target="_blank" class="a-link">www.hometax.go.kr</a>)에서 발급받으실 수 있습니다.</p>
+							</div>
+							
+							<!-- 버튼 기능 있을 때 -->
+							<!--
+								버튼 기능 없을 때 : <div class="btn-group-fixed"> ~ </div> 태그 자체 삭제
+							-->
+							<div class="btn-group-fixed">
+								<button type="button" class="button purple">결제취소</button>
+								<button type="button" class="button purple">신용카드 영수증 출력</button>
+							</div>
+							
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					<!--// 결제 상세 레이어 -->
+					
+					
+					<section id="layer_payment_cancel" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">취소 수수료</h3>
+							</header>
+			
+							<div class="layer-con">
+								
+								<div class="layer-payment-cancel">
+									<div class="txt">
+										본 콘텐츠는 취소시 수수료가 발생됩니다.<br /> 
+										(상영일 3일 ~ 1일전)
+									</div>
+								
+									<div class="money mt20">
+										결제 수수료 : <em>800</em>원
+									</div>
+									
+									<div class="txt mt20">
+										취소 수수료 결제가 완료되면 예매내역은 자동 취소됩니다.<br />
+										계속 진행 하시겠습니까?
+									</div>
+								</div>
+							</div>
+							
+							<div class="btn-group-fixed">
+								<button type="button" class="button purple">확인</button>
+							</div>
+							
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+
+					<!-- OK캐쉬백 추후적립 -->
+					<section id="layer_okcash_after" class="modal-layer">
+						<div class="wrap">
+							<header class="layer-header">
+								<h3 class="tit">OK캐쉬백 포인트 적립</h3>
+							</header>
+			
+							<div class="layer-con">
+								<div class="popup-gray mid-info-box mb10">
+									<div class="pop-search-area line-wid">
+										<div class="pop-search-area-line">
+											<p class="sh-txt reset"><label for="okcashbag_card_num">예매번호</label></p>
+											<input type="text" id="after_okcashbag_card_num" title="OK 캐쉬백 카드번호 입력" class="input-text w250px x-small">
+										</div>
+
+										<div class="pop-search-area-line">
+											<p class="sh-txt reset"><label for="okcashbag_use_pwd">카드번호</label></p>
+											<input type="test" id="after_okcashbag_card_num" title="ok 캐쉬백 카드번호 입력" class="input-text w250px x-small">
+										</div>
+
+									</div>
+								</div>
+
+								<div class="box-border v1 use-guide mt10">
+									<p class="tit">유의사항</p>
+
+									<ul class="dot-list gray">
+										<li>적립은 온라인(홈페이지, 모바일앱) 예매내역에 한해 가능합니다.</li>
+										<li>할인/결제 수단에 따라 적립이 불가 할 수 있습니다.</li>
+										<li>상영 당일까지만 적립이 가능하며, 상영일이 지난 후에는 적립이 불가합니다.</li>
+										<li>적립된 포인트는 OK캐쉬백 홈페이지에서 확인하실 수 있습니다.</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="btn-group-fixed">
+								<button type="button" class="button purple">확인</button>
+							</div>
+							
+							<button type="button" class="btn-modal-close">레이어 닫기</button>
+						</div>
+					</section>
+					
+					<!-- // OK캐쉬백 추후적립 -->
+
+				</div>
+			</div>
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

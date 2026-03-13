@@ -1,0 +1,136 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>간편인증 &gt; 회원 재인증 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+</head>
+
+<body class="bg-member">
+	<!-- member-wrap -->
+	<div class="member-wrap">
+		<h1 class="ci"><a href="">MEGABOX : Life Theater</a></h1>
+		
+		<!-- col-wrap -->
+		<div class="col-wrap">
+			<!-- col -->
+			<div class="col">
+				
+				<p class="tit-member">회원 재인증</p>
+				
+				<div class="tab-list">
+					<ul>
+						<li class="on"><a href="">간편인증</a></li>
+						<li><a href="">본인인증</a></li>
+					</ul>
+				</div>
+				
+				<ul class="dot-list gblue mt40">
+					<li class="font-gblue">회원정보에 등록된 휴대폰번호로 인증번호가 전송됩니다.</li>
+				</ul>
+				
+				<div class="table-wrap mt15">
+					<table class="board-form">
+						<caption>아이디, 이름, 휴대폰 번호, 인증번호 항목을 가진 회원 재인증 등록 표</caption>
+						<colgroup>
+							<col style="width:130px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="user_id">아이디</label></th>
+								<td>
+									<input type="text" id="user_id" placeholder="아이디" class="input-text w230px">
+									
+									<div class="alert">오류 메시지</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="user_name">이름</label></th>
+								<td>
+									<input type="text" id="user_name" placeholder="이름" class="input-text w230px">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="user_hp">휴대폰 번호</label></th>
+								<td>
+									<input type="text" id="user_hp" placeholder="'-' 없이 입력" class="input-text w230px">
+									<button type="button" class="button gray w75px ml08">인증요청</button>
+									
+									<div class="alert">오류 메시지</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="user_hp_chk">인증번호</label></th>
+								<td>
+									<div class="chk-num small">
+										<div class="line">
+											<input type="text" id="chkNum" class="input-text w180px" title="인증번호 입력" />
+										
+											<div class="time-limit">
+												3:00
+											</div>
+										</div>
+									</div>
+									
+									<button type="button" class="button gray-line w75px ml08">인증확인</button>
+									
+									<div class="alert">오류 메시지</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<p class="mt20">
+					※ 휴대폰 번호가 변경된 경우 본인인증으로 찾기를 통하여 인증을 진행해주시기 바랍니다. 
+				</p>
+				
+				<div class="btn-member-bottom">
+					<button type="button" class="button purple large">확인</button>
+				</div>
+			</div>
+			<!--// col -->
+		</div>
+		<!--// col-wrap -->
+	</div>
+	<!--// member-wrap -->
+</body>
+</html>

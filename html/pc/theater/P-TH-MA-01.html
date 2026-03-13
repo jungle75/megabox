@@ -1,0 +1,533 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>전체극장 &gt; 극장 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	$(function(){
+		if( $('.theater-swiper').length > 0 ){
+			var theater_swiper = new Swiper('.theater-swiper', {
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: true,
+				},
+				loop : true,
+				slidesPerView: 3,
+				spaceBetween: 40,
+				pagination: {
+					el: '.theater-pagination',
+					//type: 'fraction',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.theater-prev',
+					nextEl : '.theater-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
+
+			// swiper 전체 count
+			all_count = $('.theater-swiper .cell').length;
+			dupli_count = $('.theater-swiper .swiper-slide-duplicate').length;
+			real_count = all_count - dupli_count;
+			$('.theater-main .theater-count .total').text(real_count)
+
+			// 현재 활성화된 swiper
+			theater_swiper.on('slideChange', function(){
+				$('.theater-main .theater-count .active').text(theater_swiper.realIndex + 1)
+			});
+
+			// 자동실행 정지
+			$('.theater-util .pause').on('click', function(){
+				theater_swiper.autoplay.stop();
+
+				$(this).removeClass('on');
+				$('.theater-util .play').addClass('on').focus();
+			});
+
+			// 자동실행 시작
+			$('.theater-util .play').on('click', function(){
+				theater_swiper.autoplay.start();
+
+				$(this).removeClass('on');
+				$('.theater-util .pause').addClass('on').focus();
+			});
+
+			// 좌우 이동시 자동실행 정지됨
+			$(document).on('click','.theater-prev, .theater-next', function(){
+				$('.theater-util .pause').removeClass('on');
+				$('.theater-util .play').addClass('on');
+			});
+
+
+			$(window).resize(function(){
+				theater_swiper.update();
+			}).resize();
+		}
+	});
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">극장</a>
+						<a href="">홈</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contentㄴ -->
+			<div id="contents" class="no-padding">
+				<!-- theater-main -->
+				<div class="theater-main mb40">
+					<div class="inner-wrap">
+						<div class="left">
+							<p class="slogun">megabox life theater</p>
+
+							<p class="txt">메가박스<br />새로운 지점을<br />소개합니다.</p>
+
+							<!-- swiper-control -->
+							<div class="swiper-control">
+								<div class="theater-pagination"></div>
+
+								<div class="theater-util">
+									<button type="button" class="theater-prev">이전 이벤트 보기</button>
+									<button type="button" class="theater-next">다음 이벤트 보기</button>
+									<button type="button" class="pause on">일시정지</button>
+									<button type="button" class="play">자동재생</button>
+								</div>
+
+								<div class="theater-count">
+									<span title="현재 페이지" class="active">1</span> /
+									<span title="전체 페이지" class="total">2</span>
+								</div>
+							</div>
+							<!--// swiper-control -->
+						</div>
+
+						<!-- theater-swiper -->
+						<div class="theater-swiper">
+							<div class="swiper-wrapper">
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="">
+										<div class="img new"></div>
+
+										<div class="cont new">
+											<p class="label">신규오픈</p>
+											<p class="local">영종</p>
+											<p class="name">상암월드컵경기장 상암월</p>
+											<p class="date">10월 10일</p>
+										</div>
+									</a>
+								</div>
+
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="">
+										<div class="img renewal"></div>
+
+										<div class="cont renewal">
+											<p class="label">리뉴얼오픈</p>
+											<p class="local">영종</p>
+											<p class="name">상암월드컵경기장</p>
+											<p class="date">10월 10일</p>
+										</div>
+									</a>
+								</div>
+
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="">
+										<div class="img open"></div>
+
+										<div class="cont open">
+											<p class="label">오픈예정</p>
+											<p class="local">영종</p>
+											<p class="name">상암월드컵경기장</p>
+											<p class="date">10월 10일</p>
+										</div>
+									</a>
+								</div>
+								
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="">
+										<div class="img etc"></div>
+
+										<div class="cont etc">
+											<p class="label">기타</p>
+											<p class="local">영종</p>
+											<p class="name">상암월드컵경기장</p>
+											<p class="date">10월 10일</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!--// theater-swiper -->
+					</div>
+				</div>
+				<!--// theater-main -->
+
+				<div class="inner-wrap">
+					<h2 class="tit">전체극장</h2>
+
+					<div class="theater-box">
+						<div class="theater-place">
+							<ul>
+								<li class="on">
+									<button type="button" class="sel-city">서울 <i class="iconset ico-new-circle"></i></button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">강남</a></li>
+											<li><a href="">강남대로(씨티)</a></li>
+											<li><a href="">강동</a></li>
+											<li><a href="">군자</a></li>
+											<li><a href="">동대문</a></li>
+											<li><a href="">마곡</a></li>
+											<li><a href="">목동 <i class="iconset ico-new-theater"></i></a></li>
+											<li><a href="">상봉</a></li>
+											<li><a href="">상암월드컵경기장</a></li>
+											<li><a href="">센트럴</a></li>
+											<li><a href="">송파파크하비오</a></li>
+											<li><a href="">신촌</a></li>
+											<li><a href="">은평</a></li>
+											<li><a href="">이수</a></li>
+											<li><a href="">창동</a></li>
+											<li><span class="favorit-theater"><i class="iconset ico-favo-theater"></i></span><a href="">코엑스</a></li>
+											<li><a href="">화곡</a></li>
+											<li><a href="">ARTNINE</a></li>
+											<li><a href="">EOE4</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">경기 <i class="iconset ico-new-circle"></i></button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">고양스타필드</a></li>
+											<li><a href="">김포</a></li>
+											<li><a href="">김포한강신도시</a></li>
+											<li><a href="">남양주</a></li>
+											<li><a href="">동탄</a></li>
+											<li><a href="">미사강변</a></li>
+											<li><a href="">백석</a></li>
+											<li><a href="">별내</a></li>
+											<li><a href="">분당</a></li>
+											<li><a href="">수원</a></li>
+											<li><a href="">수원남문</a></li>
+											<li><a href="">시흥배곧</a></li>
+											<li><a href="">안산중앙</a></li>
+											<li><a href="">양주</a></li>
+											<li><a href="">영통</a></li>
+											<li><a href="">오산</a></li>
+											<li><a href="">용인테크노밸리 <i class="iconset ico-new-theater"></i></a></li>
+											<li><a href="">의정부민락</a></li>
+											<li><a href="">일산</a></li>
+											<li><a href="">일산벨라시타</a></li>
+											<li><a href="">킨텍스</a></li>
+											<li><a href="">파주금촌</a></li>
+											<li><a href="">파주운정</a></li>
+											<li><a href="">파주출판도시</a></li>
+											<li><a href="">평택</a></li>
+											<li><a href="">하남스타필드</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">인천 </button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">검단</a></li>
+											<li><a href="">송도</a></li>
+											<li><a href="">영종</a></li>
+											<li><a href="">인천논현</a></li>
+											<li><a href="">청라</a></li>
+											<li><a href="">청라지젤</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">대전/충청/세종</button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">공주</a></li>
+											<li><a href="">대전</a></li>
+											<li><a href="">세종</a></li>
+											<li><a href="">오창</a></li>
+											<li><a href="">제천</a></li>
+											<li><a href="">진천</a></li>
+											<li><a href="">천안</a></li>
+											<li><a href="">청주충북대</a></li>
+											<li><a href="">충주</a></li>
+											<li><a href="">홍성내포</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">부산/대구/경상</button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">거창</a></li>
+											<li><a href="">경산하양</a></li>
+											<li><a href="">경주</a></li>
+											<li><a href="">구미강동</a></li>
+											<li><a href="">김천</a></li>
+											<li><a href="">남포항</a></li>
+											<li><a href="">대구(칠성로)</a></li>
+											<li><a href="">대구신세계(동대구)</a></li>
+											<li><a href="">대구이시아</a></li>
+											<li><a href="">덕천</a></li>
+											<li><a href="">마산</a></li>
+											<li><a href="">문경</a></li>
+											<li><a href="">부산극장</a></li>
+											<li><a href="">부산대</a></li>
+											<li><a href="">북대구(칠곡)</a></li>
+											<li><a href="">사천</a></li>
+											<li><a href="">삼천포</a></li>
+											<li><a href="">안동</a></li>
+											<li><a href="">양산</a></li>
+											<li><a href="">울산</a></li>
+											<li><a href="">정관</a></li>
+											<li><a href="">창원</a></li>
+											<li><a href="">해운대(장산)</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">광주/전라</button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">광주상무</a></li>
+											<li><a href="">광주하남</a></li>
+											<li><a href="">남원</a></li>
+											<li><a href="">목포</a></li>
+											<li><a href="">목포하당(포르모)</a></li>
+											<li><a href="">송천</a></li>
+											<li><a href="">순천</a></li>
+											<li><a href="">여수</a></li>
+											<li><a href="">여수웅천</a></li>
+											<li><a href="">전대(광주)</a></li>
+											<li><a href="">전주(객사)</a></li>
+											<li><a href="">첨단</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">강원</button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">남춘천</a></li>
+											<li><a href="">속초</a></li>
+											<li><a href="">원주</a></li>
+											<li><a href="">원주센트럴</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="sel-city">제주</button>
+									<div class="theater-list">
+										<ul>
+											<li><a href="">제주</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="user-theater">
+							<!-- 로그인 전 -->
+							<div>
+								<i class="iconset ico-favo-theater"></i> 나의 선호극장 정보
+								<a href="" class="button small ml10">로그인하기</a>
+							</div>
+							<!-- // 로그인 전 -->
+							<!-- 로그인 후 -->
+							<!--
+							<div>
+								<i class="iconset ico-favo-theater"></i>
+								<span class="font-gblue">김메가</span>님의 선호극장
+								<ul class="theater-circle">
+									<li><a href="">코엑스</a></li>
+									<li><a href="">상암월드컵경기장</a></li>
+									<li><a href="">영통</a></li>
+								</ul>
+								<a href="" class="button small float-r"> <i class="iconset ico-edit"></i> 선호극장 관리</a>
+							</div>
+							-->
+							<!-- // 로그인 후 -->
+						</div>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70 mb15">
+						<h3 class="tit">극장 이벤트</h3>
+						<a href="" class="more">더보기 <i class="iconset ico-arr-right-gray"></i></a>
+					</div>
+
+					<div class="event-box">
+						<ul>
+							<li><a href=""><img src="../../../static/pc/images/@img-event-01.jpg" alt="블루멤버스포인트로 메가박스 4천원 할인 받으세요!" /></a></li>
+							<li><a href=""><img src="../../../static/pc/images/@img-event-02.jpg" alt="보헤미안 랩소디 N차 관람 이벤트" /></a></li>
+						</ul>
+					</div>
+
+					<!-- 가이드 수정 -->
+					<div class="tit-util mt70 mb15">
+						<h3 class="tit">극장 공지사항</h3>
+						<a href="" class="more">더보기 <i class="iconset ico-arr-right-gray"></i></a>
+					</div>
+
+					<div class="table-wrap">
+						<table class="board-list">
+							<caption>극장, 제목, 지역, 등록일이 들어간 극장 공지사항 목록</caption>
+							<colgroup>
+								<col style="width:150px;">
+								<col>
+								<col style="width:150px;">
+								<col style="width:120px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">극장</th>
+									<th scope="col">지역</th>
+									<th scope="col">제목</th>
+									<th scope="col">등록일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>대구신세계(동대구)</td>
+									<th scope="row">
+										<a href="">2월 21일(수) 일산벨라시타지점 전기설비 점검 및 온라인 2월 21일(수) 일산벨라시타지점 전기설비 점검 및 온라인</a>
+									</th>
+									<td>대구</td>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>상암월드컵경기장</td>
+									<th scope="row">
+										<a href="">&lt;도어락&gt; 1주차 (12/8~9)</a>
+									</th>
+									<td>서울</td>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>상암월드컵경기장</td>
+									<th scope="row">
+										<a href="">&lt;도어락&gt; 1주차 (12/8~9)</a>
+									</th>
+									<td>서울</td>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>상암월드컵경기장</td>
+									<th scope="row">
+										<a href="">&lt;도어락&gt; 1주차 (12/8~9)</a>
+									</th>
+									<td>서울</td>
+									<td>2018.03.05</td>
+								</tr>
+								<tr>
+									<td>상암월드컵경기장</td>
+									<th scope="row">
+										<a href="">&lt;도어락&gt; 1주차 (12/8~9)</a>
+									</th>
+									<td>서울</td>
+									<td>2018.03.05</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+				</div>
+				<!--content:End -->
+			</div>
+			<!--// contents -->
+		</div>
+		<!--// container -->
+
+		<footer id="footer">footer</footer>
+	</div>
+<!--// body-wrap -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>무대시사회 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+	// footer 토글
+	$('#footer .arrow').click(function() {
+        $('.footerHide').toggleClass('act');
+    });
+});
+
+$(window).on('scroll', function() {
+	var r24_header = $('.r24_header');
+    if (r24_header.length > 0) {
+        var scrollTop = $(window).scrollTop();
+        
+        if (scrollTop > 0) {
+            r24_header.addClass('scrollon');
+        } else {
+            r24_header.removeClass('scrollon');
+        }
+    };
+});
+</script>
+</head>
+<body>
+    
+  <header id="headerSub" class="r24_header">
+		<div class="headCont">
+			<div class="ltArea">
+				<a href="#" class="btn2"><i class="icon2 btn_back_bl30">뒤로가기</i></a>
+			</div>
+			<h2 class="headTite">Apple 계정 로그인 연동</h2>
+		</div>
+	</header>
+
+
+  <div class="container">    
+
+    <!-- 회원 로그인 -->
+    <div class="login2-wrap mbContent">
+        <div class="inner-wrap">
+
+          <div class="appleGuidBox">
+            <div class="logos">
+              <span class="logo"><img src="../../../static/mb/images/2024renewal/common/icon_apple.png" alt="애플"></span>
+              <span class="logo"><img src="../../../static/mb/images/2024renewal/common/icon_megabox.png" alt="메가박스"></span>
+            </div>
+            <dl>
+              <dt>애플 계정 인증 완료</dt>
+              <dd>메가박스 아이디로 로그인하여 Apple 계정과 연동해주세요.<br/>최초 연동후 Apple 계정으로 간편 로그인할 수 있습니다.</dd>
+            </dl>
+          </div>
+          
+          <form name="loginDataFrm" method="post">
+            <div class="f-line">
+              <div class="box">
+                <input type="text" class="input-text enterTgt" id="loginId" name="loginId" placeholder="아이디" title="아이디를 입력하세요">
+              </div>
+            </div>
+            <div class="f-line">
+              <div class="box">
+                <input type="password" class="input-text enterTgt" id="loginPwd" name="loginPwd" placeholder="비밀번호" title="비밀번호를 입력하세요">
+              </div>
+            </div>
+          </form>
+
+          <div class="btn-group pb20">
+            <button type="button" class="button-bot purple" id="loginBtn">로그인 후 간편 로그인 연동하기</button>
+          </div>
+
+          <div class="login-link-list">
+            <ul>
+              <li><a href="javascript:AppDomain.Member.findIdPwd(AppDomain.Flag.isRefreshClose)">ID/PW 찾기</a></li>
+              <li><a href="javascript:AppDomain.Member.join()">회원가입</a></li>
+            </ul>
+          </div>            
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>  

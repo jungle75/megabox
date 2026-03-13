@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>극장별 예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+$(function(){
+	
+	if( $('.reserveCalendar').length > 0 ){
+		var list_swiper = new Swiper('.reserveCalendar', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 0,
+			pagination: false,
+			centeredSlides: false,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	$('.reserve-botinfo').stop().delay(5000).fadeOut(500);
+	
+});
+
+$(window).on('scroll', function() {
+    var reserveTop = $('.reserveTop');
+    if (reserveTop.length > 0) {
+        if ($(window).scrollTop() > 0) {
+            reserveTop.addClass('act');
+        } else {
+            reserveTop.removeClass('act');
+        }
+    }
+});
+</script>
+</head>
+<body>
+	<header id="headerSub" class="">
+			<h1 class="tit">결제하기</h1>
+			<a href="javascript:fn_goSeat()" class="h-back"><i class="iconset ico-back"></i></a>
+	</header>
+
+	
+	<div class="container">
+
+		<div class="reservePay2">
+
+			<section class="section">
+				<div class="titleArea">
+						<div class="tit">결제수단</div>
+						<div class="rtCk" data-type="paySelect"><span class="text" id="payTxt">내통장결제</span></div>
+				</div>
+				<div class="conBox">
+						<!-- paySelect -->
+						<div class="paySelect" id="paySelect">
+								<div class="joongPay none" data-type="joongang-display" paydcmeancd="105038" meanmappid="ON00000029">
+										<div class="title">
+												<div class="tit"><span class="hide">JoongAng PAY</span></div>
+												<div class="btn" id="btnMng" onclick="fn_joongAngPayMng();"></div>
+										</div>
+										<div class="cardBox" id="joongAngPayList" onclick=""><div class="card c11_047 act" onclick="fn_joongAngPayClick(this);" mtycd="11" mdtcd="047" vrno="B926D56F1D56997DE41EE5F1BCDF3D0849F4E648">	<dl>    	<dd class="name">롯데카드</dd>    	<dd class="numb">5137 92** **** 0123</dd>	</dl></div><div class="card none" onclick="fn_joongAngPayLink('PREG');">카드 추가하기</div></div>
+								</div>
+								<div class="pays" data-type="credit" paydcmeancd="102001" meanmappid="ON00000030">신용/체크카드</div> <!--선택되면 체크 act-->
+								<div class="pays" data-type="easy" paydcmeancd="105001" meanmappid="ON00000032">간편결제<span class="tag2" id="imgTag">혜택</span></div> <!--사용 못할때는 disab 추가-->
+								<div class="pays" data-type="mobile" paydcmeancd="105005" meanmappid="ON00000038">휴대폰결제</div>
+								<div class="pays act" data-type="settlebank" paydcmeancd="105030" meanmappid="ON00000039">내통장결제</div>
+						</div>
+						<!--//paySelect end -->
+
+						<div class="ord" id="cardContent" data-type="creditContent">
+							<div id="divSelectPayMean" class="sel-card-btn display-none">
+									<input type="text" id="selectPayMean" name="selectPayMean" data-val="" class="faSlt" onclick="fn_layerPayPopup('bokd')" readonly="">
+							</div>
+							<div id="divRdoCardSelect" class="card-payment-type display-none" data-type="creditContent">
+									<span id="rdo_card_select_g_span" class="bg-radio">
+											<input type="radio" name="rdo_card_select" id="rdo_card_select_g" value="01">
+											<label for="rdo_card_select_g" id="label_pay">앱카드</label>
+									</span>
+									<span id="rdo_card_select_n_span" class="bg-radio">
+											<input type="radio" name="rdo_card_select" id="rdo_card_select_n" value="00">
+											<label for="rdo_card_select_n" id="label_favor">일반결제</label>
+									</span>
+									<span id="rdo_card_select_s_span" class="bg-radio display-none">
+											<input type="radio" name="rdo_card_select" id="rdo_card_select_s" value="02">
+											<label for="rdo_card_select_s" id="lab_sepecial_card"></label>
+									</span>
+									<span id="rdo_card_select_m_span" class="bg-radio display-none">
+											<input type="radio" name="rdo_card_select" id="rdo_card_select_m" value="03">
+											<label for="rdo_card_select_m" id="lab_moring_card">아침愛 조조할인</label>
+									</span>
+									<span id="rdo_card_select_e_span" class="bg-radio display-none">
+											<input type="radio" name="rdo_card_select" id="rdo_card_select_e" value="04">
+											<label for="rdo_card_select_e" id="lab_edu_card">Edu Plan+ 할인</label>
+									</span>
+							</div>
+
+							<div class="dotListT1 pd0" id="paymentInfo">
+								<ul class="dotListT1 display-none" content-paydcmeancd="102001"></ul>
+								<ul class="dotListT1 pt0 display-none" content-paydcmeancd="305005">
+										<li>신한카드 조조무료 서비스는 '아침愛 조조할인' 선택 시에만 적용되며 실적 및 조건 충족 시 월 1회, 최대 2인까지 무료로 관람하실 수 있습니다.</li>
+								</ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105005"><li>결제하신 금액은 익월 휴대폰 요금에 합산되어 청구되며, 휴대폰 결제한도는 통산사별 월 누적 이용 제한에 따라 적용됩니다.</li><li>매월 말일 23시30분 ~ 익월 00시 10분까지(40분간)는 시스템 점검시간으로 이용이 어려울 수 있습니다.</li><li>휴대폰 결제와 관련된 추가 안내는 FAQ를 참조해주세요.</li></ul>
+								<ul class="dotListT1" content-paydcmeancd="105030"><li>내통장결제는 본인명의의 계좌를 최초 1회 등록 후 비밀번호 입력만으로 간편하게 이용할 수 있는 현금결제 서비스 입니다.</li><li>은행 점검시간의 경우 내통장결제서비스 이용이 불가합니다.</li></ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105035"><li>토스에 등록된 계좌와 신용/체크카드로 쉽고 편리하게 결제하세요.</li><li>토스페이 결제 시 토스에서 제공하는 카드사 별 무이자, 청구할인, 결제 이벤트만 제공됩니다.</li></ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105036"><li>네이버페이 결제 시, 카드사 할인 및 포인트 사용이 불가할 수 있습니다.</li><li>네이버페이 결제 시 결제금액의 최대 1%가 적립됩니다. (네이버 유입 1% / 기타경로 0.2%)</li><li>상기 적립율은 2023년 6월 1일 결제 건부터 적용됩니다.</li></ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105037"><li>즉시할인 신용카드 적용이 불가합니다.</li></ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105003"><li>즉시할인 신용카드 적용이 불가합니다.</li><li>페이코 포인트 결제 시 결제금액의 1% 추가적립 됩니다.</li></ul>
+								<ul class="dotListT1 display-none" content-paydcmeancd="105034"></ul>
+							</div>
+						</div>
+
+						<div class="textInfo" id="promt">
+							<dl>
+									<dt>결제 프로모션</dt>
+							<dd><img src="https://img.megabox.co.kr/SharedImg/payPromt/2024/07/05/z9Amz4ohMGa2jOgT6zJZtcchh0qcWAr6.png">5월 토스페이 결제 시 추첨 통해 관람권 제공!</dd><dd><img src="https://img.megabox.co.kr/SharedImg/payPromt/2025/02/17/30ylvM9JvN71XB7SsW8OXCK6XmKoymVp.png">1,500원 리워드&amp;경품추첨 이벤트</dd></dl>
+						</div>
+
+						<div class="innerWrap display-none" id="terms">
+							<div class="chkIn all">
+									<div class="chkTy01">
+											<input type="checkbox" id="agree"><label for="agree">결제대행 서비스 약관 필수 동의</label>
+									</div>
+							</div>
+							<ul class="chkList">
+									<li>
+											전자금융거래 기본약관 [필수]<!-- 전자금융거래 기본약관 -->
+											<a class="link" href="javascript:void(0);" onclick="fn_detailPopup('one')">내용보기</a>
+									</li>
+									<li>
+											개인정보 수집 및 이용에 대한 동의 [필수]<!-- 개인정보 수집 및 이용에 대한 동의 -->
+											<a class="link" href="javascript:void(0);" onclick="fn_detailPopup('two')">내용보기</a>
+									</li>
+									<li>
+											개인정보의 제 3자 제공 동의 [필수]<!-- 개인정보의 제 3자 제공 동의 -->
+											<a class="link" href="javascript:void(0);" onclick="fn_detailPopup('three')">내용보기</a>
+									</li>
+									<li>
+											개인정보의 처리 위탁 동의 [필수]<!-- 개인정보의 처리 위탁 동의 -->
+											<a class="link" href="javascript:void(0);" onclick="fn_detailPopup('four')">내용보기</a>
+									</li>
+							</ul>
+						</div>
+
+						
+						<div class="innerWrap" id="refundTerms" style="border-top: none">
+							<div class="chkIn all">
+									<div class="chkTy01">
+											<input type="checkbox" id="refundAgree"><label for="refundAgree">취소/환불 정책에 대한 동의</label>
+									</div>
+							</div>
+							<ul class="chkList">
+									<li>
+											<div class="guideText">
+												- 온라인 예매는 영화 상영시간 20분전까지 취소 가능하며, 20분 이후 현장 취소만 가능합니다.
+												<br>- 현장 취소 시 영화 상영시간 이전까지만 가능합니다.</div>
+									</li>
+							</ul>
+						</div>
+						
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+</body>
+</html>

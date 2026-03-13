@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>예고편/스틸컷 &gt; 영화 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+
+	
+
+$(function(){
+	
+	// 자막
+	$(document).on('click', '.caption-btn', function(){
+		$(this).closest('.thum-wrap').find('.thum-caption2').toggleClass('on');
+
+		if( $(this).closest('.thum-wrap').find('.thum-caption2').hasClass('on') ){
+			$(this).find('.txt').text('자막닫기');
+			$(this).find('.ico-btn-more-arr').css({ transform: 'rotate(180deg)' });
+		}
+		else {
+			$(this).find('.txt').text('자막보기');
+			$(this).find('.ico-btn-more-arr').css({ transform: 'rotate(0deg)' });
+		}
+	});
+
+	// 메인 탭
+	if( $('.swiper-container').length > 0 ){
+		var galleryThumbs = new Swiper('.gallery-thumbs', {
+			spaceBetween: 20,
+			slidesPerView: 4,
+			freeMode: false,
+			watchSlidesProgress: true,
+		});
+		var galleryTop = new Swiper('.gallery-top', {
+			spaceBetween: 0,
+			freeMode: false,
+			effect: 'fade',
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			}
+		});
+	}
+
+});
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<div class="header-add-area">
+			광고 영역 높이값 80px. 글자크기 조절 및 배경색은 추후 삭제 예정
+		</div>
+
+		<!--
+			기본
+			<header id="header">
+
+			투명할때
+			<header id="header" class="no-bg">
+		-->
+		<header id="header" class="no-bg">
+			header : layout.html 참조
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container no-padding-bottom">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">영화</a>
+						<a href="">전체영화</a>
+						<a href="">박스오피스</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents" class="no-padding">
+
+				<!-- movie-detail-page -->
+				<div class="movie-detail-page">
+
+					<div class="bg-img" style="background-image:url('../../../static/pc/images/movie/img-movie-detail.jpg');"></div>
+					<div class="bg-pattern"></div>
+					<div class="bg-mask"></div>
+
+					<!-- movie-detail-cont -->
+					<div class="movie-detail-cont">
+
+						<!--
+							기본 일때
+							<p class="d-day default">D-3</p>
+
+							예매 일때
+							<p class="d-day theater">개봉 D-3</p>
+
+							my day
+							<p class="d-day my">관람 D-3</p>
+						 -->
+						<p class="d-day theater">개봉 D-3</p>
+
+						<!-- 2019-01-11 삭제
+							<p class="contents-type">#클래식소사이어티</p>
+						-->
+
+						<p class="title">보헤미안 랩소디</p>
+						<p class="title-eng">Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody Bohemian Rhapsody</p>
+
+						<div class="btn-util">
+							<!--
+								보고싶어 활성화
+								<button type="button" title="보고싶어 함" class="btn-like on">
+
+								보고싶어 비활성화
+								<button type="button" title="보고싶어 안함" class="btn-like">
+							 -->
+
+							<button type="button" title="보고싶어 안함" class="btn btn-like">
+								<i class="iconset ico-heart-line"></i>
+								<span title="보고싶어 한 명수">7000k</span>
+							</button>
+
+							<a href="" class="btn btn-sns tooltip click">
+								<i class="iconset ico-sns-line"></i> 공유하기
+
+								<div class="ir" data-width="360">
+									<div class="cont-area">
+										<div class="btn-sns-share-group">
+											<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+											<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+											<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+											<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+											<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- info -->
+						<div class="info">
+							<div class="score">
+								<p class="tit">메가스코어</p>
+								<!--
+									관람 전, 후 점시 차이에 따라 class 변경
+									관람 전이 클때
+									<div class="number small">
+
+									관람 후가 클때
+									<div class="number big">
+
+									점수가 같을 때
+									<div class="number equal">
+
+									스코어 없을 시
+									<div class="number none">
+								 -->
+								<div class="number equal">
+									<p title="관람 전 점수" class="before">7.8<span class="ir">점</span></p>
+									<p title="관람 후 점수" class="after">9.8<span class="ir">점</span></p>
+								</div>
+							</div>
+
+							<div class="rate">
+								<p class="tit">예매율</p>
+								<p class="cont"><em>1</em>위 (32.2&#37;)</p>
+							</div>
+
+							<div class="audience">
+								<div class="tit">
+									<span class="mr05">누적관객수</span>
+
+									<!-- 2019-05-03 툴팁 보기 수정 -->
+									<a href="#tooltip-layer01" title="툴팁보기" class="tooltip click">
+										<i class="iconset ico-tooltip-gray">툴팁보기</i>
+										<div class="ir" data-width="320">
+											<div class="cont-area">
+												<p class="reset a-c">
+													누적관객 및 전일관객은 영화진흥위원회영화관<br />
+													입장권 통합 전산망 제공 기준입니다.<br />
+													(2018.12.18기준)
+												</p>
+											</div>
+										</div>
+									</a>
+								</div>
+								<p class="cont"><em>99,124,637</em> 명</p>
+							</div>
+						</div>
+						<!--// info -->
+
+						<div class="poster">
+							<div class="wrap">
+								<!--
+								<p class="movie-grade age-all">전체 관람가</p>
+								<p class="movie-grade age-12">12세 이상 관람가</p>
+								<p class="movie-grade age-15">15세 이상 관람가</p>
+								<p class="movie-grade age-19">청소년 관람 불가</p>
+								<p class="movie-grade age-no">미정</p>
+								 -->
+								<p class="movie-grade age-all">전체 관람가</p>
+								<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="~~~~~영화 제목 ~~~~ 포스터" />
+
+								<a href="" class="btn-poster-down" title="파일 다운">포스터 다운로드</a>
+							</div>
+						</div>
+
+						<!-- 2019-07-24 삭제. 예매 버튼은 아내로 이동
+						<div class="reserve">
+
+						</div>
+						-->
+
+						<!--
+							링크 갯수가 1개 일때
+							<div class="reserve screen-type col-1">
+
+							링크 갯수가 2개 일때
+							<div class="reserve screen-type col-2">
+
+							링크 갯수가 3개 일때
+							<div class="reserve screen-type col-3">
+						-->
+						<!--
+							2019-07-24
+							class 추가. reserve
+							a 태그에 class 변경
+						-->
+						<div class="reserve screen-type col-2">
+							<a href="" class="btn reserve">예매</a>
+							<a href="" class="btn mx">MX</a>
+						</div>
+					</div>
+					<!--// movie-detail-cont -->
+				</div>
+				<!--// movie-detail -->
+
+				<!-- inner-wrap -->
+				<div class="inner-wrap">
+
+					<div class="tab-list fixed">
+						<ul>
+							<li><a href="">주요정보</a></li>
+							<li><a href="">한줄평</a></li>
+							<li><a href="">무비포스트</a></li>
+							<li class="on"><a href="">예고편/스틸컷</a></li>
+						</ul>
+					</div>
+
+					<div class="pb100">
+						<div class="movie-list-util mt40">
+							<div class="movie-sorting">
+								<!--
+									활성화 class="btn on"
+									비 활성호 class="btn"
+								 -->
+								<span><button type="button" class="btn on">전체(4)</button></span>
+								<span><button type="button" class="btn preview">예고편(3)</button></span>
+								<span><button type="button" class="btn stillcut">스틸컷(5)</button></span>
+							</div>
+						</div>
+
+						<!-- stillcut-slide -->
+						<div class="stillcut-slide">
+
+							<!-- slide-title -->
+							<div class="slide-title">
+								<!-- 하단 thumb-list 에있는 img 에  alt 값이 span속의 글귀가 자동으로 들어가고 desc 속의 내용은 제목부분으로 자동으로 작성이됨 -->
+								<h2 class="tit">
+									<span>보헤미안 랩소디 영화 예고편 #</span>
+									[본편 무삭제 영상] 보헤미안 랩소디 명곡의 탄생! 이하이 특별 콜라보 풀영상
+								</h2>
+
+								<!-- 2019-01-29 마크업 변경 -->
+								<div class="slide-btn">
+									<a href="" class="btn-prev swiper-button-prev">
+										<i class="iconset ico-prev-circle"></i>
+										<span>이전 영상</span>
+									</a>
+
+									<a href="" class="btn-next swiper-button-next">
+										<i class="iconset ico-next-circle"></i>
+										<span>다음 영상</span>
+									</a>
+								</div>
+								<!--// 2019-01-29 마크업 변경 -->
+
+
+								<!-- slide-list -->
+								<div class="swiper-container gallery-top">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+										</div>
+									</div>
+
+								</div>
+								<!--// slide-list -->
+								
+								<div class="thum-wrap">
+									<div class="a-c mt40 thum-caption2">
+										자막내용입니다 자막이 들어가요
+									</div>
+
+									<div class="btn-more caption-btn">
+										<button type="button" class="btn"> <span class="txt">자막보기</span> <i class="iconset ico-btn-more-arr"></i></button>
+									</div>
+								</div>
+
+								<div class="thumbs-wrap">
+									<div class="swiper-container gallery-thumbs">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+											<div class="swiper-slide">
+												<img src="../../../static/pc/images/movie/img-P-MO-EX-01.png" alt="" >
+												<div class="movie-detail">
+													마우스 오버시<br>
+													예고편 제목 출력
+												</div>
+												<i class="iconset ico-play"></i>
+											</div>
+										</div>
+									</div>
+								
+									<div class="slide-btn thumb-btn">
+										<a href="" class="btn-prev swiper-button-prev">
+											<img src="../../../static/pc/images/common/btn/btn-prev.png" alt="">
+										</a>
+
+										<a href="" class="btn-next swiper-button-next">
+											<img src="../../../static/pc/images/common/btn/btn-next.png" alt="">
+										</a>
+									</div>
+								</div>
+
+							</div>
+							<!--// slide-title -->
+
+
+						</div>
+						<!--// stillcut-slide -->
+
+						
+						<!-- stair-slide -->
+						<div class="stair-slide">
+							<h2 class="tit small">보헤미안랩소디에 대한 <span class="font-gblue">23</span>개의 스틸컷이 있어요!</h2>
+
+							<div class="stair-slide-list">
+								<!--// 2019-03-06 : 수정 -->
+								<!--
+								<ul>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-EX-plan01.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-post03.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-poster03.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-poster06.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-post03.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-poster03.png" alt=""></a></li>
+									<li><a href=""><img src="../../../static/pc/images/movie/img-P-MO-PO0101-poster06.png" alt=""></a></li>
+								</ul>
+								-->
+								<!--// 2019-03-06 : 수정 -->
+								<div class="btn-more">
+									<button type="button" class="btn">더보기 <i class="iconset ico-btn-more-arr"></i></button>
+								</div>
+							</div>
+						</div>
+						<!--// stair-slide -->
+
+						<!-- layer-stillcut-view -->
+						<div class="layer-stillcut-view">
+							<div class="layer-wrap">
+
+								<div class="movie-detail-cont">
+									<!-- 영화 이미지 배경이미지로 출력 -->
+									<div class="bg-img" style="background-image:url('../../../static/pc/images/movie/img-movie-detail.jpg');"></div>
+									<div class="bg-pattern"></div>
+									<div class="bg-mask"></div>
+
+									<div class="info">
+										<p class="title">보헤미안 랩소디</p>
+
+										<!--
+											보고싶어 활성화
+											<button type="button" title="보고싶어 함" class="btn-like on">
+
+											보고싶어 비활성화
+											<button type="button" title="보고싶어 안함" class="btn-like">
+										 -->
+										<button type="button" title="보고싶어 안함" class="btn btn-like">
+											<i class="iconset ico-heart-line"></i>
+											<span title="보고싶어 한 명수">7000k</span>
+										</button>
+
+										<a href="" class="btn btn-sns">
+											<i class="iconset ico-sns-line"></i> 공유하기
+										</a>
+
+										<div class="reserve">
+											<a href="" class="button gblue">예매</a>
+										</div>
+									</div>
+								</div>
+								<!--// 2019-01-29 : 영화 정보 추가 -->
+								<!--// 2019-03-06 : 수정 -->
+								<div class="view-content">
+									<span><a href="" title="클릭시 창 닫힘"><img src="../../../static/pc/images/movie/img-movie-detail.jpg" alt=""></a></span>
+								</div>
+								<!--// 2019-03-06 : 수정 -->
+								<!--
+									2019-01-29 :
+									닫기 버튼에 class btn-close 추가
+									a 태그를 button 태그로 교체
+								-->
+								<div class="btn-group a-c">
+									<button type="button" class="btn-prev"><i class="iconset ico-prev"></i> 이전 이미지 보기</button>
+									<button type="button" class="btn-next"><i class="iconset ico-next"></i> 다음 이미지 보기</button>
+									<button type="button" class="btn-close"><i class="iconset ico-layer-close"></i> 스틸컷 레이어 닫기</button>
+								</div>
+							</div>
+						</div>
+						<!--// layer-stillcut-view -->
+					</div>
+				</div>
+				<!--// inner-wrap -->
+			</div>
+			<!--// contents -->
+
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer : layout.html 참조
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

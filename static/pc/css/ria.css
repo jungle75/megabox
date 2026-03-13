@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.time-schedule .wrap {border-color:#ff0000;}
+.time-schedule.quick .wrap {border-color:#ff0000;}
+
+.quick-reserve-area {border-color:#ff0000;}
+
+.quick-reserve-area .list-area.no-tab {padding-top:0 !important;}
+.quick-reserve-area .list-area.no-tab .btn-tab {display:none !important;}
+.quick-reserve-area .list-area.no-tab .list {height:360px;}
+
+.quick-reserve-area .list-area .all-list .btn-tab.on {border-color:#555; background-color:#ff0000; color:#fff;}
+.quick-reserve-area .list-area .other-list .btn-tab.on {border-color:#555; background-color:#ff0000; color:#fff;}
+.quick-reserve-area .list-area .list .scroll ul li button.on {color:#fff; background-color:#ff0000;}
+.quick-reserve-area .theater-choice .list .scroll ul li .btn.on {color:#444; background-color:#fff000;}
+.quick-reserve-area .theater-choice .list .scroll ul li .depth .detail-list ul li button.on {color:#fff; background-color:#ff0000;}
+
+.quick-reserve-area .movie-choice {border-color:#ff0000;}
+.quick-reserve-area .theater-choice {border-color:#ff0000;}
+
+

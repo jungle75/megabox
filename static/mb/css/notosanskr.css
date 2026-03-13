@@ -1,0 +1,60 @@
+@charset "utf-8";
+/*
+	noto sans kr 경량화 버젼
+*/
+
+@font-face {
+	font-family: 'NotoSans';
+	font-style: normal;
+	font-weight: 400; /* 영문 light */
+	src:url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Light.eot'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		/* url('../font/notosanskr/NotoSans-Light.woff2') format('woff'), */
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Light.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Light.eot?#iefix') format('embedded-opentype'); /* ie 6~8 */
+}
+
+@font-face {
+	font-family: 'NotoSans';
+	font-style: normal;
+	font-weight: 700; /* 영문 regular  */
+	src:url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Regular.eot'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		/* url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Regular.woff2') format('truetype'), */
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Regular.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/NotoSans-Regular.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+	font-family: 'NotoSansKR';
+	font-style: normal;
+	font-weight: 400; /* demilight */
+	src:url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-light.eot'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-light.eot?#iefix') format('embedded-opentype'), /* ie 6~8 */
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-light.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NotoSansKR';
+	font-style: normal;
+	font-weight: 700; /* medium */
+	src:url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-medium.eot'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-medium.eot?#iefix') format('embedded-opentype'), /* ie 6~8 */
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-medium.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NotoSansKR';
+	font-style: normal;
+	font-weight: 900; /* bold */
+	src:url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-bold.eot'); /* ie 9 호환성 보기 */
+	src:local('@'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-bold.eot?#iefix') format('embedded-opentype'), /* ie 6~8 */
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-bold.woff') format('woff'),
+		url('https://img.megabox.co.kr/static/mb/font/notosanskr/notokr-bold.ttf') format('truetype');
+}
+

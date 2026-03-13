@@ -1,0 +1,996 @@
+<!doctype html>
+<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>전체 영화 &gt; 영화 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/pc/css/import.css" media="all" />
+
+<script src="../../../static/pc/js/jquery-1.12.4.js"></script>
+<script src="../../../static/pc/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/pc/js/gsaps.js"></script>
+
+<!-- lib 추가 -->
+<script src="../../../static/pc/js/bootstrap-custom.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/bootstrap-select.js"></script><!-- selectbox custom -->
+<script src="../../../static/pc/js/swiper.min.js"></script>
+<script src="../../../static/pc/js/masonry.pkgd.min.js"></script>
+<script src="../../../static/pc/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- 개발 datepicker 커스텀등등 -->
+<script src="../../../js/megaboxCom.js"></script>
+<script src="../../../js/common/mega.prototype.js"></script>
+<script src="../../../js/common/commons.js"></script>
+
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/pc/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+
+</head>
+<body>
+
+	<!-- 웹접근성 영역 바로가기 -->
+	<div class="skip" title="스킵 네비게이션">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#footer">푸터 바로가기</a>
+	</div>
+
+	<!-- body-wrap -->
+	<div class="body-wrap">
+		<!-- header -->
+		<header id="header">
+			header : layout.html 참조
+		</header>
+		<!--// header -->
+
+		<!-- container -->
+		<div class="container">
+
+			<div class="page-util">
+				<div class="inner-wrap">
+					<div class="location">
+						<span>Home</span>
+						<a href="">영화</a>
+						<a href="">전체영화</a>
+					</div>
+
+					<!-- 2019-06-25 class 수정 -->
+					<div class="sns-share">
+						<a href="" class="btn btn-common-share">
+							공유하기 <i class="iconset ico-share-toggle"></i>
+						</a>
+
+						<div class="btn-sns-share-wrap">
+							<div class="cont-area">
+								<div class="btn-sns-share-group">
+									<button type="button" title="카카오톡 공유하기" class="btn kakao">카카오톡</button>
+									<button type="button" title="페이스북 공유하기" class="btn face">페이스북</button>
+									<button type="button" title="밴드 공유하기" class="btn band">밴드</button>
+									<button type="button" title="트위터 공유하기" class="btn twitter">트위터</button>
+									<button type="button" title="링크 공유하기" class="btn link">링크공유</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--// 2019-06-25 class 수정 -->
+				</div>
+			</div>
+
+			<!-- contents -->
+			<div id="contents">
+
+				<!-- inner-wrap -->
+				<div class="inner-wrap">
+
+					<h2 class="tit">전체영화</h2>
+
+					<div class="tab-list tab-layer fixed">
+						<ul>
+							<!--
+								활성화 클래스가 a 태그에서 li 태그로 이동
+
+								기본
+								<li>
+
+								활성화
+								<li class="on">
+							 -->
+							<li class="on"><a href="#tab01">박스오피스</a></li>
+							<li><a href="#tab02">상영예정작</a></li>
+							<li><a href="#tab03">필름소사이어티</a></li>
+							<li><a href="#tab04">클래식소사이어티</a></li>
+							<li><a href="#tab05"><strong class="font-green">김메가</strong>님을 위한 장르모아보기</a></li>
+						</ul>
+					</div>
+
+					<div class="tab-cont-wrap">
+						<!-- 박스오피스 tab -->
+						<!-- 첫번째 tab 에는 무조건 on 을 붙이고 시작합니다. -->
+						<div id="tab01" class="tab-cont on">
+
+							<!-- movie-list-util -->
+							<div class="movie-list-util mt40">
+								<!-- 검색결과 있을 때, 검색 하기 전  -->
+								<div class="movie-sorting">
+									<!--
+										활성화 class="btn on"
+										비 활성호 class="btn"
+									 -->
+									<span><button type="button" class="btn on">예매율순</button></span>
+									<span><button type="button" class="btn">누적관객순</button></span>
+									<span><button type="button" class="btn">메가스코어순</button></span>
+								</div>
+
+								<div class="onair-condition">
+									<!--
+										title 값과 class 주의
+
+										전부 다  볼때
+										<button type="button" title="전체 영화 보기" class="btn-onair">개봉작만</button>
+
+										개봉작만 볼때
+										<button type="button" title="개봉작만 보기" class="btn-onair on">개봉작만</button>
+									-->
+									<button type="button" title="개봉작만 보기" class="btn-onair">개봉작만</button>
+								</div>
+								<!--// 검색결과 있을 때, 검색 하기 전  -->
+
+								<!-- 검색결과 없을 때 -->
+								<p class="no-result-count"><strong>0개</strong>의 영화가 검색되었습니다.</p>
+								<!--// 검색결과 없을 때 -->
+
+								<div class="movie-search">
+									<input type="text" title="영화명을 입력하세요" placeholder="영화명 검색" class="input-text" />
+									<button type="button" class="btn-search-input">검색</button>
+								</div>
+							</div>
+							<!--// movie-list-util -->
+
+							<!-- movie-list -->
+							<div class="movie-list">
+								<ol class="list">
+									<!--
+										이벤트 일때만 li 태그에 class ad-event 추가
+									 -->
+									<!-- 2019-01-24 삭제
+									<li class="ad-event">
+										<a href=""><img src="../../../static/pc/images/movie/@img-movie-list-event.png" alt="블루멤버스 포인트로 메가박스 4천원 할인 받으세요!" /></a>
+									</li>
+									 -->
+
+									<li tabindex="0">
+										<div class="movie-list-info">
+
+											<!-- 랭크 있을때만 출력 -->
+											<p class="rank">1<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" class="poster" />
+
+											<div class="curation">
+												<p class="film">필름 소사이어티</p>
+												<!--
+												큐레이션 표시
+												<p class="film">필름 소사이어티</p>
+												<p class="classic">클래식 소사이어티</p>
+												 -->
+											</div>
+
+											<div class="screen-type">
+												<p>부티크</p>
+												<p>MX</p>
+												<p>발코니</p>
+											</div>
+
+											<!-- 2019-01-23 : 연령고지 위치 변경 및 마크업 수정 -->
+											<!--
+											<div class="age-see">
+
+												~~~~~
+
+											</div>
+											 -->
+
+											<!-- 2019-01-23 수정 -->
+											<!-- 마우스 오버시 나오는 layer : movie-score -->
+											<div class="movie-score">
+
+												<a href="" class="wrap">
+													<div class="summary">
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+													</div>
+
+
+													<!--
+														관람 전이 더 높을 때
+														<div class="my-score small">
+
+														관람 후가 더 높을 때
+														<div class="my-score big">
+
+														관람 후가 더 같을 때
+														<div class="my-score equal">
+													 -->
+													<div class="my-score">
+														<div class="preview">
+															<p class="tit">기대평</p>
+															<p class="number">5.5<span class="ir">점</span></p>
+														</div>
+
+														<!--
+															기대평이 클때
+															<span class="sign small">보다 크다</span>
+
+															관람후가 클때
+															<span class="sign big">보다 작다</span>
+
+															같을 때
+															<span class="sign equal">같다</span>
+														 -->
+														<span class="sign equal">같다</span>
+
+														<div class="review">
+															<p class="tit">관람평</p>
+															<p class="number after">5.5<span class="ir">점</span></p>
+														</div>
+													</div>
+												</a>
+											</div>
+											<!--// 마우스 오버시 나오는 layer : movie-score -->
+											<!--// 2019-01-23 수정 -->
+										</div>
+
+										<!-- 2019-01-23 : 마크업 변경 -->
+										<div class="tit-area">
+											<!--
+												관람 등급 표시
+												<p class="movie-grade age-all">전체 관람가</p>
+												<p class="movie-grade age-12">12세 이상 관람가</p>
+												<p class="movie-grade age-15">15세 이상 관람가</p>
+												<p class="movie-grade age-19">청소년 관람 불가</p>
+												<p class="movie-grade age-no">미정</p>
+											-->
+											<p class="movie-grade age-12">12세 이상 관람가</p>
+
+											<p title="영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력" class="tit">영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력</p>
+										</div>
+
+										<div class="rate-date">
+											<!-- 예매율 안나올땐 태그 자체를 삭제 해주세요 -->
+											<span class="rate">예매율 12.5 &#37;</span>
+											<span class="date">개봉일 2018.12.12</span>
+										</div>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+
+											<!-- 상영예정일때 -->
+											<!--
+											<p class="txt">상영예정</p>
+											-->
+
+											<!-- 언제 개봉 예정일때 -->
+											<!--
+											<p class="txt">3월 개봉예정</p>
+											 -->
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+											 -->
+
+											<p class="txt">상영예정</p>
+										</div>
+										<!--// 2019-01-23 : 마크업 변경 -->
+									</li>
+
+									<!--
+										2019-07-22
+
+										이미지 없을 때 혹은 로딩 하는 중
+										<li tabindex="0" class="no-img">
+
+										위 상황이 아닐 때
+										<li tabindex="0">
+									 -->
+									<li tabindex="0" class="no-img">
+										<div class="movie-list-info">
+
+											<!-- 랭크 있을때만 출력 -->
+											<p class="rank">2<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" class="poster" />
+
+											<div class="curation">
+												<p class="classic">클래식 소사이어티</p>
+												<!--
+												큐레이션 표시
+												<p class="film">필름 소사이어티</p>
+												<p class="classic">클래식 소사이어티</p>
+												 -->
+											</div>
+
+											<div class="screen-type">
+												<p>부티크</p>
+												<p>MX</p>
+												<p>발코니</p>
+											</div>
+
+											<!-- 2019-01-23 : 연령고지 위치 변경 및 마크업 수정 -->
+											<!--
+											<div class="age-see">
+
+												~~~~~
+
+											</div>
+											 -->
+
+											<!-- 2019-01-23 수정 -->
+											<!-- 마우스 오버시 나오는 layer : movie-score -->
+											<div class="movie-score">
+
+												<a href="" class="wrap">
+													<div class="summary">
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+													</div>
+
+													<!--
+														관람 전이 더 높을 때
+														<div class="my-score small">
+
+														관람 후가 더 높을 때
+														<div class="my-score big">
+
+														관람 후가 더 같을 때
+														<div class="my-score equal">
+													 -->
+													<div class="my-score">
+														<div class="preview">
+															<p class="tit">기대평</p>
+															<p class="number">7.5<span class="ir">점</span></p>
+														</div>
+
+														<!--
+															기대평이 클때
+															<span class="sign small">보다 크다</span>
+
+															관람후가 클때
+															<span class="sign big">보다 작다</span>
+
+															같을 때
+															<span class="sign equal">같다</span>
+														 -->
+														<span class="sign small">보다 크다</span>
+
+														<div class="review">
+															<p class="tit">관람평</p>
+															<p class="number after">5.5<span class="ir">점</span></p>
+														</div>
+													</div>
+												</a>
+											</div>
+											<!--// 마우스 오버시 나오는 layer : movie-score -->
+											<!--// 2019-01-23 수정 -->
+										</div>
+
+										<!-- 2019-01-23 : 마크업 변경 -->
+										<div class="tit-area">
+											<!--
+												관람 등급 표시
+												<p class="movie-grade age-all">전체 관람가</p>
+												<p class="movie-grade age-12">12세 이상 관람가</p>
+												<p class="movie-grade age-15">15세 이상 관람가</p>
+												<p class="movie-grade age-19">청소년 관람 불가</p>
+												<p class="movie-grade age-no">미정</p>
+											-->
+											<p class="movie-grade age-19">청소년 관람 불가</p>
+
+											<p title="영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력" class="tit">영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력</p>
+										</div>
+
+										<div class="rate-date">
+											<!-- 예매율 안나올땐 태그 자체를 삭제 해주세요 -->
+											<span class="rate">예매율 12.5 &#37;</span>
+											<span class="date">개봉일 2018.12.12</span>
+										</div>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<!-- 상영예정일때 -->
+											<!--
+											<p class="txt">상영예정</p>
+											-->
+
+											<!-- 언제 개봉 예정일때 -->
+											<!--
+											<p class="txt">3월 개봉예정</p>
+											 -->
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+											 -->
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+											 -->
+
+											<p class="txt">3월 개봉예정</p>
+										</div>
+										<!--// 2019-01-23 : 마크업 변경 -->
+									</li>
+
+									<li tabindex="0">
+										<div class="movie-list-info">
+
+											<!-- 랭크 있을때만 출력 -->
+											<p class="rank">3<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" class="poster" />
+
+											<div class="curation">
+												<p class="classic">클래식 소사이어티</p>
+												<!--
+												큐레이션 표시
+												<p class="film">필름 소사이어티</p>
+												<p class="classic">클래식 소사이어티</p>
+												 -->
+											</div>
+
+											<div class="screen-type">
+												<p>부티크</p>
+												<p>MX</p>
+												<p>발코니</p>
+											</div>
+
+											<!-- 2019-01-23 : 연령고지 위치 변경 및 마크업 수정 -->
+											<!--
+											<div class="age-see">
+
+												~~~~~
+
+											</div>
+											 -->
+
+											<!-- 2019-01-23 수정 -->
+											<!-- 마우스 오버시 나오는 layer : movie-score -->
+											<div class="movie-score">
+
+												<a href="" class="wrap">
+													<div class="summary">
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+													</div>
+
+													<!--
+														관람 전이 더 높을 때
+														<div class="my-score small">
+
+														관람 후가 더 높을 때
+														<div class="my-score big">
+
+														관람 후가 더 같을 때
+														<div class="my-score equal">
+													 -->
+													<div class="my-score">
+														<div class="preview">
+															<p class="tit">기대평</p>
+															<p class="number">5.5<span class="ir">점</span></p>
+														</div>
+
+														<!--
+															기대평이 클때
+															<span class="sign small">보다 크다</span>
+
+															관람후가 클때
+															<span class="sign big">보다 작다</span>
+
+															같을 때
+															<span class="sign equal">같다</span>
+														 -->
+														<span class="sign big">보다 작다</span>
+
+														<div class="review">
+															<p class="tit">관람평</p>
+															<p class="number after">8.5<span class="ir">점</span></p>
+														</div>
+													</div>
+												</a>
+											</div>
+											<!--// 마우스 오버시 나오는 layer : movie-score -->
+											<!--// 2019-01-23 수정 -->
+										</div>
+
+										<!-- 2019-01-23 : 마크업 변경 -->
+										<div class="tit-area">
+											<!--
+												관람 등급 표시
+												<p class="movie-grade age-all">전체 관람가</p>
+												<p class="movie-grade age-12">12세 이상 관람가</p>
+												<p class="movie-grade age-15">15세 이상 관람가</p>
+												<p class="movie-grade age-19">청소년 관람 불가</p>
+												<p class="movie-grade age-no">미정</p>
+											-->
+											<p class="movie-grade age-19">청소년 관람 불가</p>
+
+											<p title="영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력" class="tit">영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력</p>
+										</div>
+
+										<div class="rate-date">
+											<!-- 예매율 안나올땐 태그 자체를 삭제 해주세요 -->
+											<span class="rate">예매율 12.5 &#37;</span>
+											<span class="date">개봉일 2018.12.12</span>
+										</div>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<!-- 상영예정일때 -->
+											<!--
+											<p class="txt">상영예정</p>
+											-->
+
+											<!-- 언제 개봉 예정일때 -->
+											<!--
+											<p class="txt">3월 개봉예정</p>
+											 -->
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+											 -->
+
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+											 -->
+
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+										</div>
+										<!--// 2019-01-23 : 마크업 변경 -->
+									</li>
+
+									<li tabindex="0">
+										<div class="movie-list-info">
+
+											<!-- 랭크 있을때만 출력 -->
+											<p class="rank">4<span class="ir">위</span></p>
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" class="poster" />
+
+											<div class="curation">
+												<p class="classic">클래식 소사이어티</p>
+												<!--
+												큐레이션 표시
+												<p class="film">필름 소사이어티</p>
+												<p class="classic">클래식 소사이어티</p>
+												 -->
+											</div>
+
+											<div class="screen-type">
+												<p>부티크</p>
+												<p>MX</p>
+												<p>발코니</p>
+											</div>
+
+											<!-- 2019-01-23 : 연령고지 위치 변경 및 마크업 수정 -->
+											<!--
+											<div class="age-see">
+
+												~~~~~
+
+											</div>
+											 -->
+
+											<!-- 2019-01-23 수정 -->
+											<!-- 마우스 오버시 나오는 layer : movie-score -->
+											<div class="movie-score">
+
+												<a href="" class="wrap">
+													<div class="summary">
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+													</div>
+
+													<!--
+														관람 전이 더 높을 때
+														<div class="my-score small">
+
+														관람 후가 더 높을 때
+														<div class="my-score big">
+
+														관람 후가 더 같을 때
+														<div class="my-score equal">
+													 -->
+													<div class="my-score">
+														<div class="preview">
+															<p class="tit">기대평</p>
+															<p class="number">5.5<span class="ir">점</span></p>
+														</div>
+
+														<!--
+															기대평이 클때
+															<span class="sign small">보다 크다</span>
+
+															관람후가 클때
+															<span class="sign big">보다 작다</span>
+
+															같을 때
+															<span class="sign equal">같다</span>
+														 -->
+														<span class="sign big">보다 작다</span>
+
+														<div class="review">
+															<p class="tit">관람평</p>
+															<p class="number after">8.5<span class="ir">점</span></p>
+														</div>
+													</div>
+												</a>
+											</div>
+											<!--// 마우스 오버시 나오는 layer : movie-score -->
+											<!--// 2019-01-23 수정 -->
+										</div>
+
+										<!-- 2019-01-23 : 마크업 변경 -->
+										<div class="tit-area">
+											<!--
+												관람 등급 표시
+												<p class="movie-grade age-all">전체 관람가</p>
+												<p class="movie-grade age-12">12세 이상 관람가</p>
+												<p class="movie-grade age-15">15세 이상 관람가</p>
+												<p class="movie-grade age-19">청소년 관람 불가</p>
+												<p class="movie-grade age-no">미정</p>
+											-->
+											<p class="movie-grade age-19">청소년 관람 불가</p>
+
+											<p title="영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력" class="tit">영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력</p>
+										</div>
+
+										<div class="rate-date">
+											<!-- 예매율 안나올땐 태그 자체를 삭제 해주세요 -->
+											<span class="rate">예매율 12.5 &#37;</span>
+											<span class="date">개봉일 2018.12.12</span>
+										</div>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<!-- 상영예정일때 -->
+											<!--
+											<p class="txt">상영예정</p>
+											-->
+
+											<!-- 언제 개봉 예정일때 -->
+											<!--
+											<p class="txt">3월 개봉예정</p>
+											 -->
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+											 -->
+
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+											 -->
+
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+										</div>
+										<!--// 2019-01-23 : 마크업 변경 -->
+									</li>
+
+									<li tabindex="0">
+										<div class="movie-list-info">
+
+											<!-- 랭크 있을때만 출력 -->
+											<!--
+											<p class="rank">4<span class="ir">위</span></p>
+											 -->
+
+											<!-- to 개발 : alt 값에 영화 제목 출력 -->
+											<img src="../../../static/pc/images/movie/@img-movie-list.jpg" alt="영화제목 출력" class="poster" />
+
+											<div class="curation">
+												<p class="classic">클래식 소사이어티</p>
+												<!--
+												큐레이션 표시
+												<p class="film">필름 소사이어티</p>
+												<p class="classic">클래식 소사이어티</p>
+												 -->
+											</div>
+
+											<div class="screen-type">
+												<p>부티크</p>
+												<p>MX</p>
+												<p>발코니</p>
+											</div>
+
+											<!-- 2019-01-23 : 연령고지 위치 변경 및 마크업 수정 -->
+											<!--
+											<div class="age-see">
+
+												~~~~~
+
+											</div>
+											 -->
+
+											<!-- 2019-01-23 수정 -->
+											<!-- 마우스 오버시 나오는 layer : movie-score -->
+											<div class="movie-score">
+
+												<a href="" class="wrap">
+													<div class="summary">
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’<br />
+														나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br />
+														공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’
+													</div>
+
+													<!--
+														관람 전이 더 높을 때
+														<div class="my-score small">
+
+														관람 후가 더 높을 때
+														<div class="my-score big">
+
+														관람 후가 더 같을 때
+														<div class="my-score equal">
+													 -->
+													<div class="my-score">
+														<div class="preview">
+															<p class="tit">기대평</p>
+															<p class="number">5.5<span class="ir">점</span></p>
+														</div>
+
+														<!--
+															기대평이 클때
+															<span class="sign small">보다 크다</span>
+
+															관람후가 클때
+															<span class="sign big">보다 작다</span>
+
+															같을 때
+															<span class="sign equal">같다</span>
+														 -->
+														<span class="sign big">보다 작다</span>
+
+														<div class="review">
+															<p class="tit">관람평</p>
+															<p class="number after">8.5<span class="ir">점</span></p>
+														</div>
+													</div>
+												</a>
+											</div>
+											<!--// 마우스 오버시 나오는 layer : movie-score -->
+											<!--// 2019-01-23 수정 -->
+										</div>
+
+										<!-- 2019-01-23 : 마크업 변경 -->
+										<div class="tit-area">
+											<!--
+												관람 등급 표시
+												<p class="movie-grade age-all">전체 관람가</p>
+												<p class="movie-grade age-12">12세 이상 관람가</p>
+												<p class="movie-grade age-15">15세 이상 관람가</p>
+												<p class="movie-grade age-19">청소년 관람 불가</p>
+												<p class="movie-grade age-no">미정</p>
+											-->
+											<p class="movie-grade age-19">청소년 관람 불가</p>
+
+											<p title="영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력" class="tit">영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력 영화제목 출력</p>
+										</div>
+
+										<div class="rate-date">
+											<!-- 예매율 안나올땐 태그 자체를 삭제 해주세요 -->
+											<span class="rate">예매율 12.5 &#37;</span>
+											<span class="date">개봉일 2018.12.12</span>
+										</div>
+
+										<div class="btn-util">
+											<!--
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 안함" class="iconset ico-heart-toggle-gray"></i> 125k</button>
+												<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+											 -->
+											<button type="button" class="button btn-like"><i title="보고싶어 설정 함" class="iconset ico-heart-toggle-gray on"></i> 125k</button>
+
+											<!-- 상영예정일때 -->
+											<!--
+											<p class="txt">상영예정</p>
+											-->
+
+											<!-- 언제 개봉 예정일때 -->
+											<!--
+											<p class="txt">3월 개봉예정</p>
+											 -->
+
+											<!-- 예매,mx 둘다 나올 때 -->
+											<!--
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+											 -->
+
+											<!-- 예매만 나올 때 -->
+											<!--
+											<div class="case">
+												<a href="" class="button purple">예매</a>
+											</div>
+											 -->
+
+											<div class="case col-2">
+												<a href="" class="button purple">예매</a>
+												<a href="" class="button purple">MX</a>
+											</div>
+										</div>
+										<!--// 2019-01-23 : 마크업 변경 -->
+									</li>
+								</ol>
+							</div>
+							<!--// movie-list -->
+
+							<!--
+								2019-07-02 : 가이드 수정
+								<div class="btn-more">
+								->
+								<div class="btn-more v1">
+							 -->
+							<div class="btn-more v1">
+								<button type="button" class="btn">더보기 <i class="iconset ico-btn-more-arr"></i></button>
+							</div>
+
+
+							<!-- 검색결과 없을 때 -->
+							<div class="movie-list-no-result">
+								<p>검색된 영화가 없습니다.</p>
+
+								<p>
+									<strong>영화검색 <i class="iconset ico-tip">Tip</i></strong>
+									하나의 단어만 입력해도 검색이 가능합니다.
+								</p>
+							</div>
+
+
+							<!-- 검색결과 없을 때 -->
+							<div class="movie-list-no-favor">
+								<p>
+									선호장르를 설정하시면<br />
+									김메가님을 위한 영화를 추천해 드립니다!
+								</p>
+
+								<div class="btn-group center">
+									<a href="" class="button large purple">선호장르설정하기</a>
+								</div>
+							</div>
+
+
+						</div>
+						<!--// 박스오피스 tab -->
+
+						<!-- 상영예정작 -->
+						<div id="tab02" class="tab-cont">
+							상영예정작 tab 안의 내용들은 박스오피스와 동일
+						</div>
+						<!--// 상영예정작 -->
+
+						<!-- 필름 -->
+						<div id="tab03" class="tab-cont">
+							필름 tab 안의 내용들은 박스오피스와 동일
+						</div>
+						<!--// 필름 -->
+
+						<!-- 필름 -->
+						<div id="tab04" class="tab-cont">
+							클래식 tab 안의 내용들은 박스오피스와 동일
+						</div>
+
+						<!-- 장르모아보기 -->
+						<div id="tab05" class="tab-cont">
+							장르모아보기 tab 안의 내용들은 박스오피스와 동일
+						</div>
+						<!--// 장르모아보기 -->
+					</div>
+				</div>
+				<!--// inner-wrap -->
+			</div>
+			<!--// contents -->
+		</div>
+		<!--// container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			footer : layout.html 참조
+		</footer>
+		<!--// footer -->
+	</div>
+	<!--// body-wrap -->
+</body>
+</html>

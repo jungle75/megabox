@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta property="og:image" content="http://image3.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg">
+<meta name="”format-detection”" content="”telephone=no," address="no," email="no”">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="keyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta name="description" content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남고 소통의 즐거움이 가득한 공간 메가박스 입니다." />
+
+<meta property="og:site_name" content="메가박스" />
+<meta property="og:url" content="http://megabox.co.kr" />
+<meta property="og:image" content="http://image2.megabox.co.kr/mop/home/appbunpage/URLVIEW.jpg" />
+
+<title>극장별 예매 &gt; 예매 | 라이프시어터 메가박스</title>
+
+<link rel="stylesheet" href="../../../static/mb/css/import.css" media="all" />
+
+<script src="../../../static/mb/js/jquery-1.12.4.js"></script>
+<script src="../../../static/mb/js/jquery-ui.1.12.1.js"></script>
+<script src="../../../static/mb/js/gsaps.js"></script>
+<script src="../../../static/mb/js/swiper.min.js"></script>
+<script>
+	var _init = {
+		cache	: Date.now(),
+		path	: '../../../static/mb/js/'
+	};
+	document.write(
+		'<script src="'+_init.path+'ui.common.js?v='+_init.cache+'"><\/script>'+
+		'<script src="'+_init.path+'front.js?v='+_init.cache+'"><\/script>'
+	);
+</script>
+<script>
+$(function(){
+	
+	if( $('.reserve-calendar').length > 0 ){
+		var list_swiper = new Swiper('.reserve-calendar', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			spaceBetween: 0,
+			pagination: false,
+			centeredSlides: false,
+			disableTouchControl:true,
+			lazy:true,
+			navigation : false
+		});
+	}
+
+	$('.reserve-botinfo').stop().delay(5000).fadeOut(500);
+	
+});
+
+
+</script>
+</head>
+<body>
+	<header id="headerSub" class="reserve-head">
+		<h1 class="tit">극장별 예매</h1>
+		<a href="" class="h-back"><i class="iconset ico-back-w"></i></a>
+	</header>
+
+	<div id="rnb">
+		
+	</div>
+
+	
+	<div class="container">
+
+		<div class="reserve-top v2">
+
+			<div class="inner-wrap">
+				<div class="theater-cover">
+					<a href="" class="change-theater">극장변경</a>
+					<div class="theater-list">
+						<div class="item on">동대문</div>
+						<div class="item">상암월드컵경기장</div>
+						<div class="item">영통</div>
+						<div class="item">동대문</div>
+						<div class="item">상암월드컵경기장</div>
+						<div class="item">영통</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="reserve-calendar mt20">
+				<div class="swiper-wrapper">
+					<div class="item swiper-slide on">
+						<a href="#none"><strong class="roboto">28</strong><span>오늘</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">29</strong><span>내일</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">30</strong><span>수</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">31</strong><span>목</span></a>
+					</div>
+					<div class="item swiper-slide first-day">
+						<div class="month"><span class="roboto">2019</span><strong><em class="roboto">3</em>월</strong></div>
+						<a href="#none"><strong class="roboto">1</strong><span>금</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none" class="sat"><strong class="roboto">2</strong><span>토</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none" class="sun"><strong class="roboto">3</strong><span>일</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">4</strong><span>월</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">5</strong><span>화</span></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#none"><strong class="roboto">6</strong><span>수</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="reserve-cont v2">
+			
+			<div class="theater-group">
+
+				<div class="theater-tit">
+					<i class="iconset ico-pg-medium-all"></i>
+					<i class="iconset ico-pg-medium-12"></i>
+					<i class="iconset ico-pg-medium-15"></i>
+					<i class="iconset ico-pg-medium-20"></i> 어벤져스 : 엔드게임  <a href="" class="righten"><i class="iconset ico-alert-16"></i></a></div>
+
+				<div class="troom-wrap">
+					<p class="tit"><strong>MX관 (7층)</strong> ATMOS 450석</p>
+					<div class="time-wrap">
+						<!-- 
+							반복영역
+							
+							일반 상태일때 time-cell
+							매진 상태일때 soldout 클래스 추가
+							선호 시간에 해당될때 liketime 클래스 추가
+
+							아침시간 ico-ticket-sun
+							점심시간 ico-ticket-brunch
+							심야시간 ico-ticket-moon
+
+							무대인사 ico-tag-stage
+							회원시사 ico-tag-user
+							오픈시사 ico-tag-open
+						-->
+						<div class="time-cell liketime">
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-sun"></i> 160석</p>
+						</div>
+						<!-- // 반복 -->
+
+						<div class="time-cell soldout">
+							<div class="theater-tag"><i class="iconset ico-tag-stage"></i></div>
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-user"></i></div>
+							<a href="#none">
+								<em>10:30</em>
+								<span>~12:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-open"></i></div>
+							<a href="#none">
+								<em>12:30</em>
+								<span>~14:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-brunch"></i> 160석</p>
+						</div>
+
+						<div class="time-cell soldout">
+							<a href="#none">
+								
+								<em>14:30</em>
+								<span>~16:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<a href="#none">
+								<em>16:30</em>
+								<span>~18:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell">
+							<a href="#none">
+								<em>18:30</em>
+								<span>~20:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell soldout">
+							<a href="#none">
+								<em>20:30</em>
+								<span>~22:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<a href="#none">
+								<em>22:30</em>
+								<span>~00:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-moon"></i> 160석</p>
+						</div>
+
+						<div class="time-cell">
+							<a href="#none">
+								<em>00:30</em>
+								<span>~02:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-moon"></i> 160석</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="troom-wrap">
+					<p class="tit"><strong>MX관 (7층)</strong> ATMOS 450석</p>
+					<div class="time-wrap">
+					
+						<div class="time-cell liketime">
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-sun"></i> 160석</p>
+						</div>
+						<!-- // 반복 -->
+
+						<div class="time-cell soldout">
+							<div class="theater-tag"><i class="iconset ico-tag-stage"></i></div>
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<a href="#none">
+								<em>00:30</em>
+								<span>~02:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-moon"></i> 160석</p>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="inner-banner">
+				<div class="event-list">
+					<!-- 반복 -->
+					<div class="item">
+						<a href="#">
+							<div class="img"><img src="../../../static/mb/images/event/@event-long.jpeg" alt=""></div>
+							<div class="info">
+								<p class="title">주먹왕랄프2 콤보</p>
+								<p class="date">2019. 01. 03 - 2019. 01. 31 </p>
+							</div>
+						</a>
+					</div>
+					<!-- // 반복 -->
+				</div>
+			</div>
+
+			<div class="theater-group bd-no">
+
+				<div class="theater-tit"><i class="iconset ico-pg-medium-20"></i> 어벤져스 : 엔드게임    <a href="" class="righten"><i class="iconset ico-alert-16"></i></a></div>
+
+				<div class="troom-wrap">
+					<p class="tit"><strong>MX관 (7층)</strong> ATMOS 450석</p>
+					<div class="time-wrap">
+						<!-- 
+							반복영역
+							
+							일반 상태일때 time-cell
+							매진 상태일때 soldout 클래스 추가
+							선호 시간에 해당될때 liketime 클래스 추가
+
+							아침시간 ico-ticket-sun
+							점심시간 ico-ticket-brunch
+							심야시간 ico-ticket-moon
+
+							무대인사 ico-tag-stage
+							회원시사 ico-tag-user
+							오픈시사 ico-tag-open
+						-->
+						<div class="time-cell liketime">
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-sun"></i> 160석</p>
+						</div>
+						<!-- // 반복 -->
+
+						<div class="time-cell soldout">
+							<div class="theater-tag"><i class="iconset ico-tag-stage"></i></div>
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-user"></i></div>
+							<a href="#none">
+								<em>10:30</em>
+								<span>~12:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-open"></i></div>
+							<a href="#none">
+								<em>12:30</em>
+								<span>~14:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-brunch"></i> 160석</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="theater-group">
+
+				<div class="theater-tit"><button type="button" class=""></button> 상암월드컵경기장  <a href="" class="righten"><i class="iconset ico-alert-16"></i></a></div>
+
+				<div class="troom-wrap">
+					<p class="tit"><strong>MX관 (7층)</strong> ATMOS 450석</p>
+					<div class="time-wrap">
+						<!-- 
+							반복영역
+							
+							일반 상태일때 time-cell
+							매진 상태일때 soldout 클래스 추가
+							선호 시간에 해당될때 liketime 클래스 추가
+
+							아침시간 ico-ticket-sun
+							점심시간 ico-ticket-brunch
+							심야시간 ico-ticket-moon
+
+							무대인사 ico-tag-stage
+							회원시사 ico-tag-user
+							오픈시사 ico-tag-open
+						-->
+						<div class="time-cell liketime">
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-sun"></i> 160석</p>
+						</div>
+						<!-- // 반복 -->
+
+						<div class="time-cell soldout">
+							<div class="theater-tag"><i class="iconset ico-tag-stage"></i></div>
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-user"></i></div>
+							<a href="#none">
+								<em>10:30</em>
+								<span>~12:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-open"></i></div>
+							<a href="#none">
+								<em>12:30</em>
+								<span>~14:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-brunch"></i> 160석</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="theater-group">
+
+				<div class="theater-tit"><button type="button" class=""></button> 상암월드컵경기장  <a href="" class="righten"><i class="iconset ico-alert-16"></i></a></div>
+
+				<div class="troom-wrap">
+					<p class="tit"><strong>MX관 (7층)</strong> ATMOS 450석</p>
+					<div class="time-wrap">
+						<!-- 
+							반복영역
+							
+							일반 상태일때 time-cell
+							매진 상태일때 soldout 클래스 추가
+							선호 시간에 해당될때 liketime 클래스 추가
+
+							아침시간 ico-ticket-sun
+							점심시간 ico-ticket-brunch
+							심야시간 ico-ticket-moon
+
+							무대인사 ico-tag-stage
+							회원시사 ico-tag-user
+							오픈시사 ico-tag-open
+						-->
+						<div class="time-cell liketime">
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-sun"></i> 160석</p>
+						</div>
+						<!-- // 반복 -->
+
+						<div class="time-cell soldout">
+							<div class="theater-tag"><i class="iconset ico-tag-stage"></i></div>
+							<a href="#none">
+								<em>08:30</em>
+								<span>~10:40</span>
+							</a>
+							<p class="txt">매진</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-user"></i></div>
+							<a href="#none">
+								<em>10:30</em>
+								<span>~12:40</span>
+							</a>
+							<p class="txt">160석</p>
+						</div>
+
+						<div class="time-cell">
+							<div class="theater-tag"><i class="iconset ico-tag-open"></i></div>
+							<a href="#none">
+								<em>12:30</em>
+								<span>~14:40</span>
+							</a>
+							<p class="txt"><i class="iconset ico-ticket-brunch"></i> 160석</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+		<div class="reserve-botinfo">
+			<span class="stage">무대인사</span>
+			<span class="user">회원시사</span>
+			<span class="open">오픈시사</span>
+		</div>
+
+	</div>
+</body>
+</html>
